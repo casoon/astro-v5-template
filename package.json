@@ -1,0 +1,20 @@
+{
+  "name": "astro-v5-template",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/image": "^0.18.0",
+    "@astrojs/rss": "^4.0.9",
+    "@picocss/pico": "^2.0.6",
+    "astro": "^5.0.0-beta.5",
+    "typescript": "^5.6.3"
+  }
+}

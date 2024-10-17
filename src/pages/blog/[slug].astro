@@ -1,0 +1,12 @@
+---
+import Layout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const { slug } = Astro.params;
+const blogPosts = await getCollection('blog');
+const post = blogPosts.find((p) => p.slug === slug);
+---
+<Layout>
+    <h1>{post.title}</h1>
+    <p><em>{post.date}</em></p>
+    <div>{post.content}</div>
+</Layout>
