@@ -3,10 +3,10 @@ import Layout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 const { slug } = Astro.params;
 const blogPosts = await getCollection('blog');
-const post = blogPosts.find((p) => p.slug === slug);
+const post = blogPosts.find((p) => p.slug === slug) ?? null;
 ---
 <Layout>
-    <h1>{post.title}</h1>
-    <p><em>{post.date}</em></p>
-    <div>{post.content}</div>
+    <h1>{post?.data.title ?? 'Blogpost nicht gefunden'}</h1>
+    <p><em>{post?.data.date ?? ''}</em></p>
+    <div>{post?.body ?? ''}</div>
 </Layout>
