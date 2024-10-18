@@ -1,5 +1,5 @@
 ---
-import * as pico from '@picocss/pico';
+
 ---
 <html lang="de">
 <head>
@@ -19,7 +19,7 @@ import * as pico from '@picocss/pico';
 		</ul>
 	</nav>
 </header>
-<main>
+<main transition:animate="slide">
 	<slot />
 </main>
 <footer>
@@ -29,6 +29,7 @@ import * as pico from '@picocss/pico';
 </html>
 
 <style>
+	@import '@picocss/pico/css/pico.css';
 	body {
 		font-family: 'Open Sans', sans-serif;
 		padding: 30px;
