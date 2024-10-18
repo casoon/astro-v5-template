@@ -1,13 +1,34 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import Layout from '@/layouts/BaseLayout.astro';
 import Greeting from '@/components/Greeting.astro';
 import myImage from 'public/images/img01.jpg';
 
 ---
 <Layout>
-	<Picture src={myImage} formats={['webp']} alt="Example Image" />
+	<Image src={myImage}
+		   widths={[240, 540, 720, 1200]}
+		   sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1200px`}
+		   alt="Example Image"
+           class="responsive-image"
+    />
 	<h1>Welcome to Astro V5 Template</h1>
 	<Greeting name="Astro User" />
 	<p>This is a demo project showcasing the features of Astro.js version 5.x.</p>
 </Layout>
+
+<style>
+    .responsive-image-container {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .responsive-image {
+        max-width: 100%;
+        height: auto; /* Damit das Seitenverhältnis erhalten bleibt */
+        width: auto;
+        display: block; /* Das verhindert, dass um das Bild herum zusätzlicher Platz bleibt */
+    }
+
+</style>
