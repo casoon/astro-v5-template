@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/BaseLayout.astro';
-import { fetch } from 'undici';
 
 const response = await fetch('https://api.spacexdata.com/v4/launches/latest');
 const launchData = await response.json() as { name: string; date_utc: string; details: string };
