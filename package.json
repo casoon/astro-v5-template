@@ -16,6 +16,7 @@
     "@picocss/pico": "^2.0.6",
     "astro": "^5.0.0-beta.5",
     "typescript": "^5.6.3",
-    "@types/bun": "^1.1.11"
+    "@types/bun": "^1.1.11",
+    "@fontsource/open-sans": "^5.1.0"
   }
 }
