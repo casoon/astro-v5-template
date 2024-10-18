@@ -2,14 +2,11 @@
 import { Image } from 'astro:assets';
 import Layout from '@/layouts/BaseLayout.astro';
 import Greeting from '@/components/Greeting.astro';
-import myImage from '@/images/img01.jpg';
+import myImage from '@/images/img01.webp';
 
 ---
 <Layout>
 	<Image src={myImage}
-		   widths={[240, 540, 720, 1200]}
-		   sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1200px`}
-		   format="webp"
 		   alt="Example Image"
            class="responsive-image"
     />
