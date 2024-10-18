@@ -1,6 +1,6 @@
 ---
-title: "Erster Blogpost"
+title: "first blog post"
 date: "2024-10-01"
 ---
 
-Willkommen zu meinem ersten Blogpost! Dies ist eine Einführung in Astro.js Version 5.x.
+Welcome to my first blog post! This is an introduction to Astro.js version 5.x.

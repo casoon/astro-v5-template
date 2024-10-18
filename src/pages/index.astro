@@ -1,7 +1,16 @@
 ---
-import Layout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import Layout from '@/layouts/BaseLayout.astro';
+import Greeting from '@/components/Greeting.astro';
+import myImage from 'public/images/img01.jpg';
+
 ---
 <Layout>
-	<h1>Willkommen zu Astro V5 Demo</h1>
-	<p>Dies ist ein Demo-Projekt, das die Features von Astro.js Version 5.x zeigt.</p>
+	<Image src={myImage}
+		   widths={[240, 540, 720, 1200]}
+		   sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1200px`}
+		   alt="Example Image" />
+	<h1>Welcome to Astro V5 Template</h1>
+	<Greeting name="Astro User" />
+	<p>This is a demo project showcasing the features of Astro.js version 5.x.</p>
 </Layout>
