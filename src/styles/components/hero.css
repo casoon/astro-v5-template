@@ -1,0 +1,9 @@
+.hero {
+    margin-bottom: var(--spacing-large);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

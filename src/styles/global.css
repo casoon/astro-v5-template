@@ -1,0 +1,51 @@
+/* global.css */
+@import './base/variables.css';  /* Global CSS variables such as colors, spacing, and font sizes */
+@import './base/reset.css';      /* Standardized base for cross-browser consistency */
+@import './base/typography.css'; /* Basic typography styles like headings and paragraph spacing */
+
+@import './layout/grid.css';     /* Flexible grid system for layouts */
+@import './layout/spacing.css';  /* Utility classes for spacing, such as padding and margins */
+
+@import './components/navbar.css'; /* Navbar component for the main menu */
+@import './components/hero.css';
+@import './components/buttons.css'; /* Reusable button styles */
+@import './components/cards.css';   /* Styles for card components */
+
+
+/* Global Standard Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    padding-block: var(--spacing-medium); /* Vertical Padding (top and bottom) */
+    padding-inline: var(--spacing-medium); /* Horizontal Padding (left and right) */
+    container-type: inline-size; /* Enable container queries based on the container's inline size */
+}
+
+/* Container queries based on the container size */
+@container (min-width: 768px) {
+    .content {
+        padding-block: var(--spacing-large);
+        padding-inline: var(--spacing-large);
+    }
+}
+
+@container (min-width: 1024px) {
+    .content {
+        padding-block: calc(var(--spacing-large) * 1.5);
+        padding-inline: calc(var(--spacing-large) * 1.5);
+    }
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}

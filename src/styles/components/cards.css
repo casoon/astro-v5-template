@@ -1,0 +1,14 @@
+/* cards.css */
+.card {
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-medium);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--spacing-large);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: var(--font-size-large);
+}

@@ -1,0 +1,12 @@
+/* spacing.css */
+.padding-large {
+    padding: var(--spacing-large);
+}
+
+.margin-bottom-large {
+    margin-bottom: var(--spacing-large);
+}
+
+.margin-top-large {
+    margin-top: var(--spacing-large);
+}

@@ -6,13 +6,22 @@ import myImage from '@/images/img01.webp';
 
 ---
 <Layout>
-	<Image src={myImage}
-		   alt="Example Image"
-           class="responsive-image"
-    />
-	<h1>Welcome to Astro V5 Template</h1>
-	<Greeting name="Astro User" />
-	<p>This is a demo project showcasing the features of Astro.js version 5.x.</p>
+	<div class="hero">
+		<Image src={myImage}
+			   alt="Example Image"
+			   class="responsive-image"
+		/>
+	</div>
+
+	<div class="content">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<h1>Welcome to Astro V5 Template</h1>
+				<Greeting name="Astro User" />
+				<p>This is a demo project showcasing the features of Astro.js version 5.x.</p>
+			</div>
+		</div>
+	</div>
 </Layout>
 
 <style>

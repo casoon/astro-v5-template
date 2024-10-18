@@ -11,14 +11,16 @@ import '@fontsource/open-sans';
 </head>
 <body>
 <header>
-	<nav>
-		<ul style="display: flex; gap: 1rem; list-style: none;">
-			<li><a href="/" style="color: #007bff; text-decoration: none;">Home</a></li>
-			<li><a href="/blog" style="color: #007bff; text-decoration: none;">Blog</a></li>
-			<li><a href="/data-fetching" style="color: #007bff; text-decoration: none;">Data Fetching</a></li>
-			<li><a href="/api/greeting" style="color: #007bff; text-decoration: none;">Internal API</a></li>
-			<li><a href="/server-island" style="color: #007bff; text-decoration: none;">Server Island</a></li>
-		</ul>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<a href="#" class="navbar-logo">Astro V5 Template</a>
+		<div class="navbar-menu">
+			<a href="/">Home</a>
+			<a href="/blog">Blog</a>
+			<a href="/data-fetching">Data Fetching</a>
+			<a href="/api/greeting">Internal API</a>
+			<a href="/server-island">Server Island</a>
+		</div>
 	</nav>
 </header>
 <main transition:animate="slide">
@@ -30,10 +32,20 @@ import '@fontsource/open-sans';
 </body>
 </html>
 
+<script>
+	window.addEventListener('scroll', function() {
+		const navbar = document.querySelector('.navbar');
+		if (navbar) {
+			if (window.scrollY > 50) {
+				navbar.classList.add('scrolled');
+			} else {
+				navbar.classList.remove('scrolled');
+			}
+		}
+	});
+</script>
+
+
 <style>
-	@import '@picocss/pico/css/pico.css';
-	body {
-		font-family: 'Open Sans', sans-serif;
-		padding: 30px;
-	}
+	@import '@/styles/global.css';
 </style>
