@@ -1,0 +1,8 @@
+---
+let loading = true;
+await new Promise(resolve => setTimeout(resolve, 5000));
+loading = false;
+---
+<div>
+    {loading ? <p>Loading...</p> : <p>Content has finished loading with server:defer!</p>}
+</div>

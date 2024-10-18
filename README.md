@@ -13,6 +13,7 @@ The Astro V5 Template is a comprehensive demonstration of the features of Astro.
 - **Static and Dynamic Content**: The project includes a mix of statically generated pages and dynamic elements, such as the blog page, which automatically updates when new content is added.
 - **Styling with Pico.css**: The project uses Pico.css as a modern, minimalist alternative to Bootstrap to ensure a clean, appealing design.
 - **Internal API**: Added an internal API endpoint (`/api/greeting`) that returns a JSON response, demonstrating the use of server-side API routes with Astro.
+- **Server Island Example**: Added a page (`server-island.astro`) that integrates a slow component rendered with server:defer.
 
 ## Design and User Interface
 The project design aims to provide a clear and user-friendly interface. With the help of Pico.css, a stylish yet minimalist aesthetic is achieved that focuses on content without being overwhelming. Navigation elements and layout components are clearly structured to ensure an intuitive user experience.
