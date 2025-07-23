@@ -12,6 +12,5 @@
         "./public/*"
       ]
     }
-  },
-  "extends": "astro/tsconfigs/strict"
+  }
 }
