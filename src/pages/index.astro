@@ -1,32 +1,14 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '@/layouts/BaseLayout.astro';
-import Greeting from '@/components/Greeting.astro';
-import myImage from '@/images/img01.webp';
-
+import SvelteDemo from '@/components/SvelteDemo.svelte';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
-<Layout>
-	<Image src={myImage}
-		   alt="Example Image"
-           class="responsive-image"
-    />
-	<h1>Welcome to Astro V5 Template</h1>
-	<Greeting name="Astro User" />
-	<p>This is a demo project showcasing the features of Astro.js version 5.x.</p>
-</Layout>
-
-<style>
-    .responsive-image-container {
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .responsive-image {
-        max-width: 100%;
-        height: auto; /* Damit das Seitenverhältnis erhalten bleibt */
-        width: auto;
-        display: block; /* Das verhindert, dass um das Bild herum zusätzlicher Platz bleibt */
-    }
-
-</style>
+<BaseLayout>
+  <h1 class="text-4xl font-bold text-blue-600 mb-4">Astro V5 + Tailwind + Svelte</h1>
+  <p class="mb-6 text-lg text-gray-700">Dieses Template ist bereit fuer deine Projekte!</p>
+  <button class="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">
+    Tailwind Button
+  </button>
+  <div class="mt-8">
+    <SvelteDemo client:load />
+  </div>
+</BaseLayout>

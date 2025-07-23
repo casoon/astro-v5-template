@@ -1,6 +1,6 @@
 ---
+import '@/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
-import '@fontsource/open-sans';
 ---
 <html lang="de">
 <head>
@@ -9,31 +9,23 @@ import '@fontsource/open-sans';
 	<title>Astro V5 Template</title>
 	<ClientRouter />
 </head>
-<body>
-<header>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+<header class="py-4">
 	<nav>
-		<ul style="display: flex; gap: 1rem; list-style: none;">
-			<li><a href="/" style="color: #007bff; text-decoration: none;">Home</a></li>
-			<li><a href="/blog" style="color: #007bff; text-decoration: none;">Blog</a></li>
-			<li><a href="/data-fetching" style="color: #007bff; text-decoration: none;">Data Fetching</a></li>
-			<li><a href="/api/greeting" style="color: #007bff; text-decoration: none;">Internal API</a></li>
-			<li><a href="/server-island" style="color: #007bff; text-decoration: none;">Server Island</a></li>
+		<ul class="flex justify-center gap-4 list-none p-0 m-0">
+			<li><a href="/" class="text-blue-600 no-underline text-lg font-semibold">Home</a></li>
 		</ul>
 	</nav>
 </header>
-<main transition:animate="slide">
-	<slot />
+<main class="flex-1 flex items-center justify-center">
+	<div class="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8 mx-2 flex flex-col items-center text-center">
+		<slot />
+	</div>
 </main>
-<footer>
-	<p>&copy; 2024 Astro V5 Template</p>
+<footer class="text-center text-gray-400 py-4">
+	<p>&copy; 2025 Astro V5 Template</p>
 </footer>
 </body>
 </html>
 
-<style>
-	@import '@picocss/pico/css/pico.css';
-	body {
-		font-family: 'Open Sans', sans-serif;
-		padding: 30px;
-	}
-</style>
+

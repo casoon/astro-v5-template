@@ -1,10 +1,18 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import cloudflare from '@astrojs/cloudflare';
+import tailwind from '@astrojs/tailwind';
+import mdx from '@astrojs/mdx';
+import svelte from '@astrojs/svelte';
 
 export default defineConfig({
-    output: 'server',
-    adapter: cloudflare({
-        imageService: 'passthrough'
-    })
+  integrations: [
+    tailwind({ 
+      applyBaseStyles: false,
+    }),
+    svelte(),
+    mdx(),
+  ],
+  build: {
+    exclude: [],
+    inlineStylesheets: 'auto',
+  }
 });
