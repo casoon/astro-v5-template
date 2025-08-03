@@ -1,13 +1,10 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@tailwindcss/vite';
 import mdx from '@astrojs/mdx';
 import svelte from '@astrojs/svelte';
+import tailwind from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  integrations: [
-    svelte(),
-    mdx(),
-  ],
+  integrations: [svelte(), mdx()],
   build: {
     exclude: [],
     inlineStylesheets: 'auto',
@@ -17,8 +14,8 @@ export default defineConfig({
       tailwind({
         config: {
           darkMode: 'class',
-        }
-      })
+        },
+      }),
     ],
   },
 });

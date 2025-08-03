@@ -43,7 +43,7 @@ export default {
           800: 'rgb(0, 94, 106)',
           900: 'rgb(0, 68, 77)',
           950: 'rgb(0, 43, 48)',
-        }
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -156,7 +156,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-} 
+  plugins: [require('@tailwindcss/typography')],
+};

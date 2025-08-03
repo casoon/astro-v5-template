@@ -1,35 +1,37 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  
-  let isDark = false;
-  let mounted = false;
-  
-  onMount(() => {
-    mounted = true;
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
-    isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    updateTheme();
-  });
-  
-  function toggleTheme() {
-    isDark = !isDark;
-    updateTheme();
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    console.log('Theme toggled to:', isDark ? 'dark' : 'light');
-    console.log('HTML classes:', document.documentElement.className);
+import { onMount } from 'svelte';
+
+let isDark = false;
+let mounted = false;
+
+onMount(() => {
+  mounted = true;
+  // Check for saved theme preference or default to light mode
+  const savedTheme = localStorage.getItem('theme');
+  isDark =
+    savedTheme === 'dark' ||
+    (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  updateTheme();
+});
+
+function toggleTheme() {
+  isDark = !isDark;
+  updateTheme();
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  console.log('Theme toggled to:', isDark ? 'dark' : 'light');
+  console.log('HTML classes:', document.documentElement.className);
+}
+
+function updateTheme() {
+  const html = document.documentElement;
+  if (isDark) {
+    html.classList.add('dark');
+    html.setAttribute('data-theme', 'dark');
+  } else {
+    html.classList.remove('dark');
+    html.setAttribute('data-theme', 'light');
   }
-  
-  function updateTheme() {
-    const html = document.documentElement;
-    if (isDark) {
-      html.classList.add('dark');
-      html.setAttribute('data-theme', 'dark');
-    } else {
-      html.classList.remove('dark');
-      html.setAttribute('data-theme', 'light');
-    }
-  }
+}
 </script>
 
 <button

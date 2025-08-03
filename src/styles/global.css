@@ -1,40 +1,61 @@
 /* Font imports */
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
 
-@import './tailwind.css'; /* Import the dedicated Tailwind file */
+@import "./tailwind.css"; /* Import the dedicated Tailwind file */
 
 /* Base styles */
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
 /* Smooth transitions for all elements */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* Custom animations */
 @keyframes endless {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes shine {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes infinite-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Dark mode styles */
@@ -181,7 +202,37 @@ body {
   background: linear-gradient(135deg, rgb(16, 16, 16) 0%, rgb(26, 26, 26) 100%) !important;
 }
 
-/* Dark mode blog prose styles */
+/* Dark mode blog article styles - Higher specificity */
+.dark article p {
+  color: #ffffff !important;
+}
+
+.dark article ul {
+  color: #ffffff !important;
+}
+
+.dark article ol {
+  color: #ffffff !important;
+}
+
+.dark article li {
+  color: #ffffff !important;
+}
+
+.dark article blockquote {
+  color: #ffffff !important;
+}
+
+.dark article a {
+  color: #60a5fa !important;
+}
+
+.dark article strong {
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+/* Dark mode prose styles */
 .dark .prose {
   color: #ffffff !important;
 }
@@ -223,27 +274,6 @@ body {
 
 .dark .prose pre {
   background-color: rgb(46, 46, 46) !important;
-  color: #ffffff !important;
-}
-
-/* Dark mode blog article styles */
-.dark article p {
-  color: #ffffff !important;
-}
-
-.dark article ul {
-  color: #ffffff !important;
-}
-
-.dark article ol {
-  color: #ffffff !important;
-}
-
-.dark article li {
-  color: #ffffff !important;
-}
-
-.dark article blockquote {
   color: #ffffff !important;
 }
 
@@ -312,17 +342,3 @@ body {
 .dark .rounded-full.text-cyan-800 {
   color: #ffffff !important;
 }
-
-/* Force maximum contrast for blog content */
-.dark article * {
-  color: #ffffff !important;
-}
-
-.dark article a {
-  color: #60a5fa !important;
-}
-
-.dark article strong {
-  color: #ffffff !important;
-  font-weight: bold !important;
-} 

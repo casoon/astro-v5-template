@@ -1,5 +1,5 @@
 <script lang="ts">
-  let count = 0;
+const count = 0;
 </script>
 
 <div class="p-6 sm:p-8 border border-gray-700/30 dark:border-gray-600/30 rounded-2xl sm:rounded-3xl bg-black/20 dark:bg-white/10 backdrop-blur-md shadow-2xl text-center relative overflow-hidden">
