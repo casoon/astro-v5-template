@@ -7,8 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.ts,.astro,.svelte"
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "check": "biome check --write .",
+    "type-check": "astro check"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",

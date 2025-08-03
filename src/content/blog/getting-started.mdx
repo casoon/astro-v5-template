@@ -1,0 +1,110 @@
+---
+title: "Erste Schritte mit Astro V5"
+description: "Eine Einführung in das moderne Astro V5 Template mit Tailwind CSS und Svelte"
+date: "2024-12-19"
+author: "Astro Team"
+image: "/img01.jpg"
+tags: ["astro", "tailwind", "svelte", "tutorial"]
+---
+
+# Willkommen bei Astro V5!
+
+Dieser Blog-Post zeigt dir, wie du mit dem Astro V5 Template startest und deine ersten Schritte machst.
+
+## Was ist Astro V5?
+
+Astro V5 ist die neueste Version des modernen Web-Frameworks, das dir ermöglicht, schnellere Websites mit weniger JavaScript zu erstellen. Unser Template kombiniert die besten Technologien:
+
+- **Astro V5** für das Framework
+- **Tailwind CSS** für das Styling
+- **Svelte** für interaktive Komponenten
+- **TypeScript** für bessere Entwicklererfahrung
+
+## Schnellstart
+
+1. **Klonen des Templates:**
+```bash
+git clone https://github.com/your-repo/astro-v5-template.git
+cd astro-v5-template
+```
+
+2. **Abhängigkeiten installieren:**
+```bash
+npm install
+```
+
+3. **Development Server starten:**
+```bash
+npm run dev
+```
+
+4. **Im Browser öffnen:**
+```
+http://localhost:4321
+```
+
+## Features
+
+### Dark Mode
+Das Template unterstützt automatisch Dark Mode mit sanften Übergängen. Der Theme-Toggle befindet sich in der oberen rechten Ecke.
+
+### Responsive Design
+Alle Komponenten sind vollständig responsive und funktionieren auf allen Geräten.
+
+### Performance
+Dank Astro's "Zero JavaScript by default" Ansatz sind deine Seiten blitzschnell.
+
+## Interaktive Demo
+
+Hier ist eine kleine Demo der Svelte-Komponente:
+
+<div class="my-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+  <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Live Demo</h3>
+  <p class="text-gray-600 dark:text-gray-300 mb-4">
+    Klicke den Button unten, um die Interaktivität zu testen:
+  </p>
+  <button 
+    id="demo-counter"
+    class="px-4 py-2 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
+    data-demo="counter"
+  >
+    Klicks: <span id="counter">0</span>
+  </button>
+</div>
+
+## Code-Beispiel
+
+Hier ist ein Beispiel für eine einfache Astro-Komponente:
+
+```html
+---
+// Komponenten-Logik hier
+const title = "Hallo Astro!";
+---
+
+<html>
+  <head>
+    <title>{title}</title>
+  </head>
+  <body>
+    <h1>{title}</h1>
+  </body>
+</html>
+```
+
+## Nächste Schritte
+
+- Erstelle neue Seiten im `src/pages/` Verzeichnis
+- Füge neue Blog-Posts im `src/content/blog/` hinzu
+- Erstelle API-Endpunkte im `src/pages/api/` Verzeichnis
+- Passe das Design mit Tailwind CSS an
+
+<div class="my-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg">
+  <h4 class="text-blue-800 dark:text-blue-200 font-semibold mb-2">💡 Tipp</h4>
+  <p class="text-blue-700 dark:text-blue-300">
+    Nutze die <code class="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded">npm run dev</code> 
+    Kommando, um deine Änderungen live zu sehen!
+  </p>
+</div>
+
+Viel Spaß beim Entwickeln! 🚀 

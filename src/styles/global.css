@@ -8,4 +8,146 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Explicit dark mode styles with better contrast and colors */
+.dark body {
+  background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
+  color: #ffffff;
+}
+
+/* Background colors with better contrast */
+.dark .bg-white {
+  background-color: #1a1f2e !important;
+}
+
+.dark .bg-gray-50 {
+  background-color: #0a0f1c !important;
+}
+
+.dark .bg-gray-100 {
+  background-color: #1a1f2e !important;
+}
+
+.dark .bg-gray-800 {
+  background-color: #2d3748 !important;
+}
+
+.dark .bg-gray-900 {
+  background-color: #0a0f1c !important;
+}
+
+/* Text colors with better readability and contrast */
+.dark .text-gray-800 {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-gray-500 {
+  color: #a0aec0 !important;
+}
+
+.dark .text-gray-400 {
+  color: #a0aec0 !important;
+}
+
+.dark .text-gray-300 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-white {
+  color: #ffffff !important;
+}
+
+.dark .text-black {
+  color: #ffffff !important;
+}
+
+/* Border colors with better visibility */
+.dark .border-gray-200 {
+  border-color: #4a5568 !important;
+}
+
+.dark .border-gray-300 {
+  border-color: #718096 !important;
+}
+
+.dark .border-gray-700 {
+  border-color: #4a5568 !important;
+}
+
+/* Specific component overrides for better readability */
+.dark .bg-white\/80 {
+  background-color: rgba(26, 31, 46, 0.9) !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(26, 31, 46, 0.95) !important;
+}
+
+.dark .border-white\/20 {
+  border-color: rgba(74, 85, 104, 0.4) !important;
+}
+
+.dark .border-white\/30 {
+  border-color: rgba(74, 85, 104, 0.5) !important;
+}
+
+.dark .border-gray-700\/30 {
+  border-color: rgba(74, 85, 104, 0.4) !important;
+}
+
+.dark .border-slate-600\/40 {
+  border-color: rgba(74, 85, 104, 0.5) !important;
+}
+
+/* Button and interactive elements with better colors */
+.dark .bg-gradient-to-br {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+}
+
+.dark .hover\:bg-gray-300:hover {
+  background-color: #4a5568 !important;
+}
+
+.dark .hover\:bg-gray-700:hover {
+  background-color: #4a5568 !important;
+}
+
+/* Enhanced gradient backgrounds for dark mode */
+.dark .bg-gradient-to-br.from-gray-50.to-blue-50 {
+  background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%) !important;
+}
+
+.dark .bg-gradient-to-br.from-slate-900.to-slate-800 {
+  background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%) !important;
+}
+
+/* Better contrast for specific elements */
+.dark .text-gray-300 {
+  color: #e2e8f0 !important;
+}
+
+.dark .text-cyan-300 {
+  color: #81e6d9 !important;
+}
+
+.dark .text-cyan-400 {
+  color: #4fd1c7 !important;
+}
+
+.dark .text-cyan-600 {
+  color: #38b2ac !important;
 } 

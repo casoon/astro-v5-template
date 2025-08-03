@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -57,8 +58,105 @@ export default {
         '4xl': '2rem',
         '5xl': '2.5rem',
         '6xl': '3rem',
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: '#374151',
+            a: {
+              color: '#0891b2',
+              '&:hover': {
+                color: '#0e7490',
+              },
+            },
+            strong: {
+              color: '#111827',
+            },
+            code: {
+              color: '#0891b2',
+              backgroundColor: '#f3f4f6',
+              padding: '0.25rem 0.375rem',
+              borderRadius: '0.375rem',
+              fontWeight: '400',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: '#111827',
+              color: '#f9fafb',
+              overflowX: 'auto',
+              borderRadius: '0.5rem',
+              padding: '1rem',
+            },
+            blockquote: {
+              borderLeftColor: '#0891b2',
+              color: '#6b7280',
+            },
+            h1: {
+              color: '#111827',
+              fontWeight: '700',
+            },
+            h2: {
+              color: '#111827',
+              fontWeight: '600',
+            },
+            h3: {
+              color: '#111827',
+              fontWeight: '600',
+            },
+            h4: {
+              color: '#111827',
+              fontWeight: '600',
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: '#d1d5db',
+            a: {
+              color: '#22d3ee',
+              '&:hover': {
+                color: '#06b6d4',
+              },
+            },
+            strong: {
+              color: '#f9fafb',
+            },
+            code: {
+              color: '#22d3ee',
+              backgroundColor: '#374151',
+            },
+            pre: {
+              backgroundColor: '#374151',
+              color: '#e5e7eb',
+            },
+            blockquote: {
+              borderLeftColor: '#22d3ee',
+              color: '#d1d5db',
+            },
+            h1: {
+              color: '#f9fafb',
+            },
+            h2: {
+              color: '#f9fafb',
+            },
+            h3: {
+              color: '#f9fafb',
+            },
+            h4: {
+              color: '#f9fafb',
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
-}
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+} 

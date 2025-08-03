@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <div class="space-y-6">
+    <h1 class="text-3xl font-bold text-black dark:text-white">Dark Mode Debug</h1>
+    
+    <!-- Manual toggle buttons -->
+    <div class="space-y-2">
+      <button 
+        onclick="document.documentElement.classList.add('dark'); document.documentElement.setAttribute('data-theme', 'dark'); console.log('Manual dark mode enabled');"
+        class="px-4 py-2 bg-gray-800 text-white rounded"
+      >
+        Force Dark Mode
+      </button>
+      <button 
+        onclick="document.documentElement.classList.remove('dark'); document.documentElement.setAttribute('data-theme', 'light'); console.log('Manual light mode enabled');"
+        class="px-4 py-2 bg-gray-200 text-black rounded"
+      >
+        Force Light Mode
+      </button>
+    </div>
+    
+    <!-- Test elements -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded">
+        <h3 class="text-lg font-semibold text-black dark:text-white">Test Box 1</h3>
+        <p class="text-gray-600 dark:text-gray-300">Dieser Text sollte sich ändern</p>
+      </div>
+      
+      <div class="p-4 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded">
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Test Box 2</h3>
+        <p class="text-gray-700 dark:text-gray-400">Auch dieser Text sollte sich ändern</p>
+      </div>
+    </div>
+    
+    <!-- Current state display -->
+    <div class="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded">
+      <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200">Current State</h3>
+      <p class="text-blue-600 dark:text-blue-300">
+        Dark class: <span id="dark-class-status">Checking...</span><br>
+        Data theme: <span id="data-theme-status">Checking...</span>
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  function updateStatus() {
+    const html = document.documentElement;
+    const darkClassElement = document.getElementById('dark-class-status');
+    const dataThemeElement = document.getElementById('data-theme-status');
+    
+    if (darkClassElement) {
+      darkClassElement.textContent = html.classList.contains('dark') ? 'Present' : 'Not present';
+    }
+    if (dataThemeElement) {
+      dataThemeElement.textContent = html.getAttribute('data-theme') || 'Not set';
+    }
+  }
+  
+  // Update status on load
+  updateStatus();
+  
+  // Update status every second
+  setInterval(updateStatus, 1000);
+</script> 

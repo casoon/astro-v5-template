@@ -8,7 +8,13 @@ This project is a minimal template for new Astro projects with Tailwind CSS v4 a
 - Astro 5.x base configuration
 - Tailwind CSS v4 with Vite integration
 - Svelte integration with example component
-- Example page (index.astro) using Tailwind and Svelte demo
+- TypeScript support with strict configuration
+- Biome for linting and formatting
+- Dark mode toggle with system preference detection
+- Mobile-first responsive design
+- Modern UX patterns (loading states, animations)
+- Environment variables configuration
+- Performance optimizations
 
 **Quick Start:**
 
@@ -25,6 +31,15 @@ npm install
 # Start development server
 npm run dev
 ```
+
+**Available Scripts:**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run format` - Format code with Biome
+- `npm run lint` - Lint code with Biome
+- `npm run check` - Format and lint code
+- `npm run type-check` - Check TypeScript types
 
 **Purpose:**
 

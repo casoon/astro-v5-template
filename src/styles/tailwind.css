@@ -1,2 +1,22 @@
 /* Tailwind CSS v4 import */
-@import "tailwindcss"; 
+@import "tailwindcss";
+
+/* Dark mode configuration */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  :root.dark {
+    color-scheme: dark;
+  }
+  
+  /* Alternative dark mode support */
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+  
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+} 

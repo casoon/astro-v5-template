@@ -13,6 +13,12 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   vite: {
-    plugins: [tailwind()],
+    plugins: [
+      tailwind({
+        config: {
+          darkMode: 'class',
+        }
+      })
+    ],
   },
 });

@@ -1,0 +1,156 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout>
+	<article class="max-w-4xl mx-auto">
+		<!-- Header -->
+		<header class="mb-12">
+			<nav class="mb-6">
+				<a href="/blog/" class="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 text-sm">
+					← Zurück zum Blog
+				</a>
+			</nav>
+
+			<h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">
+				{post.data.title}
+			</h1>
+			
+			<!-- Meta -->
+			<div class="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
+				{post.data.date && (
+					<time datetime={post.data.date}>
+						{new Date(post.data.date).toLocaleDateString('de-DE', {
+							year: 'numeric',
+							month: 'long',
+							day: 'numeric'
+						})}
+					</time>
+				)}
+				{post.data.author && (
+					<span>von {post.data.author}</span>
+				)}
+				{post.data.tags && post.data.tags.length > 0 && (
+					<div class="flex gap-2">
+						{post.data.tags.map((tag) => (
+							<span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200 text-xs rounded">
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
+			</div>
+
+			<!-- Description -->
+			{post.data.description && (
+				<p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+					{post.data.description}
+				</p>
+			)}
+
+			<!-- Image -->
+			{post.data.image && (
+				<img 
+					src={post.data.image} 
+					alt={post.data.title}
+					class="w-full h-64 object-cover rounded-lg mb-8"
+				/>
+			)}
+		</header>
+
+		<!-- Content -->
+		<div class="text-left [&>*]:text-left [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:text-gray-800 [&>h1]:dark:text-white [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-gray-800 [&>h2]:dark:text-white [&>h2]:mb-4 [&>h2]:mt-6 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:text-white [&>h3]:mb-3 [&>h3]:mt-5 [&>p]:text-gray-700 [&>p]:dark:text-gray-300 [&>p]:leading-relaxed [&>p]:mb-4 [&>a]:text-cyan-600 [&>a]:dark:text-cyan-400 [&>a]:no-underline [&>a]:hover:underline [&>strong]:text-gray-800 [&>strong]:dark:text-white [&>strong]:font-bold [&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:bg-gray-100 [&>code]:dark:bg-gray-800 [&>code]:px-2 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>pre]:bg-gray-900 [&>pre]:dark:bg-gray-800 [&>pre]:text-gray-100 [&>pre]:dark:text-gray-200 [&>pre]:p-4 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-cyan-500 [&>blockquote]:dark:border-cyan-400 [&>blockquote]:bg-gray-50 [&>blockquote]:dark:bg-gray-800/50 [&>blockquote]:text-gray-600 [&>blockquote]:dark:text-gray-300 [&>blockquote]:p-4 [&>blockquote]:rounded-r-lg [&>blockquote]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul]:text-gray-700 [&>ul]:dark:text-gray-300 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>ol]:text-gray-700 [&>ol]:dark:text-gray-300 [&>li]:mb-1 [&>hr]:border-gray-200 [&>hr]:dark:border-gray-700 [&>hr]:my-8">
+			<Content />
+		</div>
+
+		<!-- Footer -->
+		<footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+			<a 
+				href="/blog/" 
+				class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300"
+			>
+				← Alle Artikel
+			</a>
+		</footer>
+	</article>
+</BaseLayout>
+
+<script>
+	// Demo functionality for blog posts
+	document.addEventListener('DOMContentLoaded', function() {
+		// Counter demo
+		const counterButton = document.getElementById('demo-counter');
+		const counterSpan = document.getElementById('counter');
+		
+		if (counterButton && counterSpan) {
+			let count = 0;
+			counterButton.addEventListener('click', function() {
+				count++;
+				counterSpan.textContent = count.toString();
+			});
+		}
+
+		// Animation demo
+		const fadeBtn = document.getElementById('fade-btn');
+		const slideBtn = document.getElementById('slide-btn');
+		const resetBtn = document.getElementById('reset-btn');
+		const demoElement = document.getElementById('demo-element');
+		
+		if (fadeBtn && demoElement) {
+			fadeBtn.addEventListener('click', function() {
+				demoElement.style.opacity = '0.3';
+				demoElement.style.transform = 'scale(0.8)';
+			});
+		}
+		
+		if (slideBtn && demoElement) {
+			slideBtn.addEventListener('click', function() {
+				demoElement.style.transform = 'translateX(100px) rotate(45deg)';
+			});
+		}
+		
+		if (resetBtn && demoElement) {
+			resetBtn.addEventListener('click', function() {
+				demoElement.style.opacity = '1';
+				demoElement.style.transform = 'none';
+			});
+		}
+
+		// Tailwind demo
+		const colorBtn = document.getElementById('color-btn');
+		const sizeBtn = document.getElementById('size-btn');
+		const demoBox = document.getElementById('demo-box');
+		
+		if (colorBtn && demoBox) {
+			colorBtn.addEventListener('click', function() {
+				const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-yellow-500'];
+				const currentColor = demoBox.className.match(/bg-\w+-500/);
+				const currentIndex = colors.indexOf(currentColor ? currentColor[0] : 'bg-red-500');
+				const nextIndex = (currentIndex + 1) % colors.length;
+				demoBox.className = demoBox.className.replace(/bg-\w+-500/, colors[nextIndex]);
+			});
+		}
+		
+		if (sizeBtn && demoBox) {
+			sizeBtn.addEventListener('click', function() {
+				const sizes = ['w-32 h-32', 'w-40 h-40', 'w-48 h-48', 'w-32 h-32'];
+				const currentSize = demoBox.className.match(/w-\d+ h-\d+/);
+				const currentIndex = sizes.indexOf(currentSize ? currentSize[0] : 'w-32 h-32');
+				const nextIndex = (currentIndex + 1) % sizes.length;
+				demoBox.className = demoBox.className.replace(/w-\d+ h-\d+/, sizes[nextIndex]);
+			});
+		}
+	});
+</script> 

@@ -1,29 +1,74 @@
 ---
 import '@/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import ThemeToggle from '@/components/ThemeToggle.svelte';
+
+// Environment variables
+const siteName = import.meta.env.PUBLIC_SITE_NAME || 'Astro V5 Template';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://astrov5.casoon.dev';
 ---
-<html lang="de">
+<html lang="de" class="scroll-smooth">
+<script is:inline>
+  // Theme initialization
+  (function() {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const html = document.documentElement;
+    
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.classList.remove('dark');
+      html.setAttribute('data-theme', 'light');
+    }
+    
+    console.log('Initial theme:', theme);
+    console.log('HTML classes:', html.className);
+    console.log('Data theme:', html.getAttribute('data-theme'));
+  })();
+</script>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Astro V5 Template</title>
+	<title>{siteName}</title>
+	<meta name="description" content="Modern Astro template with Tailwind CSS v4 and Svelte">
+	<link rel="canonical" href={siteUrl}>
 	<ClientRouter />
 </head>
-<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
-<header class="py-6">
-	<nav class="flex justify-center">
-		<ul class="flex gap-6 list-none p-0 m-0">
-			<li><a href="/" class="text-indigo-600 no-underline text-lg font-semibold hover:text-indigo-800 transition-colors">Home</a></li>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 flex flex-col transition-all duration-500 ease-in-out">
+<header class="py-4 px-4 sm:py-6 sm:px-6">
+	<nav class="flex justify-between items-center max-w-4xl mx-auto">
+		<ul class="flex gap-4 sm:gap-6 list-none p-0 m-0">
+			<li><a href="/" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Home</a></li>
+			<li><a href="/blog" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Blog</a></li>
+			<li><a href="/api-test" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">API Test</a></li>
 		</ul>
+		<ThemeToggle client:load />
 	</nav>
 </header>
-<main class="flex-1 flex items-center justify-center px-4">
-	<div class="w-full max-w-2xl bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-10 mx-2 flex flex-col items-center text-center border border-white/20">
+<main class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
+	<div class="w-full max-w-7xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 mx-2 flex flex-col items-center text-center border border-white/30 dark:border-gray-600/40 transition-all duration-500 ease-in-out">
 		<slot />
 	</div>
 </main>
-<footer class="text-center text-gray-500 py-6">
-	<p>&copy; 2025 Astro V5 Template</p>
+<footer class="text-center text-gray-500 dark:text-gray-400 py-4 sm:py-6 px-4">
+	<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+		<p>&copy; 2025 {siteName}</p>
+		<div class="flex items-center gap-2">
+			<span>•</span>
+			<a 
+				href="https://github.com/casoon/astro-v5-template" 
+				target="_blank" 
+				rel="noopener noreferrer"
+				class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+			>
+				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+				</svg>
+				GitHub
+			</a>
+		</div>
+	</div>
 </footer>
 </body>
 </html>

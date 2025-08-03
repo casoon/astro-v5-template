@@ -1,0 +1,204 @@
+---
+title: "Tailwind CSS Tipps & Tricks"
+description: "Nützliche Tipps für die Arbeit mit Tailwind CSS in deinem Astro Projekt"
+date: "2024-12-19"
+author: "Design Team"
+image: "/img01.webp"
+tags: ["tailwind", "css", "design", "tips"]
+---
+
+# Tailwind CSS Tipps & Tricks
+
+Hier sind die wichtigsten Tipps und Tricks für die Arbeit mit Tailwind CSS in deinem Astro Projekt.
+
+## 1. Responsive Design
+
+Tailwind macht responsive Design einfach:
+
+<div class="my-6">
+  <div class="w-full md:w-1/2 lg:w-1/3 p-4 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+    <p class="text-blue-800 dark:text-blue-200 text-sm md:text-base lg:text-lg">
+      Responsive Textgröße
+    </p>
+  </div>
+</div>
+
+```html
+<div class="w-full md:w-1/2 lg:w-1/3">
+  <p class="text-sm md:text-base lg:text-lg">
+    Responsive Textgröße
+  </p>
+</div>
+```
+
+## 2. Dark Mode
+
+Dark Mode ist automatisch verfügbar:
+
+<div class="my-6 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+  <p class="text-gray-800 dark:text-white">
+    Automatischer Dark Mode
+  </p>
+</div>
+
+```html
+<div class="bg-white dark:bg-gray-800">
+  <p class="text-gray-800 dark:text-white">
+    Automatischer Dark Mode
+  </p>
+</div>
+```
+
+## 3. Flexbox & Grid
+
+<div class="my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="p-4 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+    <p class="text-purple-800 dark:text-purple-200">Grid Item 1</p>
+  </div>
+  <div class="p-4 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+    <p class="text-purple-800 dark:text-purple-200">Grid Item 2</p>
+  </div>
+  <div class="p-4 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+    <p class="text-purple-800 dark:text-purple-200">Grid Item 3</p>
+  </div>
+</div>
+
+```html
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div>Grid Item 1</div>
+  <div>Grid Item 2</div>
+  <div>Grid Item 3</div>
+</div>
+```
+
+## 4. Spacing & Sizing
+
+<div class="my-6 space-y-4">
+  <div class="w-16 h-16 bg-red-500 rounded"></div>
+  <div class="w-24 h-24 bg-green-500 rounded"></div>
+  <div class="w-32 h-32 bg-blue-500 rounded"></div>
+</div>
+
+```html
+<div class="space-y-4">
+  <div class="w-16 h-16 bg-red-500"></div>
+  <div class="w-24 h-24 bg-green-500"></div>
+  <div class="w-32 h-32 bg-blue-500"></div>
+</div>
+```
+
+## 5. Animations
+
+<div class="my-6 flex gap-4">
+  <div class="w-16 h-16 bg-cyan-500 rounded-lg animate-pulse"></div>
+  <div class="w-16 h-16 bg-purple-500 rounded-lg animate-bounce"></div>
+  <div class="w-16 h-16 bg-green-500 rounded-lg animate-spin"></div>
+</div>
+
+```html
+<div class="animate-pulse hover:animate-bounce">
+  <!-- Animierte Elemente -->
+</div>
+```
+
+## 6. Custom Classes
+
+Erstelle eigene Utility-Klassen in deiner CSS-Datei:
+
+```css
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+```
+
+## 7. Arbitrary Values
+
+Verwende beliebige Werte mit eckigen Klammern:
+
+<div class="my-6">
+  <div class="w-[200px] h-[150px] bg-[#ff6b6b] rounded-lg flex items-center justify-center text-white font-semibold">
+    Benutzerdefinierte Werte
+  </div>
+</div>
+
+```html
+<div class="w-[200px] h-[150px] bg-[#ff6b6b]">
+  <!-- Benutzerdefinierte Werte -->
+</div>
+```
+
+## 8. Group Hover
+
+<div class="my-6 group p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+  <p class="text-gray-600 dark:text-gray-300">Hover über diesen Container</p>
+  <div class="mt-2 p-2 bg-white dark:bg-gray-700 rounded group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+    <p class="text-gray-800 dark:text-gray-200">Dieser Bereich ändert sich beim Hover</p>
+  </div>
+</div>
+
+```html
+<div class="group">
+  <div class="group-hover:bg-blue-500">
+    <!-- Ändert sich beim Hover über das Parent-Element -->
+  </div>
+</div>
+```
+
+## 9. Container Queries
+
+<div class="my-6 @container">
+  <div class="@lg:text-lg p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+    <p class="text-gray-700 dark:text-gray-300">
+      Diese Textgröße ändert sich basierend auf der Container-Größe
+    </p>
+  </div>
+</div>
+
+```html
+<div class="@container">
+  <div class="@lg:text-lg">
+    <!-- Responsive basierend auf Container-Größe -->
+  </div>
+</div>
+```
+
+## 10. Performance Tipps
+
+<div class="my-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg">
+  <h4 class="text-yellow-800 dark:text-yellow-200 font-semibold mb-2">⚡ Performance</h4>
+  <ul class="text-yellow-700 dark:text-yellow-300 space-y-1">
+    <li>• Nutze <code class="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">@apply</code> sparsam</li>
+    <li>• Vermeide zu viele Utility-Klassen in einer Zeile</li>
+    <li>• Nutze PurgeCSS für Production Builds</li>
+  </ul>
+</div>
+
+## Interaktive Demo
+
+<div class="my-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+  <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Live Tailwind Demo</h3>
+  <div class="space-y-4">
+    <div class="flex gap-2">
+      <button id="color-btn" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+        Farbe ändern
+      </button>
+      <button id="size-btn" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+        Größe ändern
+      </button>
+    </div>
+    <div id="demo-box" class="w-32 h-32 bg-red-500 rounded-lg transition-all duration-300"></div>
+  </div>
+</div>
+
+## Fazit
+
+Tailwind CSS macht das Styling deiner Astro-Komponenten unglaublich einfach und konsistent. Mit diesen Tipps kannst du noch effizienter arbeiten!
+
+<div class="my-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
+  <h4 class="text-green-800 dark:text-green-200 font-semibold mb-2">🎉 Erfolg</h4>
+  <p class="text-green-700 dark:text-green-300">
+    Du hast jetzt alle wichtigen Tailwind CSS Tipps gelernt. Starte mit deinem nächsten Projekt!
+  </p>
+</div> 
