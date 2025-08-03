@@ -29,7 +29,7 @@ const { Content } = await post.render();
 			</h1>
 			
 			<!-- Meta -->
-			<div class="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
+			<div class="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-300 mb-8">
 				{post.data.date && (
 					<time datetime={post.data.date}>
 						{new Date(post.data.date).toLocaleDateString('de-DE', {
@@ -45,7 +45,7 @@ const { Content } = await post.render();
 				{post.data.tags && post.data.tags.length > 0 && (
 					<div class="flex gap-2">
 						{post.data.tags.map((tag) => (
-							<span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200 text-xs rounded">
+							<span class="px-2 py-1 bg-cyan-100 dark:!bg-gray-800 text-cyan-800 dark:!text-white text-xs rounded font-medium">
 								{tag}
 							</span>
 						))}
@@ -55,7 +55,7 @@ const { Content } = await post.render();
 
 			<!-- Description -->
 			{post.data.description && (
-				<p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+				<p class="text-lg text-gray-600 dark:text-gray-200 mb-8 leading-relaxed">
 					{post.data.description}
 				</p>
 			)}
@@ -71,7 +71,7 @@ const { Content } = await post.render();
 		</header>
 
 		<!-- Content -->
-		<div class="text-left [&>*]:text-left [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:text-gray-800 [&>h1]:dark:text-white [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-gray-800 [&>h2]:dark:text-white [&>h2]:mb-4 [&>h2]:mt-6 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:text-white [&>h3]:mb-3 [&>h3]:mt-5 [&>p]:text-gray-700 [&>p]:dark:text-gray-300 [&>p]:leading-relaxed [&>p]:mb-4 [&>a]:text-cyan-600 [&>a]:dark:text-cyan-400 [&>a]:no-underline [&>a]:hover:underline [&>strong]:text-gray-800 [&>strong]:dark:text-white [&>strong]:font-bold [&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:bg-gray-100 [&>code]:dark:bg-gray-800 [&>code]:px-2 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>pre]:bg-gray-900 [&>pre]:dark:bg-gray-800 [&>pre]:text-gray-100 [&>pre]:dark:text-gray-200 [&>pre]:p-4 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-cyan-500 [&>blockquote]:dark:border-cyan-400 [&>blockquote]:bg-gray-50 [&>blockquote]:dark:bg-gray-800/50 [&>blockquote]:text-gray-600 [&>blockquote]:dark:text-gray-300 [&>blockquote]:p-4 [&>blockquote]:rounded-r-lg [&>blockquote]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul]:text-gray-700 [&>ul]:dark:text-gray-300 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>ol]:text-gray-700 [&>ol]:dark:text-gray-300 [&>li]:mb-1 [&>hr]:border-gray-200 [&>hr]:dark:border-gray-700 [&>hr]:my-8">
+		<div class="text-left [&>*]:text-left [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:text-gray-800 [&>h1]:dark:text-white [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-gray-800 [&>h2]:dark:text-white [&>h2]:mb-4 [&>h2]:mt-6 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:text-white [&>h3]:mb-3 [&>h3]:mt-5 [&>p]:text-gray-700 [&>p]:dark:text-white [&>p]:leading-relaxed [&>p]:mb-4 [&>a]:text-cyan-600 [&>a]:dark:text-cyan-400 [&>a]:no-underline [&>a]:hover:underline [&>strong]:text-gray-800 [&>strong]:dark:text-white [&>strong]:font-bold [&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:bg-gray-100 [&>code]:dark:bg-gray-800 [&>code]:px-2 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>pre]:bg-gray-900 [&>pre]:dark:bg-gray-800 [&>pre]:text-gray-100 [&>pre]:dark:text-white [&>pre]:p-4 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-cyan-500 [&>blockquote]:dark:border-cyan-400 [&>blockquote]:bg-gray-50 [&>blockquote]:dark:bg-gray-800/50 [&>blockquote]:text-gray-600 [&>blockquote]:dark:text-white [&>blockquote]:p-4 [&>blockquote]:rounded-r-lg [&>blockquote]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul]:text-gray-700 [&>ul]:dark:text-white [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>ol]:text-gray-700 [&>ol]:dark:text-white [&>li]:mb-1 [&>hr]:border-gray-200 [&>hr]:dark:border-gray-700 [&>hr]:my-8">
 			<Content />
 		</div>
 

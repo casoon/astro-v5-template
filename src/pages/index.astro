@@ -6,15 +6,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   <div class="space-y-8">
     <!-- Glowing Title -->
     <h1 class="text-6xl font-bold text-center">
-      <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
+      <span class="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent animate-pulse">
         Astro V5
       </span>
-      <span class="text-gray-800 dark:text-white"> + </span>
-      <span class="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+      <span class="text-gray-800 dark:text-gray-200"> + </span>
+      <span class="bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">
         Tailwind
       </span>
-      <span class="text-gray-800 dark:text-white"> + </span>
-      <span class="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">
+      <span class="text-gray-800 dark:text-gray-200"> + </span>
+      <span class="bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">
         Svelte
       </span>
     </h1>
@@ -27,16 +27,16 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     
     <!-- Glowing Button -->
     <div class="flex justify-center">
-      <button class="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+      <button class="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-pink-600 text-white font-bold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
         <span class="relative z-10">Tailwind Button</span>
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
       </button>
     </div>
     
     <!-- Svelte Component with Glow -->
     <div class="flex justify-center mt-12">
       <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
         <div class="relative">
           <SvelteDemo client:load />
         </div>

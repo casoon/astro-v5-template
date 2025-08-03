@@ -15,7 +15,7 @@ posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).get
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white">
         Blog
       </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
         Entdecke Artikel über Astro, Tailwind CSS, Svelte und moderne Web-Entwicklung
       </p>
     </div>
@@ -51,19 +51,19 @@ posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).get
           
           <!-- Content -->
           <div class="p-6 space-y-4">
-            <!-- Meta -->
-            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-              <time datetime={post.data.date}>
-                {new Date(post.data.date).toLocaleDateString('de-DE', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
-              {post.data.author && (
-                <span>von {post.data.author}</span>
-              )}
-            </div>
+                      <!-- Meta -->
+          <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-300">
+            <time datetime={post.data.date}>
+              {new Date(post.data.date).toLocaleDateString('de-DE', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+            {post.data.author && (
+              <span>von {post.data.author}</span>
+            )}
+          </div>
             
             <!-- Title -->
             <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
@@ -74,7 +74,7 @@ posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).get
             
             <!-- Description -->
             {post.data.description && (
-              <p class="text-gray-600 dark:text-gray-300 line-clamp-3">
+              <p class="text-gray-600 dark:text-gray-200 line-clamp-3">
                 {post.data.description}
               </p>
             )}
@@ -83,7 +83,7 @@ posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).get
             {post.data.tags && (
               <div class="flex flex-wrap gap-2">
                 {post.data.tags.slice(0, 3).map((tag) => (
-                  <span class="px-3 py-1 text-xs bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full">
+                  <span class="px-3 py-1 text-xs bg-cyan-100 dark:!bg-gray-800 text-cyan-700 dark:!text-white rounded-full font-medium">
                     {tag}
                   </span>
                 ))}
