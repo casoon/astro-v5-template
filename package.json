@@ -1,7 +1,8 @@
 {
   "name": "astro-v5-template",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
+  "homepage": "https://astrov5.casoon.dev/",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
