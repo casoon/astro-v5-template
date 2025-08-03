@@ -9,20 +9,20 @@ import { ClientRouter } from 'astro:transitions';
 	<title>Astro V5 Template</title>
 	<ClientRouter />
 </head>
-<body class="min-h-screen bg-gray-50 flex flex-col">
-<header class="py-4">
-	<nav>
-		<ul class="flex justify-center gap-4 list-none p-0 m-0">
-			<li><a href="/" class="text-blue-600 no-underline text-lg font-semibold">Home</a></li>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex flex-col">
+<header class="py-6">
+	<nav class="flex justify-center">
+		<ul class="flex gap-6 list-none p-0 m-0">
+			<li><a href="/" class="text-indigo-600 no-underline text-lg font-semibold hover:text-indigo-800 transition-colors">Home</a></li>
 		</ul>
 	</nav>
 </header>
-<main class="flex-1 flex items-center justify-center">
-	<div class="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-8 mx-2 flex flex-col items-center text-center">
+<main class="flex-1 flex items-center justify-center px-4">
+	<div class="w-full max-w-2xl bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-10 mx-2 flex flex-col items-center text-center border border-white/20">
 		<slot />
 	</div>
 </main>
-<footer class="text-center text-gray-400 py-4">
+<footer class="text-center text-gray-500 py-6">
 	<p>&copy; 2025 Astro V5 Template</p>
 </footer>
 </body>

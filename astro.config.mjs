@@ -5,14 +5,14 @@ import svelte from '@astrojs/svelte';
 
 export default defineConfig({
   integrations: [
-    tailwind({ 
-      applyBaseStyles: false,
-    }),
     svelte(),
     mdx(),
   ],
   build: {
     exclude: [],
     inlineStylesheets: 'auto',
-  }
+  },
+  vite: {
+    plugins: [tailwind()],
+  },
 });

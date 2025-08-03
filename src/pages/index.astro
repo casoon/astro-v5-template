@@ -3,12 +3,44 @@ import SvelteDemo from '@/components/SvelteDemo.svelte';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 <BaseLayout>
-  <h1 class="text-4xl font-bold text-blue-600 mb-4">Astro V5 + Tailwind + Svelte</h1>
-  <p class="mb-6 text-lg text-gray-700">Dieses Template ist bereit fuer deine Projekte!</p>
-  <button class="px-6 py-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition">
-    Tailwind Button
-  </button>
-  <div class="mt-8">
-    <SvelteDemo client:load />
+  <div class="space-y-8">
+    <!-- Glowing Title -->
+    <h1 class="text-6xl font-bold text-center">
+      <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
+        Astro V5
+      </span>
+      <span class="text-white"> + </span>
+      <span class="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+        Tailwind
+      </span>
+      <span class="text-white"> + </span>
+      <span class="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">
+        Svelte
+      </span>
+    </h1>
+    
+    <!-- Glowing Description -->
+    <p class="text-xl text-gray-300 text-center leading-relaxed max-w-2xl mx-auto">
+      Dieses Template ist bereit für deine 
+      <span class="text-cyan-300 font-semibold">Projekte</span>!
+    </p>
+    
+    <!-- Glowing Button -->
+    <div class="flex justify-center">
+      <button class="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+        <span class="relative z-10">Tailwind Button</span>
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+      </button>
+    </div>
+    
+    <!-- Svelte Component with Glow -->
+    <div class="flex justify-center mt-12">
+      <div class="relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+        <div class="relative">
+          <SvelteDemo client:load />
+        </div>
+      </div>
+    </div>
   </div>
 </BaseLayout>
