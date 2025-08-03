@@ -1,10 +1,10 @@
 ---
-title: "Tailwind CSS Tipps & Tricks"
-description: "Nützliche Tipps für die Arbeit mit Tailwind CSS in deinem Astro Projekt"
-date: "2024-12-19"
-author: "Design Team"
-image: "/img01.webp"
-tags: ["tailwind", "css", "design", "tips"]
+title: 'Tailwind CSS Tipps & Tricks'
+description: 'Nützliche Tipps für die Arbeit mit Tailwind CSS in deinem Astro Projekt'
+date: '2024-12-19'
+author: 'Design Team'
+image: '/img01.webp'
+tags: ['tailwind', 'css', 'design', 'tips']
 ---
 
 # Tailwind CSS Tipps & Tricks
@@ -25,9 +25,7 @@ Tailwind macht responsive Design einfach:
 
 ```html
 <div class="w-full md:w-1/2 lg:w-1/3">
-  <p class="text-sm md:text-base lg:text-lg">
-    Responsive Textgröße
-  </p>
+  <p class="text-sm md:text-base lg:text-lg">Responsive Textgröße</p>
 </div>
 ```
 
@@ -36,16 +34,12 @@ Tailwind macht responsive Design einfach:
 Dark Mode ist automatisch verfügbar:
 
 <div class="my-6 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
-  <p class="text-gray-800 dark:text-white">
-    Automatischer Dark Mode
-  </p>
+  <p class="text-gray-800 dark:text-white">Automatischer Dark Mode</p>
 </div>
 
 ```html
 <div class="bg-white dark:bg-gray-800">
-  <p class="text-gray-800 dark:text-white">
-    Automatischer Dark Mode
-  </p>
+  <p class="text-gray-800 dark:text-white">Automatischer Dark Mode</p>
 </div>
 ```
 
@@ -134,7 +128,9 @@ Verwende beliebige Werte mit eckigen Klammern:
 <div class="my-6 group p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
   <p class="text-gray-600 dark:text-gray-300">Hover über diesen Container</p>
   <div class="mt-2 p-2 bg-white dark:bg-gray-700 rounded group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-    <p class="text-gray-800 dark:text-gray-200">Dieser Bereich ändert sich beim Hover</p>
+    <p class="text-gray-800 dark:text-gray-200">
+      Dieser Bereich ändert sich beim Hover
+    </p>
   </div>
 </div>
 
@@ -167,9 +163,15 @@ Verwende beliebige Werte mit eckigen Klammern:
 ## 10. Performance Tipps
 
 <div class="my-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-lg">
-  <h4 class="text-yellow-800 dark:text-yellow-200 font-semibold mb-2">⚡ Performance</h4>
+  <h4 class="text-yellow-800 dark:text-yellow-200 font-semibold mb-2">
+    ⚡ Performance
+  </h4>
   <ul class="text-yellow-700 dark:text-yellow-300 space-y-1">
-    <li>• Nutze <code class="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">@apply</code> sparsam</li>
+    <li>
+      • Nutze{' '}
+      <code class="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">@apply</code>{' '}
+      sparsam
+    </li>
     <li>• Vermeide zu viele Utility-Klassen in einer Zeile</li>
     <li>• Nutze PurgeCSS für Production Builds</li>
   </ul>
@@ -178,17 +180,28 @@ Verwende beliebige Werte mit eckigen Klammern:
 ## Interaktive Demo
 
 <div class="my-8 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-  <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Live Tailwind Demo</h3>
+  <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
+    Live Tailwind Demo
+  </h3>
   <div class="space-y-4">
     <div class="flex gap-2">
-      <button id="color-btn" class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+      <button
+        id="color-btn"
+        class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+      >
         Farbe ändern
       </button>
-      <button id="size-btn" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors">
+      <button
+        id="size-btn"
+        class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
+      >
         Größe ändern
       </button>
     </div>
-    <div id="demo-box" class="w-32 h-32 bg-red-500 rounded-lg transition-all duration-300"></div>
+    <div
+      id="demo-box"
+      class="w-32 h-32 bg-red-500 rounded-lg transition-all duration-300"
+    ></div>
   </div>
 </div>
 
@@ -197,8 +210,11 @@ Verwende beliebige Werte mit eckigen Klammern:
 Tailwind CSS macht das Styling deiner Astro-Komponenten unglaublich einfach und konsistent. Mit diesen Tipps kannst du noch effizienter arbeiten!
 
 <div class="my-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg">
-  <h4 class="text-green-800 dark:text-green-200 font-semibold mb-2">🎉 Erfolg</h4>
+  <h4 class="text-green-800 dark:text-green-200 font-semibold mb-2">
+    🎉 Erfolg
+  </h4>
   <p class="text-green-700 dark:text-green-300">
-    Du hast jetzt alle wichtigen Tailwind CSS Tipps gelernt. Starte mit deinem nächsten Projekt!
+    Du hast jetzt alle wichtigen Tailwind CSS Tipps gelernt. Starte mit deinem
+    nächsten Projekt!
   </p>
-</div> 
+</div>

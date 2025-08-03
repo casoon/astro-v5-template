@@ -1,16 +1,18 @@
 {
   "name": "astro-v5-template",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "homepage": "https://astrov5.casoon.dev/",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "biome format --write .",
-    "lint": "biome lint .",
-    "check": "biome check --write .",
-    "type-check": "astro check"
+    "format:svelte": "prettier --write \"**/*.svelte\" --config .prettierrc.svelte.json",
+    "format:astro": "prettier --write \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:format:svelte": "prettier --check \"**/*.svelte\" --config .prettierrc.svelte.json",
+    "check:format:astro": "prettier --check \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:biome": "biome check --write .",
+    "check": "npm run check:biome && npm run check:format:svelte && npm run check:format:astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.3",
@@ -33,6 +35,9 @@
     "@types/node-fetch": "^2.6.12",
     "astro": "^5.12.8",
     "npm-run-all": "^4.1.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.4.0",
     "wait-on": "^8.0.3"
   }
 }

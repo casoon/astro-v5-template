@@ -37,10 +37,13 @@ export const GET: APIRoute = async ({ url }) => {
         headers: { 'Content-Type': 'application/json' },
       });
     } else {
-      return new Response(JSON.stringify({ error: 'Benutzer nicht gefunden' }), {
-        status: 404,
-        headers: { 'Content-Type': 'application/json' },
-      });
+      return new Response(
+        JSON.stringify({ error: 'Benutzer nicht gefunden' }),
+        {
+          status: 404,
+          headers: { 'Content-Type': 'application/json' },
+        },
+      );
     }
   }
 
@@ -53,7 +56,7 @@ export const GET: APIRoute = async ({ url }) => {
     {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
-    }
+    },
   );
 };
 
@@ -70,7 +73,7 @@ export const POST: APIRoute = async ({ request }) => {
         {
           status: 400,
           headers: { 'Content-Type': 'application/json' },
-        }
+        },
       );
     }
 
@@ -92,7 +95,7 @@ export const POST: APIRoute = async ({ request }) => {
       {
         status: 201,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     );
   } catch (_error) {
     return new Response(
@@ -102,7 +105,7 @@ export const POST: APIRoute = async ({ request }) => {
       {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     );
   }
 };

@@ -1,14 +1,14 @@
 /* Font imports */
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
 
-@import "./tailwind.css"; /* Import the dedicated Tailwind file */
+@import './tailwind.css'; /* Import the dedicated Tailwind file */
 
 /* Base styles */
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* Smooth transitions for all elements */
@@ -183,7 +183,11 @@ body {
 
 /* Dark mode gradients */
 .dark .bg-gradient-to-br {
-  background: linear-gradient(135deg, rgb(16, 16, 16) 0%, rgb(26, 26, 26) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgb(16, 16, 16) 0%,
+    rgb(26, 26, 26) 100%
+  ) !important;
 }
 
 .dark .hover\:bg-gray-300:hover {
@@ -195,11 +199,19 @@ body {
 }
 
 .dark .bg-gradient-to-br.from-gray-50.to-blue-50 {
-  background: linear-gradient(135deg, rgb(16, 16, 16) 0%, rgb(0, 43, 48) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgb(16, 16, 16) 0%,
+    rgb(0, 43, 48) 100%
+  ) !important;
 }
 
 .dark .bg-gradient-to-br.from-gray-900.to-gray-800 {
-  background: linear-gradient(135deg, rgb(16, 16, 16) 0%, rgb(26, 26, 26) 100%) !important;
+  background: linear-gradient(
+    135deg,
+    rgb(16, 16, 16) 0%,
+    rgb(26, 26, 26) 100%
+  ) !important;
 }
 
 /* Dark mode blog article styles - Higher specificity */
@@ -230,6 +242,47 @@ body {
 .dark article strong {
   color: #ffffff !important;
   font-weight: bold !important;
+}
+
+/* Dark mode blog headings - Maximum contrast */
+.dark article h1,
+.dark article h2,
+.dark article h3,
+.dark article h4,
+.dark article h5,
+.dark article h6 {
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+.dark article h1 {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+}
+
+.dark article h2 {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
+}
+
+.dark article h3 {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
+
+.dark article h4 {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.dark article h5 {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.dark article h6 {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
 }
 
 /* Dark mode prose styles */

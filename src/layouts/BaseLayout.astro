@@ -1,10 +1,14 @@
 ---
 import '@/styles/global.css';
+// biome-ignore lint/correctness/noUnusedImports: ClientRouter wird im Astro-Template verwendet
 import { ClientRouter } from 'astro:transitions';
+// biome-ignore lint/correctness/noUnusedImports: ThemeToggle wird im Astro-Template verwendet
 import ThemeToggle from '@/components/ThemeToggle.svelte';
 
 // Environment variables
+// biome-ignore lint/correctness/noUnusedVariables: siteName wird im Astro-Template verwendet
 const siteName = import.meta.env.PUBLIC_SITE_NAME || 'Astro V5 Template';
+// biome-ignore lint/correctness/noUnusedVariables: siteUrl wird im Astro-Template verwendet
 const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://astrov5.casoon.dev';
 ---
 <html lang="de" class="scroll-smooth">

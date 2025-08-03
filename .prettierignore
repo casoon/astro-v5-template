@@ -1,0 +1,7 @@
+# Astro-Dateien von Prettier ausschließen (werden separat formatiert)
+*.astro
+
+# Andere Dateien, die nicht formatiert werden sollen
+node_modules/
+dist/
+.astro/ 

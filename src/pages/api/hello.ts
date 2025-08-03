@@ -13,7 +13,7 @@ export const GET: APIRoute = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
 };
 
@@ -32,7 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
   } catch (_error) {
     return new Response(
@@ -44,7 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-      }
+      },
     );
   }
 };
