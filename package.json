@@ -1,7 +1,7 @@
 {
   "name": "astro-v5-template",
   "type": "module",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "homepage": "https://astrov5.casoon.dev/",
   "scripts": {
     "dev": "astro dev",
@@ -12,9 +12,11 @@
     "check:format:svelte": "prettier --check \"**/*.svelte\" --config .prettierrc.svelte.json",
     "check:format:astro": "prettier --check \"**/*.astro\" --config .prettierrc.astro.json",
     "check:biome": "biome check --write .",
-    "check": "npm run check:biome && npm run check:format:svelte && npm run check:format:astro"
+    "check": "npm run check:biome && npm run check:format:svelte && npm run check:format:astro",
+    "type-check": "astro check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^4.3.3",
     "@astrojs/svelte": "^7.1.0",
     "@fontsource/inter": "^5.2.6",
@@ -28,7 +30,8 @@
     "motion": "^12.23.3",
     "svelte": "^5.35.4",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.3",
