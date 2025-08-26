@@ -1,25 +1,24 @@
 # Astro V5 Template
 
-This project is a minimal template for new Astro projects with Tailwind CSS v4 and Svelte.
+A modern and minimal template for new Astro projects with Tailwind CSS v4 and Svelte integration.
 
 **Live Demo:** [astrov5.casoon.dev](https://astrov5.casoon.dev/)
 
-**Included:**
+## 🚀 Features
 
-- **Astro 5.x** base configuration
-- **Tailwind CSS v4** with Vite integration
-- **Svelte** integration with example component
-- **TypeScript** support with strict configuration
-- **Biome** for linting and **Prettier** for formatting
-- **Dark mode** toggle with system preference detection
-- **Blog system** with MDX support and content collections
-- **API routes** with example endpoints
-- **Mobile-first** responsive design
-- **Modern UX patterns** (loading states, animations)
-- **Environment variables** configuration
-- **Performance optimizations**
+- **Astro 5.x** - Latest version with modern configuration
+- **Tailwind CSS v4** - With Vite integration for optimal performance
+- **Svelte Integration** - With example components and theme toggle
+- **TypeScript** - Full type support with strict configuration
+- **Biome** - Modern linting and formatting tools
+- **Dark Mode** - Automatic system preference detection
+- **Blog System** - MDX support with Content Collections
+- **API Routes** - Example endpoints for backend functionality
+- **Mobile-First** - Responsive design for all devices
+- **Performance Optimizations** - Modern UX patterns and loading states
+- **@casoon/tailwindcss-effects** - Advanced Tailwind CSS effects and animations
 
-**Quick Start:**
+## 🛠️ Quick Start
 
 ```bash
 # Clone this template
@@ -35,102 +34,122 @@ npm install
 npm run dev
 ```
 
-**Available Scripts:**
+## 📜 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run format:svelte` - Format Svelte files with prettier-plugin-svelte
-- `npm run format:astro` - Format Astro files with prettier-plugin-astro
-- `npm run check:format:svelte` - Check Svelte file formatting
-- `npm run check:format:astro` - Check Astro file formatting
-- `npm run check:biome` - Lint code with Biome (excluding Svelte/Astro)
-- `npm run check` - Combined linting with Biome & format checking with Prettier
-- `npm run type-check` - Check TypeScript types
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run check` | Run all linting and formatting checks |
+| `npm run type-check` | Check TypeScript types |
 
----
+### Formatting & Linting
 
-## Linting & Formatting (Biome + Prettier + Svelte + Astro)
+| Command | Description |
+|---------|-------------|
+| `npm run format:svelte` | Format Svelte files |
+| `npm run format:astro` | Format Astro files |
+| `npm run check:biome` | Lint code with Biome |
+| `npm run check:format:svelte` | Check Svelte formatting |
+| `npm run check:format:astro` | Check Astro formatting |
 
-### **Setup:**
-- **Biome** checks and formats all files except Svelte components (`*.svelte`) and Astro files (`*.astro`).
-  - Configuration can be found in `biome.json` (`!**/*.svelte` and `!**/*.astro` in the includes array).
-- **Prettier** uses separate configuration files for different file types:
-  - `.prettierrc` - General settings
-  - `.prettierrc.svelte.json` - Svelte-specific configuration
-  - `.prettierrc.astro.json` - Astro-specific configuration
+## 🏗️ Project Structure
 
-### **Main Commands:**
-- `npm run check:biome` – Linting with Biome (excluding Svelte/Astro)
-- `npm run check:format:svelte` – Format check for Svelte files
-- `npm run check:format:astro` – Format check for Astro files
-- `npm run check` – All combined
-- `npm run format:svelte` – Format only Svelte files
-- `npm run format:astro` – Format only Astro files
-
-### **Notes:**
-- In Astro files with dynamic components (e.g., `{ Content } = await post.render();`), Biome may show an "unused variable" error even though the variable is used in the template. This is a known linter issue and can be ignored.
-- Astro and Svelte files are excluded from Biome and formatted separately with their own Prettier configurations.
-- Each file type uses its own configuration file for maximum flexibility and consistency.
-
-### **Configuration Files:**
 ```
-.prettierrc              # General settings (minimal)
-.prettierrc.svelte.json  # Svelte-specific configuration
-.prettierrc.astro.json   # Astro-specific configuration
+astro-v5-template/
+├── src/
+│   ├── components/          # Reusable components
+│   │   ├── SvelteDemo.svelte
+│   │   └── ThemeToggle.svelte
+│   ├── content/             # Content Collections
+│   │   └── blog/           # Blog posts (MDX)
+│   ├── layouts/            # Astro layouts
+│   │   └── BaseLayout.astro
+│   ├── pages/              # Pages and API routes
+│   │   ├── api/           # API endpoints
+│   │   ├── blog/          # Blog pages
+│   │   └── index.astro    # Homepage
+│   ├── styles/            # CSS and Tailwind
+│   └── utils/             # Utility functions
+├── public/                 # Static assets
+├── astro.config.mjs       # Astro configuration
+├── tailwind.config.mjs    # Tailwind configuration
+└── biome.json             # Biome linting configuration
 ```
 
----
+## 📝 Blog System
 
-## Blog System
-
-### **Features:**
+### Features
 - **MDX Support** for interactive blog posts
 - **Content Collections** with TypeScript schema validation
 - **Automatic sorting** by date (newest first)
 - **Tag system** for categorization
 - **Responsive grid layout** for blog overview
-- **Dark mode** with optimized contrasts
-- **SEO-optimized** meta tags and structure
+- **SEO optimized** with meta tags and structured data
 
-### **Structure:**
-```
-src/
-├── content/
-│   └── blog/
-│       ├── first-post.mdx
-│       ├── getting-started.mdx
-│       └── tailwind-tips.mdx
-├── pages/
-│   └── blog/
-│       ├── index.astro      # Blog overview
-│       └── [...slug].astro  # Individual blog posts
-└── utils/
-    └── blog.ts              # Blog utilities (Best Practices)
-```
-
-### **Usage:**
+### Usage
 - Create blog posts as `.mdx` files in `src/content/blog/`
 - Frontmatter with `title`, `date`, `description`, `author`, `tags` (optional)
 - Automatic generation of blog overview and individual pages
 
----
+## 🔌 API Routes
 
-## API Routes
-
-### **Features:**
-- **RESTful API endpoints** in `src/pages/api/`
-- **TypeScript support** for API routes
-- **Interactive test page** at `/api-test`
-- **JSON response handling**
-
-### **Available Endpoints:**
+### Available Endpoints
 - `GET /api/hello` - Simple Hello World endpoint
 - `GET /api/users` - User list with query parameter support
 - `POST /api/users` - User creation (demo)
 
+### Test Page
+Visit `/api-test` for an interactive API testing interface.
+
+## 🎨 Theme & Styling
+
+- **Dark/Light Mode** with automatic system preference detection
+- **Tailwind CSS v4** with modern utility classes
+- **Responsive Design** for all screen sizes
+- **Consistent color palette** with optimized contrasts
+
+## ✨ Tailwind CSS Effects
+
+This template includes **@casoon/tailwindcss-effects** (v0.4.0) - a powerful collection of advanced Tailwind CSS effects and animations that enhance your UI components with:
+
+- **Advanced hover effects** and micro-interactions
+- **Smooth transitions** and animations
+- **Modern glassmorphism** and backdrop effects
+- **Enhanced form elements** with interactive states
+- **Professional loading animations** and spinners
+- **Custom utility classes** for complex animations
+
+Learn more: [@casoon/tailwindcss-effects](https://github.com/casoon/tailwindcss-effects)
+
+## 🔧 Configuration
+
+### Linting & Formatting
+The project uses a combined configuration of:
+- **Biome** for general linting tasks
+- **Prettier** for Svelte and Astro-specific formatting
+- Separate configuration files for maximum flexibility
+
+### Environment Variables
+- Copy `env.example` to `.env`
+- Configure your specific environment variables
+
+## 📱 Browser Support
+
+- Chrome (latest version)
+- Firefox (latest version)
+- Safari (latest version)
+- Edge (latest version)
+
+## 🤝 Contributing
+
+Improvement suggestions and pull requests are welcome!
+
+## 📄 License
+
+This template is available under the MIT license.
+
 ---
 
-**Purpose:**
-
-Quick starting point for your own Astro projects with Tailwind CSS v4 and Svelte.
+**Purpose:** Quick starting point for your own Astro projects with Tailwind CSS v4 and Svelte integration.
