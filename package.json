@@ -1,7 +1,7 @@
 {
   "name": "astro-v5-template",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.2",
   "homepage": "https://astrov5.casoon.dev/",
   "scripts": {
     "dev": "astro dev",
@@ -14,7 +14,6 @@
     "check:biome": "biome check --write .",
     "check": "npm run check:biome && npm run check:format:svelte && npm run check:format:astro",
     "type-check": "astro check",
-    "uninstall:lucide-react": "npm uninstall lucide-react",
     "update-deps": "npx npm-check-updates -u"
   },
   "dependencies": {
