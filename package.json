@@ -14,7 +14,8 @@
     "check:biome": "biome check --write .",
     "check": "npm run check:biome && npm run check:format:svelte && npm run check:format:astro",
     "type-check": "astro check",
-    "uninstall:lucide-react": "npm uninstall lucide-react"
+    "uninstall:lucide-react": "npm uninstall lucide-react",
+    "update-deps": "npx npm-check-updates -u"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
