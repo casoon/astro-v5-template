@@ -1,9 +1,11 @@
 /* Tailwind CSS v4 import */
-@import 'tailwindcss';
+@import "tailwindcss";
+
+/* Atlas Design System - after Tailwind for proper layering */
+@import "@casoon/atlas-styles";
 
 /* Tailwind CSS v4 plugins */
 @plugin "@tailwindcss/forms";
-
 @plugin "@tailwindcss/typography";
 
 /* Theme configuration for Tailwind CSS v4 */

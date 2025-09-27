@@ -15,7 +15,7 @@ npm run update-deps  # Update all dependencies
 
 ## Architecture
 - **Formatter/Linter**: Biome for JS/TS, Prettier for .astro/.svelte
-- **Styling**: Tailwind v4 via Vite, dark mode support
+- **Styling**: Tailwind v4 via Vite, Atlas Design System for UI components
 - **Content**: MDX blog posts in `src/content/blog/` with Content Collections
 - **API**: File-based routing in `src/pages/api/`
 - **Components**: Svelte 5 for interactivity, Astro for layouts

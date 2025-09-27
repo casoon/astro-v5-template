@@ -27,7 +27,7 @@ A modern, production-ready template for Astro projects with Tailwind CSS v4, Sve
 - **API Routes** - Type-safe endpoints with examples
 - **Performance** - Optimized images, fonts, and loading
 - **404 Page** - Custom error page
-- **@casoon/tailwindcss-effects** - Advanced animations and effects
+- **@casoon/atlas-styles** - Modern design system with glass effects and animations
 
 ## 🛠️ Quick Start
 
@@ -121,18 +121,18 @@ Visit `/api-test` for an interactive API testing interface.
 - **Responsive Design** for all screen sizes
 - **Consistent color palette** with optimized contrasts
 
-## ✨ Tailwind CSS Effects
+## ✨ Atlas Design System
 
-This template includes **@casoon/tailwindcss-effects** (v0.4.0) - a powerful collection of advanced Tailwind CSS effects and animations that enhance your UI components with:
+This template includes **@casoon/atlas-styles** - a complete Tailwind v4-compatible design system featuring:
 
-- **Advanced hover effects** and micro-interactions
-- **Smooth transitions** and animations
-- **Modern glassmorphism** and backdrop effects
-- **Enhanced form elements** with interactive states
-- **Professional loading animations** and spinners
-- **Custom utility classes** for complex animations
+- **Glass Morphism Effects** - Modern glass variants with backdrop filters
+- **Gradient System** - 30+ gradient utilities with animations
+- **Component Library** - Cards, forms, buttons with consistent design
+- **Animation Utilities** - Smooth transitions and micro-interactions
+- **Modular Imports** - Import only what you need
+- **Design Tokens** - Customizable CSS variables for theming
 
-Learn more: [@casoon/tailwindcss-effects](https://github.com/casoon/tailwindcss-effects)
+Learn more: [@casoon/atlas-styles](https://github.com/casoon/atlas)
 
 ## 🔧 Configuration
 

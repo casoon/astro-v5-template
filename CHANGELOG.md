@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2024-01-27
+
+### Changed
+- Replaced @casoon/tailwindcss-effects with @casoon/atlas-styles
+- Added GlassCard component showcasing atlas-styles
+- Updated homepage to demonstrate Atlas Design System features
+
+### Added
+- Environment variables best practice example (env.d.ts.example)
+- Atlas Design System integration with glass effects and gradients
+
+---
+
 ## [0.1.0] - 2024-01-27
 
 ### 🎆 Production Ready Release

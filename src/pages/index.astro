@@ -1,8 +1,7 @@
 ---
-// biome-ignore lint/correctness/noUnusedImports: SvelteDemo wird im Astro-Template verwendet
 import SvelteDemo from '@/components/SvelteDemo.svelte';
-// biome-ignore lint/correctness/noUnusedImports: BaseLayout wird im Astro-Template verwendet
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import GlassCard from '@/components/GlassCard.astro';
 ---
 <BaseLayout>
   <div class="space-y-8">
@@ -23,16 +22,43 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     
     <!-- Glowing Description -->
     <p class="text-xl text-gray-600 dark:text-gray-300 text-center leading-relaxed max-w-2xl mx-auto">
-      Dieses Template ist bereit für deine 
-      <span class="text-cyan-600 dark:text-cyan-400 font-semibold">Projekte</span>!
+      Modern template with 
+      <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">Tailwind CSS v4</span>
     </p>
     
-    <!-- Glowing Button -->
-    <div class="flex justify-center">
-      <button class="group relative px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-pink-600 text-white font-bold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-        <span class="relative z-10">Tailwind Button</span>
-        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-400 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-      </button>
+    <!-- Glass Effect Examples with Standard Tailwind -->
+    <div class="grid md:grid-cols-3 gap-6 mt-12">
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold mb-2">Glass Effect</h3>
+        <p class="text-gray-300">Beautiful glassmorphism with backdrop blur</p>
+      </div>
+      <div class="bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold mb-2">Dark Glass</h3>
+        <p class="text-gray-300">Dark variant for enhanced contrast</p>
+      </div>
+      <div class="bg-white/30 backdrop-blur-xl border border-white/30 rounded-lg p-6 hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold mb-2">Strong Glass</h3>
+        <p class="text-gray-300">Maximum glass effect intensity</p>
+      </div>
+    </div>
+    
+    <!-- Gradient Examples -->
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-6 rounded-lg">
+        <h3 class="text-2xl font-bold text-white">Ocean Gradient</h3>
+        <p class="text-white/90 mt-2">Dynamic gradient with modern design</p>
+      </div>
+      <div class="bg-gradient-to-br from-orange-400 to-pink-600 p-6 rounded-lg">
+        <h3 class="text-2xl font-bold text-white">Sunset Gradient</h3>
+        <p class="text-white/90 mt-2">Warm gradient for vibrant designs</p>
+      </div>
+    </div>
+    
+    <!-- Button Examples -->
+    <div class="flex justify-center gap-4 mt-8">
+      <button class="px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-semibold transition-colors">Primary Button</button>
+      <button class="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-semibold transition-colors">Secondary</button>
+      <button class="px-6 py-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white rounded-lg font-semibold transition-all">Glass Button</button>
     </div>
     
     <!-- Svelte Component with Glow -->
