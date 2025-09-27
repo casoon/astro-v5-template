@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
-      message: 'Hallo von der Astro API!',
+      message: 'Hello from the Astro API!',
       timestamp: new Date().toISOString(),
       version: '1.0.0',
       features: ['TypeScript', 'Astro', 'Tailwind', 'Svelte'],
@@ -23,7 +23,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     return new Response(
       JSON.stringify({
-        message: 'Daten erfolgreich empfangen!',
+        message: 'Data received successfully!',
         receivedData: body,
         timestamp: new Date().toISOString(),
       }),
@@ -37,7 +37,7 @@ export const POST: APIRoute = async ({ request }) => {
   } catch (_error) {
     return new Response(
       JSON.stringify({
-        error: 'Ungültige JSON-Daten',
+        error: 'Invalid JSON data',
       }),
       {
         status: 400,

@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getSortedPosts } from '@/utils/blog';
+import type { CollectionEntry } from 'astro:content';
 
-// Alle Blog-Posts abrufen (sortiert nach Datum)
 const posts = await getSortedPosts();
+---
 ---
 
 <BaseLayout>
@@ -14,13 +15,13 @@ const posts = await getSortedPosts();
         Blog
       </h1>
       <p class="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
-        Entdecke Artikel über Astro, Tailwind CSS, Svelte und moderne Web-Entwicklung
+        Discover articles about Astro, Tailwind CSS, Svelte and modern web development
       </p>
     </div>
 
     <!-- Blog Posts Grid -->
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {posts.map((post) => (
+      {posts.map((post: CollectionEntry<'blog'>) => (
         <article class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
           <!-- Image or Placeholder -->
           <div class="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
@@ -52,14 +53,14 @@ const posts = await getSortedPosts();
             <!-- Meta -->
             <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-300">
             <time datetime={post.data.date}>
-              {new Date(post.data.date).toLocaleDateString('de-DE', {
+              {new Date(post.data.date).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
               })}
             </time>
             {post.data.author && (
-              <span>von {post.data.author}</span>
+              <span>by {post.data.author}</span>
             )}
           </div>
             
@@ -80,7 +81,7 @@ const posts = await getSortedPosts();
             <!-- Tags -->
             {post.data.tags && (
               <div class="flex flex-wrap gap-2">
-                {post.data.tags.slice(0, 3).map((tag) => (
+                {post.data.tags.slice(0, 3).map((tag: string) => (
                   <span class="px-3 py-1 text-xs bg-cyan-100 dark:!bg-gray-800 text-cyan-700 dark:!text-white rounded-full font-medium">
                     {tag}
                   </span>
@@ -93,7 +94,7 @@ const posts = await getSortedPosts();
               href={`/blog/${post.slug}/`}
               class="inline-flex items-center text-cyan-600 dark:text-cyan-400 font-semibold hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
             >
-              Weiterlesen
+              Read more
               <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -108,10 +109,10 @@ const posts = await getSortedPosts();
       <div class="text-center py-12">
         <div class="text-6xl mb-4">📝</div>
         <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-          Noch keine Blog-Posts
+          No blog posts yet
         </h3>
         <p class="text-gray-600 dark:text-gray-300">
-          Erstelle deinen ersten Blog-Post im <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">src/content/blog/</code> Verzeichnis
+          Create your first blog post in the <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">src/content/blog/</code> directory
         </p>
       </div>
     )}

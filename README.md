@@ -1,22 +1,33 @@
 # Astro V5 Template
 
-A modern and minimal template for new Astro projects with Tailwind CSS v4 and Svelte integration.
+A modern, production-ready template for Astro projects with Tailwind CSS v4, Svelte 5, and comprehensive developer experience.
 
 **Live Demo:** [astrov5.casoon.dev](https://astrov5.casoon.dev/)
 
 ## 🚀 Features
 
-- **Astro 5.x** - Latest version with modern configuration
-- **Tailwind CSS v4** - With Vite integration for optimal performance
-- **Svelte Integration** - With example components and theme toggle
-- **TypeScript** - Full type support with strict configuration
-- **Biome** - Modern linting and formatting tools
-- **Dark Mode** - Automatic system preference detection
-- **Blog System** - MDX support with Content Collections
-- **API Routes** - Example endpoints for backend functionality
-- **Mobile-First** - Responsive design for all devices
-- **Performance Optimizations** - Modern UX patterns and loading states
-- **@casoon/tailwindcss-effects** - Advanced Tailwind CSS effects and animations
+### Core Stack
+- **Astro 5.x** - Latest version with View Transitions
+- **Tailwind CSS v4** - Next-gen CSS with Vite integration
+- **Svelte 5** - For interactive components
+- **TypeScript** - Full type safety with strict mode
+- **MDX** - Enhanced markdown for blog posts
+
+### Developer Experience
+- **Biome + Prettier** - Dual formatter setup for all file types
+- **Husky + Lint-staged** - Pre-commit hooks for code quality
+- **GitHub Actions** - CI/CD pipeline ready
+- **VSCode Settings** - Optimized workspace configuration
+- **Environment Validation** - Type-safe env vars with Zod
+
+### Features
+- **Dark/Light Mode** - System preference detection with persistence
+- **Blog System** - Content Collections with RSS feed
+- **SEO Optimized** - Sitemap, meta tags, Open Graph
+- **API Routes** - Type-safe endpoints with examples
+- **Performance** - Optimized images, fonts, and loading
+- **404 Page** - Custom error page
+- **@casoon/tailwindcss-effects** - Advanced animations and effects
 
 ## 🛠️ Quick Start
 
@@ -125,31 +136,78 @@ Learn more: [@casoon/tailwindcss-effects](https://github.com/casoon/tailwindcss-
 
 ## 🔧 Configuration
 
-### Linting & Formatting
-The project uses a combined configuration of:
-- **Biome** for general linting tasks
-- **Prettier** for Svelte and Astro-specific formatting
-- Separate configuration files for maximum flexibility
-
 ### Environment Variables
-- Copy `env.example` to `.env`
-- Configure your specific environment variables
+1. Copy `env.example` to `.env`
+2. Environment variables are validated with Zod in `src/env.ts`
+3. Type-safe access throughout the app
+
+```env
+PUBLIC_SITE_URL=https://your-domain.com
+PUBLIC_SITE_NAME="Your Site Name"
+PUBLIC_ENABLE_ANALYTICS=true
+```
+
+### Linting & Formatting
+- **Biome** - JavaScript/TypeScript linting and formatting
+- **Prettier** - Astro and Svelte file formatting
+- **Pre-commit hooks** - Automatic formatting on commit
+
+### SEO Configuration
+- Update `site` in `astro.config.mjs`
+- Customize meta tags in `BaseLayout.astro`
+- Add your Open Graph image as `public/og-image.jpg`
+
+## 📦 What's Included
+
+```
+astro-v5-template/
+├── .github/              # GitHub Actions workflows
+├── .husky/               # Git hooks
+├── .vscode/              # VSCode settings
+├── src/
+│   ├── components/       # Astro & Svelte components
+│   ├── content/          # Blog posts (MDX)
+│   ├── layouts/          # Page layouts
+│   ├── pages/            # Routes & API endpoints
+│   ├── styles/           # Global styles
+│   ├── utils/            # Helper functions
+│   └── env.ts           # Environment validation
+├── public/               # Static assets
+└── WARP.md               # AI assistant guide
+```
+
+## 🌟 Getting Started with This Template
+
+### Using GitHub Template
+1. Click "Use this template" on GitHub
+2. Clone your new repository
+3. Install dependencies: `npm install`
+4. Start developing: `npm run dev`
+
+### Using degit
+```bash
+px degit casoon/astro-v5-template my-project
+cd my-project
+npm install
+npm run dev
+```
 
 ## 📱 Browser Support
 
-- Chrome (latest version)
-- Firefox (latest version)
-- Safari (latest version)
-- Edge (latest version)
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
 
 ## 🤝 Contributing
 
-Improvement suggestions and pull requests are welcome!
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-This template is available under the MIT license.
+MIT License - feel free to use this template for any project.
 
 ---
 
-**Purpose:** Quick starting point for your own Astro projects with Tailwind CSS v4 and Svelte integration.
+**Created by:** [casoon](https://github.com/casoon)  
+**Version:** 0.1.0  
+**Last Updated:** January 2024

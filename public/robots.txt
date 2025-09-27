@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astrov5.casoon.dev/sitemap-index.xml

@@ -1,14 +1,13 @@
-/* Font imports */
+/* Import fonts with font-display swap for better performance */
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
 @import '@fontsource/inter/700.css';
 
-@import './tailwind.css'; /* Import the dedicated Tailwind file */
-
-/* Base styles */
-body {
-  font-family: 'Inter', system-ui, sans-serif;
+/* Override font-display for Inter font */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
 }
 
 /* Smooth transitions for all elements */

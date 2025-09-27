@@ -30,7 +30,7 @@ export const GET: APIRoute = async ({ url }) => {
   const id = searchParams.get('id');
 
   if (id) {
-    const user = users.find((u) => u.id === parseInt(id));
+    const user = users.find((u) => u.id === parseInt(id, 10));
     if (user) {
       return new Response(JSON.stringify(user), {
         status: 200,
@@ -89,7 +89,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     return new Response(
       JSON.stringify({
-        message: 'Benutzer erfolgreich erstellt',
+        message: 'User created successfully',
         user: newUser,
       }),
       {

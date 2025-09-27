@@ -1,15 +1,34 @@
 ---
 import '@/styles/global.css';
-// biome-ignore lint/correctness/noUnusedImports: ClientRouter wird im Astro-Template verwendet
-import { ClientRouter } from 'astro:transitions';
-// biome-ignore lint/correctness/noUnusedImports: ThemeToggle wird im Astro-Template verwendet
+import { ViewTransitions } from 'astro:transitions';
 import ThemeToggle from '@/components/ThemeToggle.svelte';
+import { env } from '@/env';
 
 // Environment variables
-// biome-ignore lint/correctness/noUnusedVariables: siteName wird im Astro-Template verwendet
-const siteName = import.meta.env.PUBLIC_SITE_NAME || 'Astro V5 Template';
-// biome-ignore lint/correctness/noUnusedVariables: siteUrl wird im Astro-Template verwendet
-const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://astrov5.casoon.dev';
+const siteName = env.PUBLIC_SITE_NAME;
+const siteUrl = env.PUBLIC_SITE_URL;
+
+// Props for SEO
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  author?: string;
+}
+
+const {
+  title = siteName,
+  description = 'Modern Astro template with Tailwind CSS v4 and Svelte',
+  image = '/og-image.jpg',
+  type = 'website',
+  publishedTime,
+  author = 'Astro V5 Template'
+} = Astro.props;
+
+const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
+const ogImage = new URL(image, siteUrl).toString();
 ---
 <html lang="de" class="scroll-smooth">
 <script is:inline>
@@ -34,10 +53,40 @@ const siteUrl = import.meta.env.PUBLIC_SITE_URL || 'https://astrov5.casoon.dev';
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{siteName}</title>
-	<meta name="description" content="Modern Astro template with Tailwind CSS v4 and Svelte">
+	<title>{pageTitle}</title>
+	<meta name="description" content={description}>
 	<link rel="canonical" href={siteUrl}>
-	<ClientRouter />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content={type}>
+	<meta property="og:url" content={siteUrl}>
+	<meta property="og:title" content={pageTitle}>
+	<meta property="og:description" content={description}>
+	<meta property="og:image" content={ogImage}>
+	<meta property="og:site_name" content={siteName}>
+	{type === 'article' && publishedTime && (
+		<meta property="article:published_time" content={publishedTime}>
+	)}
+	{type === 'article' && author && (
+		<meta property="article:author" content={author}>
+	)}
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content={siteUrl}>
+	<meta name="twitter:title" content={pageTitle}>
+	<meta name="twitter:description" content={description}>
+	<meta name="twitter:image" content={ogImage}>
+	
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml">
+	
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	
+	<ViewTransitions />
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 flex flex-col transition-all duration-500 ease-in-out font-inter">
 <header class="py-4 px-4 sm:py-6 sm:px-6">

@@ -7,8 +7,6 @@
       "@/*": ["./src/*"],
       "public/*": ["./public/*"]
     },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
