@@ -13,19 +13,20 @@ const {
   size = 'md'
 } = Astro.props;
 
-const glassClass = variant === 'default' ? 'cs-glass' 
-  : variant === 'dark' ? 'cs-glass-dark' 
-  : 'cs-glass-strong';
+const sizeClass = size === 'sm' ? 'p-4' 
+  : size === 'lg' ? 'p-8' 
+  : 'p-6';
 
-const sizeClass = size === 'sm' ? 'cs-glass-sm p-4' 
-  : size === 'lg' ? 'cs-glass-lg p-8' 
-  : 'cs-glass-md p-6';
+// Use Atlas glass utilities based on variant
+const glassClass = variant === 'default' ? 'cs-glass' 
+  : variant === 'dark' ? 'cs-glass-black' 
+  : 'cs-glass-3xl';
 ---
 
-<div class={`${glassClass} ${sizeClass} rounded-lg transition-all duration-300 hover:scale-105`}>
-  <h3 class="cs-text text-xl font-semibold mb-2">{title}</h3>
+<div class={`${glassClass} ${sizeClass} transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl`}>
+  <h3 class="text-xl font-semibold mb-2">{title}</h3>
   {description && (
-    <p class="cs-text-muted">{description}</p>
+    <p class="text-slate-700 dark:text-slate-200">{description}</p>
   )}
   <slot />
 </div>

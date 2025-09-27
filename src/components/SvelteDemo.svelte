@@ -1,6 +1,6 @@
 <script lang="ts">
   // @ts-ignore - Used in template
-  let count = 0;
+  let count = $state(0);
 </script>
 
 <div
@@ -25,7 +25,7 @@
 
     <button
       class="group relative px-6 sm:px-8 py-2 sm:py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg shadow-xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-purple-300 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
-      on:click={() => count++}
+      onclick={() => count++}
     >
       <span class="relative z-10">+1</span>
       <div

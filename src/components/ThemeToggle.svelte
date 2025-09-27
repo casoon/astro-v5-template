@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  let isDark = false;
+  let isDark = $state(false);
   // @ts-ignore - Used in template
-  let mounted = false;
+  let mounted = $state(false);
 
   onMount(() => {
     mounted = true;
@@ -38,7 +38,7 @@
 </script>
 
 <button
-  on:click={toggleTheme}
+  onclick={toggleTheme}
   class="group relative p-3 rounded-2xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
   aria-label="Toggle dark mode"
 >
