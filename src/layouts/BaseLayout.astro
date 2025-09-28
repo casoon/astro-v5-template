@@ -3,6 +3,7 @@ import '@/styles/tailwind.css';
 import '@/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
 import ThemeToggle from '@/components/ThemeToggle.svelte';
+import Toast from '@/components/Toast.astro';
 import { env } from '@/env';
 
 // Environment variables
@@ -95,7 +96,8 @@ const ogImage = new URL(image, siteUrl).toString();
 		<ul class="flex gap-4 sm:gap-6 list-none p-0 m-0">
 			<li><a href="/" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Home</a></li>
 			<li><a href="/blog" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Blog</a></li>
-			<li><a href="/api-test" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">API Test</a></li>
+			<li><a href="/contact" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Contact</a></li>
+			<li><a href="/api-test" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">API</a></li>
 		</ul>
 		<ThemeToggle client:load />
 	</nav>
@@ -124,6 +126,7 @@ const ogImage = new URL(image, siteUrl).toString();
 		</div>
 	</div>
 </footer>
+<Toast />
 </body>
 </html>
 

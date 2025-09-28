@@ -1,8 +1,24 @@
 {
   "name": "astro-v5-template",
   "type": "module",
-  "version": "0.1.1",
-  "homepage": "https://astrov5.casoon.dev/",
+  "version": "1.0.0",
+  "description": "Production-ready Astro starter template with Tailwind CSS v4, Atlas Design System, and Svelte 5",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casoon/astro-v5-template"
+  },
+  "keywords": [
+    "astro",
+    "tailwindcss",
+    "atlas",
+    "svelte",
+    "template",
+    "starter",
+    "typescript"
+  ],
+  "scripts": {
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

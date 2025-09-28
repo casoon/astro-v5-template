@@ -2,9 +2,21 @@
 import SvelteDemo from '@/components/SvelteDemo.svelte';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import GlassCard from '@/components/GlassCard.astro';
+import Hero from '@/components/Hero.astro';
+import Card from '@/components/Card.astro';
 ---
 <BaseLayout>
-  <div class="space-y-8">
+  <!-- Hero Section -->
+  <Hero 
+    title="Build Amazing Sites with Astro + Atlas"
+    subtitle="A modern template combining Astro 5, Tailwind CSS v4, and Atlas Design System for beautiful, performant websites."
+    ctaText="Get Started"
+    ctaLink="#components"
+    secondaryCtaText="View on GitHub"
+    secondaryCtaLink="https://github.com/yourusername/astro-v5-template"
+  />
+  
+  <div class="space-y-16" id="components">
     <!-- Glowing Title -->
     <h1 class="text-6xl font-bold text-center">
       <span class="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 bg-clip-text text-transparent animate-pulse">
@@ -74,14 +86,47 @@ import GlassCard from '@/components/GlassCard.astro';
       </div>
     </div>
     
-    <!-- Svelte Component with Glow -->
-    <div class="flex justify-center mt-12">
-      <div class="relative">
-        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+    <!-- Card Component Showcase -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Card Component Variants</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card 
+          title="Default Card"
+          description="A clean card with Tailwind styling and subtle shadows."
+          tag="Tailwind"
+        />
+        <Card 
+          title="Glass Card"
+          description="Beautiful glassmorphism effect using Atlas utilities."
+          variant="glass"
+          tag="Atlas"
+        />
+        <Card 
+          title="Gradient Card"
+          description="Eye-catching gradient background with hover effects."
+          variant="gradient"
+          tag="Featured"
+        />
+        <Card 
+          title="Outline Card"
+          description="Minimal design with focus on content and clean borders."
+          variant="outline"
+          tag="Minimal"
+        />
+      </div>
+    </section>
+    
+    <!-- Interactive Demo Section -->
+    <section class="mt-16 text-center">
+      <h2 class="text-3xl font-bold mb-8">Interactive Components</h2>
+      <div class="flex justify-center">
         <div class="relative">
-          <SvelteDemo client:load />
+          <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-pink-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
+          <div class="relative">
+            <SvelteDemo client:load />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </BaseLayout>
