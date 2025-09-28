@@ -19,7 +19,6 @@
     "typescript"
   ],
   "scripts": {
-  "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -67,6 +66,9 @@
   "lint-staged": {
     "*.{js,ts,jsx,tsx,mjs,cjs}": [
       "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.json": [
+      "prettier --write"
     ],
     "*.astro": [
       "prettier --write --config .prettierrc.astro.json"
