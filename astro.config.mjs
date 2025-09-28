@@ -19,6 +19,9 @@ export default defineConfig({
         modernAst: true,     // Use modern AST for better performance
       },
       prebundleSvelteLibraries: true,  // Pre-bundle for faster builds
+      experimental: {
+        async: true,         // Enable async SSR for Svelte 5
+      },
     }),
     // MDX for enhanced markdown with component support
     mdx(), 

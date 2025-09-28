@@ -1,4 +1,4 @@
-import { vitePreprocess } from '@astrojs/svelte';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 export default {
   preprocess: vitePreprocess(),
@@ -6,7 +6,9 @@ export default {
     runes: true,
     modernAst: true,
   },
-  experimental: {
-    async: true, // Enable async SSR for Svelte 5
+  vitePlugin: {
+    experimental: {
+      async: true, // Enable async SSR for Svelte 5
+    },
   },
 };
