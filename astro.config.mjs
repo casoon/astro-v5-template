@@ -12,16 +12,13 @@ export default defineConfig({
   
   // Integrations extend Astro with custom functionality
   integrations: [
-    // Svelte 5 with runes API for reactive components
+    // Svelte 5 with runes API for reactive components  
     svelte({
       compilerOptions: {
         runes: true,         // Enable Svelte 5 runes ($state, $derived, etc.)
         modernAst: true,     // Use modern AST for better performance
       },
       prebundleSvelteLibraries: true,  // Pre-bundle for faster builds
-      experimental: {
-        async: true,         // Enable async SSR (required for Svelte 5)
-      },
     }),
     // MDX for enhanced markdown with component support
     mdx(), 
@@ -47,6 +44,10 @@ export default defineConfig({
     ssr: {
       // Include font packages in SSR bundle
       noExternal: ['@fontsource/*'],
+    },
+    // Svelte-specific configuration for async SSR
+    define: {
+      '__SVELTE_EXPERIMENTAL_ASYNC__': true,
     },
   },
 });
