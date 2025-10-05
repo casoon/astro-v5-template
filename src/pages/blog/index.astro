@@ -1,119 +1,78 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
 import { getSortedPosts } from '@/utils/blog';
 import type { CollectionEntry } from 'astro:content';
 
 const posts = await getSortedPosts();
----
+
+// Function to determine card variant
+function getCardVariant(index: number): 'default' | 'featured' | 'minimal' {
+  if (index === 0) return 'featured';
+  if ((index + 1) % 4 === 0) return 'minimal';
+  return 'default';
+}
 ---
 
 <BaseLayout>
-  <div class="space-y-8 w-full">
-    <!-- Header -->
-    <div class="text-center space-y-4">
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white">
-        Blog
-      </h1>
-      <p class="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">
-        Discover articles about Astro, Tailwind CSS, Svelte and modern web development
-      </p>
+  <!-- Background with floating orbs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+    <div class="cs-orb cs-orb-lg opacity-10 animate-pulse" style="top: 10%; left: 80%; animation-duration: 8s;"></div>
+    <div class="cs-orb cs-orb-md opacity-15 animate-bounce" style="top: 60%; left: 10%; animation-delay: 2s; animation-duration: 6s;"></div>
+    <div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 80%; right: 15%; animation-delay: 4s; animation-duration: 10s;"></div>
+  </div>
+
+  <div class="relative space-y-12 w-full">
+    <!-- Header with Atlas styling -->
+    <div class="text-center space-y-6">
+      <div class="cs-glass-sm p-8 rounded-3xl mx-auto max-w-4xl backdrop-blur-xl">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold cs-gradient-text cs-gradient-animate mb-6">
+          Blog
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          Entdecke Artikel über Astro, Tailwind CSS, Svelte und moderne Webentwicklung
+        </p>
+        
+        <!-- Decorative elements -->
+        <div class="flex justify-center items-center gap-4 mt-6 opacity-60">
+          <div class="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent w-20"></div>
+          <div class="cs-orb cs-orb-xs animate-pulse"></div>
+          <div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Blog Posts Grid -->
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {posts.map((post: CollectionEntry<'blog'>) => (
-        <article class="group bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
-          <!-- Image or Placeholder -->
-          <div class="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-            {post.data.image ? (
-              <img 
-                src={post.data.image} 
-                alt={post.data.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            ) : (
-              <svg 
-                class="w-16 h-16 text-gray-400 dark:text-gray-500" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  stroke-linecap="round" 
-                  stroke-linejoin="round" 
-                  stroke-width="1.5" 
-                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                />
-              </svg>
-            )}
-          </div>
-          
-          <!-- Content -->
-          <div class="p-6 space-y-4">
-            <!-- Meta -->
-            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-300">
-            <time datetime={post.data.date}>
-              {new Date(post.data.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-            {post.data.author && (
-              <span>by {post.data.author}</span>
-            )}
-          </div>
-            
-            <!-- Title -->
-            <h2 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-              <a href={`/blog/${post.slug}/`}>
-                {post.data.title}
-              </a>
-            </h2>
-            
-            <!-- Description -->
-            {post.data.description && (
-              <p class="text-gray-600 dark:text-gray-200 line-clamp-3">
-                {post.data.description}
-              </p>
-            )}
-            
-            <!-- Tags -->
-            {post.data.tags && (
-              <div class="flex flex-wrap gap-2">
-                {post.data.tags.slice(0, 3).map((tag: string) => (
-                  <span class="px-3 py-1 text-xs bg-cyan-100 dark:!bg-gray-800 text-cyan-700 dark:!text-white rounded-full font-medium">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-            
-            <!-- Read More -->
-            <a 
-              href={`/blog/${post.slug}/`}
-              class="inline-flex items-center text-cyan-600 dark:text-cyan-400 font-semibold hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
-            >
-              Read more
-              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </a>
-          </div>
-        </article>
+    <!-- Blog Posts Grid with Atlas styling -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post: CollectionEntry<'blog'>, index: number) => (
+        <BlogCard 
+          title={post.data.title}
+          description={post.data.description}
+          date={post.data.date}
+          author={post.data.author}
+          image={post.data.image}
+          slug={post.slug}
+          tags={post.data.tags}
+          variant={getCardVariant(index)}
+        />
       ))}
     </div>
 
-    <!-- Empty State -->
+    <!-- Empty State with Atlas styling -->
     {posts.length === 0 && (
-      <div class="text-center py-12">
-        <div class="text-6xl mb-4">📝</div>
-        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-          No blog posts yet
-        </h3>
-        <p class="text-gray-600 dark:text-gray-300">
-          Create your first blog post in the <code class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded">src/content/blog/</code> directory
-        </p>
+      <div class="text-center py-16">
+        <div class="cs-glass p-12 rounded-3xl mx-auto max-w-md">
+          <div class="text-8xl mb-6 animate-bounce">📝</div>
+          <h3 class="text-2xl font-bold cs-gradient-text mb-4">
+            Noch keine Blog-Posts
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Erstelle deinen ersten Blog-Post im 
+            <code class="cs-glass-sm px-2 py-1 rounded text-sm font-mono">src/content/blog/</code> 
+            Verzeichnis
+          </p>
+          <div class="cs-orb cs-orb-sm opacity-30 animate-pulse mx-auto"></div>
+        </div>
       </div>
     )}
   </div>

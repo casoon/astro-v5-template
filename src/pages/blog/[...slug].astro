@@ -17,37 +17,61 @@ const { Content } = await post.render();
 ---
 
 <BaseLayout>
-	<article class="max-w-4xl mx-auto">
-		<!-- Header -->
-		<header class="mb-12">
-			<nav class="mb-6">
-				<a href="/blog/" class="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 text-sm">
-					← Back to Blog
+	<!-- Background with floating orbs -->
+	<div class="fixed inset-0 pointer-events-none overflow-hidden">
+		<div class="cs-orb cs-orb-lg opacity-5 animate-pulse" style="top: 20%; right: 10%; animation-duration: 12s;"></div>
+		<div class="cs-orb cs-orb-md opacity-10 animate-bounce" style="top: 70%; left: 5%; animation-delay: 3s; animation-duration: 8s;"></div>
+	</div>
+
+	<article class="max-w-5xl mx-auto relative">
+		<!-- Header with Atlas styling -->
+		<header class="mb-16">
+			<nav class="mb-8">
+				<a href="/blog/" class="inline-flex items-center gap-2 cs-glass px-4 py-2 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+					</svg>
+					Zurück zum Blog
 				</a>
 			</nav>
 
-			<h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">
-				{post.data.title}
-			</h1>
-			
-			<!-- Meta -->
-			<div class="flex flex-wrap items-center gap-6 text-sm text-gray-500 dark:text-gray-300 mb-8">
-				{post.data.date && (
-					<time datetime={post.data.date}>
-					{new Date(post.data.date).toLocaleDateString('en-US', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric'
-						})}
-					</time>
-				)}
-				{post.data.author && (
-					<span>by {post.data.author}</span>
-				)}
+			<!-- Title with gradient effect -->
+			<div class="cs-glass-sm p-8 rounded-3xl mb-8">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold cs-gradient-text cs-gradient-animate mb-8 text-center">
+					{post.data.title}
+				</h1>
+				
+				<!-- Meta Information with Atlas styling -->
+				<div class="flex flex-wrap items-center justify-center gap-8 text-sm opacity-80 mb-6">
+					{post.data.date && (
+						<div class="flex items-center gap-2 cs-glass-sm px-4 py-2 rounded-full">
+							<svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+							</svg>
+							<time datetime={post.data.date}>
+							{new Date(post.data.date).toLocaleDateString('de-DE', {
+									year: 'numeric',
+									month: 'long',
+									day: 'numeric'
+								})}
+							</time>
+						</div>
+					)}
+					{post.data.author && (
+						<div class="flex items-center gap-2 cs-glass-sm px-4 py-2 rounded-full">
+							<svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+							</svg>
+							<span>von {post.data.author}</span>
+						</div>
+					)}
+				</div>
+				
+				<!-- Tags with Atlas styling -->
 				{post.data.tags && post.data.tags.length > 0 && (
-					<div class="flex gap-2">
+					<div class="flex flex-wrap gap-3 justify-center">
 					{post.data.tags.map((tag: string) => (
-							<span class="px-2 py-1 bg-cyan-100 dark:!bg-gray-800 text-cyan-800 dark:!text-white text-xs rounded font-medium">
+							<span class="cs-glass px-4 py-2 rounded-full font-medium hover:cs-glass-lg transition-all duration-300 hover:scale-105">
 								{tag}
 							</span>
 						))}
@@ -55,36 +79,79 @@ const { Content } = await post.render();
 				)}
 			</div>
 
-			<!-- Description -->
+			<!-- Description with Atlas styling -->
 			{post.data.description && (
-				<p class="text-lg text-gray-600 dark:text-gray-200 mb-8 leading-relaxed">
-					{post.data.description}
-				</p>
+				<div class="cs-glass p-6 rounded-2xl mb-8 text-center">
+					<p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed italic">
+						{post.data.description}
+					</p>
+				</div>
 			)}
 
-			<!-- Image -->
+			<!-- Image with Atlas styling -->
 			{post.data.image && (
-				<img 
-					src={post.data.image} 
-					alt={post.data.title}
-					class="w-full h-64 object-cover rounded-lg mb-8"
-				/>
+				<div class="relative group mb-12">
+					<div class="cs-glass p-2 rounded-3xl">
+						<img 
+							src={post.data.image} 
+							alt={post.data.title}
+							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
+							loading="lazy"
+						/>
+					</div>
+					<!-- Floating orbs around image -->
+					<div class="absolute inset-0 pointer-events-none">
+						<div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 10%; left: -5%; animation-delay: 1s;"></div>
+						<div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="bottom: 15%; right: -3%; animation-delay: 2s;"></div>
+					</div>
+				</div>
 			)}
 		</header>
 
-		<!-- Content -->
-		<div class="text-left [&>*]:text-left [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:text-gray-800 [&>h1]:dark:!text-white [&>h1]:mb-6 [&>h1]:mt-8 [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-gray-800 [&>h2]:dark:!text-white [&>h2]:mb-4 [&>h2]:mt-6 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:!text-white [&>h3]:mb-3 [&>h3]:mt-5 [&>h4]:text-xl [&>h4]:font-semibold [&>h4]:text-gray-800 [&>h4]:dark:!text-white [&>h4]:mb-2 [&>h4]:mt-4 [&>h5]:text-lg [&>h5]:font-semibold [&>h5]:text-gray-800 [&>h5]:dark:!text-white [&>h5]:mb-2 [&>h5]:mt-3 [&>h6]:text-base [&>h6]:font-semibold [&>h6]:text-gray-800 [&>h6]:dark:!text-white [&>h6]:mb-1 [&>h6]:mt-2 [&>p]:text-gray-700 [&>p]:dark:!text-white [&>p]:leading-relaxed [&>p]:mb-4 [&>a]:text-cyan-600 [&>a]:dark:text-cyan-400 [&>a]:no-underline [&>a]:hover:underline [&>strong]:text-gray-800 [&>strong]:dark:!text-white [&>strong]:font-bold [&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:bg-gray-100 [&>code]:dark:bg-gray-800 [&>code]:px-2 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>pre]:bg-gray-900 [&>pre]:dark:bg-gray-800 [&>pre]:text-gray-100 [&>pre]:dark:!text-white [&>pre]:p-4 [&>pre]:rounded-lg [&>pre]:overflow-x-auto [&>pre]:mb-4 [&>blockquote]:border-l-4 [&>blockquote]:border-cyan-500 [&>blockquote]:dark:border-cyan-400 [&>blockquote]:bg-gray-50 [&>blockquote]:dark:bg-gray-800/50 [&>blockquote]:text-gray-600 [&>blockquote]:dark:!text-white [&>blockquote]:p-4 [&>blockquote]:rounded-r-lg [&>blockquote]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-4 [&>ul]:text-gray-700 [&>ul]:dark:!text-white [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:mb-4 [&>ol]:text-gray-700 [&>ol]:dark:!text-white [&>li]:mb-1 [&>hr]:border-gray-200 [&>hr]:dark:border-gray-700 [&>hr]:my-8">
-			<Content />
+		<!-- Content with enhanced Atlas styling -->
+		<div class="cs-glass-sm p-8 rounded-3xl">
+			<div class="prose prose-lg max-w-none dark:prose-invert
+				[&>h1]:cs-gradient-text [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:mb-8 [&>h1]:mt-12 [&>h1]:text-center
+				[&>h2]:cs-gradient-text [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:mb-6 [&>h2]:mt-10
+				[&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:text-white [&>h3]:mb-4 [&>h3]:mt-8
+				[&>p]:text-gray-700 [&>p]:dark:text-gray-200 [&>p]:leading-relaxed [&>p]:mb-6 [&>p]:text-lg
+				[&>a]:cs-gradient-text [&>a]:no-underline [&>a]:hover:underline [&>a]:font-medium
+				[&>strong]:text-gray-800 [&>strong]:dark:text-white [&>strong]:font-bold
+				[&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:cs-glass-sm [&>code]:px-3 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>code]:font-mono
+				[&>pre]:cs-glass [&>pre]:p-6 [&>pre]:rounded-2xl [&>pre]:overflow-x-auto [&>pre]:mb-8 [&>pre]:border [&>pre]:border-white/20
+				[&>blockquote]:cs-glass [&>blockquote]:border-l-4 [&>blockquote]:border-gradient-to-b [&>blockquote]:from-cyan-500 [&>blockquote]:to-purple-500 [&>blockquote]:p-6 [&>blockquote]:rounded-r-2xl [&>blockquote]:mb-8 [&>blockquote]:italic
+				[&>ul]:list-none [&>ul]:space-y-2 [&>ul]:mb-6
+				[&>li]:relative [&>li]:pl-6 [&>li]:text-gray-700 [&>li]:dark:text-gray-200
+				[&>li]:before:content-['•'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-cyan-500 [&>li]:before:font-bold
+				[&>hr]:border-none [&>hr]:h-px [&>hr]:bg-gradient-to-r [&>hr]:from-transparent [&>hr]:via-gray-300 [&>hr]:dark:via-gray-600 [&>hr]:to-transparent [&>hr]:my-12
+			">
+				<Content />
+			</div>
 		</div>
 
-		<!-- Footer -->
-		<footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-			<a 
-				href="/blog/" 
-				class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300"
-			>
-				← All Articles
-			</a>
+		<!-- Footer with Atlas styling -->
+		<footer class="mt-16">
+			<div class="cs-glass p-8 rounded-3xl text-center">
+				<div class="flex items-center justify-center gap-4 mb-6">
+					<div class="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent w-20"></div>
+					<div class="cs-orb cs-orb-xs animate-pulse"></div>
+					<div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
+				</div>
+				
+				<p class="text-gray-600 dark:text-gray-300 mb-6">
+					Danke fürs Lesen! Entdecke weitere Artikel in unserem Blog.
+				</p>
+				
+				<a 
+					href="/blog/" 
+					class="inline-flex items-center gap-3 cs-glass px-6 py-3 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1 cs-gradient-text font-semibold"
+				>
+					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+					</svg>
+					Alle Artikel ansehen
+				</a>
+			</div>
 		</footer>
 	</article>
 </BaseLayout>

@@ -32,10 +32,12 @@ import Card from '@/components/Card.astro';
       </span>
     </h1>
     
-    <!-- Glowing Description -->
+    <!-- Description -->
     <p class="text-xl text-slate-600 dark:text-slate-300 text-center leading-relaxed max-w-2xl mx-auto">
-      Modern template with 
-      <span class="cs-gradient-text-ocean font-semibold">Atlas Design System</span>
+      A modern web template combining the latest technologies with 
+      <span class="text-cyan-600 dark:text-cyan-400 font-semibold">beautiful UI components</span>
+      <br class="hidden sm:block" />
+      and developer-friendly tools
     </p>
     
     <!-- Atlas Glass Cards -->
@@ -47,42 +49,93 @@ import Card from '@/components/Card.astro';
       </div>
     </div>
     
-    <!-- Atlas Gradient Examples -->
+    <!-- Beautiful Gradient Examples -->
     <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div class="cs-gradient-ocean p-6 rounded-lg">
+      <div class="bg-gradient-to-br from-cyan-400 to-blue-600 p-6 rounded-lg">
         <h3 class="text-2xl font-bold text-white drop-shadow-lg">Ocean Gradient</h3>
-        <p class="text-white/90 mt-2">Atlas gradient with animation support</p>
+        <p class="text-white/90 mt-2">Beautiful ocean colors with smooth transitions</p>
       </div>
-      <div class="cs-gradient-sunset p-6 rounded-lg">
+      <div class="bg-gradient-to-br from-orange-400 to-pink-600 p-6 rounded-lg">
         <h3 class="text-2xl font-bold text-white drop-shadow-lg">Sunset Gradient</h3>
-        <p class="text-white/90 mt-2">Warm Atlas gradient for vibrant designs</p>
+        <p class="text-white/90 mt-2">Warm sunset colors for vibrant designs</p>
       </div>
     </div>
     
-    <!-- Atlas Button Examples -->
-    <div class="flex flex-wrap justify-center gap-4 mt-8">
-      <button class="cs-glass-purple px-6 py-3 text-white font-semibold hover:scale-105 transition-transform">
-        Primary Button
-      </button>
-      <button class="cs-glass-black px-6 py-3 text-white font-semibold hover:scale-105 transition-transform">
-        Secondary
-      </button>
-      <button class="cs-glass px-6 py-3 font-semibold hover:scale-105 transition-transform">
-        Glass Button
-      </button>
+    <!-- Atlas UI Components Showcase -->
+    <div class="space-y-8 mt-12">
+      <!-- Button Collection -->
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-6">Interactive Buttons</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="cs-button-primary hover:scale-105 transition-all duration-200">
+            Primary Action
+          </button>
+          <button class="cs-button-secondary hover:scale-105 transition-all duration-200">
+            Secondary
+          </button>
+          <button class="cs-glass px-6 py-3 rounded-lg hover:scale-105 transition-all duration-200">
+            Atlas Glass
+          </button>
+        </div>
+      </div>
+      
+      <!-- Animated Elements -->
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-6">Animations & Effects</h3>
+        <div class="flex justify-center items-center gap-8 flex-wrap">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" style="animation: var(--animate-float)"></div>
+          <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full" style="animation: var(--animate-endless)"></div>
+          <div class="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg text-white font-semibold" style="background-size: 200% 100%; animation: var(--animate-shine)">
+            Shine Effect
+          </div>
+        </div>
+      </div>
+      
+      <!-- Atlas Orbs & Floating Elements -->
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-6">Floating Orbs & Elements</h3>
+        <div class="relative h-32 flex justify-center items-center overflow-hidden">
+          <!-- Animated Orbs -->
+          <div class="absolute w-20 h-20 bg-gradient-to-br from-pink-400 to-purple-600 rounded-full opacity-60 blur-sm" style="animation: var(--animate-float); animation-duration: 3s;"></div>
+          <div class="absolute w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full opacity-50 blur-sm" style="animation: var(--animate-float); animation-duration: 4s; animation-delay: 1s; transform: translateX(80px);"></div>
+          <div class="absolute w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-full opacity-70 blur-sm" style="animation: var(--animate-float); animation-duration: 5s; animation-delay: 2s; transform: translateX(-60px);"></div>
+          <div class="relative z-10 text-lg font-semibold text-slate-700 dark:text-slate-200">Interactive Background Elements</div>
+        </div>
+      </div>
+      
+      <!-- Atlas Typography Effects -->
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-6">Typography Effects</h3>
+        <div class="space-y-6">
+          <h2 class="text-5xl font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 bg-clip-text text-transparent">Rainbow Gradient</h2>
+          <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">Ocean Gradient</h2>
+          <h2 class="text-4xl font-bold text-slate-800 dark:text-slate-100" style="text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(59,130,246,0.3);">Glow Shadow</h2>
+          <h2 class="text-4xl font-bold bg-gradient-to-r from-pink-400 via-red-500 to-yellow-500 bg-clip-text text-transparent" style="background-size: 300% 100%; animation: var(--animate-shine);">Animated Shine</h2>
+        </div>
+      </div>
     </div>
     
-    <!-- Atlas Feature Cards -->
-    <div class="grid md:grid-cols-2 gap-6 mt-8">
-      <div class="cs-glass p-6 hover:scale-[1.02] transition-transform">
-        <div class="text-4xl mb-4">🚀</div>
-        <h3 class="text-xl font-bold mb-2">Fast Performance</h3>
-        <p>Optimized Atlas components</p>
+    <!-- Atlas Feature Showcase -->
+    <div class="grid md:grid-cols-3 gap-6 mt-8">
+      <!-- Feature Card 1 -->
+      <div class="cs-card-feature group">
+        <div class="cs-card-icon">🚀</div>
+        <h3 class="cs-card-title">Performance First</h3>
+        <p class="cs-card-description">Optimized CSS animations and efficient rendering</p>
       </div>
-      <div class="cs-glass-blue p-6 hover:scale-[1.02] transition-transform">
-        <div class="text-4xl mb-4">🎨</div>
-        <h3 class="text-xl font-bold mb-2">Modern Design</h3>
-        <p>Beautiful glass effects</p>
+      
+      <!-- Feature Card 2 -->
+      <div class="cs-card-feature group">
+        <div class="cs-card-icon">🎨</div>
+        <h3 class="cs-card-title">Design System</h3>
+        <p class="cs-card-description">Consistent components with Tailwind integration</p>
+      </div>
+      
+      <!-- Feature Card 3 -->
+      <div class="cs-card-feature group">
+        <div class="cs-card-icon">✨</div>
+        <h3 class="cs-card-title">Interactive Effects</h3>
+        <p class="cs-card-description">Smooth animations and hover transitions</p>
       </div>
     </div>
     
@@ -113,6 +166,92 @@ import Card from '@/components/Card.astro';
           variant="outline"
           tag="Minimal"
         />
+      </div>
+    </section>
+    
+    <!-- Atlas Form Elements -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Atlas Form System</h2>
+      
+      <!-- Comparison: Regular vs Atlas Forms -->
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Regular Tailwind Form -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
+          <h3 class="text-lg font-bold mb-4">📝 Regular Tailwind Forms</h3>
+          <form class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2">Standard Input</label>
+              <input 
+                type="text" 
+                placeholder="Basic input field"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-2">Standard Button</label>
+              <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Atlas Modern Form -->
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
+          <h3 class="text-lg font-bold mb-4">✨ Atlas Modern Forms</h3>
+          <form class="cs-form-modern">
+            <div class="cs-form-group">
+              <label class="cs-label-modern">Modern Input</label>
+              <input type="text" class="cs-input-modern" placeholder="Atlas styled input with better focus states">
+            </div>
+            <button class="cs-button-primary-modern">
+              Atlas Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Atlas Form Features Showcase -->
+      <div class="mt-12 max-w-4xl mx-auto">
+        <h3 class="text-xl font-bold text-center mb-8">Atlas Form Features</h3>
+        <form class="cs-form-modern">
+          <!-- Input with Validation States -->
+          <div class="cs-form-row">
+            <div class="cs-form-col">
+              <label class="cs-label-modern">Email with Success State</label>
+              <input type="email" class="cs-input-modern cs-input-success" placeholder="success@example.com" value="user@example.com">
+              <!-- Success state example -->
+              <small class="text-green-600 text-sm flex items-center gap-1 mt-1">
+                <span>✓</span> Email format is valid
+              </small>
+            </div>
+            <div class="cs-form-col">
+              <label class="cs-label-modern">Input with Error State</label>
+              <input type="text" class="cs-input-modern cs-input-error" placeholder="This field has an error">
+              <!-- Error state example -->
+              <small class="text-red-600 text-sm flex items-center gap-1 mt-1">
+                <span>⚠</span> This field is required
+              </small>
+            </div>
+          </div>
+          
+          <!-- Input Groups with Addons -->
+          <div class="cs-form-group">
+            <label class="cs-label-modern">Input with Addon</label>
+            <div class="cs-input-group">
+              <div class="cs-input-addon cs-input-addon-left">$</div>
+              <input type="number" class="cs-input-modern cs-input-with-addon-left" placeholder="0.00">
+            </div>
+          </div>
+          
+          <div class="cs-form-group">
+            <label class="cs-label-modern">URL Input</label>
+            <div class="cs-input-group">
+              <input type="text" class="cs-input-modern cs-input-with-addon-right" placeholder="your-site">
+              <div class="cs-input-addon cs-input-addon-right">.com</div>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
     

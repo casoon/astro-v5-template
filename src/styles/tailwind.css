@@ -1,7 +1,7 @@
 /* Tailwind CSS v4 import */
 @import "tailwindcss";
 
-/* Atlas Design System - after Tailwind for proper layering */
+/* Atlas Design System - Full integration */
 @import "@casoon/atlas-styles";
 
 /* Tailwind CSS v4 plugins */

@@ -4,6 +4,7 @@ import '@/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
 import ThemeToggle from '@/components/ThemeToggle.svelte';
 import Toast from '@/components/Toast.astro';
+import WebVitals from '@/components/WebVitals.astro';
 import { env } from '@/env';
 
 // Environment variables
@@ -90,17 +91,40 @@ const ogImage = new URL(image, siteUrl).toString();
 	
 	<ViewTransitions />
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800 flex flex-col transition-all duration-500 ease-in-out font-inter">
-<header class="py-4 px-4 sm:py-6 sm:px-6">
-	<nav class="flex justify-between items-center max-w-4xl mx-auto">
-		<ul class="flex gap-4 sm:gap-6 list-none p-0 m-0">
-			<li><a href="/" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Home</a></li>
-			<li><a href="/blog" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Blog</a></li>
-			<li><a href="/contact" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">Contact</a></li>
-			<li><a href="/api-test" class="text-indigo-600 dark:text-indigo-400 no-underline text-lg font-semibold hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors">API</a></li>
+<body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter">
+<header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
+	<nav class="flex justify-between items-center max-w-6xl mx-auto">
+		<!-- Desktop Navigation -->
+		<ul class="hidden md:flex gap-8 list-none p-0 m-0">
+			<li><a href="/" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Home</a></li>
+			<li><a href="/blog" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Blog</a></li>
+			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Contact</a></li>
+			<li><a href="/api-test" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">API</a></li>
 		</ul>
+		
+		<!-- Mobile Menu Button -->
+		<button 
+			id="mobile-menu-button" 
+			class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+			aria-label="Toggle mobile menu"
+		>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+		</button>
+		
 		<ThemeToggle client:load />
 	</nav>
+	
+	<!-- Mobile Navigation Menu -->
+	<div id="mobile-menu" class="md:hidden hidden bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700">
+		<ul class="flex flex-col py-4 px-6 space-y-2 list-none">
+			<li><a href="/" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Home</a></li>
+			<li><a href="/blog" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Blog</a></li>
+			<li><a href="/contact" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Contact</a></li>
+			<li><a href="/api-test" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">API</a></li>
+		</ul>
+	</div>
 </header>
 <main class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
 	<div class="w-full max-w-7xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 mx-2 flex flex-col items-center text-center border border-slate-200 dark:border-slate-700 transition-all duration-500 ease-in-out">
@@ -127,6 +151,62 @@ const ogImage = new URL(image, siteUrl).toString();
 	</div>
 </footer>
 <Toast />
+<WebVitals debug={import.meta.env.DEV} />
+
+<!-- Mobile Menu Script -->
+<script>
+	// Mobile menu functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const menuLines = mobileMenuButton?.querySelectorAll('span');
+		
+		mobileMenuButton?.addEventListener('click', function() {
+			const isOpen = !mobileMenu?.classList.contains('hidden');
+			
+			if (isOpen) {
+				// Close menu
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			} else {
+				// Open menu
+				mobileMenu?.classList.remove('hidden');
+				// Transform to X icon
+				menuLines?.[0]?.classList.add('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.add('opacity-0');
+				menuLines?.[2]?.classList.add('-rotate-45', '-translate-y-2');
+			}
+		});
+		
+		// Close menu when clicking on a link
+		const mobileLinks = mobileMenu?.querySelectorAll('a');
+		mobileLinks?.forEach(link => {
+			link.addEventListener('click', function() {
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			});
+		});
+		
+		// Close menu when clicking outside
+		document.addEventListener('click', function(event) {
+			if (!mobileMenuButton?.contains(event.target as Node) && 
+				!mobileMenu?.contains(event.target as Node)) {
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			}
+		});
+	});
+</script>
+
 </body>
 </html>
 

@@ -1,0 +1,93 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article' | 'product';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  tags?: string[];
+}
+
+const {
+  title = 'Astro v5 Template',
+  description = 'Modern Astro v5 website with Tailwind CSS v4, Atlas Design System, and Svelte 5',
+  canonical = Astro.url.href,
+  image = '/og-image.jpg',
+  noindex = false,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author,
+  tags = [],
+} = Astro.props;
+
+const siteName = 'Astro v5 Template';
+const twitterHandle = '@your_handle';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+const imageUrl = image.startsWith('http') ? image : new URL(image, Astro.site).href;
+---
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name=\"title\" content={fullTitle} />
+<meta name=\"description\" content={description} />
+<link rel=\"canonical\" href={canonical} />
+
+<!-- Robots -->
+{noindex && <meta name=\"robots\" content=\"noindex, nofollow\" />}
+
+<!-- Open Graph / Facebook -->
+<meta property=\"og:type\" content={type} />
+<meta property=\"og:url\" content={canonical} />
+<meta property=\"og:title\" content={fullTitle} />
+<meta property=\"og:description\" content={description} />
+<meta property=\"og:image\" content={imageUrl} />
+<meta property=\"og:site_name\" content={siteName} />
+
+<!-- Twitter -->
+<meta property=\"twitter:card\" content=\"summary_large_image\" />
+<meta property=\"twitter:url\" content={canonical} />
+<meta property=\"twitter:title\" content={fullTitle} />
+<meta property=\"twitter:description\" content={description} />
+<meta property=\"twitter:image\" content={imageUrl} />
+{twitterHandle && <meta property=\"twitter:creator\" content={twitterHandle} />}
+
+<!-- Article specific -->
+{type === 'article' && publishedTime && (
+  <meta property=\"article:published_time\" content={publishedTime} />
+)}
+{type === 'article' && modifiedTime && (
+  <meta property=\"article:modified_time\" content={modifiedTime} />
+)}
+{type === 'article' && author && (
+  <meta property=\"article:author\" content={author} />
+)}
+{type === 'article' && tags.length > 0 && (
+  tags.map((tag) => <meta property=\"article:tag\" content={tag} />)
+)}
+
+<!-- JSON-LD Schema -->
+<script type=\"application/ld+json\">
+{
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': type === 'article' ? 'Article' : 'WebSite',
+    name: fullTitle,
+    description: description,
+    url: canonical,
+    image: imageUrl,
+    ...(type === 'article' && publishedTime && {
+      datePublished: publishedTime,
+      dateModified: modifiedTime || publishedTime,
+      author: {
+        '@type': 'Person',
+        name: author || 'Anonymous',
+      },
+    }),
+  })
+}
+</script>
