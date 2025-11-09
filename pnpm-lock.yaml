@@ -6,7 +6,100 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  packages/base:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.9.5
+        version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
+      '@astrojs/mdx':
+        specifier: ^4.3.10
+        version: 4.3.10(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))
+      '@astrojs/rss':
+        specifier: ^4.0.13
+        version: 4.0.13
+      '@astrojs/sitemap':
+        specifier: ^3.6.0
+        version: 3.6.0
+      '@astrojs/svelte':
+        specifier: ^7.2.2
+        version: 7.2.2(@types/node@24.10.0)(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.43.5)(typescript@5.9.3)(yaml@2.8.1)
+      '@casoon/atlas-styles':
+        specifier: ^0.0.5
+        version: 0.0.5
+      '@fontsource/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@tailwindcss/forms':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@4.1.17)
+      '@tailwindcss/typography':
+        specifier: ^0.5.19
+        version: 0.5.19(tailwindcss@4.1.17)
+      '@tailwindcss/vite':
+        specifier: ^4.1.17
+        version: 4.1.17(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lucide-svelte:
+        specifier: ^0.553.0
+        version: 0.553.0(svelte@5.43.5)
+      svelte:
+        specifier: ^5.43.5
+        version: 5.43.5
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
+      tailwindcss:
+        specifier: ^4.1.17
+        version: 4.1.17
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.3.4
+        version: 2.3.4
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^5.1.1
+        version: 5.1.1(svelte@5.43.5)(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))
+      '@types/node-fetch':
+        specifier: ^2.6.13
+        version: 2.6.13
+      astro:
+        specifier: ^5.15.4
+        version: 5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1)
+      husky:
+        specifier: ^9.1.7
+        version: 9.1.7
+      lighthouse:
+        specifier: ^13.0.1
+        version: 13.0.1
+      lint-staged:
+        specifier: ^16.2.6
+        version: 16.2.6
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      prettier-plugin-astro:
+        specifier: ^0.14.1
+        version: 0.14.1
+      prettier-plugin-svelte:
+        specifier: ^3.4.0
+        version: 3.4.0(prettier@3.6.2)(svelte@5.43.5)
+      wait-on:
+        specifier: ^9.0.3
+        version: 9.0.3
+
+  packages/demo:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.5
@@ -4913,7 +5006,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 24.10.0
 
   '@types/shimmer@1.2.0': {}
 

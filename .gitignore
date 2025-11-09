@@ -1,10 +1,4 @@
-# build output
-dist/
-
-# generated types
-.astro/
-
-# dependencies
+# Dependencies
 node_modules/
 
 # package manager
@@ -12,18 +6,33 @@ package-lock.json
 yarn.lock
 .pnpm-debug.log
 
-# logs
+# Build outputs
+dist/
+.astro/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+# OS
 .DS_Store
+Thumbs.db
 
-# jetbrains setting folder
+# IDE
+.vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Package managers
+package-lock.json
+yarn.lock

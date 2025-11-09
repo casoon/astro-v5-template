@@ -1,0 +1,76 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  href?: string;
+  variant?: 'default' | 'glass' | 'gradient' | 'outline';
+  tag?: string;
+}
+
+const { 
+  title, 
+  description, 
+  image,
+  href,
+  variant = 'default',
+  tag
+} = Astro.props;
+
+const baseClasses = "group relative overflow-hidden rounded-xl transition-all duration-300 hover:scale-[1.02]";
+
+const variantClasses = {
+  default: "bg-white dark:bg-slate-800 shadow-lg hover:shadow-xl",
+  glass: "bg-gradient-to-br from-indigo-400/20 to-purple-400/20 backdrop-blur-lg border border-indigo-300/40 hover:shadow-xl hover:from-indigo-400/30 hover:to-purple-400/30 hover:border-indigo-300/50",
+  gradient: "bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-800",
+  outline: "border-2 border-slate-200 dark:border-slate-700 hover:border-purple-500 dark:hover:border-purple-400"
+};
+
+const Wrapper = href ? 'a' : 'div';
+---
+
+<Wrapper href={href} class={`${baseClasses} ${variantClasses[variant]} block`}>
+  {image && (
+    <div class="aspect-[16/9] overflow-hidden bg-slate-100 dark:bg-slate-900">
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+    </div>
+  )}
+  
+  <div class="p-6">
+    {tag && (
+      <span class="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 mb-3">
+        {tag}
+      </span>
+    )}
+    
+    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+      {title}
+    </h3>
+    
+    {description && (
+      <p class="text-slate-600 dark:text-slate-300 line-clamp-3">
+        {description}
+      </p>
+    )}
+    
+    <slot />
+    
+    {href && (
+      <div class="mt-4 flex items-center text-purple-600 dark:text-purple-400 font-medium">
+        <span>Read more</span>
+        <svg class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    )}
+  </div>
+  
+  {/* Hover effect overlay for gradient variant */}
+  {variant === 'gradient' && (
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-400/0 to-pink-400/0 group-hover:from-purple-400/10 group-hover:to-pink-400/10 transition-all duration-300 pointer-events-none"></div>
+  )}
+</Wrapper>

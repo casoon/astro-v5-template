@@ -1,0 +1,100 @@
+{
+  "name": "@astro-v5/base",
+  "type": "module",
+  "version": "1.1.0",
+  "description": "Minimal Astro v5 base template - production-ready starter",
+  "private": true,
+  "author": "casoon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casoon/astro-v5-template"
+  },
+  "keywords": [
+    "astro",
+    "tailwindcss",
+    "atlas",
+    "svelte",
+    "template",
+    "starter",
+    "typescript"
+  ],
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "volta": {
+    "node": "22.21.0",
+    "pnpm": "9.15.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview",
+    "clean": "rm -rf dist .astro node_modules/.cache",
+    "setup": "node setup.js",
+    "format": "pnpm format:biome && pnpm format:svelte && pnpm format:astro",
+    "format:biome": "biome format --write .",
+    "format:svelte": "prettier --write \"**/*.svelte\" --config .prettierrc.svelte.json",
+    "format:astro": "prettier --write \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:format:svelte": "prettier --check \"**/*.svelte\" --config .prettierrc.svelte.json",
+    "check:format:astro": "prettier --check \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:biome": "biome check --write .",
+    "check": "pnpm check:biome && pnpm check:format:svelte && pnpm check:format:astro",
+    "type-check": "astro check",
+    "lighthouse": "pnpm dlx lighthouse http://localhost:4321 --output html --output-path ./lighthouse-report.html",
+    "update-deps": "pnpm dlx npm-check-updates -u",
+    "prepare": "husky",
+    "postinstall": "echo \"\\n🚀 Dependencies installed! Run 'pnpm dev' to start development.\\n\""
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/rss": "^4.0.13",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/svelte": "^7.2.2",
+    "@casoon/atlas-styles": "^0.0.5",
+    "@fontsource/inter": "^5.2.8",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.17",
+    "clsx": "^2.1.1",
+    "lucide-svelte": "^0.553.0",
+    "svelte": "^5.43.5",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.4",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "@types/node-fetch": "^2.6.13",
+    "astro": "^5.15.4",
+    "husky": "^9.1.7",
+    "lighthouse": "^13.0.1",
+    "lint-staged": "^16.2.6",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.4.0",
+    "wait-on": "^9.0.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,mjs,cjs}": [
+      "biome check --write --no-errors-on-unmatched"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.astro": [
+      "prettier --write --config .prettierrc.astro.json"
+    ],
+    "*.svelte": [
+      "prettier --write --config .prettierrc.svelte.json"
+    ]
+  }
+}

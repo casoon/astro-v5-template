@@ -1,12 +1,15 @@
-# Astro v5v5 Workspace
+# Astro v5 Template
 
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Svelte](https://img.shields.io/badge/Svelte-5.43.5-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
-[![Workspaces](https://img.shields.io/badge/Workspaces-enabled-brightgreen)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-ProductionProduction-ready Astro v5 monorepowithpnpmworkspaces.
+Production-ready Astro starter template with modern tooling and best practices.
 
-#### FeaturesPackages
+## Features
 
 - **Astro 5.15.4** - Static site generation with islands architecture
 - **Tailwind CSS 4.1.17** - Utility-first CSS with custom components
@@ -17,24 +20,10 @@ ProductionProduction-ready Astro v5 monorepowithpnpmworkspaces.
 - **MDX Blog** - Content collections with RSS feed
 - **SEO Optimized** - Meta tags, sitemap, and Open Graph
 - **CI/CD Ready** - GitHub Actions workflow included
-```
-packages/
-├── base/    - Minimal production template (blank slate)
-└── demo/    - Full-featured demo site (with examples)
-###**BaseTemplate**
-Minimal starter for new projects:
-✅Clean,nodemocontent
-- ✅ Essential components only
-- ✅ Ready for production
-- ✅ Example blog post (draft)**DemoSite
-Full-featured showcase:
-- ✅ 4 example blog posts
-- ✅ All components demonstrated
-- ✅ API examples
-- ✅ Contact forms
-- ✅ Deployed demo site##🚀QuickStart
 
-###Prerequisites### Install & Run
+## Prerequisites
+
+Install Volta and pnpm:
 
 ```bash
 # Install Volta (automatic Node.js version management)
@@ -51,123 +40,16 @@ Volta will automatically use Node.js 22.21.0 and pnpm 9.15.4 as defined in `pack
 ```bash
 # Clone or use as template
 git clone https://github.com/casoon/astro-v5-template.git
-# Clone repository
-git clone https://github.com/casoon/astro-v5-template.git
 cd astro-v5-template
 
-# Install all dependencies
+# Install dependencies
 pnpm install
 
-# Run demo site
-pnpm dev
-
-# Run base template
-pnpm dev:base
-##📋WorkspaceCommands| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start demo site (default) |
-| `pnpm dev:base` | Start base template |
-| `pnpm dev:demo` | Start demo site |
-| `pnpm build` | Build all packages |
-| `pnpm build:base` | Build base only |
-| `pnpm build:demo` | Build demo only |
-| `pnpm preview` | Preview demo build |
-| `pnpm preview:base` | Preview base build |
-| `pnpm clean` | Clean all packages |
-| `pnpm format` | Format all code |
-| `pnpm check` | Run all checks |
-## 🎯 Use Cases
-Scenario1:Start New Project
-Use the base template:```bash
-# Option 1: Copy base package
-cp -r packages/base my-project
-cd my-project
-pnpm install
-pnpm dev
-#Option2:Use degit
-npx degit casoon/astro-v5-template/packages/base my-project
-```###Scenario2:Multiple Landing PagesCreateadditionalpackagestheworkspace:```bash
-# Add new site
-mkdir packages/landing-page
-cp -r packages/base/* packages/landing-page/# Edit packages/landing-page/package.json
-# Change name to "@astro-v5/landing-page"
-
-# Install and run
-pnpm install
-pnpm --filter @astro-v5/landing-page dev
+# Start development server
+pnpmpnpm dev
 ```
 
-### **Scenario 3: Shared Design System**
-Create a shared package for components:
-
-```bash
-mkdir packages/ui
-# Create shared components
-# Import in base and demo:
-# "dependencies": { "@astro-v5/ui": "workspace:*" }
-```
-
-## 🏗️ Workspace Structure
-├── package.json              # Root workspace config
-├── pnpm-workspace.yaml       # Workspace definition
-├── pnpm-lock.yaml           # Shared lockfile
-├── packages/
-│   ├── base/                # Minimal template
-│   │   ├── package.json     # @astro-v5/base
-│   │   ├── src/
-│   │   ├── public/
-│   │   └── ...
-│   └── demo/                # Demo site
-│       ├── package.json     # @astro-v5/demo
-│       ├── src/
-│       ├── public/
-│       └── ...
-└── README.md               # This file
-##🔄WorkflowBenefits### **Single Source of Truth**
-- Update dependencies once, applies to all packages
-- Shared TypeScript, linting, formatting configs
-- One git repo, simplified management
-### Independent SitesEachpackagecanbedeployed separatelyDifferentcontent,sametech stackBuildandpreviewindependentlyEfficientDevelopment
-- Shared `node_modules` saves disk space
-- Fast installs with pnpm
-- Parallel builds with `-r` flag## 🎨 Tech Stack
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Astro** | 5.15.4 | Static site generator |
-| **Tailwind CSS** | 4.1.17 | Utility-first CSS |
-| **Svelte** | 5.43.5 | Reactive components |
-| **TypeScript** | 5.9.3 | Type safety |
-| **pnpm** | 9.15.4 | Package manager |
-| **Volta** | - | Node version manager |
-
-## 📝 Adding New Sites
-
-1. **Create new package:**
-```bash
-mkdir packages/my-site
-cp -r packages/base/* packages/my-site/
-```
-
-2. **Update package.json:**
-```json
-{
-  "name": "@astro-v5/my-site",
-  "version": "1.0.0"
-3. **Install & run:**
-pnpm install
- dev--filter@astro-v5/my-sitedev
-```
-
-Open4. **Add workspace script (optional):**
-```json
-// Root package.json
-{
-  "scripts": {
-    "dev:my-site": "pnpm --filter @astro-v5/my-site dev"
-  }
-}
-```
+Open http://localhost:4321
 
 ## Commands
 
@@ -301,34 +183,28 @@ author: Your Name
 tags: ["astro", "tailwind"]
 draft: false
 featured: false
-## 🚢 Deployment
+---
 
-YourEach contentpackage here...
-```can be deployed independently:
+Your content here...
+```
 
-###### CreatingDeploy PagesDemo:```bash#Builddemopnpmbuild:demo
+### Creating Pages
 
 Add `.astro` files to `src/pages/`:
 
 ```astro
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-# Deploy from packages/demo/dist/
-```
+---
 
-<BaseLayout### title="Page**Deploy Title">
+<BaseLayout title="Page Title">
   <h1>Content</h1>
 </BaseLayout>
-```Base:**
-```bash
-# Build base
-pnpm build:base
-
-#### APIDeploy Routesfrompackages/base/dist/
 ```
 
-Create endpointsSupportedPlatformsVercelNetlifyCloudflarePagesGitHubPages
-Anystatic host
+### API Routes
+
+Create endpoints in `src/pages/api/`:
 
 ```typescript
 export const GET: APIRoute = async () => {
@@ -336,13 +212,9 @@ export const GET: APIRoute = async () => {
     headers: { 'Content-Type': 'application/json' }
   });
 };
-```## 🔧 Troubleshooting
-
-### Tech"Module Stacknotfound"errors
-```bash
-# Reinstall workspace
-pnpm install
 ```
+
+## Tech Stack
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
@@ -355,19 +227,16 @@ pnpm install
 | **Biome** | 2.3.4 | Linter & formatter |
 | **Zod** | 4.1.12 | Runtime validation |
 | **MDX** | 4.3.10 | Markdown with components |
-Husky"gitcan'tbefound"
-```bash
-#Husky looks.gitin package root#Thisisnormalinworkspaces,can be ignored#Orconfigurehuskyinroot if needed```
-## LicenseDifferentNode versions```bash
-#Voltamanages versions automatically
-# Just ensure Volta is installed
-volta install node@2221.0
-voltainstallpnpm
-```
 
-MIT## ©📚 LearnMore
+## License
 
-## Links- [pnpm Workspaces](https://pnpm.io/workspaces)
+MIT © casoon
+
+## Links
+
+- [GitHub Repository](https://github.com/casoon/astro-v5-template)
 - [Astro Documentation](https://docs.astro.build)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Svelte Documentation](https://svelte.dev/docs)
+- [pnpm Documentation](https://pnpm.io)
 - [Volta Documentation](https://volta.sh)
-©casoon## 🔗 Links-[GitHubRepository](https://github.comcasoonastro-v5-template)- [Demo Site](https://astrov5.casoon.dev) (from packagesdemo)

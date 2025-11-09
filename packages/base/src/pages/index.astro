@@ -1,0 +1,44 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Welcome"
+  description="Your new Astro site"
+>
+  <div class="text-center space-y-8">
+    <h1 class="text-5xl font-bold text-slate-900 dark:text-white">
+      Welcome to Astro
+    </h1>
+
+    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+      This is a blank template. Start building by editing files in <code class="px-2 py-1 bg-slate-200 dark:bg-slate-700 rounded">src/</code>
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center mt-8">
+      <a
+        href="/blog"
+        class="px-6 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg hover:bg-slate-700 dark:hover:bg-slate-100 transition-colors font-medium"
+      >
+        View Blog
+      </a>
+      <a
+        href="https://docs.astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-6 py-3 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium"
+      >
+        Documentation
+      </a>
+    </div>
+
+    <div class="mt-12 p-6 bg-slate-100 dark:bg-slate-800 rounded-xl max-w-2xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4 text-slate-900 dark:text-white">Quick Start</h2>
+      <div class="text-left space-y-2 text-slate-700 dark:text-slate-300">
+        <p><code class="px-2 py-1 bg-white dark:bg-slate-700 rounded">pnpm dev</code> - Start development</p>
+        <p><code class="px-2 py-1 bg-white dark:bg-slate-700 rounded">pnpm build</code> - Build for production</p>
+        <p><code class="px-2 py-1 bg-white dark:bg-slate-700 rounded">pnpm preview</code> - Preview build</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
