@@ -51,6 +51,7 @@
     "postinstall": "echo \"\\n🚀 Dependencies installed! Run 'pnpm dev' to start development.\\n\""
   },
   "dependencies": {
+    "@astro-v5/shared": "workspace:*",
     "@astrojs/check": "^0.9.5",
     "@astrojs/mdx": "^4.3.10",
     "@astrojs/rss": "^4.0.13",

@@ -1,0 +1,166 @@
+/* ========================================
+   Astro v5 Design System - Utility Classes
+   ======================================== */
+
+/* Navigation Links */
+.nav-link {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-accent-hover);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: var(--color-text-primary);
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Navigation Links */
+.nav-link-mobile {
+  display: block;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.nav-link-mobile:hover {
+  color: var(--color-accent-hover);
+  background-color: var(--color-background-secondary);
+}
+
+/* Card Container */
+.card-container {
+  width: 100%;
+  max-width: 80rem;
+  background-color: var(--color-surface);
+  backdrop-filter: blur(var(--blur-lg));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  padding: var(--spacing-lg);
+  margin: 0 var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  transition: all 0.5s ease-in-out;
+}
+
+@media (min-width: 640px) {
+  .card-container {
+    border-radius: var(--radius-2xl);
+    padding: var(--card-padding);
+  }
+}
+
+/* Glass Effect */
+.glass-effect {
+  background-color: var(--color-surface);
+  backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid var(--color-border);
+}
+
+/* Text Gradient */
+.text-gradient {
+  background-image: var(--gradient-accent);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus Ring */
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Container */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-responsive {
+    max-width: 1536px;
+  }
+}
+
+/* Flexbox Utilities */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

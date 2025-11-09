@@ -10,6 +10,9 @@ importers:
 
   packages/base:
     dependencies:
+      '@astro-v5/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@astrojs/check':
         specifier: ^0.9.5
         version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
@@ -101,6 +104,9 @@ importers:
 
   packages/demo:
     dependencies:
+      '@astro-v5/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@astrojs/check':
         specifier: ^0.9.5
         version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
@@ -189,6 +195,12 @@ importers:
       wait-on:
         specifier: ^9.0.3
         version: 9.0.3
+
+  packages/shared:
+    dependencies:
+      '@fontsource/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
 
 packages:
 

@@ -21,13 +21,11 @@
   "scripts": {
     "dev": "pnpm --filter @astro-v5/demo dev",
     "dev:base": "pnpm --filter @astro-v5/base dev",
-    "dev:demo": "pnpm --filter @astro-v5/demo dev",
     "build": "pnpm -r build",
     "build:base": "pnpm --filter @astro-v5/base build",
     "build:demo": "pnpm --filter @astro-v5/demo build",
     "preview": "pnpm --filter @astro-v5/demo preview",
     "preview:base": "pnpm --filter @astro-v5/base preview",
-    "preview:demo": "pnpm --filter @astro-v5/demo preview",
     "clean": "pnpm -r clean && rm -rf node_modules",
     "format": "pnpm -r format",
     "check": "pnpm -r check",
