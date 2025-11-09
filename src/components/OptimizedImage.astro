@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 export interface Props {
@@ -21,14 +20,18 @@ const {
   class: className = '',
   sizes
 } = Astro.props;
+
+// Use native img tag for maximum compatibility
+const imgAttrs: Record<string, any> = {
+  src: typeof src === 'string' ? src : src.src,
+  alt,
+  loading,
+  class: className,
+};
+
+if (width) imgAttrs.width = width;
+if (height) imgAttrs.height = height;
+if (sizes) imgAttrs.sizes = sizes;
 ---
 
-<Image
-  src={src}
-  alt={alt}
-  width={width}
-  height={height}
-  loading={loading}
-  class={className}
-  sizes={sizes}
-/>
+<img {...imgAttrs} />

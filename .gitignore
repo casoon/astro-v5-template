@@ -7,6 +7,11 @@ dist/
 # dependencies
 node_modules/
 
+# package manager
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
 # logs
 npm-debug.log*
 yarn-debug.log*

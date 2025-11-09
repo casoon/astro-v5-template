@@ -1,9 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  let isDark = $state(false);
-  // @ts-ignore - Used in template
-  let mounted = $state(false);
+  let isDark = $state<boolean>(false);
+  let mounted = $state<boolean>(false);
 
   onMount(() => {
     mounted = true;
@@ -16,8 +15,7 @@
     updateTheme();
   });
 
-  // @ts-ignore - Used in template
-  function toggleTheme() {
+  function toggleTheme(): void {
     isDark = !isDark;
     updateTheme();
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
@@ -25,7 +23,7 @@
     console.log('HTML classes:', document.documentElement.className);
   }
 
-  function updateTheme() {
+  function updateTheme(): void {
     const html = document.documentElement;
     if (isDark) {
       html.classList.add('dark');

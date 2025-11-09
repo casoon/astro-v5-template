@@ -6,22 +6,22 @@ import { z } from 'zod';
  */
 const envSchema = z.object({
   // Site configuration
-  PUBLIC_SITE_URL: z.string().url().default('https://astrov5.casoon.dev'),
+  PUBLIC_SITE_URL: z.string().default('https://astrov5.casoon.dev'),
   PUBLIC_SITE_NAME: z.string().min(1).default('Astro V5 Template'),
-  
+
   // API configuration (optional)
-  PUBLIC_API_URL: z.string().url().optional(),
-  
+  PUBLIC_API_URL: z.string().optional(),
+
   // Feature flags
   PUBLIC_ENABLE_ANALYTICS: z
     .string()
-    .transform((val) => val === 'true')
-    .default('false'),
+    .default('false')
+    .transform((val) => val === 'true'),
   PUBLIC_ENABLE_DARK_MODE: z
     .string()
-    .transform((val) => val === 'true')
-    .default('true'),
-  
+    .default('true')
+    .transform((val) => val === 'true'),
+
   // Build configuration (optional)
   PUBLIC_BUILD_TIME: z.string().optional(),
 });

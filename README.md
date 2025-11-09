@@ -1,529 +1,242 @@
-# 🚀 Astro V5 Template - Modern Web Starter
+# Astro v5 Template
 
-[![Astro](https://img.shields.io/badge/Astro-5.14.1-FF5D01?logo=astro&logoColor=white)](https://astro.build)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.14-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Svelte](https://img.shields.io/badge/Svelte-5.39.8-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+[![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.17-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Svelte](https://img.shields.io/badge/Svelte-5.43.5-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A **production-ready** Astro starter template featuring the latest web technologies. Build lightning-fast websites with beautiful UI components, comprehensive tooling, and modern development practices.
+Production-ready Astro starter template with modern tooling and best practices.
 
-**[🌐 Live Demo](https://astrov5.casoon.dev/)** | **[📦 Use Template](https://github.com/casoon/astro-v5-template/generate)** | **[🔍 Web Vitals Analysis](https://github.com/casoon/auditmysite_studio)**
+## Features
 
----
+- **Astro 5.15.4** - Static site generation with islands architecture
+- **Tailwind CSS 4.1.17** - Utility-first CSS with custom components
+- **Svelte 5.43.5** - Reactive components with runes API
+- **Atlas Design System** - Glass effects and modern UI components
+- **TypeScript** - Full type safety
+- **pnpm + Volta** - Fast package management with automatic Node.js versioning
+- **MDX Blog** - Content collections with RSS feed
+- **SEO Optimized** - Meta tags, sitemap, and Open Graph
+- **CI/CD Ready** - GitHub Actions workflow included
 
-## ⚡ Quick Start
+## Prerequisites
 
-Get your project running in under 60 seconds:
-
-```bash
-# Option 1: Use GitHub template (recommended)
-# Click "Use this template" button on GitHub
-
-# Option 2: Clone with degit
-npx degit casoon/astro-v5-template my-project
-cd my-project
-
-# Install and configure
-npm install
-npm run setup  # 🆕 Interactive template configuration
-npm run dev
-```
-
-Open [http://localhost:4321](http://localhost:4321) - You're ready to build! 🎉
-
-### 🎁 What's New in This Version
-
-- **🚀 Astro 5.14.1** - Latest features and performance improvements
-- **🎨 Atlas Design System** - Beautiful glass effects, gradients, and animations
-- **📝 Enhanced Blog System** - Atlas-styled blog cards with featured variants
-- **🎯 Improved UX** - German localization and better accessibility
-- **⚡ Svelte 5.39.8** - Reactive components with runes API
-- **📊 Web Vitals Monitoring** - Built-in performance tracking
-- **🔍 SEO Optimized** - Comprehensive meta tags and sitemaps
-
----
-
-## 🎯 Features & Highlights
-
-### ✨ **Interactive Template Configuration**
-
-Customize your template with the interactive setup:
+Install Volta and pnpm:
 
 ```bash
-npm run setup
+# Install Volta (automatic Node.js version management)
+curl https://get.volta.sh | bash
+
+# Install pnpm
+volta install pnpm
 ```
 
-**Choose your features:**
-- 📝 **Blog System** - Full MDX blog with RSS feed
-- 🔌 **API Routes** - Server-side endpoints for forms  
-- 📧 **Newsletter** - Email signup with validation
-- 📞 **Contact Form** - Ready-to-use contact forms
-- 🎯 **SEO Optimization** - Meta tags and analytics
+Volta will automatically use Node.js 22.21.0 and pnpm 9.15.4 as defined in `package.json`.
 
-### 🏠 **Production-Ready Components**
-
-| Component | Description | Features |
-|-----------|-------------|----------|
-| **Hero Section** | Eye-catching landing area | Gradient backgrounds, CTA buttons, floating orbs |
-| **Navigation** | Responsive navbar | Mobile menu, theme toggle, glass effects |
-| **Blog System** | 🆕 Atlas-styled blog | Featured cards, glass effects, German localization |
-| **BlogCard Component** | 🆕 Flexible blog cards | 3 variants: default, featured, minimal with animations |
-| **Cards** | Flexible card system | 4 variants: default, glass, gradient, outline |
-| **Forms** | Contact & newsletter | Validation, API integration, success states |
-| **Modal System** | Dialog components | Backdrop blur, animations |
-| **Toast Notifications** | User feedback | Success, error, warning, info states |
-| **SEO Component** | Meta tag management | Open Graph, Twitter Cards, JSON-LD |
-| **Web Vitals** | Performance monitoring | Real-time metrics with debug overlay |
-
-### 🚀 **Modern Tech Stack**
-
-| Technology | Version | Purpose |
-|------------|---------|----------|
-| **Astro** | 5.14.1 | Static site generator with islands architecture |
-| **Atlas Design System** | 0.0.4 | 🆕 Glass effects, gradients, and modern UI components |
-| **Tailwind CSS** | 4.1.14 | Utility-first CSS framework |
-| **Svelte** | 5.39.8 | Reactive components with runes API |
-| **TypeScript** | 5.9.3 | Type safety and better DX |
-| **Zod** | 4.1.11 | Runtime type validation |
-| **Biome** | 2.2.5 | Fast linter and formatter |
-
-### ⚙️ **Developer Experience**
-
-- ⚡ **Instant Hot Reload** - See changes immediately
-- 🐛 **Pre-configured Linting** - Biome + Prettier setup
-- 🪝 **Git Hooks** - Auto-format on commit with Husky
-- 🎨 **VS Code Ready** - Extensions and settings included
-- 🔒 **Type-Safe Environment** - Validated with Zod schema
-- 📋 **Performance Reports** - Built-in Lighthouse integration
-
----
-
-## 📦 Project Structure
-
-```
-astro-v5-template/
-├── 📁 src/
-│   ├── 🧩 components/        # Reusable UI components
-│   │   ├── 🏠 Hero.astro         # Landing hero section
-│   │   ├── 🧭 Navbar.astro       # Navigation with theme toggle
-│   │   ├── 🃋 Card.astro         # Flexible card system
-│   │   ├── 📝 BlogCard.astro     # 🆕 Atlas-styled blog cards
-│   │   ├── 🎨 GlassCard.astro    # Glass effect cards
-│   │   ├── 📞 ContactForm.astro  # Contact form with validation
-│   │   ├── 📧 Newsletter.astro   # Newsletter signup
-│   │   ├── 🧠 Modal.astro        # Modal dialog system
-│   │   ├── 🔔 Toast.astro        # Notification toasts
-│   │   ├── 🔍 SEO.astro          # SEO meta tags
-│   │   └── 📊 WebVitals.astro   # Performance monitoring
-│   ├── 📄 pages/
-│   │   ├── 🔌 api/              # Server-side API routes
-│   │   │   ├── contact.ts        # Contact form handler
-│   │   │   ├── newsletter.ts     # Newsletter signup
-│   │   │   ├── hello.ts          # API example
-│   │   │   └── users.ts          # Users API example
-│   │   ├── 📝 blog/             # 🆕 Atlas-enhanced MDX blog system
-│   │   │   ├── index.astro       # Blog overview with Atlas cards
-│   │   │   └── [...slug].astro   # Blog posts with glass effects
-│   │   ├── 🏠 index.astro       # Homepage
-│   │   ├── 📞 contact.astro     # Contact page
-│   │   ├── 🚫 404.astro         # Custom 404 page
-│   │   └── 🗺️ rss.xml.js       # RSS feed
-│   ├── 🌍 layouts/           # Page layouts
-│   │   └── BaseLayout.astro  # Main layout template
-│   ├── 📁 content/           # Content collections
-│   │   ├── config.ts         # Content config
-│   │   └── blog/             # Blog posts (MDX)
-│   └── 🎨 styles/            # Global styles
-│       ├── global.css        # Global CSS
-│       └── tailwind.css      # Tailwind imports
-├── 🎁 setup.js              # Interactive template setup
-├── ⚙️ template.config.js      # Template configuration
-└── 📦 package.json          # Dependencies and scripts
-
----
-
-## 🛠️ Available Commands
-
-### 🚀 **Development**
-| Command | Description |
-|---------|-------------|
-| `npm run dev` / `npm start` | Start development server on port 4321 |
-| `npm run setup` | 🆕 Interactive template configuration |
-| `npm run clean` | Clean build artifacts and cache |
-
-### 🏠 **Build & Deploy**
-| Command | Description |
-|---------|-------------|
-| `npm run build` | Type-check and build for production |
-| `npm run build:fast` | Build without type checking (faster) |
-| `npm run preview` | Preview production build locally |
-
-### 🎨 **Code Quality**
-| Command | Description |
-|---------|-------------|
-| `npm run format` | Format all code with Biome & Prettier |
-| `npm run check` | Run all linting and format checks |
-| `npm run type-check` | Run Astro TypeScript checks |
-
-### 📊 **Analysis & Maintenance**
-| Command | Description |
-|---------|-------------|
-| `npm run lighthouse` | Generate Lighthouse performance report |
-| `npm run update-deps` | Update all dependencies safely |
-
-> **💡 Pro Tip:** Use `npm run lighthouse` after building to analyze your site's performance, accessibility, and SEO metrics.
-
----
-
-## 🎨 Customization Guide
-
-### 🔧 **Environment Setup**
-
-1. Copy the environment template:
-   ```bash
-   cp env.example .env
-   ```
-
-2. Update your site configuration:
-   ```env
-   PUBLIC_SITE_NAME="Your Site Name"
-   PUBLIC_SITE_URL="https://yoursite.com"
-   PUBLIC_ENABLE_ANALYTICS="true"
-   PUBLIC_ENABLE_DARK_MODE="true"
-   ```
-
-### 🎨 **Theming & Styling**
-
-**Tailwind Configuration:**
-- Edit `src/styles/tailwind.css` for custom theme variables
-- Modify color scheme in Tailwind's theme configuration
-- Use CSS custom properties for consistent theming
-
-**Component Styling:**
-```astro
-<!-- Example: Custom hero with your brand colors -->
-<Hero 
-  title="Your Brand Message"
-  subtitle="Your compelling description"
-  ctaText="Get Started"
-  ctaLink="/contact"
-/>
-```
-
-### 📝 **Content Management**
-
-**Blog Posts:**
-- Add `.mdx` files to `src/content/blog/`
-- Use frontmatter for metadata:
-  ```yaml
-  ---
-  title: "Your Post Title"
-  description: "Post description"
-  date: 2024-01-01
-  author: "Your Name"
-  tags: ["tag1", "tag2"]
-  ---
-  ```
-
-**Pages:**
-- Create `.astro` files in `src/pages/`
-- Use layouts from `src/layouts/`
-- Leverage components from `src/components/`
-
-### 🔌 **API Integration**
-
-**Form Handlers:**
-```typescript
-// src/pages/api/custom-form.ts
-export async function POST({ request }) {
-  const data = await request.formData();
-  // Process your form data
-  return new Response(JSON.stringify({ success: true }));
-}
-```
-
----
-
-## 🚀 Deployment
-
-### **Recommended Platforms**
-
-| Platform | Deploy Button | Features |
-|----------|---------------|----------|
-| **Vercel** | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/casoon/astro-v5-template) | Zero-config, edge functions, analytics |
-| **Netlify** | [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/casoon/astro-v5-template) | Form handling, split testing |
-| **Cloudflare Pages** | Manual setup | Global CDN, Workers integration |
-
-### **Manual Deployment**
+## Quick Start
 
 ```bash
-# Build for production
-npm run build
-
-# The 'dist' folder contains your built site
-# Upload this folder to any static hosting provider
-```
-
-### **Environment Variables for Production**
-
-Set these in your deployment platform:
-```env
-PUBLIC_SITE_URL=https://yourdomain.com
-PUBLIC_SITE_NAME=Your Site Name
-PUBLIC_ENABLE_ANALYTICS=true
-```
-
----
-
-## 📊 Performance & Analytics
-
-### **Built-in Web Vitals Monitoring**
-
-The template includes real-time performance monitoring:
-- **LCP** (Largest Contentful Paint)
-- **FID** (First Input Delay) 
-- **CLS** (Cumulative Layout Shift)
-- **FCP** (First Contentful Paint)
-- **TTFB** (Time to First Byte)
-
-**Enable debug mode during development:**
-```astro
-<WebVitals debug={true} />
-```
-
-**For advanced analysis:** [**🔍 AuditMySite Studio**](https://github.com/casoon/auditmysite_studio)
-
-### **Lighthouse Integration**
-
-```bash
-# Generate performance report
-npm run lighthouse
-
-# Report saved as lighthouse-report.html
-```
-
----
-
-## 📁 Component Examples
-
-### **Hero Section**
-```astro
-<Hero 
-  title="Welcome to My Site"
-  subtitle="Build something amazing"
-  ctaText="Get Started"
-  ctaLink="/contact"
-  secondaryCtaText="Learn More"
-  secondaryCtaLink="/about"
-/>
-```
-
-### **Card Variants**
-```astro
-<!-- Default Card -->
-<Card 
-  title="Feature Name"
-  description="Feature description"
-  href="/learn-more"
-  tag="New"
-/>
-
-<!-- Glass Effect Card -->
-<Card 
-  variant="glass"
-  title="Premium Feature"
-  description="Enhanced with glass effects"
-/>
-
-<!-- Gradient Card -->
-<Card 
-  variant="gradient" 
-  title="Featured Content"
-  description="Eye-catching gradient background"
-/>
-```
-
-### **🆕 BlogCard Component**
-```astro
-<!-- Featured Blog Post -->
-<BlogCard 
-  title="Getting Started with Atlas"
-  description="Learn the Atlas Design System"
-  date="2024-01-01"
-  author="Your Name"
-  image="/blog/image.jpg"
-  slug="getting-started"
-  tags={["Astro", "Atlas", "Tutorial"]}
-  variant="featured"
-/>
-
-<!-- Default Blog Post -->
-<BlogCard 
-  title="Another Great Post"
-  description="More awesome content"
-  date="2024-01-02"
-  slug="another-post"
-  variant="default"
-/>
-
-<!-- Minimal Blog Post -->
-<BlogCard 
-  title="Quick Tip"
-  date="2024-01-03"
-  slug="quick-tip"
-  variant="minimal"
-/>
-```
-
-### **Toast Notifications**
-```javascript
-// Success notification
-window.showToast('Form submitted successfully!', 'success');
-
-// Error notification
-window.showToast('Something went wrong', 'error');
-
-// Info notification
-window.showToast('Please check your email', 'info', 5000);
-```
-
-### **SEO Component**
-```astro
-<SEO 
-  title="Page Title"
-  description="Page description for search engines"
-  image="/og-image.jpg"
-  type="article"
-  publishedTime="2024-01-01"
-  author="Author Name"
-/>
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### **Reporting Issues**
-- 🐛 [Report bugs](https://github.com/casoon/astro-v5-template/issues/new?template=bug_report.md)
-- 💡 [Request features](https://github.com/casoon/astro-v5-template/issues/new?template=feature_request.md)
-- 💬 [Join discussions](https://github.com/casoon/astro-v5-template/discussions)
-
-### **Development Setup**
-```bash
-# Fork and clone the repo
-git clone https://github.com/your-username/astro-v5-template.git
+# Clone or use as template
+git clone https://github.com/casoon/astro-v5-template.git
 cd astro-v5-template
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run dev
-
-# Make your changes and run tests
-npm run build
-npm run check
+pnpmpnpm dev
 ```
 
-### **Pull Request Guidelines**
-- Follow existing code style and conventions
-- Include tests for new features
-- Update documentation as needed
-- Keep commits atomic and well-described
+Open http://localhost:4321
 
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production (with type-check) |
+| `pnpm build:fast` | Build without type-checking |
+| `pnpm preview` | Preview production build |
+| `pnpm check` | Run linting and format checks |
+| `pnpm format` | Format all code |
+| `pnpm type-check` | Run TypeScript checks |
+| `pnpm update-deps` | Update dependencies |
+
+## Project Structure
+
+```
+├── public/              # Static assets
+├── src/
+│   ├── components/      # Reusable components
+│   │   ├── *.astro     # Astro components
+│   │   └── *.svelte    # Svelte components
+│   ├── content/         # Content collections
+│   │   ├── blog/       # Blog posts (MDX)
+│   │   └── config.ts   # Content schema
+│   ├── layouts/         # Page layouts
+│   ├── pages/           # File-based routing
+│   │   ├── api/        # API endpoints
+│   │   └── blog/       # Blog pages
+│   ├── styles/          # Global styles
+│   ├── types/           # TypeScript types
+│   ├── utils/           # Utility functions
+│   └── env.ts           # Environment validation
+├── .github/             # GitHub Actions
+├── astro.config.mjs     # Astro configuration
+├── tailwind.config.js   # Tailwind configuration
+└── tsconfig.json        # TypeScript configuration
+```
+
+## Key Components
+
+### SEO & Meta Tags
+- `SEO.astro` - Comprehensive meta tags (Open Graph, Twitter Cards)
+- Automatic sitemap generation
+- RSS feed for blog posts
+
+### UI Components
+- `Card.astro` - Flexible card component (4 variants)
+- `GlassCard.astro` - Glass morphism effects
+- `Hero.astro` - Landing page hero section
+- `BlogCard.astro` - Blog post cards
+- `Modal.astro` - Accessible modal dialogs
+- `Toast.astro` - Toast notifications
+- `ThemeToggle.svelte` - Dark/light mode toggle
+- `MobileMenu.astro` - Responsive mobile navigation
+
+### Blog System
+- Content collections with Zod schema validation
+- MDX support with components
+- Draft and featured post flags
+- Tag-based filtering
+- RSS feed generation
+
+## Configuration
+
+### Environment Variables
+
+Copy `env.example` to `.env`:
+
+```bash
+PUBLIC_SITE_URL=https://yourdomain.com
+PUBLIC_SITE_NAME=Your Site Name
+PUBLIC_ENABLE_ANALYTICS=false
+PUBLIC_ENABLE_DARK_MODE=true
+```
+
+Environment variables are validated with Zod in `src/env.ts`.
+
+### Tailwind CSS
+
+Custom utility classes in `src/styles/global.css`:
+- `.nav-link` - Navigation links with hover effects
+- `.nav-link-mobile` - Mobile navigation styles
+- `.card-container` - Content container with glass effect
+- `.glass-effect` - Glass morphism background
+- `.text-gradient` - Gradient text effect
+
+### Atlas Design System
+
+Imported via `@casoon/atlas-styles` - provides glass effects, gradients, and modern UI components.
+
+## Deployment
+
+### Build for Production
+
+```bash
+pnpm build
+```
+
+Output is in `dist/` directory.
+
+### Deployment Platforms
+
+The static site can be deployed to:
+- **Vercel**: Zero config deployment
+- **Netlify**: Drag & drop or Git integration  
+- **Cloudflare Pages**: Fast edge deployment
+- **GitHub Pages**: Free static hosting
+- **Any static host**: Upload `dist/` folder
+
+### GitHub Actions
+
+Included CI workflow (`.github/workflows/ci.yml`):
+- Type-checking
+- Linting
+- Build verification
+- Artifact upload
+
+## Development
+
+### Adding Blog Posts
+
+Create MDX files in `src/content/blog/`:
+
+```mdx
+---
+title: Your Post Title
+description: Post description
+date: 2025-01-09
+author: Your Name
+tags: ["astro", "tailwind"]
+draft: false
+featured: false
 ---
 
-## 📜 Documentation
+Your content here...
+```
 
-- **[📚 Setup Guide](SETUP.md)** - Detailed setup instructions
-- **[📄 Contributing Guide](CONTRIBUTING.md)** - How to contribute
-- **[🗓️ Changelog](CHANGELOG.md)** - Version history
-- **[♿ Accessibility](a11y-seo-check.md)** - A11y and SEO guidelines
+### Creating Pages
 
+Add `.astro` files to `src/pages/`:
+
+```astro
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-## ⚖️ License
+<BaseLayout title="Page Title">
+  <h1>Content</h1>
+</BaseLayout>
+```
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+### API Routes
 
-### **What this means:**
-- ✅ **Commercial use** - Use it for your business projects
-- ✅ **Modification** - Adapt it to your needs
-- ✅ **Distribution** - Share it with others
-- ✅ **Private use** - Use it in private projects
+Create endpoints in `src/pages/api/`:
 
----
+```typescript
+export const GET: APIRoute = async () => {
+  return new Response(JSON.stringify({ data: 'value' }), {
+    headers: { 'Content-Type': 'application/json' }
+  });
+};
+```
 
-## 🙏 Credits & Acknowledgments
+## Tech Stack
 
-### **Built With**
-- **[Astro](https://astro.build)** - The web framework for content-driven websites
-- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
-- **[Svelte](https://svelte.dev)** - Reactive UI components
-- **[TypeScript](https://www.typescriptlang.org)** - Type-safe JavaScript
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| **Astro** | 5.15.4 | Static site generator |
+| **Tailwind CSS** | 4.1.17 | Utility-first CSS |
+| **Svelte** | 5.43.5 | Reactive components |
+| **TypeScript** | 5.9.3 | Type safety |
+| **pnpm** | 9.15.4 | Package manager |
+| **Volta** | - | Node.js version manager |
+| **Biome** | 2.3.4 | Linter & formatter |
+| **Zod** | 4.1.12 | Runtime validation |
+| **MDX** | 4.3.10 | Markdown with components |
 
-### **Performance Analysis**
-- **[AuditMySite Studio](https://github.com/casoon/auditmysite_studio)** - Advanced web performance auditing
+## License
 
-### **Community**
-Built with ♥️ by the [Casoon](https://github.com/casoon) team and [contributors](https://github.com/casoon/astro-v5-template/graphs/contributors).
+MIT © casoon
 
----
+## Links
 
-**[⬆️ Back to Top](#-astro-v5-template---modern-web-starter)**
-
-<div align="center">
-
-**If this template helped you, please consider ⭐ starring the repo!**
-
-[![GitHub stars](https://img.shields.io/github/stars/casoon/astro-v5-template?style=social)](https://github.com/casoon/astro-v5-template/stargazers)
-
-</div>
-
----
-
-## 💡 Tips & Best Practices
-
-1. **Keep it Fast** - Astro ships 0 JS by default. Add interactivity only where needed.
-2. **Atlas Glass Effects** - Use `cs-glass` classes for modern glassmorphism
-3. **Blog Variants** - Featured posts automatically use enhanced styling
-4. **German Localization** - Blog components include German text by default
-5. **Type Everything** - Full TypeScript support is configured
-6. **Mobile First** - All components are responsive by default
-7. **Performance** - Atlas effects are optimized for smooth animations
-
----
-
-## 📖 Documentation
-
-- [Astro Docs](https://docs.astro.build)
-- [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4-alpha)
-- [Atlas Design System](https://github.com/casoon/atlas)
-- [Svelte 5 Runes](https://svelte.dev/docs/svelte/reactivity)
-
----
-
-## 🤝 Contributing
-
-Found a bug? Have a feature request? PRs welcome!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-MIT License - feel free to use this template for any project!
-
----
-
-<div align="center">
-  <p>Built with ❤️ by the Astro community</p>
-  <p>⭐ Star this repo if it helped you!</p>
-</div>
+- [GitHub Repository](https://github.com/casoon/astro-v5-template)
+- [Astro Documentation](https://docs.astro.build)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Svelte Documentation](https://svelte.dev/docs)
+- [pnpm Documentation](https://pnpm.io)
+- [Volta Documentation](https://volta.sh)
