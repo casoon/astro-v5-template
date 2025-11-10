@@ -1,0 +1,100 @@
+---
+/**
+ * OptimizedImage Component
+ *
+ * Automatically generates <picture> element with optimized WebP/AVIF sources
+ * from images processed by the optimize-images script.
+ *
+ * @example
+ * <OptimizedImage
+ *   src="/images/hero.jpg"
+ *   alt="Hero image"
+ *   sizes="(max-width: 768px) 100vw, 50vw"
+ *   loading="lazy"
+ * />
+ */
+
+export interface Props {
+  /** Path to original image in /images/ folder */
+  src: string;
+  /** Alt text for accessibility */
+  alt: string;
+  /** Image widths to generate (default: 400, 800, 1200) */
+  widths?: number[];
+  /** Sizes attribute for responsive images */
+  sizes?: string;
+  /** Loading strategy */
+  loading?: 'lazy' | 'eager';
+  /** CSS class */
+  class?: string;
+  /** Fetch priority */
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const {
+  src,
+  alt,
+  widths = [400, 800, 1200],
+  sizes = '100vw',
+  loading = 'lazy',
+  class: className,
+  fetchpriority,
+} = Astro.props;
+
+// Extract filename without extension and path
+const getOptimizedPath = (originalSrc: string) => {
+  // Convert /images/hero.jpg -> /images-optimized/hero
+  const withoutExt = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '');
+  return withoutExt.replace('/images/', '/images-optimized/');
+};
+
+// Generate srcset for a format
+const generateSrcSet = (basePath: string, format: string, widths: number[]) => {
+  return widths.map(w => `${basePath}-${w}w.${format} ${w}w`).join(', ');
+};
+
+const basePath = getOptimizedPath(src);
+const fallbackSrc = src.replace('/images/', '/images-optimized/');
+
+// Generate srcsets for different formats
+const avifSrcSet = generateSrcSet(basePath, 'avif', widths);
+const webpSrcSet = generateSrcSet(basePath, 'webp', widths);
+---
+
+<picture>
+  <!-- AVIF - Best compression -->
+  <source
+    type="image/avif"
+    srcset={avifSrcSet}
+    sizes={sizes}
+  />
+
+  <!-- WebP - Good compression, wide support -->
+  <source
+    type="image/webp"
+    srcset={webpSrcSet}
+    sizes={sizes}
+  />
+
+  <!-- Fallback - Optimized JPEG/PNG -->
+  <img
+    src={fallbackSrc}
+    alt={alt}
+    loading={loading}
+    class={className}
+    fetchpriority={fetchpriority}
+    decoding="async"
+  />
+</picture>
+
+<style>
+  picture {
+    display: contents;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>

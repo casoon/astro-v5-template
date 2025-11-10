@@ -26,7 +26,9 @@
     "build:demo": "pnpm --filter @astro-v5/demo build",
     "preview": "pnpm --filter @astro-v5/demo preview",
     "preview:base": "pnpm --filter @astro-v5/base preview",
+    "optimize-images": "node scripts/optimize-images.mjs",
     "clean": "pnpm -r clean && rm -rf node_modules",
+    "clean:images": "rm -rf packages/*/public/images-optimized",
     "format": "pnpm -r format",
     "check": "pnpm -r check",
     "type-check": "pnpm -r type-check",
@@ -40,5 +42,8 @@
     "workspace",
     "pnpm",
     "volta"
-  ]
+  ],
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
 }
