@@ -14,7 +14,7 @@ const shouldTrack = !isDev || debug;
 ---
 
 {shouldTrack && (
-  <script define:vars={{ debug, endpoint }}>
+  <script is:inline define:vars={{ debug, endpoint }}>
     // Web Vitals tracking - Inspired by AuditMySite Studio
     // 🔍 Learn more: https://github.com/casoon/auditmysite_studio
     function measureWebVitals() {
@@ -53,12 +53,12 @@ const shouldTrack = !isDev || debug;
 
       function updateDebugDisplay() {
         if (!debug || !debugContainer) return;
-        
+
         const display = debugContainer.querySelector('#vitals-display');
         const entries = Object.entries(vitals).map(([key, value]) => {
-          const formatted = typeof value === 'number' ? 
+          const formatted = typeof value === 'number' ?
             (key === 'CLS' ? value.toFixed(3) : `${value}ms`) : value;
-          
+
           let status = '⏳';
           if (key === 'LCP' && typeof value === 'number') {
             status = value < 2500 ? '✅' : value < 4000 ? '⚠️' : '❌';
@@ -77,10 +77,10 @@ const shouldTrack = !isDev || debug;
           } else if (['DNS', 'TCP', 'DOM', 'LOAD'].includes(key) && typeof value === 'number') {
             status = value < 100 ? '✅' : value < 300 ? '⚠️' : '❌';
           }
-          
+
           return `<div style="margin: 2px 0;">${status} <strong>${key}:</strong> ${formatted}</div>`;
         }).join('');
-        
+
         display.innerHTML = entries || 'Measuring...';
       }
 
@@ -90,12 +90,12 @@ const shouldTrack = !isDev || debug;
           const entries = list.getEntries();
           const lastEntry = entries[entries.length - 1];
           vitals.LCP = Math.round(lastEntry.startTime);
-          
+
           sendMetric('LCP', vitals.LCP);
           updateDebugDisplay();
           observer.disconnect();
         });
-        
+
         observer.observe({ type: 'largest-contentful-paint', buffered: true });
       }
 
@@ -104,31 +104,31 @@ const shouldTrack = !isDev || debug;
         const observer = new PerformanceObserver((list) => {
           const firstEntry = list.getEntries()[0];
           vitals.FID = Math.round(firstEntry.processingStart - firstEntry.startTime);
-          
+
           sendMetric('FID', vitals.FID);
           updateDebugDisplay();
           observer.disconnect();
         });
-        
+
         observer.observe({ type: 'first-input', buffered: true });
       }
 
       // 3. Cumulative Layout Shift (CLS)
       function measureCLS() {
         let clsValue = 0;
-        
+
         const observer = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             if (!entry.hadRecentInput) {
               clsValue += entry.value;
             }
           }
-          
+
           vitals.CLS = Math.round(clsValue * 1000) / 1000;
           sendMetric('CLS', vitals.CLS);
           updateDebugDisplay();
         });
-        
+
         observer.observe({ type: 'layout-shift', buffered: true });
 
         // Send final CLS when page is hidden (user navigates away)
@@ -144,7 +144,7 @@ const shouldTrack = !isDev || debug;
         const observer = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
-          
+
           if (fcpEntry) {
             vitals.FCP = Math.round(fcpEntry.startTime);
             sendMetric('FCP', vitals.FCP);
@@ -152,7 +152,7 @@ const shouldTrack = !isDev || debug;
             observer.disconnect();
           }
         });
-        
+
         observer.observe({ type: 'paint', buffered: true });
       }
 
@@ -181,9 +181,9 @@ const shouldTrack = !isDev || debug;
             }
           });
         });
-        
+
         observer.observe({ type: 'event', buffered: true });
-        
+
         // Clean up on page unload
         window.addEventListener('beforeunload', () => {
           observer.disconnect();
@@ -204,7 +204,7 @@ const shouldTrack = !isDev || debug;
             }
           });
         });
-        
+
         observer.observe({ type: 'longtask', buffered: true });
       }
 
@@ -216,7 +216,7 @@ const shouldTrack = !isDev || debug;
           vitals.TCP = Math.round(navigationEntry.connectEnd - navigationEntry.connectStart);
           vitals.DOM = Math.round(navigationEntry.domContentLoadedEventEnd - navigationEntry.responseEnd);
           vitals.LOAD = Math.round(navigationEntry.loadEventEnd - navigationEntry.loadEventStart);
-          
+
           sendMetric('DNS', vitals.DNS);
           sendMetric('TCP', vitals.TCP);
           sendMetric('DOM', vitals.DOM);
@@ -273,4 +273,3 @@ const shouldTrack = !isDev || debug;
     }
   </script>
 )}
-

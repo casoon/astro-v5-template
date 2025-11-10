@@ -71,7 +71,7 @@ const imageUrl = image.startsWith('http') ? image : new URL(image, Astro.site).h
 )}
 
 <!-- JSON-LD Schema -->
-<script type=\"application/ld+json\">
+<script is:inline type=\"application/ld+json\">
 {
   JSON.stringify({
     '@context': 'https://schema.org',

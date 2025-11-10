@@ -6,7 +6,9 @@
   "private": true,
   "exports": {
     "./styles/*": "./src/styles/*",
-    "./tailwind.config": "./tailwind.config.js"
+    "./tailwind.config": "./tailwind.config.js",
+    "./utils/sitemap": "./src/utils/sitemap.ts",
+    "./utils": "./src/utils/index.ts"
   },
   "files": [
     "src",

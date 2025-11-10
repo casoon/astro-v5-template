@@ -338,6 +338,52 @@ See full list in `packages/shared/README.md`.
 <div class="animate-float">Float</div>
 ```
 
+## 🗺️ Sitemap & SEO
+
+### Custom Sitemap Implementation
+
+Each package includes a custom sitemap generator that uses shared utilities from `@shared/utils/sitemap`:
+
+**Location:**
+- `packages/demo/src/pages/sitemap.xml.ts`
+- `packages/base/src/pages/sitemap.xml.ts`
+
+**Features:**
+- ✅ Automatically scans all `.astro` pages
+- ✅ Supports blog posts via Content Collections (demo package)
+- ✅ Configurable priority and changefreq per page
+- ✅ Uses `env.PUBLIC_SITE_URL` from environment config
+- ✅ Generates `sitemap.xml` at build time
+
+**Example Usage:**
+
+```typescript
+// packages/demo/src/pages/sitemap.xml.ts
+import { generateSitemapPages, generateSitemapXML } from '@shared/utils/sitemap';
+import { getCollection } from 'astro:content';
+
+const pageModules = import.meta.glob('./**/*.astro', { eager: true });
+const blogPosts = await getCollection('blog');
+
+const pages = generateSitemapPages({
+  siteUrl: env.PUBLIC_SITE_URL,
+  pageModules,
+  blogPosts, // Optional: only for packages with blog
+});
+
+const sitemap = generateSitemapXML(pages, env.PUBLIC_SITE_URL);
+```
+
+**Customization:**
+
+Edit `packages/shared/src/utils/sitemap.ts` to adjust:
+- Default priority values
+- Changefreq settings
+- URL filtering logic
+- lastmod date handling
+
+**Output:** `/sitemap.xml` (available at `https://yourdomain.com/sitemap.xml`)
+
 ## 🎨 Tech Stack
 
 | Technology | Version | Purpose |

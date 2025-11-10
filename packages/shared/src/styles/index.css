@@ -3,28 +3,30 @@
    ======================================== */
 
 /* Import Inter font with optimized performance */
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+/* Import design system modules */
+@import "./variables.css";
+@import "./animations.css";
+@import "./utilities.css";
 
 /* Override font-display for Inter font */
 @font-face {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-display: swap;
 }
-
-/* Import design system modules */
-@import './variables.css';
-@import './animations.css';
-@import './utilities.css';
 
 /* Base Styles */
 body {
   font-family: var(--font-family-base);
   color: var(--color-text-primary);
   background: var(--gradient-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Ensure smooth scrolling */

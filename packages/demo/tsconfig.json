@@ -5,7 +5,8 @@
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./src/*"],
-      "public/*": ["./public/*"]
+      "public/*": ["./public/*"],
+      "@shared/*": ["../shared/src/*"]
     },
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
@@ -15,7 +16,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "ignoreDeprecations": "5.0"
   },
   "include": ["src/**/*", "astro.config.mjs"],
   "exclude": ["node_modules", "dist"]
