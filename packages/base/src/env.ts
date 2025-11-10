@@ -34,8 +34,7 @@ function parseEnv() {
   const parsed = envSchema.safeParse(import.meta.env);
 
   if (!parsed.success) {
-    // @ts-ignore - format() is deprecated but still the recommended way for error display
-    console.error('❌ Invalid environment variables:', parsed.error.format());
+    console.error('❌ Invalid environment variables:', parsed.error.issues);
     throw new Error('Invalid environment variables');
   }
 
