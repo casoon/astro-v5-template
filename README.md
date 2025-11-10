@@ -50,7 +50,7 @@ curl https://get.volta.sh | bash
 volta install pnpm
 ```
 
-Volta automatically uses Node.js 22.21.0 and pnpm 9.15.4 (defined in `package.json`).
+Volta automatically uses Node.js 24.11.0 and pnpm 9.15.4 (defined in `package.json` and `.nvmrc`).
 
 ### Install & Run
 
@@ -501,9 +501,18 @@ pnpm build:base
 ### Supported Platforms
 - Vercel
 - Netlify
-- Cloudflare Pages
+- Cloudflare Pages (Node.js version pinned via `.nvmrc`)
 - GitHub Pages
 - Any static host
+
+### Node.js Version Control
+
+The project uses Node.js 24.11.0 (LTS). Version is controlled via:
+- `.nvmrc` - For nvm, Volta, and Cloudflare Pages
+- `.node-version` - For asdf and other version managers
+- `package.json` engines field - For npm/pnpm version checks
+
+Cloudflare Pages will automatically use the version specified in `.nvmrc`.
 
 ## 🔧 Troubleshooting
 
@@ -524,8 +533,14 @@ pnpm install
 ```bash
 # Volta manages versions automatically
 # Just ensure Volta is installed
-volta install node@22.21.0
+volta install node@24.11.0
 volta install pnpm
+
+# Or use nvm
+nvm use
+
+# Or use asdf
+asdf install
 ```
 
 ### Shared styles not updating
