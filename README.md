@@ -384,6 +384,81 @@ Edit `packages/shared/src/utils/sitemap.ts` to adjust:
 
 **Output:** `/sitemap.xml` (available at `https://yourdomain.com/sitemap.xml`)
 
+## 🖼️ Image Optimization
+
+### Automatic WebP/AVIF Generation
+
+The template includes a powerful image optimization system that generates optimized images at build-time:
+
+**Folder Structure:**
+```
+public/
+├── images/              # Original images (source of truth)
+│   ├── hero.jpg
+│   └── blog/
+│       └── post.jpg
+│
+└── images-optimized/    # Generated (committed to git)
+    ├── hero-400w.webp
+    ├── hero-800w.webp
+    ├── hero-1200w.webp
+    ├── hero-400w.avif
+    └── ...
+```
+
+**Generate Optimized Images:**
+```bash
+# Run this only when adding NEW images
+pnpm optimize-images
+```
+
+**Use OptimizedImage Component:**
+```astro
+---
+import OptimizedImage from '@shared/components/OptimizedImage.astro';
+---
+
+<OptimizedImage 
+  src="/images/hero.jpg"
+  alt="Hero image"
+  sizes="(max-width: 768px) 100vw, 800px"
+  loading="lazy"
+/>
+```
+
+**Generated Output:**
+```html
+<picture>
+  <source type="image/avif" srcset="...400w, ...800w, ...1200w" />
+  <source type="image/webp" srcset="...400w, ...800w, ...1200w" />
+  <img src="/images-optimized/hero.jpg" alt="Hero image" />
+</picture>
+```
+
+**Features:**
+- ✅ 60-80% smaller file sizes (WebP/AVIF vs JPEG)
+- ✅ Automatic format selection by browser
+- ✅ Responsive images with srcset
+- ✅ Multiple sizes: 400w, 800w, 1200w
+- ✅ Build-time optimization (no runtime cost)
+- ✅ Cloudflare Pages compatible
+
+**Configuration:**
+
+Edit `scripts/optimize-images.mjs` to customize:
+- Widths: `[400, 800, 1200]`
+- Formats: `['webp', 'avif']`
+- Quality settings
+- Input/Output directories
+
+**Workflow:**
+1. Add images to `/public/images/`
+2. Run `pnpm optimize-images`
+3. Commit optimized images to git
+4. Use `<OptimizedImage>` component in your pages
+
+**Test Page:** Visit `/image-test` to see examples
+
 ## 🎨 Tech Stack
 
 | Technology | Version | Purpose |
