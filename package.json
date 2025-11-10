@@ -27,6 +27,8 @@
     "preview": "pnpm --filter @astro-v5/demo preview",
     "preview:base": "pnpm --filter @astro-v5/base preview",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "optimize-images:demo": "node scripts/optimize-images.mjs demo",
+    "optimize-images:base": "node scripts/optimize-images.mjs base",
     "clean": "pnpm -r clean && rm -rf node_modules",
     "clean:images": "rm -rf packages/*/public/images-optimized",
     "format": "pnpm -r format",

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-import sharp from 'sharp';
-import { readdir, mkdir, stat, writeFile } from 'fs/promises';
-import { join, dirname, basename, extname, relative } from 'path';
-import { fileURLToPath } from 'url';
+import sharp from "sharp";
+import { readdir, mkdir, stat, writeFile } from "fs/promises";
+import { join, dirname, basename, extname, relative } from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = join(__dirname, '..');
+const ROOT_DIR = join(__dirname, "..");
 
 // Configuration
 const CONFIG = {
-  inputDir: 'public/images',
-  outputDir: 'public/images-optimized',
+  inputDir: "public/images",
+  outputDir: "public/images-optimized",
   widths: [400, 800, 1200],
-  formats: ['webp', 'avif'],
+  formats: ["webp", "avif"],
   quality: {
     webp: 80,
     avif: 75,
@@ -33,13 +33,13 @@ async function getImageFiles(dir, baseDir = dir) {
     const fullPath = join(dir, entry.name);
 
     if (entry.isDirectory()) {
-      files.push(...await getImageFiles(fullPath, baseDir));
+      files.push(...(await getImageFiles(fullPath, baseDir)));
     } else if (entry.isFile()) {
       const ext = extname(entry.name).toLowerCase();
-      if (['.jpg', '.jpeg', '.png'].includes(ext)) {
+      if ([".jpg", ".jpeg", ".png"].includes(ext)) {
         // Skip if matches skip patterns
-        const shouldSkip = CONFIG.skipPatterns.some(pattern =>
-          pattern.test(entry.name)
+        const shouldSkip = CONFIG.skipPatterns.some((pattern) =>
+          pattern.test(entry.name),
         );
         if (!shouldSkip) {
           files.push({
@@ -97,7 +97,10 @@ async function optimizeImage(file, inputBaseDir, outputBaseDir) {
 
         console.log(`  ✅ ${width}w ${format.toUpperCase()}`);
       } catch (error) {
-        console.error(`  ❌ Failed ${width}w ${format.toUpperCase()}:`, error.message);
+        console.error(
+          `  ❌ Failed ${width}w ${format.toUpperCase()}:`,
+          error.message,
+        );
       }
     }
   }
@@ -112,7 +115,7 @@ async function optimizeImage(file, inputBaseDir, outputBaseDir) {
       .toFile(fallbackPath);
 
     results.push({
-      format: 'original',
+      format: "original",
       width: metadata.width,
       path: fallbackPath,
       relativePath: relative(outputBaseDir, fallbackPath),
@@ -136,7 +139,7 @@ async function generateManifest(optimizedImages, outputBaseDir) {
     manifest[originalPath] = variants;
   }
 
-  const manifestPath = join(outputBaseDir, 'manifest.json');
+  const manifestPath = join(outputBaseDir, "manifest.json");
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log(`\n📄 Manifest generated: ${manifestPath}`);
@@ -146,13 +149,23 @@ async function generateManifest(optimizedImages, outputBaseDir) {
  * Main function
  */
 async function main() {
-  console.log('🚀 Starting image optimization...\n');
+  // Get package filter from command line argument
+  const packageFilter = process.argv[2];
+
+  console.log("🚀 Starting image optimization...\n");
+  if (packageFilter) {
+    console.log(`📦 Filter: Only processing package "${packageFilter}"\n`);
+  }
 
   // Find all packages with images
-  const packagesDir = join(ROOT_DIR, 'packages');
+  const packagesDir = join(ROOT_DIR, "packages");
   const packages = await readdir(packagesDir);
 
   for (const pkg of packages) {
+    // Skip if package filter is set and doesn't match
+    if (packageFilter && pkg !== packageFilter) {
+      continue;
+    }
     const pkgDir = join(packagesDir, pkg);
     const inputDir = join(pkgDir, CONFIG.inputDir);
     const outputDir = join(pkgDir, CONFIG.outputDir);
@@ -192,11 +205,11 @@ async function main() {
     console.log(`\n✅ Package ${pkg} complete!\n`);
   }
 
-  console.log('🎉 All images optimized successfully!');
+  console.log("🎉 All images optimized successfully!");
 }
 
 // Run
-main().catch(error => {
-  console.error('❌ Error:', error);
+main().catch((error) => {
+  console.error("❌ Error:", error);
   process.exit(1);
 });
