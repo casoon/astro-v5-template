@@ -1,9 +1,9 @@
-import type { APIRoute } from 'astro';
-import { env } from '@/env';
 import {
   generateSitemapPages,
   generateSitemapXML,
 } from '@shared/utils/sitemap';
+import type { APIRoute } from 'astro';
+import { env } from '@/env';
 
 // Dynamically import all .astro pages
 const pageModules = import.meta.glob('./**/*.astro', { eager: true });

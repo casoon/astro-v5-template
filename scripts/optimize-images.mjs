@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 import sharp from "sharp";
-import { readdir, mkdir, stat, writeFile } from "fs/promises";
-import { join, dirname, basename, extname, relative } from "path";
-import { fileURLToPath } from "url";
+import { readdir, mkdir, stat, writeFile } from "node:fs/promises";
+import { join, dirname, basename, extname, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, "..");
