@@ -81,7 +81,11 @@ pnpm dev:base
 | `pnpm build:demo` | Build demo only |
 | `pnpm preview` | Preview demo build |
 | `pnpm preview:base` | Preview base build |
+| `pnpm optimize-images` | Optimize images for all packages |
+| `pnpm optimize-images:demo` | Optimize images for demo only |
+| `pnpm optimize-images:base` | Optimize images for base only |
 | `pnpm clean` | Clean all packages |
+| `pnpm clean:images` | Remove all optimized images |
 | `pnpm format` | Format all code |
 | `pnpm check` | Run all checks |
 
@@ -342,16 +346,17 @@ See full list in `packages/shared/README.md`.
 
 ### Custom Sitemap Implementation
 
-Each package includes a custom sitemap generator that uses shared utilities from `@shared/utils/sitemap`:
+Each package includes a **custom sitemap generator** (not using @astrojs/sitemap) for full control over SEO parameters.
 
 **Location:**
 - `packages/demo/src/pages/sitemap.xml.ts`
 - `packages/base/src/pages/sitemap.xml.ts`
+- Shared utilities: `@shared/utils/sitemap`
 
-**Features:**
+**Advantages:**
+- ✅ Full control over `priority`, `changefreq`, and `lastmod`
 - ✅ Automatically scans all `.astro` pages
 - ✅ Supports blog posts via Content Collections (demo package)
-- ✅ Configurable priority and changefreq per page
 - ✅ Uses `env.PUBLIC_SITE_URL` from environment config
 - ✅ Generates `sitemap.xml` at build time
 
@@ -388,7 +393,7 @@ Edit `packages/shared/src/utils/sitemap.ts` to adjust:
 
 ### Automatic WebP/AVIF Generation
 
-The template includes a powerful image optimization system that generates optimized images at build-time:
+The template includes a powerful image optimization system that generates optimized images at **build-time**.
 
 **Folder Structure:**
 ```
@@ -408,9 +413,16 @@ public/
 
 **Generate Optimized Images:**
 ```bash
-# Run this only when adding NEW images
-pnpm optimize-images
+# Only run when adding NEW images
+pnpm optimize-images              # All packages
+pnpm optimize-images:demo         # Demo package only
+pnpm optimize-images:base         # Base package only
 ```
+
+**Important:** Optimized images are **committed to git** (not regenerated at build time). This ensures:
+- Faster CI/CD builds
+- Consistent output across environments
+- Works on Cloudflare Pages and other static hosts
 
 **Use OptimizedImage Component:**
 ```astro
@@ -426,38 +438,30 @@ import OptimizedImage from '@shared/components/OptimizedImage.astro';
 />
 ```
 
-**Generated Output:**
-```html
-<picture>
-  <source type="image/avif" srcset="...400w, ...800w, ...1200w" />
-  <source type="image/webp" srcset="...400w, ...800w, ...1200w" />
-  <img src="/images-optimized/hero.jpg" alt="Hero image" />
-</picture>
-```
+**Component Props:**
+- `src` - Path to original image in `/images/`
+- `alt` - Alt text (required)
+- `widths` - Responsive widths (default: `[400, 800, 1200]`)
+- `sizes` - Sizes attribute for responsive images
+- `loading` - Lazy loading (`lazy` | `eager`)
+- `fetchpriority` - Priority hint (`high` | `low` | `auto`)
+- `class` - CSS classes
 
 **Features:**
-- ✅ 60-80% smaller file sizes (WebP/AVIF vs JPEG)
+- ✅ 60-80% smaller file sizes (WebP/AVIF vs JPEG/PNG)
 - ✅ Automatic format selection by browser
 - ✅ Responsive images with srcset
-- ✅ Multiple sizes: 400w, 800w, 1200w
+- ✅ Multiple sizes: 400w, 800w, 1200w (configurable)
 - ✅ Build-time optimization (no runtime cost)
 - ✅ Cloudflare Pages compatible
 
-**Configuration:**
-
-Edit `scripts/optimize-images.mjs` to customize:
-- Widths: `[400, 800, 1200]`
-- Formats: `['webp', 'avif']`
-- Quality settings
-- Input/Output directories
-
 **Workflow:**
-1. Add images to `/public/images/`
-2. Run `pnpm optimize-images`
+1. Add images to `/public/images/` (original JPG/PNG)
+2. Run `pnpm optimize-images` (or package-specific command)
 3. Commit optimized images to git
 4. Use `<OptimizedImage>` component in your pages
 
-**Test Page:** Visit `/image-test` to see examples
+**Customization:** Edit `scripts/optimize-images.mjs` to change widths, formats, or quality settings.
 
 ## 🎨 Tech Stack
 
@@ -467,6 +471,7 @@ Edit `scripts/optimize-images.mjs` to customize:
 | **Tailwind CSS** | 4.1.17 | Utility-first CSS |
 | **Svelte** | 5.43.5 | Reactive components |
 | **TypeScript** | 5.9.3 | Type safety |
+| **Sharp** | 0.34.5 | Image optimization |
 | **pnpm** | 9.15.4 | Package manager |
 | **Volta** | - | Node.js version manager |
 | **Biome** | 2.3.4 | Linter & formatter |
