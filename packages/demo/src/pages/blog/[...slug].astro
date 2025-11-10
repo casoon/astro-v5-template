@@ -1,6 +1,7 @@
 ---
 import { getAllPostsForPaths } from '@/utils/blog';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import OptimizedImage from '@shared/components/OptimizedImage.astro';
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -40,7 +41,7 @@ const { Content } = await post.render();
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold cs-gradient-text cs-gradient-animate mb-8 text-center">
 					{post.data.title}
 				</h1>
-				
+
 				<!-- Meta Information with Atlas styling -->
 				<div class="flex flex-wrap items-center justify-center gap-8 text-sm opacity-80 mb-6">
 					{post.data.date && (
@@ -66,7 +67,7 @@ const { Content } = await post.render();
 						</div>
 					)}
 				</div>
-				
+
 				<!-- Tags with Atlas styling -->
 				{post.data.tags && post.data.tags.length > 0 && (
 					<div class="flex flex-wrap gap-3 justify-center">
@@ -92,9 +93,10 @@ const { Content } = await post.render();
 			{post.data.image && (
 				<div class="relative group mb-12">
 					<div class="cs-glass p-2 rounded-3xl">
-						<img 
-							src={post.data.image} 
+						<OptimizedImage
+							src={post.data.image}
 							alt={post.data.title}
+							sizes="(max-width: 768px) 100vw, 1200px"
 							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
 							loading="lazy"
 						/>
@@ -137,13 +139,13 @@ const { Content } = await post.render();
 					<div class="cs-orb cs-orb-xs animate-pulse"></div>
 					<div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
 				</div>
-				
+
 				<p class="text-gray-600 dark:text-gray-300 mb-6">
 					Danke fürs Lesen! Entdecke weitere Artikel in unserem Blog.
 				</p>
-				
-				<a 
-					href="/blog/" 
+
+				<a
+					href="/blog/"
 					class="inline-flex items-center gap-3 cs-glass px-6 py-3 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1 cs-gradient-text font-semibold"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,7 +164,7 @@ const { Content } = await post.render();
 		// Counter demo
 		const counterButton = document.getElementById('demo-counter');
 		const counterSpan = document.getElementById('counter');
-		
+
 		if (counterButton && counterSpan) {
 			let count = 0;
 			counterButton.addEventListener('click', function() {
@@ -176,20 +178,20 @@ const { Content } = await post.render();
 		const slideBtn = document.getElementById('slide-btn');
 		const resetBtn = document.getElementById('reset-btn');
 		const demoElement = document.getElementById('demo-element');
-		
+
 		if (fadeBtn && demoElement) {
 			fadeBtn.addEventListener('click', function() {
 				demoElement.style.opacity = '0.3';
 				demoElement.style.transform = 'scale(0.8)';
 			});
 		}
-		
+
 		if (slideBtn && demoElement) {
 			slideBtn.addEventListener('click', function() {
 				demoElement.style.transform = 'translateX(100px) rotate(45deg)';
 			});
 		}
-		
+
 		if (resetBtn && demoElement) {
 			resetBtn.addEventListener('click', function() {
 				demoElement.style.opacity = '1';
@@ -201,7 +203,7 @@ const { Content } = await post.render();
 		const colorBtn = document.getElementById('color-btn');
 		const sizeBtn = document.getElementById('size-btn');
 		const demoBox = document.getElementById('demo-box');
-		
+
 		if (colorBtn && demoBox) {
 			colorBtn.addEventListener('click', function() {
 				const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-yellow-500'];
@@ -211,7 +213,7 @@ const { Content } = await post.render();
 				demoBox.className = demoBox.className.replace(/bg-\w+-500/, colors[nextIndex]);
 			});
 		}
-		
+
 		if (sizeBtn && demoBox) {
 			sizeBtn.addEventListener('click', function() {
 				const sizes = ['w-32 h-32', 'w-40 h-40', 'w-48 h-48', 'w-32 h-32'];
@@ -222,4 +224,4 @@ const { Content } = await post.render();
 			});
 		}
 	});
-</script> 
+</script>
