@@ -31,7 +31,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "node ../../scripts/validate-config.mjs . && astro check && astro build",
     "build:fast": "astro build",
     "preview": "astro preview",
     "clean": "rm -rf dist .astro node_modules/.cache",

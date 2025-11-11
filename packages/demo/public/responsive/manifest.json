@@ -1,0 +1,138 @@
+{
+  "img01.jpg": [
+    {
+      "format": "webp",
+      "width": 378,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-378w.webp",
+      "relativePath": "img01-378w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 378,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-378w.avif",
+      "relativePath": "img01-378w.avif"
+    },
+    {
+      "format": "webp",
+      "width": 400,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-400w.webp",
+      "relativePath": "img01-400w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 400,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-400w.avif",
+      "relativePath": "img01-400w.avif"
+    },
+    {
+      "format": "webp",
+      "width": 756,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-756w.webp",
+      "relativePath": "img01-756w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 756,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-756w.avif",
+      "relativePath": "img01-756w.avif"
+    },
+    {
+      "format": "webp",
+      "width": 800,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-800w.webp",
+      "relativePath": "img01-800w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 800,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-800w.avif",
+      "relativePath": "img01-800w.avif"
+    },
+    {
+      "format": "webp",
+      "width": 1200,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-1200w.webp",
+      "relativePath": "img01-1200w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 1200,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-1200w.avif",
+      "relativePath": "img01-1200w.avif"
+    },
+    {
+      "format": "original",
+      "width": 2000,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01.jpg",
+      "relativePath": "img01.jpg"
+    }
+  ],
+  "img01.webp": [
+    {
+      "format": "webp",
+      "width": 378,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-378w.webp",
+      "relativePath": "img01-378w.webp"
+    },
+    {
+      "format": "webp",
+      "width": 400,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-400w.webp",
+      "relativePath": "img01-400w.webp"
+    },
+    {
+      "format": "webp",
+      "width": 756,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-756w.webp",
+      "relativePath": "img01-756w.webp"
+    },
+    {
+      "format": "webp",
+      "width": 800,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-800w.webp",
+      "relativePath": "img01-800w.webp"
+    },
+    {
+      "format": "webp",
+      "width": 1200,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-1200w.webp",
+      "relativePath": "img01-1200w.webp"
+    },
+    {
+      "format": "avif",
+      "width": 378,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-378w.avif",
+      "relativePath": "img01-378w.avif"
+    },
+    {
+      "format": "avif",
+      "width": 400,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-400w.avif",
+      "relativePath": "img01-400w.avif"
+    },
+    {
+      "format": "avif",
+      "width": 756,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-756w.avif",
+      "relativePath": "img01-756w.avif"
+    },
+    {
+      "format": "avif",
+      "width": 800,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-800w.avif",
+      "relativePath": "img01-800w.avif"
+    },
+    {
+      "format": "avif",
+      "width": 1200,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01-1200w.avif",
+      "relativePath": "img01-1200w.avif"
+    },
+    {
+      "format": "webp-original",
+      "width": 2000,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/demo/public/responsive/img01.webp",
+      "relativePath": "img01.webp"
+    }
+  ]
+}

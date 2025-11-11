@@ -2,12 +2,13 @@ import mdx from '@astrojs/mdx';
 import svelte from '@astrojs/svelte';
 import tailwind from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
+import { env } from './src/env.ts';
 
 // Astro configuration
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
-  // IMPORTANT: Update this to your domain for production
-  site: 'https://astrov5.casoon.dev',
+  // Site URL from environment configuration (single source of truth)
+  site: env.PUBLIC_SITE_URL,
 
   // Integrations extend Astro with custom functionality
   integrations: [

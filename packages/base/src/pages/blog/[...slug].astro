@@ -1,6 +1,13 @@
 ---
 import { getAllPostsForPaths } from '@/utils/blog';
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import '@shared/styles/index.css';
+import '@/styles/tailwind.css';
+import '@/styles/global.css';
+import ThemeToggle from '@/components/ThemeToggle.svelte';
+import Toast from '@/components/Toast.astro';
+import WebVitals from '@/components/WebVitals.astro';
+import BlogSEO from '@astro-v5/shared/components/seo/BlogSEO.astro';
+import { env } from '@/env';
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,9 +21,68 @@ interface Props {
 const { post } = Astro.props as Props;
 // biome-ignore lint/correctness/noUnusedVariables: Content wird im Astro-Template verwendet
 const { Content } = await post.render();
+
+const siteName = env.PUBLIC_SITE_NAME;
+const slug = post.slug || post.id;
 ---
 
-<BaseLayout>
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+<script is:inline>
+  // Theme initialization
+  (function() {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const html = document.documentElement;
+
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.classList.remove('dark');
+      html.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{post.data.title} | {siteName}</title>
+
+	<!-- Blog SEO Component - Pass available fields, missing fields are gracefully omitted -->
+	<BlogSEO
+		title={post.data.title}
+		description={post.data.description}
+		publishDate={post.data.date}
+		slug={slug}
+		author={post.data.author}
+		category={post.data.tags?.[0]}
+		image={post.data.image}
+		keywords={post.data.tags}
+		siteName={siteName}
+	/>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml">
+
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter">
+<header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
+	<nav class="flex justify-between items-center max-w-6xl mx-auto">
+		<ul class="hidden md:flex gap-8 list-none p-0 m-0">
+			<li><a href="/" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Home</a></li>
+			<li><a href="/blog" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Blog</a></li>
+			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Contact</a></li>
+		</ul>
+		<ThemeToggle client:load />
+	</nav>
+</header>
+<main class="flex-1 px-4 sm:px-6 py-8">
+	<div class="max-w-7xl mx-auto">
+
 	<!-- Background with floating orbs -->
 	<div class="fixed inset-0 pointer-events-none overflow-hidden">
 		<div class="cs-orb cs-orb-lg opacity-5 animate-pulse" style="top: 20%; right: 10%; animation-duration: 12s;"></div>
@@ -40,7 +106,7 @@ const { Content } = await post.render();
 				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold cs-gradient-text cs-gradient-animate mb-8 text-center">
 					{post.data.title}
 				</h1>
-				
+
 				<!-- Meta Information with Atlas styling -->
 				<div class="flex flex-wrap items-center justify-center gap-8 text-sm opacity-80 mb-6">
 					{post.data.date && (
@@ -66,7 +132,7 @@ const { Content } = await post.render();
 						</div>
 					)}
 				</div>
-				
+
 				<!-- Tags with Atlas styling -->
 				{post.data.tags && post.data.tags.length > 0 && (
 					<div class="flex flex-wrap gap-3 justify-center">
@@ -92,8 +158,8 @@ const { Content } = await post.render();
 			{post.data.image && (
 				<div class="relative group mb-12">
 					<div class="cs-glass p-2 rounded-3xl">
-						<img 
-							src={post.data.image} 
+						<img
+							src={post.data.image}
 							alt={post.data.title}
 							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
 							loading="lazy"
@@ -137,13 +203,13 @@ const { Content } = await post.render();
 					<div class="cs-orb cs-orb-xs animate-pulse"></div>
 					<div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
 				</div>
-				
+
 				<p class="text-gray-600 dark:text-gray-300 mb-6">
 					Danke fürs Lesen! Entdecke weitere Artikel in unserem Blog.
 				</p>
-				
-				<a 
-					href="/blog/" 
+
+				<a
+					href="/blog/"
 					class="inline-flex items-center gap-3 cs-glass px-6 py-3 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1 cs-gradient-text font-semibold"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +220,16 @@ const { Content } = await post.render();
 			</div>
 		</footer>
 	</article>
-</BaseLayout>
+
+	</div>
+</main>
+<footer class="text-center text-gray-500 dark:text-gray-400 py-4 sm:py-6 px-4">
+	<p>&copy; 2025 {siteName}</p>
+</footer>
+<Toast />
+<WebVitals debug={import.meta.env.DEV} />
+</body>
+</html>
 
 <script>
 	// Demo functionality for blog posts
@@ -162,7 +237,7 @@ const { Content } = await post.render();
 		// Counter demo
 		const counterButton = document.getElementById('demo-counter');
 		const counterSpan = document.getElementById('counter');
-		
+
 		if (counterButton && counterSpan) {
 			let count = 0;
 			counterButton.addEventListener('click', function() {
@@ -176,20 +251,20 @@ const { Content } = await post.render();
 		const slideBtn = document.getElementById('slide-btn');
 		const resetBtn = document.getElementById('reset-btn');
 		const demoElement = document.getElementById('demo-element');
-		
+
 		if (fadeBtn && demoElement) {
 			fadeBtn.addEventListener('click', function() {
 				demoElement.style.opacity = '0.3';
 				demoElement.style.transform = 'scale(0.8)';
 			});
 		}
-		
+
 		if (slideBtn && demoElement) {
 			slideBtn.addEventListener('click', function() {
 				demoElement.style.transform = 'translateX(100px) rotate(45deg)';
 			});
 		}
-		
+
 		if (resetBtn && demoElement) {
 			resetBtn.addEventListener('click', function() {
 				demoElement.style.opacity = '1';
@@ -201,7 +276,7 @@ const { Content } = await post.render();
 		const colorBtn = document.getElementById('color-btn');
 		const sizeBtn = document.getElementById('size-btn');
 		const demoBox = document.getElementById('demo-box');
-		
+
 		if (colorBtn && demoBox) {
 			colorBtn.addEventListener('click', function() {
 				const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-yellow-500'];
@@ -211,7 +286,7 @@ const { Content } = await post.render();
 				demoBox.className = demoBox.className.replace(/bg-\w+-500/, colors[nextIndex]);
 			});
 		}
-		
+
 		if (sizeBtn && demoBox) {
 			sizeBtn.addEventListener('click', function() {
 				const sizes = ['w-32 h-32', 'w-40 h-40', 'w-48 h-48', 'w-32 h-32'];
@@ -222,4 +297,4 @@ const { Content } = await post.render();
 			});
 		}
 	});
-</script> 
+</script>

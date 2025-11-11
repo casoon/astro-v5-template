@@ -1,0 +1,185 @@
+---
+/**
+ * PageSEO Component - Comprehensive but Graceful
+ *
+ * Accepts all SEO props for maximum control, but gracefully handles missing values.
+ * Missing values are simply omitted from output (no errors, no placeholder text).
+ *
+ * Minimal usage:
+ * ```astro
+ * <PageSEO title="About Us" />
+ * ```
+ *
+ * Full usage with all options:
+ * ```astro
+ * <PageSEO
+ *   title="About Us"
+ *   description="Learn about our company"
+ *   keywords={["company", "about", "team"]}
+ *   image="/og-about.jpg"
+ *   author="John Doe"
+ *   siteName="My Company"
+ *   twitterHandle="mycompany"
+ *   locale="en-US"
+ *   lastmod={new Date()}
+ * />
+ * ```
+ */
+
+export interface Props {
+  /** Page title - REQUIRED */
+  title: string;
+  /** Page description (if not provided, uses title) */
+  description?: string;
+  /** Last modified date */
+  lastmod?: string | Date;
+  /** Open Graph image URL */
+  image?: string;
+  /** SEO keywords */
+  keywords?: string[];
+  /** Author name */
+  author?: string;
+  /** Site name for Open Graph */
+  siteName?: string;
+  /** Twitter handle (without @) */
+  twitterHandle?: string;
+  /** Locale (default: en-US) */
+  locale?: string;
+}
+
+const {
+  title,
+  description,
+  lastmod,
+  image,
+  keywords = [],
+  author,
+  siteName,
+  twitterHandle,
+  locale = 'en-US',
+} = Astro.props;
+
+// Get site URL from Astro config or current request
+const siteUrl = Astro.site ?? Astro.url;
+const baseOrigin = siteUrl.origin.replace(/\/$/, '');
+
+// Current path and canonical URL
+const currentPath = Astro.url.pathname;
+const pageUrl = new URL(currentPath, siteUrl).toString();
+
+// Use description or fall back to title
+const pageDescription = description || title;
+
+// Convert date to ISO format
+const convertToISODate = (dateInput?: string | Date): string => {
+  if (!dateInput) return new Date().toISOString().split('T')[0];
+  if (dateInput instanceof Date) {
+    return dateInput.toISOString().split('T')[0];
+  }
+  if (dateInput.match(/^\d{2}\.\d{2}\.\d{4}$/)) {
+    const [day, month, year] = dateInput.split('.');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  }
+  if (dateInput.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    return dateInput;
+  }
+  return dateInput;
+};
+
+const isoDate = convertToISODate(lastmod);
+
+// Build keywords string only if keywords provided
+const keywordsString = keywords.length > 0 ? keywords.join(', ') : undefined;
+
+// JSON-LD Schema for WebPage (only include provided fields)
+const webpageSchema: any = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description: pageDescription,
+  url: pageUrl,
+  dateModified: isoDate,
+  inLanguage: locale.replace('_', '-'),
+  isAccessibleForFree: true,
+};
+
+// Only add author if provided
+if (author) {
+  webpageSchema.author = {
+    '@type': 'Person',
+    name: author,
+    url: baseOrigin,
+  };
+}
+
+// Only add publisher if siteName provided
+if (siteName) {
+  webpageSchema.publisher = {
+    '@type': 'Organization',
+    name: siteName,
+    url: baseOrigin,
+  };
+}
+
+// BreadcrumbList Schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: baseOrigin,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: title,
+      item: pageUrl,
+    },
+  ],
+};
+
+// Open Graph image (only if provided, otherwise use favicon as fallback)
+const ogImage = image
+  ? image.startsWith('http')
+    ? image
+    : `${baseOrigin}${image}`
+  : `${baseOrigin}/favicon.svg`;
+
+// Twitter handle formatting (only if provided)
+const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : undefined;
+---
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(webpageSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<!-- Meta Tags for SEO -->
+<meta name="description" content={pageDescription} />
+{keywordsString && <meta name="keywords" content={keywordsString} />}
+{author && <meta name="author" content={author} />}
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:url" content={pageUrl} />
+{siteName && <meta property="og:site_name" content={siteName} />}
+<meta property="og:locale" content={locale} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={pageDescription} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+{twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
+{twitterCreator && <meta name="twitter:site" content={twitterCreator} />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={pageUrl} />

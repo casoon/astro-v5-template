@@ -1,0 +1,258 @@
+---
+/**
+ * BlogSEO Component - Comprehensive but Graceful
+ *
+ * Accepts all blog/article SEO props, gracefully handles missing values.
+ * Missing optional values are omitted from output (no errors, no placeholders).
+ *
+ * Minimal usage:
+ * ```astro
+ * <BlogSEO
+ *   title="My Post"
+ *   publishDate={new Date()}
+ *   slug="my-post"
+ * />
+ * ```
+ *
+ * Full usage with all options:
+ * ```astro
+ * <BlogSEO
+ *   title="My Post"
+ *   description="Post description"
+ *   publishDate={new Date()}
+ *   lastmod={new Date()}
+ *   slug="my-post"
+ *   author="John Doe"
+ *   category="Tutorial"
+ *   readingTime="5 min"
+ *   image="/blog/my-post.jpg"
+ *   keywords={["astro", "tutorial"]}
+ *   siteName="My Blog"
+ *   twitterHandle="myblog"
+ * />
+ * ```
+ */
+
+export interface Props {
+  /** Article title - REQUIRED */
+  title: string;
+  /** Publication date - REQUIRED */
+  publishDate: Date | string;
+  /** Article slug - REQUIRED */
+  slug: string;
+  /** Article description (if not provided, uses title) */
+  description?: string;
+  /** Last modified date (defaults to publishDate if not provided) */
+  lastmod?: Date | string;
+  /** Article author name */
+  author?: string;
+  /** Article category/section */
+  category?: string;
+  /** Reading time (e.g., "5 min") */
+  readingTime?: string;
+  /** Article cover image URL */
+  image?: string;
+  /** Article-specific keywords */
+  keywords?: string[];
+  /** Site name for Open Graph */
+  siteName?: string;
+  /** Twitter handle (without @) */
+  twitterHandle?: string;
+  /** Locale (default: en-US) */
+  locale?: string;
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  lastmod,
+  slug,
+  author,
+  category,
+  readingTime,
+  image,
+  keywords = [],
+  siteName,
+  twitterHandle,
+  locale = 'en-US',
+} = Astro.props;
+
+// Get site URL from Astro config or current request
+const siteUrl = Astro.site ?? Astro.url;
+const baseOrigin = siteUrl.origin.replace(/\/$/, '');
+
+// Build article URL
+const articleUrl = `${baseOrigin}/blog/${slug}`;
+
+// Use description or fall back to title
+const articleDescription = description || title;
+
+// Convert date to ISO format
+const convertToISODate = (dateInput: string | Date): string => {
+  if (!dateInput) return new Date().toISOString().split('T')[0];
+  if (dateInput instanceof Date) {
+    return dateInput.toISOString().split('T')[0];
+  }
+  if (dateInput.match(/^\d{2}\.\d{2}\.\d{4}$/)) {
+    const [day, month, year] = dateInput.split('.');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  }
+  if (dateInput.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    return dateInput;
+  }
+  return dateInput;
+};
+
+const publishedDate = convertToISODate(publishDate);
+const modifiedDate = lastmod ? convertToISODate(lastmod) : publishedDate;
+
+// Extract reading time in minutes (if provided)
+const readingMinutes = readingTime ? parseInt(readingTime.split(' ')[0]) || 5 : undefined;
+const estimatedWords = readingMinutes ? readingMinutes * 200 : undefined;
+
+// Build keywords (include category if provided)
+const articleKeywords = category ? [category, ...keywords] : keywords;
+const keywordsString = articleKeywords.length > 0 ? articleKeywords.join(', ') : undefined;
+
+// JSON-LD Schema for Article (only include provided fields)
+const articleSchema: any = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description: articleDescription,
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': articleUrl,
+  },
+  inLanguage: locale.replace('_', '-'),
+  isAccessibleForFree: true,
+};
+
+// Only add author if provided
+if (author) {
+  articleSchema.author = {
+    '@type': 'Person',
+    name: author,
+    url: baseOrigin,
+  };
+}
+
+// Only add publisher if siteName provided
+if (siteName) {
+  articleSchema.publisher = {
+    '@type': 'Organization',
+    name: siteName,
+    url: baseOrigin,
+  };
+}
+
+// Only add category if provided
+if (category) {
+  articleSchema.articleSection = category;
+}
+
+// Only add keywords if provided
+if (articleKeywords.length > 0) {
+  articleSchema.keywords = articleKeywords;
+}
+
+// Only add word count if reading time provided
+if (estimatedWords) {
+  articleSchema.wordCount = estimatedWords;
+}
+
+// Only add reading time if provided
+if (readingMinutes) {
+  articleSchema.timeRequired = `PT${readingMinutes}M`;
+}
+
+// Only add image if provided
+if (image) {
+  articleSchema.image = {
+    '@type': 'ImageObject',
+    url: image.startsWith('http') ? image : `${baseOrigin}${image}`,
+  };
+}
+
+// BreadcrumbList Schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: baseOrigin,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${baseOrigin}/blog`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: title,
+      item: articleUrl,
+    },
+  ],
+};
+
+// Open Graph image (only if provided, otherwise use favicon)
+const ogImage = image
+  ? image.startsWith('http')
+    ? image
+    : `${baseOrigin}${image}`
+  : `${baseOrigin}/favicon.svg`;
+
+// Twitter handle formatting (only if provided)
+const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : undefined;
+---
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<!-- Meta Tags for SEO -->
+<meta name="description" content={articleDescription} />
+{keywordsString && <meta name="keywords" content={keywordsString} />}
+{author && <meta name="author" content={author} />}
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={articleDescription} />
+<meta property="og:url" content={articleUrl} />
+{siteName && <meta property="og:site_name" content={siteName} />}
+<meta property="og:locale" content={locale} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+
+<!-- Article-specific Open Graph Tags (only if provided) -->
+{author && <meta property="article:author" content={author} />}
+<meta property="article:published_time" content={publishedDate} />
+<meta property="article:modified_time" content={modifiedDate} />
+{category && <meta property="article:section" content={category} />}
+{category && <meta property="article:tag" content={category} />}
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={articleDescription} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+{twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
+{twitterCreator && <meta name="twitter:site" content={twitterCreator} />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={articleUrl} />
+
+<!-- Reading Time Metadata (only if provided) -->
+{readingTime && <meta name="reading-time" content={readingTime} />}
+{readingMinutes && <meta name="estimated-reading-time" content={`${readingMinutes} minutes`} />}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import sharp from "sharp";
-import { readdir, mkdir, stat, writeFile } from "node:fs/promises";
+import { readdir, mkdir, stat, writeFile, copyFile } from "node:fs/promises";
 import { join, dirname, basename, extname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -9,9 +9,9 @@ const ROOT_DIR = join(__dirname, "..");
 
 // Configuration
 const CONFIG = {
-  inputDir: "public/images",
-  outputDir: "public/images-optimized",
-  widths: [400, 800, 1200],
+  inputDir: "src/assets/images",
+  outputDir: "public/responsive",
+  widths: [378, 400, 756, 800, 1200],
   formats: ["webp", "avif"],
   quality: {
     webp: 80,
@@ -36,7 +36,7 @@ async function getImageFiles(dir, baseDir = dir) {
       files.push(...(await getImageFiles(fullPath, baseDir)));
     } else if (entry.isFile()) {
       const ext = extname(entry.name).toLowerCase();
-      if ([".jpg", ".jpeg", ".png"].includes(ext)) {
+      if ([".jpg", ".jpeg", ".png", ".webp", ".svg"].includes(ext)) {
         // Skip if matches skip patterns
         const shouldSkip = CONFIG.skipPatterns.some((pattern) =>
           pattern.test(entry.name),
@@ -47,6 +47,8 @@ async function getImageFiles(dir, baseDir = dir) {
             relativePath: relative(baseDir, fullPath),
             name: basename(entry.name, ext),
             ext,
+            isWebp: ext === ".webp",
+            isSvg: ext === ".svg",
           });
         }
       }
@@ -57,9 +59,137 @@ async function getImageFiles(dir, baseDir = dir) {
 }
 
 /**
+ * Optimize existing WebP file to multiple sizes
+ */
+async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
+  const results = [];
+  const relativeDir = dirname(file.relativePath);
+  const outputDirPath = join(outputBaseDir, relativeDir);
+
+  // Ensure output directory exists
+  await mkdir(outputDirPath, { recursive: true });
+
+  console.log(`📸 Processing: ${file.relativePath}`);
+
+  // Get original image metadata
+  const image = sharp(file.path);
+  const metadata = await image.metadata();
+
+  // Generate different size variants (WebP to WebP)
+  for (const width of CONFIG.widths) {
+    // Skip if width is larger than original
+    if (width > metadata.width) continue;
+
+    const outputName = `${file.name}-${width}w.webp`;
+    const outputPath = join(outputDirPath, outputName);
+
+    try {
+      await sharp(file.path)
+        .resize(width, null, { withoutEnlargement: true })
+        .webp({ quality: CONFIG.quality.webp })
+        .toFile(outputPath);
+
+      results.push({
+        format: "webp",
+        width,
+        path: outputPath,
+        relativePath: relative(outputBaseDir, outputPath),
+      });
+
+      console.log(`  ✅ ${width}w WEBP`);
+    } catch (error) {
+      console.error(`  ❌ Failed ${width}w WEBP:`, error.message);
+    }
+  }
+
+  // Also generate AVIF variants from WebP
+  for (const width of CONFIG.widths) {
+    // Skip if width is larger than original
+    if (width > metadata.width) continue;
+
+    const outputName = `${file.name}-${width}w.avif`;
+    const outputPath = join(outputDirPath, outputName);
+
+    try {
+      await sharp(file.path)
+        .resize(width, null, { withoutEnlargement: true })
+        .avif({ quality: CONFIG.quality.avif })
+        .toFile(outputPath);
+
+      results.push({
+        format: "avif",
+        width,
+        path: outputPath,
+        relativePath: relative(outputBaseDir, outputPath),
+      });
+
+      console.log(`  ✅ ${width}w AVIF`);
+    } catch (error) {
+      console.error(`  ❌ Failed ${width}w AVIF:`, error.message);
+    }
+  }
+
+  // Copy original WebP as fallback
+  const fallbackName = `${file.name}.webp`;
+  const fallbackPath = join(outputDirPath, fallbackName);
+
+  try {
+    await copyFile(file.path, fallbackPath);
+
+    results.push({
+      format: "webp-original",
+      width: metadata.width,
+      path: fallbackPath,
+      relativePath: relative(outputBaseDir, fallbackPath),
+    });
+
+    console.log(`  ✅ Original WebP`);
+  } catch (error) {
+    console.error(`  ❌ Failed original WebP:`, error.message);
+  }
+
+  return results;
+}
+
+/**
+ * Copy SVG file without modification
+ */
+async function copySvgFile(file, inputBaseDir, outputBaseDir) {
+  const relativeDir = dirname(file.relativePath);
+  const outputDirPath = join(outputBaseDir, relativeDir);
+
+  await mkdir(outputDirPath, { recursive: true });
+
+  console.log(`📋 Copying SVG: ${file.relativePath}`);
+
+  const outputPath = join(outputDirPath, `${file.name}.svg`);
+  await copyFile(file.path, outputPath);
+
+  console.log(`  ✅ Copied`);
+
+  return [
+    {
+      format: "svg",
+      path: outputPath,
+      relativePath: relative(outputBaseDir, outputPath),
+    },
+  ];
+}
+
+/**
  * Optimize a single image to multiple formats and sizes
  */
 async function optimizeImage(file, inputBaseDir, outputBaseDir) {
+  // If file is SVG, just copy it
+  if (file.isSvg) {
+    return await copySvgFile(file, inputBaseDir, outputBaseDir);
+  }
+
+  // If file is already WebP, optimize it with size variants
+  if (file.isWebp) {
+    return await optimizeWebPFile(file, inputBaseDir, outputBaseDir);
+  }
+
   const results = [];
   const relativeDir = dirname(file.relativePath);
   const outputDirPath = join(outputBaseDir, relativeDir);

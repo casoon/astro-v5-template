@@ -1,0 +1,39 @@
+---
+import '../styles/global.css';
+import { env } from '../env';
+import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+}
+
+const {
+  title = env.PUBLIC_SITE_NAME,
+  description = 'A modern Astro website',
+  keywords = [],
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+
+    <!-- SEO Component with JSON-LD, Open Graph, Twitter Cards -->
+    <PageSEO
+      title={title}
+      description={description}
+      keywords={keywords}
+      siteName={env.PUBLIC_SITE_NAME}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

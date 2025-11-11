@@ -109,6 +109,58 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
 
+  packages/blank:
+    dependencies:
+      '@astro-v5/shared':
+        specifier: workspace:*
+        version: link:../shared
+      '@astrojs/check':
+        specifier: ^0.9.5
+        version: 0.9.5(prettier-plugin-astro@0.14.1)(prettier@3.6.2)(typescript@5.9.3)
+      '@astrojs/sitemap':
+        specifier: ^3.6.0
+        version: 3.6.0
+      '@casoon/atlas-styles':
+        specifier: ^0.0.5
+        version: 0.0.5
+      '@fontsource/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@tailwindcss/vite':
+        specifier: ^4.1.17
+        version: 4.1.17(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
+      tailwindcss:
+        specifier: ^4.1.17
+        version: 4.1.17
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+      zod:
+        specifier: ^4.1.12
+        version: 4.1.12
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^2.3.4
+        version: 2.3.4
+      astro:
+        specifier: ^5.15.4
+        version: 5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1)
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      prettier-plugin-astro:
+        specifier: ^0.14.1
+        version: 0.14.1
+
   packages/demo:
     dependencies:
       '@astro-v5/shared':

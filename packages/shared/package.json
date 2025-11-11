@@ -7,9 +7,8 @@
   "exports": {
     "./styles/*": "./src/styles/*",
     "./tailwind.config": "./tailwind.config.js",
-    "./utils/sitemap": "./src/utils/sitemap.ts",
-    "./utils": "./src/utils/index.ts",
-    "./components/OptimizedImage.astro": "./src/components/OptimizedImage.astro"
+    "./utils/*": "./src/utils/*",
+    "./components/*": "./src/components/*"
   },
   "files": [
     "src",
