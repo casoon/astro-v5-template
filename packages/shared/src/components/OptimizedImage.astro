@@ -77,24 +77,14 @@ const webpSrcSet = generateSrcSet(basePath, 'webp', widths);
   />
 
   <!-- Fallback - Optimized JPEG/PNG -->
-  {fetchpriority ? (
-    <img
-      src={fallbackSrc}
-      alt={alt}
-      loading={loading}
-      class={className}
-      fetchpriority={fetchpriority}
-      decoding="async"
-    />
-  ) : (
-    <img
-      src={fallbackSrc}
-      alt={alt}
-      loading={loading}
-      class={className}
-      decoding="async"
-    />
-  )}
+  <img
+    src={fallbackSrc}
+    alt={alt}
+    loading={loading}
+    class={className}
+    {...(fetchpriority && { fetchpriority })}
+    decoding="async"
+  />
 </picture>
 
 <style>
