@@ -1,31 +1,11 @@
 import { getCollection } from 'astro:content';
-import {
-  generateSitemapPages,
-  generateSitemapXML,
-} from '@shared/utils/sitemap';
-import type { APIRoute } from 'astro';
+import { createSitemapRoute } from '@astro-v5/shared/utils';
 import { env } from '@/env';
 
-// Dynamically import all .astro pages
 const pageModules = import.meta.glob('./**/*.astro', { eager: true });
 
-export const GET: APIRoute = async () => {
-  // Get blog posts from content collection
-  const blogPosts = await getCollection('blog');
-
-  // Generate sitemap pages
-  const pages = generateSitemapPages({
-    siteUrl: env.PUBLIC_SITE_URL,
-    pageModules,
-    blogPosts,
-  });
-
-  // Generate XML sitemap
-  const sitemap = generateSitemapXML(pages, env.PUBLIC_SITE_URL);
-
-  return new Response(sitemap, {
-    headers: {
-      'Content-Type': 'application/xml; charset=utf-8',
-    },
-  });
-};
+export const GET = createSitemapRoute({
+  siteUrl: env.PUBLIC_SITE_URL,
+  pageModules,
+  getBlogPosts: () => getCollection('blog'),
+});

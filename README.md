@@ -121,7 +121,7 @@ pnpm dev:demo    # Demo site
 
 ### Scenario 1: Start Fresh (Blank Template)
 
-Perfect for custom projects:
+Perfect for custom projects where you want complete control:
 
 ```bash
 # Copy blank package
@@ -131,9 +131,18 @@ pnpm install
 pnpm dev
 ```
 
+**What you get:**
+- ✅ Single homepage + 404 page
+- ✅ Basic layout structure
+- ✅ SEO components from shared
+- ✅ Shared design system
+- ✅ Environment configuration
+- ❌ No pre-built components
+- ❌ No blog functionality
+
 ### Scenario 2: Start with Components (Base Template)
 
-Get essential components out of the box:
+Get essential components and blog functionality out of the box:
 
 ```bash
 # Copy base package
@@ -142,6 +151,14 @@ cd my-project
 pnpm install
 pnpm dev
 ```
+
+**What you get:**
+- ✅ All UI components (Hero, Card, Modal, Forms, etc.)
+- ✅ Blog with MDX support
+- ✅ Contact form
+- ✅ Newsletter signup
+- ✅ Example blog post
+- ✅ Comprehensive component library
 
 ### Scenario 3: Multiple Sites with Shared Design System
 
@@ -257,9 +274,15 @@ astro-v5-template/
 mkdir packages/my-new-site
 ```
 
-### Step 2: Copy Base Template
+### Step 2: Copy Template
+
+Choose your starting point:
 
 ```bash
+# Option A: Start with blank (minimal)
+cp -r packages/blank/* packages/my-new-site/
+
+# Option B: Start with base (includes components & blog)
 cp -r packages/base/* packages/my-new-site/
 ```
 
