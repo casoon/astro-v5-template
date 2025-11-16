@@ -184,10 +184,55 @@ importers:
       '@casoon/atlas-styles':
         specifier: ^0.0.6
         version: 0.0.6
+      '@fontsource/archivo':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/crimson-text':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/dm-sans':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/fira-code':
+        specifier: ^5.2.7
+        version: 5.2.7
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource/jetbrains-mono':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/lora':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/manrope':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/merriweather':
+        specifier: ^5.2.11
+        version: 5.2.11
+      '@fontsource/montserrat':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/playfair-display':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/poppins':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/raleway':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/source-serif-4':
+        specifier: ^5.2.9
+        version: 5.2.9
+      '@fontsource/space-grotesk':
+        specifier: ^5.2.10
+        version: 5.2.10
       '@fontsource/underdog':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/work-sans':
         specifier: ^5.2.8
         version: 5.2.8
       '@tailwindcss/forms':
@@ -592,11 +637,56 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource/archivo@5.2.8':
+    resolution: {integrity: sha512-Fc4yuMt85MmcYooUVpYHAJRJTymPv2+J9HsMP2f5mxR/0pIWgE2V5XfgNTavPpklX2rJFprdT36iE6Rr8ds9MA==}
+
+  '@fontsource/crimson-text@5.2.7':
+    resolution: {integrity: sha512-hlUb/1GdXB2xc0usGMPp6qEI7Z4kQU1FEOYvozsN+cUC/Nh4kvEVVc0kHpj8B5G0hjZzfP+UmrLYHOaNAfMK5w==}
+
+  '@fontsource/dm-sans@5.2.8':
+    resolution: {integrity: sha512-tlovG42m9ESG28WiHpLq3F5umAlm64rv0RkqTbYowRn70e9OlRr5a3yTJhrhrY+k5lftR/OFJjPzOLQzk8EfCA==}
+
+  '@fontsource/fira-code@5.2.7':
+    resolution: {integrity: sha512-tnB9NNund9TwIym8/7DMJe573nlPEQb+fKUV5GL8TBYXjIhDvL0D7mgmNVNQUPhXp+R7RylQeiBdkA4EbOHPGQ==}
+
   '@fontsource/inter@5.2.8':
     resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
 
+  '@fontsource/jetbrains-mono@5.2.8':
+    resolution: {integrity: sha512-6w8/SG4kqvIMu7xd7wt6x3idn1Qux3p9N62s6G3rfldOUYHpWcc2FKrqf+Vo44jRvqWj2oAtTHrZXEP23oSKwQ==}
+
+  '@fontsource/lora@5.2.8':
+    resolution: {integrity: sha512-AQlfsHw4TP1x/eb2IZ6VjQ70ctKa39m9JN9A4zlvDOeKYLrCs+GaYIEQ86Y6YfSPGHn01bErXkRcyktOW0LOPQ==}
+
+  '@fontsource/manrope@5.2.8':
+    resolution: {integrity: sha512-gJHJmcuUk7qWcNCfcAri/DJQtXtBYqi9yKratr4jXhSo0I3xUtNNKI+igQIcw5c+m95g0vounk8ZnX/kb8o0TA==}
+
+  '@fontsource/merriweather@5.2.11':
+    resolution: {integrity: sha512-ZiIMeUh5iT8d73o6xlSF8GKgjV5pgiFrufYc5jZTVAfExtWKqM2vQHnsqXSFMv4ELhAcjt6Vf+5T3oVGXhAizQ==}
+
+  '@fontsource/montserrat@5.2.8':
+    resolution: {integrity: sha512-xTjLxSbSfCycDB0pwmNsfNvdfWPaDaRQ2LC6yt/ZI7SdvXG52zHnzNYC/09mzuAuWNJyShkteutfCoDgym56hQ==}
+
+  '@fontsource/playfair-display@5.2.8':
+    resolution: {integrity: sha512-fUEhib70SszNhQVsGbUMSsWJhr7Je0rdeuZdtGpDNu0GKF1xJM8QhpI/y0pckU25GcChXm9TLOmeZupkvvZo2g==}
+
+  '@fontsource/poppins@5.2.7':
+    resolution: {integrity: sha512-6uQyPmseo4FgI97WIhA4yWRlNaoLk4vSDK/PyRwdqqZb5zAEuc+Kunt8JTMcsHYUEGYBtN15SNkMajMdqUSUmg==}
+
+  '@fontsource/raleway@5.2.8':
+    resolution: {integrity: sha512-OATNM+J4XniKQRlI1e67v3euOnCUiXwpqgMofomKc5JNYOq0JPE6E5uTXMnFaZejKN1Z7s05JrHpmYB7/tg1Fw==}
+
+  '@fontsource/source-serif-4@5.2.9':
+    resolution: {integrity: sha512-er/Pym9emsEVJNf947umJ4kXarXfsiN6CN7kTYinefKRaHLwiquiiHOZvKvxWgkV8JMCf3pV3g0NcsPFpVCH9w==}
+
+  '@fontsource/space-grotesk@5.2.10':
+    resolution: {integrity: sha512-XNXEbT74OIITPqw2H6HXwPDp85fy43uxfBwFR5PU+9sLnjuLj12KlhVM9nZVN6q6dlKjkuN8JisW/OBxwxgUew==}
+
   '@fontsource/underdog@5.2.8':
     resolution: {integrity: sha512-hY+0qTSqB0ozy4ZNcHAjEvWAxJMids8AXjw5h03lKut45KAVWRskFvq7XPV1MRVNfNRuyq2Dc+oa+KgZwq5obw==}
+
+  '@fontsource/work-sans@5.2.8':
+    resolution: {integrity: sha512-6LaHjVVgts+rnrcqvEkP2+iUB/jw1oDSYsGO0+TltAhnWki9Hnf/UGpgMQh2jcm0GEH8VqCPnq4PpmHLFzxXtQ==}
 
   '@formatjs/ecma402-abstract@2.3.6':
     resolution: {integrity: sha512-HJnTFeRM2kVFVr5gr5kH1XP6K0JcJtE7Lzvtr3FS/so5f1kpsqqqxy5JF+FRaO6H2qmcMfAUIox7AJteieRtVw==}
@@ -4276,9 +4366,39 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
+  '@fontsource/archivo@5.2.8': {}
+
+  '@fontsource/crimson-text@5.2.7': {}
+
+  '@fontsource/dm-sans@5.2.8': {}
+
+  '@fontsource/fira-code@5.2.7': {}
+
   '@fontsource/inter@5.2.8': {}
 
+  '@fontsource/jetbrains-mono@5.2.8': {}
+
+  '@fontsource/lora@5.2.8': {}
+
+  '@fontsource/manrope@5.2.8': {}
+
+  '@fontsource/merriweather@5.2.11': {}
+
+  '@fontsource/montserrat@5.2.8': {}
+
+  '@fontsource/playfair-display@5.2.8': {}
+
+  '@fontsource/poppins@5.2.7': {}
+
+  '@fontsource/raleway@5.2.8': {}
+
+  '@fontsource/source-serif-4@5.2.9': {}
+
+  '@fontsource/space-grotesk@5.2.10': {}
+
   '@fontsource/underdog@5.2.8': {}
+
+  '@fontsource/work-sans@5.2.8': {}
 
   '@formatjs/ecma402-abstract@2.3.6':
     dependencies:
