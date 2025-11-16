@@ -3,8 +3,8 @@ import '@shared/styles/index.css';
 import '@/styles/tailwind.css';
 import '@/styles/global.css';
 import ThemeToggle from '@/components/ThemeToggle.svelte';
-import Toast from '@/components/Toast.astro';
-import WebVitals from '@/components/WebVitals.astro';
+import Toast from '@astro-v5/shared/components/Toast.astro';
+import WebVitals from '@astro-v5/shared/components/WebVitals.astro';
 import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
 import { env } from '@/env';
 
@@ -52,6 +52,11 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{pageTitle}</title>
 
+	<!-- Security Headers -->
+	<meta http-equiv="X-Content-Type-Options" content="nosniff">
+	<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+	<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
 	<!-- SEO Component with JSON-LD, Open Graph, Twitter Cards -->
 	<PageSEO
 		title={pageTitle}
@@ -71,6 +76,14 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter">
+<!-- Skip Links for Accessibility -->
+<a
+	href="#main-content"
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-purple-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
+>
+	Skip to main content
+</a>
+
 <header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
 	<nav class="flex justify-between items-center max-w-6xl mx-auto">
 		<!-- Desktop Navigation -->
@@ -105,7 +118,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 		</ul>
 	</div>
 </header>
-<main class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
+<main id="main-content" class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
 	<div class="w-full max-w-7xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 mx-2 flex flex-col items-center text-center border border-slate-200 dark:border-slate-700 transition-all duration-500 ease-in-out">
 		<slot />
 	</div>
