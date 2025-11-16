@@ -116,26 +116,40 @@ import Card from '@astro-v5/shared/components/Card.astro';
     </div>
 
     <!-- Atlas Feature Showcase -->
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <!-- Feature Card 1 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">🚀</div>
-        <h3 class="cs-card-title">Performance First</h3>
-        <p class="cs-card-description">Optimized CSS animations and efficient rendering</p>
-      </div>
+    <div class="relative p-8 rounded-3xl bg-gradient-to-br from-violet-600 via-fuchsia-600 to-pink-600 mt-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Feature Card 1 - Performance First -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-float cs-anim-infinite">🚀</div>
+            <h3 class="text-xl font-bold text-white mb-2">Performance First</h3>
+            <p class="text-white/90 text-sm">Optimized CSS animations and efficient rendering with hardware acceleration</p>
+          </div>
+        </div>
 
-      <!-- Feature Card 2 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">🎨</div>
-        <h3 class="cs-card-title">Design System</h3>
-        <p class="cs-card-description">Consistent components with Tailwind integration</p>
-      </div>
+        <!-- Feature Card 2 - Design System -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in cs-delay-100 hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-pulse cs-anim-infinite">🎨</div>
+            <h3 class="text-xl font-bold text-white mb-2">Design System</h3>
+            <p class="text-white/90 text-sm">Consistent components with Tailwind v4 integration and Atlas utilities</p>
+          </div>
+        </div>
 
-      <!-- Feature Card 3 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">✨</div>
-        <h3 class="cs-card-title">Interactive Effects</h3>
-        <p class="cs-card-description">Smooth animations and hover transitions</p>
+        <!-- Feature Card 3 - Interactive Effects -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in cs-delay-200 hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-wiggle cs-anim-infinite">✨</div>
+            <h3 class="text-xl font-bold text-white mb-2">Interactive Effects</h3>
+            <p class="text-white/90 text-sm">Smooth animations and hover transitions powered by Atlas Styles</p>
+          </div>
+        </div>
       </div>
     </div>
 
