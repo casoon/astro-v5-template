@@ -2,6 +2,23 @@
    Demo Package - Specific Overrides
    ======================================== */
 
+/* Import Underdog Font - Fun playful font for headings */
+@import '@fontsource/underdog/400.css';
+
+/* Apply Underdog Font to headings - adds personality and character */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: 'Underdog', cursive, system-ui;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+}
+
 /* Dark mode Tailwind utility overrides */
 .dark .bg-white {
   background-color: rgb(26, 26, 26) !important;

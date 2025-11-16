@@ -187,6 +187,9 @@ importers:
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
+      '@fontsource/underdog':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@tailwindcss/forms':
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@4.1.17)
@@ -591,6 +594,9 @@ packages:
 
   '@fontsource/inter@5.2.8':
     resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
+
+  '@fontsource/underdog@5.2.8':
+    resolution: {integrity: sha512-hY+0qTSqB0ozy4ZNcHAjEvWAxJMids8AXjw5h03lKut45KAVWRskFvq7XPV1MRVNfNRuyq2Dc+oa+KgZwq5obw==}
 
   '@formatjs/ecma402-abstract@2.3.6':
     resolution: {integrity: sha512-HJnTFeRM2kVFVr5gr5kH1XP6K0JcJtE7Lzvtr3FS/so5f1kpsqqqxy5JF+FRaO6H2qmcMfAUIox7AJteieRtVw==}
@@ -4271,6 +4277,8 @@ snapshots:
     optional: true
 
   '@fontsource/inter@5.2.8': {}
+
+  '@fontsource/underdog@5.2.8': {}
 
   '@formatjs/ecma402-abstract@2.3.6':
     dependencies:

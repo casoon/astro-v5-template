@@ -1,0 +1,157 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Animations Demo"
+  description="Showcase of Atlas Styles animation utilities"
+  keywords={['animations', 'atlas-styles', 'css', 'effects']}
+>
+  <div class="w-full space-y-8">
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+        Atlas Animations
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+        Explore the powerful animation utilities from @casoon/atlas-styles
+      </p>
+    </div>
+
+    <!-- Fade Animations -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Fade Animations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-md">
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Fade In</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Element fades in smoothly (cs-fade-in)</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-lg cs-delay-200">
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Fade In Delayed</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">With delay (cs-fade-in cs-delay-200)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide Animations -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Slide Animations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white cs-slide-up cs-anim-md">
+          <h3 class="font-semibold mb-2">Slide Up</h3>
+          <p class="text-sm opacity-90">cs-slide-up</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white cs-slide-down cs-anim-md cs-delay-100">
+          <h3 class="font-semibold mb-2">Slide Down</h3>
+          <p class="text-sm opacity-90">cs-slide-down</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white cs-slide-left cs-anim-md cs-delay-200">
+          <h3 class="font-semibold mb-2">Slide Left</h3>
+          <p class="text-sm opacity-90">cs-slide-left</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 text-white cs-slide-right cs-anim-md cs-delay-300">
+          <h3 class="font-semibold mb-2">Slide Right</h3>
+          <p class="text-sm opacity-90">cs-slide-right</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scale & Zoom Animations -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Scale & Zoom</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-scale-in cs-anim-lg">
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Scale In</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-scale-in</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-zoom-in cs-anim-lg cs-delay-100">
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Zoom In</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-zoom-in</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-blur-in cs-anim-lg cs-delay-200">
+          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Blur In</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-blur-in</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Continuous Animations -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Continuous Animations</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 text-white cs-pulse cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Pulse</h3>
+          <p class="text-sm opacity-90">cs-pulse cs-anim-infinite</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 text-white cs-bounce cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Bounce</h3>
+          <p class="text-sm opacity-90">cs-bounce cs-anim-infinite</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white cs-wiggle cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Wiggle</h3>
+          <p class="text-sm opacity-90">cs-wiggle cs-anim-infinite</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 text-white cs-float cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Float</h3>
+          <p class="text-sm opacity-90">cs-float cs-anim-infinite</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 text-white cs-rotate cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Rotate</h3>
+          <p class="text-sm opacity-90">cs-rotate cs-anim-infinite</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gradient-to-br from-red-500 to-pink-500 text-white cs-heartbeat cs-anim-infinite">
+          <h3 class="font-semibold mb-2">Heartbeat</h3>
+          <p class="text-sm opacity-90">cs-heartbeat cs-anim-infinite</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Effects -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">3D Effects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="p-8 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white cs-reveal-3d-up cs-anim-lg" style="perspective: 1000px;">
+          <h3 class="font-semibold mb-2 text-lg">3D Reveal Up</h3>
+          <p class="text-sm opacity-90">cs-reveal-3d-up</p>
+        </div>
+        <div class="p-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white cs-flip-3d-x cs-anim-lg cs-delay-200" style="perspective: 1000px;">
+          <h3 class="font-semibold mb-2 text-lg">3D Flip X</h3>
+          <p class="text-sm opacity-90">cs-flip-3d-x</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation Timing -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Animation Timing</h2>
+      <div class="space-y-3">
+        <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-xxs">
+          <span class="text-slate-900 dark:text-slate-100 font-mono text-sm">cs-anim-xxs (fastest)</span>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-sm">
+          <span class="text-slate-900 dark:text-slate-100 font-mono text-sm">cs-anim-sm</span>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-md">
+          <span class="text-slate-900 dark:text-slate-100 font-mono text-sm">cs-anim-md (default)</span>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-lg">
+          <span class="text-slate-900 dark:text-slate-100 font-mono text-sm">cs-anim-lg</span>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-xl">
+          <span class="text-slate-900 dark:text-slate-100 font-mono text-sm">cs-anim-xl</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Info -->
+    <section class="mt-8 p-6 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
+      <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-3">How to Use</h3>
+      <div class="space-y-2 text-sm text-blue-800 dark:text-blue-200">
+        <p><code class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">cs-fade-in</code> - Apply animation</p>
+        <p><code class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">cs-anim-md</code> - Set duration</p>
+        <p><code class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">cs-delay-200</code> - Add delay</p>
+        <p><code class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">cs-anim-infinite</code> - Loop forever</p>
+        <p><code class="bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">cs-ease-spring</code> - Spring easing</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
