@@ -3,13 +3,14 @@ import '@shared/styles/index.css';
 import '@/styles/tailwind.css';
 import '@/styles/global.css';
 import ThemeToggle from '@/components/ThemeToggle.svelte';
-import Toast from '@/components/Toast.astro';
-import WebVitals from '@/components/WebVitals.astro';
+import Toast from '@astro-v5/shared/components/Toast.astro';
+import WebVitals from '@astro-v5/shared/components/WebVitals.astro';
 import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
 import { env } from '@/env';
 
 // Environment variables
 const siteName = env.PUBLIC_SITE_NAME;
+const locale = env.PUBLIC_LOCALE || 'en';
 
 // Props for SEO
 export interface Props {
@@ -30,7 +31,7 @@ const {
 
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 ---
-<html lang="de" class="scroll-smooth">
+<html lang={locale} class="scroll-smooth">
 <script is:inline>
   // Theme initialization
   (function() {
@@ -44,16 +45,17 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
       html.classList.remove('dark');
       html.setAttribute('data-theme', 'light');
     }
-
-    console.log('Initial theme:', theme);
-    console.log('HTML classes:', html.className);
-    console.log('Data theme:', html.getAttribute('data-theme'));
   })();
 </script>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{pageTitle}</title>
+
+	<!-- Security Headers -->
+	<meta http-equiv="X-Content-Type-Options" content="nosniff">
+	<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+	<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
 	<!-- SEO Component with JSON-LD, Open Graph, Twitter Cards -->
 	<PageSEO
@@ -74,12 +76,23 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter">
+<!-- Skip Links for Accessibility -->
+<a
+	href="#main-content"
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-purple-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
+>
+	Skip to main content
+</a>
+
 <header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
 	<nav class="flex justify-between items-center max-w-6xl mx-auto">
 		<!-- Desktop Navigation -->
-		<ul class="hidden md:flex gap-8 list-none p-0 m-0">
+		<ul class="hidden md:flex gap-5 list-none p-0 m-0">
 			<li><a href="/" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Home</a></li>
 			<li><a href="/blog" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Blog</a></li>
+			<li><a href="/typography" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Fonts</a></li>
+			<li><a href="/animations" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Animations</a></li>
+			<li><a href="/glass-effects" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Glass</a></li>
 			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Contact</a></li>
 			<li><a href="/api-test" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">API</a></li>
 		</ul>
@@ -103,12 +116,15 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 		<ul class="flex flex-col py-4 px-6 space-y-2 list-none">
 			<li><a href="/" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Home</a></li>
 			<li><a href="/blog" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Blog</a></li>
+			<li><a href="/typography" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Fonts</a></li>
+			<li><a href="/animations" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Animations</a></li>
+			<li><a href="/glass-effects" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Glass</a></li>
 			<li><a href="/contact" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Contact</a></li>
 			<li><a href="/api-test" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">API</a></li>
 		</ul>
 	</div>
 </header>
-<main class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
+<main id="main-content" class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
 	<div class="w-full max-w-7xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 mx-2 flex flex-col items-center text-center border border-slate-200 dark:border-slate-700 transition-all duration-500 ease-in-out">
 		<slot />
 	</div>

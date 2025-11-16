@@ -1,13 +1,13 @@
 ---
 import SvelteDemo from '@/components/SvelteDemo.svelte';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import GlassCard from '@/components/GlassCard.astro';
-import Hero from '@/components/Hero.astro';
-import Card from '@/components/Card.astro';
+import GlassCard from '@astro-v5/shared/components/GlassCard.astro';
+import Hero from '@astro-v5/shared/components/Hero.astro';
+import Card from '@astro-v5/shared/components/Card.astro';
 ---
 <BaseLayout>
   <!-- Hero Section -->
-  <Hero 
+  <Hero
     title="Build Amazing Sites with Astro + Atlas"
     subtitle="A modern template combining Astro 5, Tailwind CSS v4, and Atlas Design System for beautiful, performant websites."
     ctaText="Get Started"
@@ -15,7 +15,7 @@ import Card from '@/components/Card.astro';
     secondaryCtaText="View on GitHub"
     secondaryCtaLink="https://github.com/yourusername/astro-v5-template"
   />
-  
+
   <div class="space-y-16" id="components">
     <!-- Glowing Title -->
     <h1 class="text-6xl font-bold text-center">
@@ -31,15 +31,15 @@ import Card from '@/components/Card.astro';
         Svelte
       </span>
     </h1>
-    
+
     <!-- Description -->
     <p class="text-xl text-slate-600 dark:text-slate-300 text-center leading-relaxed max-w-2xl mx-auto">
-      A modern web template combining the latest technologies with 
+      A modern web template combining the latest technologies with
       <span class="text-cyan-600 dark:text-cyan-400 font-semibold">beautiful UI components</span>
       <br class="hidden sm:block" />
       and developer-friendly tools
     </p>
-    
+
     <!-- Atlas Glass Cards -->
     <div class="relative mt-12 p-8 rounded-3xl bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500">
       <div class="grid md:grid-cols-3 gap-6">
@@ -48,7 +48,7 @@ import Card from '@/components/Card.astro';
         <GlassCard title="Strong Glass" description="Maximum glass effect intensity" variant="strong" />
       </div>
     </div>
-    
+
     <!-- Beautiful Gradient Examples -->
     <div class="grid md:grid-cols-2 gap-6 mt-8">
       <div class="bg-gradient-to-br from-cyan-400 to-blue-600 p-6 rounded-lg">
@@ -60,7 +60,7 @@ import Card from '@/components/Card.astro';
         <p class="text-white/90 mt-2">Warm sunset colors for vibrant designs</p>
       </div>
     </div>
-    
+
     <!-- Atlas UI Components Showcase -->
     <div class="space-y-8 mt-12">
       <!-- Button Collection -->
@@ -78,7 +78,7 @@ import Card from '@/components/Card.astro';
           </button>
         </div>
       </div>
-      
+
       <!-- Animated Elements -->
       <div class="text-center">
         <h3 class="text-2xl font-bold mb-6">Animations & Effects</h3>
@@ -90,7 +90,7 @@ import Card from '@/components/Card.astro';
           </div>
         </div>
       </div>
-      
+
       <!-- Atlas Orbs & Floating Elements -->
       <div class="text-center">
         <h3 class="text-2xl font-bold mb-6">Floating Orbs & Elements</h3>
@@ -102,7 +102,7 @@ import Card from '@/components/Card.astro';
           <div class="relative z-10 text-lg font-semibold text-slate-700 dark:text-slate-200">Interactive Background Elements</div>
         </div>
       </div>
-      
+
       <!-- Atlas Typography Effects -->
       <div class="text-center">
         <h3 class="text-2xl font-bold mb-6">Typography Effects</h3>
@@ -114,75 +114,94 @@ import Card from '@/components/Card.astro';
         </div>
       </div>
     </div>
-    
+
     <!-- Atlas Feature Showcase -->
-    <div class="grid md:grid-cols-3 gap-6 mt-8">
-      <!-- Feature Card 1 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">🚀</div>
-        <h3 class="cs-card-title">Performance First</h3>
-        <p class="cs-card-description">Optimized CSS animations and efficient rendering</p>
-      </div>
-      
-      <!-- Feature Card 2 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">🎨</div>
-        <h3 class="cs-card-title">Design System</h3>
-        <p class="cs-card-description">Consistent components with Tailwind integration</p>
-      </div>
-      
-      <!-- Feature Card 3 -->
-      <div class="cs-card-feature group">
-        <div class="cs-card-icon">✨</div>
-        <h3 class="cs-card-title">Interactive Effects</h3>
-        <p class="cs-card-description">Smooth animations and hover transitions</p>
+    <div class="relative p-8 rounded-3xl bg-gradient-to-br from-violet-600 via-fuchsia-600 to-pink-600 mt-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Feature Card 1 - Performance First -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-float cs-anim-infinite">🚀</div>
+            <h3 class="text-xl font-bold text-white mb-2">Performance First</h3>
+            <p class="text-white/90 text-sm">Optimized CSS animations and efficient rendering with hardware acceleration</p>
+          </div>
+        </div>
+
+        <!-- Feature Card 2 - Design System -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in cs-delay-100 hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-pulse cs-anim-infinite">🎨</div>
+            <h3 class="text-xl font-bold text-white mb-2">Design System</h3>
+            <p class="text-white/90 text-sm">Consistent components with Tailwind v4 integration and Atlas utilities</p>
+          </div>
+        </div>
+
+        <!-- Feature Card 3 - Interactive Effects -->
+        <div class="group relative p-6 rounded-xl backdrop-blur-md cs-fade-in cs-delay-200 hover:scale-105 transition-all duration-300 cursor-pointer"
+             style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-orange-400/20 to-red-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div class="relative">
+            <div class="text-5xl mb-4 cs-wiggle cs-anim-infinite">✨</div>
+            <h3 class="text-xl font-bold text-white mb-2">Interactive Effects</h3>
+            <p class="text-white/90 text-sm">Smooth animations and hover transitions powered by Atlas Styles</p>
+          </div>
+        </div>
       </div>
     </div>
-    
+
     <!-- Card Component Showcase -->
     <section class="mt-16">
       <h2 class="text-3xl font-bold text-center mb-8">Card Component Variants</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card 
-          title="Default Card"
-          description="A clean card with Tailwind styling and subtle shadows."
-          tag="Tailwind"
-        />
-        <Card 
-          title="Glass Card"
-          description="Beautiful glassmorphism effect using Atlas utilities."
-          variant="glass"
-          tag="Atlas"
-        />
-        <Card 
-          title="Gradient Card"
-          description="Eye-catching gradient background with hover effects."
-          variant="gradient"
-          tag="Featured"
-        />
-        <Card 
-          title="Outline Card"
-          description="Minimal design with focus on content and clean borders."
-          variant="outline"
-          tag="Minimal"
-        />
+
+      <!-- Colorful background for cards with glass effects -->
+      <div class="relative p-8 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card
+            title="Default Card"
+            description="A clean card with Tailwind styling and subtle shadows."
+            tag="Tailwind"
+          />
+          <Card
+            title="Glass Card"
+            description="Beautiful glassmorphism effect using Atlas utilities."
+            variant="glass"
+            tag="Atlas"
+          />
+          <Card
+            title="Gradient Card"
+            description="Eye-catching gradient background with hover effects."
+            variant="gradient"
+            tag="Featured"
+          />
+          <Card
+            title="Outline Card"
+            description="Minimal design with focus on content and clean borders."
+            variant="outline"
+            tag="Minimal"
+          />
+        </div>
       </div>
     </section>
-    
+
     <!-- Atlas Form Elements -->
     <section class="mt-16">
       <h2 class="text-3xl font-bold text-center mb-8">Atlas Form System</h2>
-      
-      <!-- Comparison: Regular vs Atlas Forms -->
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <!-- Regular Tailwind Form -->
-        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <h3 class="text-lg font-bold mb-4">📝 Regular Tailwind Forms</h3>
+
+      <!-- Comparison: Regular vs Atlas Forms with gradient background -->
+      <div class="relative p-8 rounded-3xl bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500">
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <!-- Regular Tailwind Form with glass effect -->
+          <div class="rounded-xl p-6 backdrop-blur-md" style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+            <h3 class="text-lg font-bold mb-4 text-white">📝 Regular Tailwind Forms</h3>
           <form class="space-y-4">
             <div>
               <label class="block text-sm font-medium mb-2">Standard Input</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Basic input field"
                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
@@ -195,10 +214,10 @@ import Card from '@/components/Card.astro';
             </div>
           </form>
         </div>
-        
-        <!-- Atlas Modern Form -->
-        <div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
-          <h3 class="text-lg font-bold mb-4">✨ Atlas Modern Forms</h3>
+
+          <!-- Atlas Modern Form with glass effect -->
+          <div class="rounded-xl p-6 backdrop-blur-md" style="background: var(--cs-glass-bg-medium); border: 1px solid var(--cs-glass-border-medium);">
+            <h3 class="text-lg font-bold mb-4 text-white">✨ Atlas Modern Forms</h3>
           <form class="cs-form-modern">
             <div class="cs-form-group">
               <label class="cs-label-modern">Modern Input</label>
@@ -208,9 +227,10 @@ import Card from '@/components/Card.astro';
               Atlas Submit
             </button>
           </form>
+          </div>
         </div>
       </div>
-      
+
       <!-- Atlas Form Features Showcase -->
       <div class="mt-12 max-w-4xl mx-auto">
         <h3 class="text-xl font-bold text-center mb-8">Atlas Form Features</h3>
@@ -234,7 +254,7 @@ import Card from '@/components/Card.astro';
               </small>
             </div>
           </div>
-          
+
           <!-- Input Groups with Addons -->
           <div class="cs-form-group">
             <label class="cs-label-modern">Input with Addon</label>
@@ -243,7 +263,7 @@ import Card from '@/components/Card.astro';
               <input type="number" class="cs-input-modern cs-input-with-addon-left" placeholder="0.00">
             </div>
           </div>
-          
+
           <div class="cs-form-group">
             <label class="cs-label-modern">URL Input</label>
             <div class="cs-input-group">
@@ -254,7 +274,7 @@ import Card from '@/components/Card.astro';
         </form>
       </div>
     </section>
-    
+
     <!-- Interactive Demo Section -->
     <section class="mt-16 text-center">
       <h2 class="text-3xl font-bold mb-8">Interactive Components</h2>

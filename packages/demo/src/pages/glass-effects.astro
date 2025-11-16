@@ -1,0 +1,184 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Glass Effects Demo"
+  description="Showcase of Atlas Styles glassmorphism effects"
+  keywords={['glass', 'glassmorphism', 'atlas-styles', 'css', 'effects']}
+>
+  <div class="w-full space-y-8">
+    <div class="text-center space-y-4">
+      <h1 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Glass Effects
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+        Modern glassmorphism effects with backdrop-filter support
+      </p>
+    </div>
+
+    <!-- Background for Glass Effects -->
+    <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-purple-500 via-pink-500 to-red-500">
+      <div class="absolute inset-0 grid grid-cols-2 gap-6 p-6">
+        <div class="p-6 rounded-xl" style="background: var(--cs-glass-bg-light); backdrop-filter: blur(var(--cs-glass-blur-sm)); border: 1px solid var(--cs-glass-border-light);">
+          <h3 class="font-semibold text-white mb-2">Light Glass</h3>
+          <p class="text-white/90 text-sm">Subtle backdrop blur</p>
+        </div>
+        <div class="p-6 rounded-xl" style="background: var(--cs-glass-bg-strong); backdrop-filter: blur(var(--cs-glass-blur-md)); border: 1px solid var(--cs-glass-border-md);">
+          <h3 class="font-semibold text-white mb-2">Strong Glass</h3>
+          <p class="text-white/90 text-sm">More intense blur</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Glass Intensity Levels -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Glass Intensity Levels</h2>
+      <div class="relative w-full h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-600 via-cyan-500 to-teal-500">
+        <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+          <div class="p-4 rounded-xl cs-fade-in" style="background: var(--cs-glass-bg-xs); backdrop-filter: blur(8px); border: 1px solid var(--cs-glass-border-xs);">
+            <h3 class="font-semibold text-white text-sm">Extra Small</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-xs</p>
+          </div>
+          <div class="p-4 rounded-xl cs-fade-in cs-delay-100" style="background: var(--cs-glass-bg-sm); backdrop-filter: blur(8px); border: 1px solid var(--cs-glass-border-sm);">
+            <h3 class="font-semibold text-white text-sm">Small</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-sm</p>
+          </div>
+          <div class="p-4 rounded-xl cs-fade-in cs-delay-200" style="background: var(--cs-glass-bg-md); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-md);">
+            <h3 class="font-semibold text-white text-sm">Medium</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-md</p>
+          </div>
+          <div class="p-4 rounded-xl cs-fade-in cs-delay-300" style="background: var(--cs-glass-bg-lg); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-lg);">
+            <h3 class="font-semibold text-white text-sm">Large</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-lg</p>
+          </div>
+          <div class="p-4 rounded-xl cs-fade-in cs-delay-400" style="background: var(--cs-glass-bg-xl); backdrop-filter: blur(16px); border: 1px solid var(--cs-glass-border-xl);">
+            <h3 class="font-semibold text-white text-sm">Extra Large</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-xl</p>
+          </div>
+          <div class="p-4 rounded-xl cs-fade-in cs-delay-500" style="background: var(--cs-glass-bg-2xl); backdrop-filter: blur(20px); border: 1px solid var(--cs-glass-border-2xl);">
+            <h3 class="font-semibold text-white text-sm">2X Large</h3>
+            <p class="text-white/80 text-xs">--cs-glass-bg-2xl</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark Glass Effects -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Dark Glass Effects</h2>
+      <div class="relative w-full h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-400 via-orange-400 to-red-400">
+        <div class="absolute inset-0 grid grid-cols-1 sm:grid-cols-3 gap-4 p-6">
+          <div class="p-6 rounded-xl cs-scale-in" style="background: var(--cs-glass-bg-dark-sm); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.1);">
+            <h3 class="font-semibold text-white mb-2">Dark Small</h3>
+            <p class="text-white/90 text-sm">Subtle dark glass</p>
+          </div>
+          <div class="p-6 rounded-xl cs-scale-in cs-delay-100" style="background: var(--cs-glass-bg-dark-md); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.15);">
+            <h3 class="font-semibold text-white mb-2">Dark Medium</h3>
+            <p class="text-white/90 text-sm">Medium dark glass</p>
+          </div>
+          <div class="p-6 rounded-xl cs-scale-in cs-delay-200" style="background: var(--cs-glass-bg-dark-strong); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.2);">
+            <h3 class="font-semibold text-white mb-2">Dark Strong</h3>
+            <p class="text-white/90 text-sm">Strong dark glass</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colored Glass Backgrounds -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Colored Glass</h2>
+      <div class="relative w-full rounded-2xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="p-6 rounded-xl cs-fade-in" style="background: var(--cs-glass-bg-blue); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-blue);">
+            <div class="w-12 h-12 rounded-full mb-3" style="background: var(--cs-orb-blue);"></div>
+            <h3 class="font-semibold text-white mb-2">Blue Glass</h3>
+            <p class="text-white/80 text-sm">--cs-glass-bg-blue</p>
+          </div>
+          <div class="p-6 rounded-xl cs-fade-in cs-delay-100" style="background: var(--cs-glass-bg-purple); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-purple);">
+            <div class="w-12 h-12 rounded-full mb-3" style="background: var(--cs-orb-purple);"></div>
+            <h3 class="font-semibold text-white mb-2">Purple Glass</h3>
+            <p class="text-white/80 text-sm">--cs-glass-bg-purple</p>
+          </div>
+          <div class="p-6 rounded-xl cs-fade-in cs-delay-200" style="background: var(--cs-glass-bg-green); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-green);">
+            <div class="w-12 h-12 rounded-full mb-3" style="background: var(--cs-orb-green);"></div>
+            <h3 class="font-semibold text-white mb-2">Green Glass</h3>
+            <p class="text-white/80 text-sm">--cs-glass-bg-green</p>
+          </div>
+          <div class="p-6 rounded-xl cs-fade-in cs-delay-300" style="background: var(--cs-glass-bg-pink); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-pink);">
+            <div class="w-12 h-12 rounded-full mb-3" style="background: var(--cs-orb-pink);"></div>
+            <h3 class="font-semibold text-white mb-2">Pink Glass</h3>
+            <p class="text-white/80 text-sm">--cs-glass-bg-pink</p>
+          </div>
+          <div class="p-6 rounded-xl cs-fade-in cs-delay-400" style="background: var(--cs-glass-bg-amber); backdrop-filter: blur(12px); border: 1px solid var(--cs-glass-border-amber);">
+            <div class="w-12 h-12 rounded-full mb-3" style="background: var(--cs-orb-amber, #f59e0b);"></div>
+            <h3 class="font-semibold text-white mb-2">Amber Glass</h3>
+            <p class="text-white/80 text-sm">--cs-glass-bg-amber</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Glass Card Examples -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Glass Card Examples</h2>
+      <div class="relative w-full rounded-2xl overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600"></div>
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.3) 0%, transparent 50%);"></div>
+
+        <div class="relative grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
+          <!-- Feature Card 1 -->
+          <div class="p-6 rounded-2xl cs-slide-up cs-anim-md" style="background: var(--cs-glass-bg-medium); backdrop-filter: blur(16px); border: 1px solid var(--cs-glass-border-medium); box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div class="w-14 h-14 rounded-xl mb-4 flex items-center justify-center" style="background: var(--cs-glass-bg-strong);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Fast Performance</h3>
+            <p class="text-white/90 text-sm leading-relaxed">
+              Optimized glass effects with hardware acceleration for smooth 60fps animations.
+            </p>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="p-6 rounded-2xl cs-slide-up cs-anim-md cs-delay-100" style="background: var(--cs-glass-bg-medium); backdrop-filter: blur(16px); border: 1px solid var(--cs-glass-border-medium); box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <div class="w-14 h-14 rounded-xl mb-4 flex items-center justify-center" style="background: var(--cs-glass-bg-strong);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Customizable</h3>
+            <p class="text-white/90 text-sm leading-relaxed">
+              Flexible design tokens for complete control over glass effects and colors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage Info -->
+    <section class="mt-8 p-6 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800">
+      <h3 class="text-lg font-semibold text-cyan-900 dark:text-cyan-100 mb-3">CSS Variables Reference</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-cyan-800 dark:text-cyan-200">
+        <div>
+          <p class="font-semibold mb-2">Background:</p>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-bg-xs</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-bg-sm</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-bg-md</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs">--cs-glass-bg-lg</code>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Borders:</p>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-border-xs</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-border-sm</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs mb-1">--cs-glass-border-md</code>
+          <code class="block bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded text-xs">--cs-glass-border-lg</code>
+        </div>
+      </div>
+      <p class="mt-4 text-sm text-cyan-700 dark:text-cyan-300">
+        Combine with <code class="bg-cyan-100 dark:bg-cyan-900 px-2 py-1 rounded">backdrop-filter: blur()</code> for best results.
+      </p>
+    </section>
+  </div>
+</BaseLayout>

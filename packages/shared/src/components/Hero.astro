@@ -37,20 +37,22 @@ const {
     
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a 
-        href={ctaLink} 
+      <a
+        href={ctaLink}
+        aria-label={`${ctaText} - ${title}`}
         class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg hover:from-purple-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
       >
         {ctaText}
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
         </svg>
       </a>
-      
+
       {secondaryCtaText && (
-        <a 
-          href={secondaryCtaLink} 
-          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg transform hover:scale-105 transition-all duration-200 hover:bg-white/30"
+        <a
+          href={secondaryCtaLink}
+          aria-label={secondaryCtaText}
+          class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-slate-900 dark:text-white bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg transform hover:scale-105 transition-all duration-200 hover:bg-white/30"
         >
           {secondaryCtaText}
         </a>
