@@ -26,36 +26,54 @@ const {
 const locale = env.PUBLIC_LOCALE || 'en';
 
 const cardClasses = {
-  default: 'cs-glass hover:cs-glass-lg',
-  featured: 'cs-glass hover:cs-glass-lg cs-gradient-border bg-gradient-to-br from-purple-500/10 to-cyan-500/10',
-  minimal: 'cs-glass-sm hover:cs-glass'
+  default: 'backdrop-blur-md hover:backdrop-blur-lg',
+  featured: 'backdrop-blur-lg',
+  minimal: 'backdrop-blur-sm hover:backdrop-blur-md'
+};
+
+const cardStyles = {
+  default: 'background: var(--cs-glass-bg-light); border: 1px solid var(--cs-glass-border-light);',
+  featured: 'background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(6, 182, 212, 0.15)); border: 2px solid var(--cs-glass-border-medium);',
+  minimal: 'background: var(--cs-glass-bg-xs); border: 1px solid var(--cs-glass-border-xs);'
 };
 
 const tagVariants = {
-  default: 'cs-glass-sm',
-  featured: 'cs-gradient-sunset text-white shadow-lg',
-  minimal: 'bg-slate-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200'
+  default: 'backdrop-blur-sm',
+  featured: 'backdrop-blur-sm bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg',
+  minimal: 'backdrop-blur-sm'
+};
+
+const tagStyles = {
+  default: 'background: rgba(255, 255, 255, 0.2); color: rgb(71, 85, 105); border: 1px solid rgba(148, 163, 184, 0.3);',
+  featured: '',
+  minimal: 'background: rgba(255, 255, 255, 0.15); color: rgb(100, 116, 139); border: 1px solid rgba(148, 163, 184, 0.2);'
 };
 
 const textClasses = {
-  default: 'text-gray-600 dark:text-gray-200',
-  featured: 'text-gray-700 dark:text-gray-200',
-  minimal: 'text-gray-600 dark:text-gray-200'
+  default: 'text-slate-700 dark:text-slate-200',
+  featured: 'text-slate-800 dark:text-white',
+  minimal: 'text-slate-600 dark:text-slate-300'
 };
 
 const metaClasses = {
-  default: 'text-sm opacity-80',
-  featured: 'text-sm opacity-90 text-gray-600 dark:text-gray-300',
-  minimal: 'text-sm opacity-80'
+  default: 'text-sm text-slate-500 dark:text-slate-400',
+  featured: 'text-sm text-slate-600 dark:text-slate-300',
+  minimal: 'text-sm text-slate-500 dark:text-slate-400'
+};
+
+const titleClasses = {
+  default: 'text-slate-900 dark:text-white',
+  featured: 'text-slate-900 dark:text-white',
+  minimal: 'text-slate-900 dark:text-white'
 };
 ---
 
-<article class={`group ${cardClasses[variant]} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 border border-white/20`}>
+<article class={`group ${cardClasses[variant]} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1`} style={cardStyles[variant]}>
   <!-- Image or Placeholder -->
   <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-cyan-500/20 to-purple-500/20">
     {image ? (
-      <img 
-        src={image} 
+      <img
+        src={image}
         alt={title}
         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
         loading="lazy"
@@ -63,29 +81,29 @@ const metaClasses = {
     ) : (
       <div class="w-full h-full flex items-center justify-center cs-gradient-ocean">
         <div class="cs-glass p-4 rounded-full">
-          <svg 
-            class="w-12 h-12 text-white drop-shadow-lg" 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            class="w-12 h-12 text-white drop-shadow-lg"
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="1.5" 
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
               d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
             />
           </svg>
         </div>
       </div>
     )}
-    
+
     <!-- Floating orbs for visual interest -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 20%; left: 15%;"></div>
       <div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="top: 60%; right: 20%; animation-delay: 0.5s;"></div>
     </div>
-    
+
     <!-- Featured badge for featured variant -->
     {variant === 'featured' && (
       <div class="absolute top-4 right-4 cs-gradient-sunset px-3 py-1 rounded-full text-white text-sm font-semibold shadow-lg">
@@ -93,7 +111,7 @@ const metaClasses = {
       </div>
     )}
   </div>
-  
+
   <!-- Content -->
   <div class="p-6 space-y-4">
     <!-- Meta Information -->
@@ -118,41 +136,41 @@ const metaClasses = {
         </span>
       )}
     </div>
-    
+
     <!-- Title with better contrast -->
-    <h2 class={`text-xl font-bold transition-all duration-300 group-hover:scale-105 ${
+    <h2 class={`text-xl font-bold transition-all duration-300 ${titleClasses[variant]} ${
       variant === 'featured'
-        ? 'text-gray-800 dark:text-white hover:cs-gradient-text hover:cs-gradient-animate'
-        : 'text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-purple-600'
+        ? 'group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-600'
+        : 'group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-purple-600'
     }`}>
       <a href={`/blog/${slug}/`} class="block" aria-label={`Read article: ${title}`}>
         {title}
       </a>
     </h2>
-    
+
     <!-- Description -->
     {description && (
       <p class={`line-clamp-3 leading-relaxed ${textClasses[variant]}`}>
         {description}
       </p>
     )}
-    
+
     <!-- Tags -->
     {tags.length > 0 && (
       <div class="flex flex-wrap gap-2">
         {tags.slice(0, 3).map((tag: string) => (
-          <span class={`px-3 py-1 text-xs rounded-full font-medium transition-all duration-300 hover:scale-105 ${tagVariants[variant]}`}>
+          <span class={`px-3 py-1 text-xs rounded-full font-medium transition-all duration-300 hover:scale-105 ${tagVariants[variant]}`} style={tagStyles[variant]}>
             {tag}
           </span>
         ))}
         {tags.length > 3 && (
-          <span class="px-3 py-1 text-xs cs-glass-sm rounded-full font-medium">
+          <span class="px-3 py-1 text-xs backdrop-blur-sm rounded-full font-medium" style="background: rgba(255, 255, 255, 0.15); color: rgb(100, 116, 139); border: 1px solid rgba(148, 163, 184, 0.2);">
             +{tags.length - 3}
           </span>
         )}
       </div>
     )}
-    
+
     <!-- Read More Link -->
     <div class="pt-2">
       <a
@@ -167,7 +185,7 @@ const metaClasses = {
       </a>
     </div>
   </div>
-  
+
   <!-- Subtle animation overlay -->
   <div class="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 </article>
