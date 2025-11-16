@@ -229,9 +229,6 @@ importers:
       '@fontsource/space-grotesk':
         specifier: ^5.2.10
         version: 5.2.10
-      '@fontsource/underdog':
-        specifier: ^5.2.8
-        version: 5.2.8
       '@fontsource/work-sans':
         specifier: ^5.2.8
         version: 5.2.8
@@ -681,9 +678,6 @@ packages:
 
   '@fontsource/space-grotesk@5.2.10':
     resolution: {integrity: sha512-XNXEbT74OIITPqw2H6HXwPDp85fy43uxfBwFR5PU+9sLnjuLj12KlhVM9nZVN6q6dlKjkuN8JisW/OBxwxgUew==}
-
-  '@fontsource/underdog@5.2.8':
-    resolution: {integrity: sha512-hY+0qTSqB0ozy4ZNcHAjEvWAxJMids8AXjw5h03lKut45KAVWRskFvq7XPV1MRVNfNRuyq2Dc+oa+KgZwq5obw==}
 
   '@fontsource/work-sans@5.2.8':
     resolution: {integrity: sha512-6LaHjVVgts+rnrcqvEkP2+iUB/jw1oDSYsGO0+TltAhnWki9Hnf/UGpgMQh2jcm0GEH8VqCPnq4PpmHLFzxXtQ==}
@@ -4395,8 +4389,6 @@ snapshots:
   '@fontsource/source-serif-4@5.2.9': {}
 
   '@fontsource/space-grotesk@5.2.10': {}
-
-  '@fontsource/underdog@5.2.8': {}
 
   '@fontsource/work-sans@5.2.8': {}
 
