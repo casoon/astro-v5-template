@@ -1,4 +1,6 @@
 ---
+import { env } from '@/env';
+
 export interface Props {
   title: string;
   description?: string;
@@ -10,16 +12,18 @@ export interface Props {
   variant?: 'default' | 'featured' | 'minimal';
 }
 
-const { 
-  title, 
-  description, 
-  date, 
-  author, 
-  image, 
-  slug, 
-  tags = [], 
-  variant = 'default' 
+const {
+  title,
+  description,
+  date,
+  author,
+  image,
+  slug,
+  tags = [],
+  variant = 'default'
 } = Astro.props;
+
+const locale = env.PUBLIC_LOCALE || 'en';
 
 const cardClasses = {
   default: 'cs-glass hover:cs-glass-lg',
@@ -95,10 +99,10 @@ const metaClasses = {
     <!-- Meta Information -->
     <div class={`flex items-center justify-between ${metaClasses[variant]}`}>
       <time datetime={date} class="flex items-center gap-1">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
         </svg>
-        {new Date(date).toLocaleDateString('de-DE', {
+        {new Date(date).toLocaleDateString(locale, {
           year: 'numeric',
           month: 'long',
           day: 'numeric'
@@ -106,9 +110,10 @@ const metaClasses = {
       </time>
       {author && (
         <span class="flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
           </svg>
+          <span class="sr-only">Author:</span>
           {author}
         </span>
       )}
@@ -116,11 +121,11 @@ const metaClasses = {
     
     <!-- Title with better contrast -->
     <h2 class={`text-xl font-bold transition-all duration-300 group-hover:scale-105 ${
-      variant === 'featured' 
-        ? 'text-gray-800 dark:text-white hover:cs-gradient-text hover:cs-gradient-animate' 
+      variant === 'featured'
+        ? 'text-gray-800 dark:text-white hover:cs-gradient-text hover:cs-gradient-animate'
         : 'text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-purple-600'
     }`}>
-      <a href={`/blog/${slug}/`} class="block">
+      <a href={`/blog/${slug}/`} class="block" aria-label={`Read article: ${title}`}>
         {title}
       </a>
     </h2>
@@ -150,12 +155,13 @@ const metaClasses = {
     
     <!-- Read More Link -->
     <div class="pt-2">
-      <a 
+      <a
         href={`/blog/${slug}/`}
         class="inline-flex items-center gap-2 cs-gradient-text hover:cs-gradient-animate font-semibold transition-all duration-300 hover:gap-3 group/link"
+        aria-label={`Read full article: ${title}`}
       >
-        Artikel lesen
-        <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        Read article
+        <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
       </a>

@@ -1,0 +1,463 @@
+# Astro v5 Template - Projektrichtlinien
+
+## 🎯 Projektzweck
+
+Dieses Template dient als professionelle, saubere Grundlage für Astro-basierte Webprojekte. Es bietet drei verschiedene Stufen (blank, base, demo) für unterschiedliche Projektanforderungen.
+
+## ♿ WCAG-Verpflichtung
+
+**Dieses Projekt verpflichtet sich zu WCAG 2.1 Level AA Konformität.**
+
+### Accessibility-Anforderungen
+
+Alle Komponenten und Features müssen folgende Standards erfüllen:
+
+#### 1. Wahrnehmbarkeit (Perceivable)
+- **1.1 Textalternativen**: Alle Bilder benötigen aussagekräftige `alt`-Attribute
+- **1.3 Anpassbar**: Semantisches HTML verwenden (nav, section, article, header, footer)
+- **1.4 Unterscheidbar**:
+  - Farbkontrast mindestens 4.5:1 für normalen Text
+  - Farbkontrast mindestens 3:1 für große Texte (18pt+ oder 14pt+ bold)
+  - Text muss auf 200% zoombar sein ohne Funktionsverlust
+  - Keine Information nur über Farbe vermitteln
+
+#### 2. Bedienbarkeit (Operable)
+- **2.1 Tastaturzugänglich**: Alle Funktionen per Tastatur erreichbar
+- **2.2 Ausreichend Zeit**: Keine zeitbasierten Einschränkungen ohne Alternative
+- **2.4 Navigierbar**:
+  - Skip-Links für Hauptinhalt
+  - Eindeutige, beschreibende Seitentitel
+  - Logische Tab-Reihenfolge
+  - Sichtbare Fokus-Indikatoren
+  - Eindeutige Link-Texte (keine "hier klicken")
+
+#### 3. Verständlichkeit (Understandable)
+- **3.1 Lesbar**: `lang`-Attribut auf html-Element
+- **3.2 Vorhersehbar**: Konsistente Navigation und Identifikation
+- **3.3 Hilfestellung bei der Eingabe**:
+  - Klare Fehlermeldungen
+  - Labels für alle Formularfelder
+  - Eingabehilfen und Validierung
+
+#### 4. Robustheit (Robust)
+- **4.1 Kompatibel**:
+  - Valides HTML
+  - Korrekte ARIA-Attribute
+  - Name, Role, Value für alle UI-Komponenten
+
+### Verpflichtende ARIA-Patterns
+
+- **Dialoge/Modals**: `role="dialog"`, `aria-modal="true"`, `aria-labelledby`
+- **Buttons**: Immer `<button>` verwenden, nie `<div onclick>`, `aria-label` für Icon-Buttons
+- **Navigation**: `<nav>` mit `aria-label` zur Unterscheidung mehrerer Navigationen
+- **Formulare**: Labels mit `for`-Attribut, `aria-describedby` für Hilfetext, `aria-invalid` für Fehler
+- **Dynamischer Content**: `aria-live` für wichtige Updates
+
+### Testing-Anforderungen
+
+Vor jedem Release müssen folgende Tests bestanden werden:
+- Keyboard-Navigation Test (Tab, Enter, Escape, Arrow Keys)
+- Screen Reader Test (NVDA, JAWS, oder VoiceOver)
+- Color Contrast Analysis (via WebAIM oder ähnlich)
+- Automated Accessibility Scan (axe, Lighthouse Accessibility Score > 90)
+
+## 🏗️ Architektur-Prinzipien
+
+### 1. Template-Philosophie
+- **Minimal, nicht maximal**: Nur notwendige Features im Template
+- **Löschbar statt konfigurierbar**: Entwickler können einfach entfernen, was sie nicht brauchen
+- **Beispiele zeigen**: Template demonstriert Best Practices, ist aber nicht produktionsfertig
+- **Drei Stufen**: blank (minimal) → base (komponenten-reich) → demo (vollständig)
+
+### 2. Code-Qualität
+
+#### TypeScript
+```typescript
+// ✅ RICHTIG: Strikte Typisierung
+interface Props {
+  title: string;
+  description?: string;
+  variant?: 'default' | 'dark' | 'strong';
+}
+
+// ❌ FALSCH: any verwenden
+const doSomething = (data: any) => { ... }
+```
+
+#### Komponenten-Struktur
+```astro
+---
+// 1. Interfaces/Types
+export interface Props {
+  // ...
+}
+
+// 2. Props destructuring mit Defaults
+const { title, variant = 'default' } = Astro.props;
+
+// 3. Logic/Computations
+const classes = cn('base-class', variantClasses[variant]);
+---
+
+<!-- 4. Template -->
+<div class={classes}>
+  <slot />
+</div>
+
+<style>
+  /* 5. Scoped Styles (nur wenn nötig) */
+</style>
+```
+
+#### Naming Conventions
+- **Komponenten**: PascalCase (`HeroSection.astro`, `BlogCard.astro`)
+- **Utilities**: camelCase (`formatDate.ts`, `cn.ts`)
+- **CSS Classes**: kebab-case via Tailwind
+- **API Routes**: kebab-case (`contact.ts`, `newsletter.ts`)
+
+### 3. Performance-Standards
+
+- **Images**: Immer `OptimizedImage.astro` verwenden, nie `<img>` direkt
+- **Web Vitals Ziele**:
+  - LCP < 2.5s
+  - FID < 100ms
+  - CLS < 0.1
+  - Lighthouse Score > 90
+- **Bundle Size**: JavaScript so minimal wie möglich
+- **Lazy Loading**: Alle Bilder außer above-the-fold
+
+## 📦 Workspace-Struktur
+
+```
+packages/
+├── shared/       # Design System, Utilities (wird von allen importiert)
+├── blank/        # Minimalstes Template (nur Layout + SEO)
+├── base/         # Produktionsreife Basis (alle Komponenten)
+└── demo/         # Vollständige Demo (Beispiel-Content)
+```
+
+### Dependency-Regel
+- `blank` → importiert nur `shared`
+- `base` → importiert nur `shared`
+- `demo` → importiert nur `shared`
+- **NIEMALS**: Cross-Package Imports zwischen blank/base/demo
+
+## 🎨 Styling-Guidelines
+
+### Tailwind CSS Prinzipien
+- **Utility-First**: Tailwind Classes bevorzugen
+- **Custom CSS nur wenn nötig**: Für Animationen, komplexe Layouts
+- **Dark Mode**: Immer `dark:` Varianten mitdenken
+- **Responsive**: Mobile-First (sm, md, lg, xl, 2xl)
+
+### Design Tokens
+```css
+/* ✅ RICHTIG: CSS Variables verwenden */
+color: var(--color-primary-500);
+transition: var(--transition-all);
+
+/* ❌ FALSCH: Hardcoded values */
+color: #3b82f6;
+transition: all 0.3s ease;
+```
+
+### Color Contrast
+- **Normale Texte**: Minimum 4.5:1 Kontrast
+- **Große Texte**: Minimum 3:1 Kontrast
+- **UI-Komponenten**: Minimum 3:1 Kontrast
+- **Prüfung**: WebAIM Contrast Checker verwenden
+
+## 🔧 Development Workflow
+
+### 1. Vor dem Entwickeln
+```bash
+# Dependencies installieren
+pnpm install
+
+# Entwicklungsserver starten
+pnpm dev              # Demo
+pnpm dev:blank       # Blank Template
+pnpm dev:base        # Base Template
+```
+
+### 2. Während der Entwicklung
+```bash
+# Type-Checking (kontinuierlich im Hintergrund)
+pnpm type-check
+
+# Linting
+pnpm check
+
+# Formatting
+pnpm format
+```
+
+### 3. Vor dem Commit
+```bash
+# Automatisch via Husky/lint-staged:
+# - Biome linting
+# - Prettier formatting
+# - TypeScript checking (auf geänderten Dateien)
+```
+
+### 4. Build & Validation
+```bash
+# Vollständiger Build
+pnpm build
+
+# Schneller Build (ohne Type-Check)
+pnpm build:fast
+
+# Spezifisches Package
+pnpm build:blank
+pnpm build:base
+pnpm build:demo
+```
+
+## 📝 Komponenten-Entwicklung
+
+### Neue Komponente erstellen
+
+1. **Prüfen**: Gehört sie in `shared` (wiederverwendbar) oder package-spezifisch?
+2. **Props Interface**: Immer `export interface Props` definieren
+3. **Accessibility**: ARIA-Attributes, Semantic HTML, Keyboard Support
+4. **TypeScript**: Strikte Typisierung, keine `any`
+5. **Responsive**: Mobile-First Design
+6. **Dark Mode**: `dark:` Varianten für alle visuellen Elemente
+7. **Documentation**: JSDoc für komplexe Props
+
+### Beispiel: Accessible Button Component
+```astro
+---
+export interface Props {
+  /** Button text or content */
+  children?: string;
+  /** Visual variant */
+  variant?: 'primary' | 'secondary' | 'ghost';
+  /** Size variant */
+  size?: 'sm' | 'md' | 'lg';
+  /** Disabled state */
+  disabled?: boolean;
+  /** ARIA label for icon-only buttons */
+  ariaLabel?: string;
+  /** Button type */
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  disabled = false,
+  ariaLabel,
+  type = 'button'
+} = Astro.props;
+---
+
+<button
+  type={type}
+  disabled={disabled}
+  aria-label={ariaLabel}
+  class={cn(
+    'button-base',
+    variantClasses[variant],
+    sizeClasses[size],
+    disabled && 'opacity-50 cursor-not-allowed'
+  )}
+>
+  <slot />
+</button>
+```
+
+## 🧪 Testing-Anforderungen
+
+### Manuelle Tests (vor jedem Release)
+- [ ] Keyboard-Navigation funktioniert
+- [ ] Dark Mode Toggle funktioniert
+- [ ] Alle Links funktionieren
+- [ ] Formulare validieren korrekt
+- [ ] Mobile Responsiveness (Chrome DevTools)
+- [ ] Screen Reader Test (mindestens ein Tool)
+
+### Automatisierte Tests
+```bash
+# Lighthouse Test (Performance, Accessibility, SEO)
+pnpm lighthouse
+
+# TypeScript Type Checking
+pnpm type-check
+
+# Linting
+pnpm check
+```
+
+## 🚀 Build & Deployment
+
+### Environment Variables
+Alle Packages nutzen validierte Environment Variables (siehe `env.ts`):
+
+```env
+# Required
+PUBLIC_SITE_URL=https://example.com
+
+# Optional but recommended
+PUBLIC_SITE_NAME=My Awesome Site
+PUBLIC_AUTHOR=Your Name
+PUBLIC_LOCALE=de
+PUBLIC_ENABLE_ANALYTICS=false
+PUBLIC_ENABLE_DARK_MODE=true
+```
+
+### Build-Validierung
+```bash
+# Config validieren
+pnpm validate:config
+
+# Full build mit allen checks
+pnpm build
+
+# Lighthouse Score prüfen
+pnpm lighthouse
+```
+
+## 📚 Best Practices
+
+### Do's ✅
+- Semantic HTML verwenden (`<nav>`, `<main>`, `<article>`)
+- TypeScript strict mode nutzen
+- Props interfaces exportieren
+- Mobile-first Design
+- Dark mode support
+- Keyboard navigation
+- ARIA labels für interaktive Elemente
+- Bilder optimieren (WebP, AVIF)
+- Environment Variables validieren
+- Komponenten dokumentieren
+
+### Don'ts ❌
+- `any` Type verwenden
+- Inline styles (außer für dynamische Values)
+- `<div>` statt `<button>` für Klickbares
+- Hardcoded URLs oder Strings
+- Fehlende alt-Attribute für Bilder
+- Console.logs im Production-Code
+- Unvalidierte User-Inputs
+- Missing TypeScript types
+- Undokumentierte komplexe Logic
+- Broken accessibility features
+
+## 🔒 Security-Richtlinien
+
+### Input Validation
+```typescript
+// ✅ RICHTIG: Zod validation
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  email: z.string().email(),
+  message: z.string().min(10).max(1000),
+});
+```
+
+### API Routes
+```typescript
+// ✅ RICHTIG: Error handling, validation
+export const POST: APIRoute = async ({ request }) => {
+  try {
+    const data = await request.json();
+    const validated = schema.parse(data);
+    // Process...
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: 'Invalid input' }), {
+      status: 400
+    });
+  }
+};
+```
+
+### XSS Prevention
+- Astro escaped automatisch
+- Bei `set:html` IMMER sanitizen
+- User Input NIEMALS direkt in HTML
+
+## 📖 Dokumentation
+
+### README-Anforderungen
+Jedes Package benötigt:
+- Kurze Beschreibung
+- Installation Steps
+- Development Commands
+- Build Instructions
+- Features Liste
+- Customization Guide
+
+### Code-Dokumentation
+```typescript
+/**
+ * Optimized image component with responsive sizes and modern formats
+ * @component
+ * @example
+ * ```astro
+ * <OptimizedImage
+ *   src="hero.jpg"
+ *   alt="Hero image"
+ *   sizes="(max-width: 768px) 100vw, 50vw"
+ * />
+ * ```
+ */
+```
+
+## 🎯 Template-Spezifische Regeln
+
+### Blank Package
+- **Minimal**: Nur Layout + SEO + 404
+- **Keine Komponenten**: Nur absolut notwendige
+- **Keine Beispiele**: Nur Struktur
+- **Ziel**: Schnellster Start für erfahrene Entwickler
+
+### Base Package
+- **Produktionsreif**: Alle Komponenten einsatzbereit
+- **Ein Beispiel pro Feature**: Blog, Form, etc.
+- **Dokumentiert**: Jede Komponente erklärt
+- **Ziel**: Schneller Projektstart mit Best Practices
+
+### Demo Package
+- **Showcase**: Alle Features demonstriert
+- **Mehrere Beispiele**: 4+ Blog Posts, verschiedene Komponenten
+- **Live Preview**: Deploybar als Referenz
+- **Ziel**: Zeigen was möglich ist
+
+## 🔄 Wartung & Updates
+
+### Version Updates
+- **Astro**: Updates zeitnah einspielen, Breaking Changes dokumentieren
+- **Dependencies**: Monatlich prüfen, Security Updates sofort
+- **Node.js**: LTS Version verwenden, in package.json festlegen
+
+### Breaking Changes
+Bei Breaking Changes:
+1. CHANGELOG.md aktualisieren
+2. Migration Guide schreiben
+3. Beispiele updaten
+4. Version Bump (Semantic Versioning)
+
+## 📞 Support & Contribution
+
+### Issues Melden
+- Template-Bug: GitHub Issue mit Reproduktion
+- Accessibility-Problem: High Priority, mit WCAG-Referenz
+- Feature Request: Mit Use Case und Begründung
+
+### Contributions
+- Fork → Feature Branch → PR
+- Alle Tests müssen passen
+- Accessibility-Konformität prüfen
+- Dokumentation aktualisieren
+
+---
+
+**Diese Richtlinien sind verbindlich für alle Entwicklungen am Template.**
+**Bei Fragen oder Unklarheiten: Lieber fragen als falsch implementieren!**

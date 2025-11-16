@@ -10,6 +10,7 @@ import { env } from '@/env';
 
 // Environment variables
 const siteName = env.PUBLIC_SITE_NAME;
+const locale = env.PUBLIC_LOCALE || 'en';
 
 // Props for SEO
 export interface Props {
@@ -30,7 +31,7 @@ const {
 
 const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 ---
-<html lang="de" class="scroll-smooth">
+<html lang={locale} class="scroll-smooth">
 <script is:inline>
   // Theme initialization
   (function() {
@@ -44,10 +45,6 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
       html.classList.remove('dark');
       html.setAttribute('data-theme', 'light');
     }
-
-    console.log('Initial theme:', theme);
-    console.log('HTML classes:', html.className);
-    console.log('Data theme:', html.getAttribute('data-theme'));
   })();
 </script>
 <head>
@@ -89,6 +86,8 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			id="mobile-menu-button"
 			class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
 			aria-label="Toggle mobile menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
 		>
 			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
 			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
@@ -149,6 +148,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			if (isOpen) {
 				// Close menu
 				mobileMenu?.classList.add('hidden');
+				mobileMenuButton?.setAttribute('aria-expanded', 'false');
 				// Reset hamburger icon
 				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
 				menuLines?.[1]?.classList.remove('opacity-0');
@@ -156,6 +156,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			} else {
 				// Open menu
 				mobileMenu?.classList.remove('hidden');
+				mobileMenuButton?.setAttribute('aria-expanded', 'true');
 				// Transform to X icon
 				menuLines?.[0]?.classList.add('rotate-45', 'translate-y-2');
 				menuLines?.[1]?.classList.add('opacity-0');
@@ -168,6 +169,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 		mobileLinks?.forEach(link => {
 			link.addEventListener('click', function() {
 				mobileMenu?.classList.add('hidden');
+				mobileMenuButton?.setAttribute('aria-expanded', 'false');
 				// Reset hamburger icon
 				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
 				menuLines?.[1]?.classList.remove('opacity-0');
@@ -180,7 +182,19 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			if (!mobileMenuButton?.contains(event.target as Node) &&
 				!mobileMenu?.contains(event.target as Node)) {
 				mobileMenu?.classList.add('hidden');
+				mobileMenuButton?.setAttribute('aria-expanded', 'false');
 				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			}
+		});
+
+		// Close menu on Escape key
+		document.addEventListener('keydown', function(event) {
+			if (event.key === 'Escape' && !mobileMenu?.classList.contains('hidden')) {
+				mobileMenu?.classList.add('hidden');
+				mobileMenuButton?.setAttribute('aria-expanded', 'false');
 				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
 				menuLines?.[1]?.classList.remove('opacity-0');
 				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
