@@ -33,8 +33,8 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.0)(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.43.5)(typescript@5.9.3)(yaml@2.8.1)
       '@casoon/atlas-styles':
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.0.6
+        version: 0.0.6
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -121,8 +121,8 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0
       '@casoon/atlas-styles':
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.0.6
+        version: 0.0.6
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -182,8 +182,8 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.0)(astro@5.15.4(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.1)(typescript@5.9.3)(yaml@2.8.1))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.43.5)(typescript@5.9.3)(yaml@2.8.1)
       '@casoon/atlas-styles':
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.0.6
+        version: 0.0.6
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -405,8 +405,8 @@ packages:
     resolution: {integrity: sha512-+ntATQe1AlL7nTOYjwjj6w3299CgRot48wL761TUGYpYgAou3AaONZazp0PKZyCyWhudWsjhq1nvRHOvbMzhTA==}
     engines: {node: '>=18'}
 
-  '@casoon/atlas-styles@0.0.5':
-    resolution: {integrity: sha512-fzjjTg+mxWgWn6PtdVhK9Enb965CYfX5wJlIbTIldS7u7f0yju4z7o+4K7kaUjAeEygtdkBRnTQDbJBIL5MHlA==}
+  '@casoon/atlas-styles@0.0.6':
+    resolution: {integrity: sha512-5mn841oxqKNyE/ZAKueJzdqsFIoB37TcZRR/q2APjNv6pGFnZlDyEvFPfp4sUxW0uS51Z3RiwK9DGRFdQYflYA==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -4162,7 +4162,7 @@ snapshots:
     dependencies:
       fontkit: 2.0.4
 
-  '@casoon/atlas-styles@0.0.5': {}
+  '@casoon/atlas-styles@0.0.6': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
