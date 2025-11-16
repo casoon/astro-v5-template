@@ -2,6 +2,117 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-5deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+  }
+
+  @keyframes reveal3dUp {
+    from {
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+
+  @keyframes flip3dX {
+    from {
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+</style>
+
 <BaseLayout
   title="Animations Demo"
   description="Showcase of Atlas Styles animation utilities"
@@ -20,14 +131,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     <!-- Fade Animations -->
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Fade Animations</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Reload the page to see animations again</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-md">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 animate-fade-in" style="animation: fadeIn 1s ease-out;">
           <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Fade In</h3>
-          <p class="text-slate-600 dark:text-slate-300 text-sm">Element fades in smoothly (cs-fade-in)</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Element fades in smoothly</p>
         </div>
-        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-fade-in cs-anim-lg cs-delay-200">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 animate-fade-in" style="animation: fadeIn 1s ease-out 0.2s both;">
           <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Fade In Delayed</h3>
-          <p class="text-slate-600 dark:text-slate-300 text-sm">With delay (cs-fade-in cs-delay-200)</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">With 200ms delay</p>
         </div>
       </div>
     </section>
@@ -35,22 +147,23 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     <!-- Slide Animations -->
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Slide Animations</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Reload the page to see animations again</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="p-6 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white cs-slide-up cs-anim-md">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white" style="animation: slideUp 0.8s ease-out;">
           <h3 class="font-semibold mb-2">Slide Up</h3>
-          <p class="text-sm opacity-90">cs-slide-up</p>
+          <p class="text-sm opacity-90">Slides from bottom</p>
         </div>
-        <div class="p-6 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white cs-slide-down cs-anim-md cs-delay-100">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white" style="animation: slideDown 0.8s ease-out 0.1s both;">
           <h3 class="font-semibold mb-2">Slide Down</h3>
-          <p class="text-sm opacity-90">cs-slide-down</p>
+          <p class="text-sm opacity-90">Slides from top</p>
         </div>
-        <div class="p-6 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white cs-slide-left cs-anim-md cs-delay-200">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 text-white" style="animation: slideLeft 0.8s ease-out 0.2s both;">
           <h3 class="font-semibold mb-2">Slide Left</h3>
-          <p class="text-sm opacity-90">cs-slide-left</p>
+          <p class="text-sm opacity-90">Slides from right</p>
         </div>
-        <div class="p-6 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 text-white cs-slide-right cs-anim-md cs-delay-300">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 text-white" style="animation: slideRight 0.8s ease-out 0.3s both;">
           <h3 class="font-semibold mb-2">Slide Right</h3>
-          <p class="text-sm opacity-90">cs-slide-right</p>
+          <p class="text-sm opacity-90">Slides from left</p>
         </div>
       </div>
     </section>
@@ -58,18 +171,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     <!-- Scale & Zoom Animations -->
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Scale & Zoom</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-scale-in cs-anim-lg">
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Reload the page to see animations again</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700" style="animation: scaleIn 0.8s ease-out;">
           <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Scale In</h3>
-          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-scale-in</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Grows from 90% to 100%</p>
         </div>
-        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-zoom-in cs-anim-lg cs-delay-100">
+        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700" style="animation: zoomIn 0.8s ease-out 0.1s both;">
           <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Zoom In</h3>
-          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-zoom-in</p>
-        </div>
-        <div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-700 cs-blur-in cs-anim-lg cs-delay-200">
-          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mb-2">Blur In</h3>
-          <p class="text-slate-600 dark:text-slate-300 text-sm">cs-blur-in</p>
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Grows from 80% to 100%</p>
         </div>
       </div>
     </section>
@@ -86,9 +196,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <h3 class="font-semibold mb-2">Bounce</h3>
           <p class="text-sm opacity-90">cs-bounce cs-anim-infinite</p>
         </div>
-        <div class="p-6 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white cs-wiggle cs-anim-infinite">
+        <div class="p-6 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white" style="animation: wiggle 1s ease-in-out infinite;">
           <h3 class="font-semibold mb-2">Wiggle</h3>
-          <p class="text-sm opacity-90">cs-wiggle cs-anim-infinite</p>
+          <p class="text-sm opacity-90">Rotates back and forth</p>
         </div>
         <div class="p-6 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 text-white cs-float cs-anim-infinite">
           <h3 class="font-semibold mb-2">Float</h3>
@@ -108,14 +218,19 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     <!-- 3D Effects -->
     <section class="space-y-4">
       <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100">3D Effects</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Reload the page to see animations again</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div class="p-8 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white cs-reveal-3d-up cs-anim-lg" style="perspective: 1000px;">
-          <h3 class="font-semibold mb-2 text-lg">3D Reveal Up</h3>
-          <p class="text-sm opacity-90">cs-reveal-3d-up</p>
+        <div style="perspective: 1000px;">
+          <div class="p-8 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 text-white" style="animation: reveal3dUp 1.2s ease-out; transform-origin: bottom center;">
+            <h3 class="font-semibold mb-2 text-lg">3D Reveal Up</h3>
+            <p class="text-sm opacity-90">Rotates up from bottom</p>
+          </div>
         </div>
-        <div class="p-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white cs-flip-3d-x cs-anim-lg cs-delay-200" style="perspective: 1000px;">
-          <h3 class="font-semibold mb-2 text-lg">3D Flip X</h3>
-          <p class="text-sm opacity-90">cs-flip-3d-x</p>
+        <div style="perspective: 1000px;">
+          <div class="p-8 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-600 text-white" style="animation: flip3dX 1.2s ease-out 0.2s both; transform-origin: center center;">
+            <h3 class="font-semibold mb-2 text-lg">3D Flip X</h3>
+            <p class="text-sm opacity-90">Flips along X axis</p>
+          </div>
         </div>
       </div>
     </section>

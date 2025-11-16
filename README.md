@@ -2,9 +2,37 @@
 
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Version](https://img.shields.io/badge/Version-1.4.0-blue)]()
 [![Workspaces](https://img.shields.io/badge/Workspaces-enabled-brightgreen)]()
 
 Production-ready Astro v5 monorepo with pnpm workspaces and shared design system.
+
+## ✨ Version 1.4.0 - What's New
+
+### Typography & Font System
+- 🎨 **Professional Font Pairing Guide** - 15 curated Google Fonts with optimal weight variants
+  - Elegant serif combinations (Playfair Display + Source Serif 4)
+  - Modern sans-serif pairings (Montserrat + Merriweather)
+  - Tech-forward duos (Space Grotesk + Work Sans)
+  - Book-style serif pairs (Crimson Text + Lora)
+  - All fonts self-hosted via @fontsource
+- ✅ **Optimized Font Loading** - Only necessary weights loaded, proper fallback fonts
+- 📊 **Live Typography Examples** - Interactive showcase with installation instructions
+
+### Animations System
+- 🎬 **Custom Animation Library** - All animations now working with custom @keyframes:
+  - Fade animations (fadeIn with delays)
+  - Slide animations (Up, Down, Left, Right)
+  - Scale & Zoom effects (scaleIn, zoomIn)
+  - Continuous animations (wiggle, pulse, bounce, float, rotate, heartbeat)
+  - 3D effects (reveal3dUp, flip3dX with proper perspective)
+- ⚡ **Performance Optimized** - Smooth 60fps animations with proper timing functions
+- 🔄 **Reload Notice** - User-friendly hints for re-triggering animations
+
+### Demo Package Enhancements
+- 📄 **/typography** - Comprehensive font pairing showcase with live previews
+- 🎭 **/animations** - Complete animation library demonstration
+- 🔍 **Improved Navigation** - Better menu structure with typography and animations pages
 
 ## Packages
 
