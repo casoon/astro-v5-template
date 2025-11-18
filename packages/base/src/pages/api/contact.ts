@@ -44,15 +44,6 @@ export const POST: APIRoute = async ({ request }) => {
     // 3. Send to a webhook
     // 4. etc.
 
-    // For demo purposes, we'll just log the data
-    console.log('Contact form submission:', {
-      name,
-      email,
-      subject,
-      message,
-      timestamp: new Date().toISOString()
-    });
-
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 1000));
 
