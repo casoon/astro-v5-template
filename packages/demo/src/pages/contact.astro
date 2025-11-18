@@ -30,6 +30,54 @@ import Modal from '@astro-v5/shared/components/Modal.astro';
       <Newsletter />
     </section>
 
+    <!-- Static Map Section -->
+    <section class="mt-16">
+      <div class="cs-glass p-8 rounded-xl">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 text-center">
+          📍 Our Location
+        </h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 text-center">
+          Static map image - No external data loaded, fully GDPR compliant
+        </p>
+
+        <div class="relative rounded-lg overflow-hidden border-2 border-slate-200 dark:border-slate-700 shadow-lg">
+          <img
+            src="/berlin-tv-tower-map.png"
+            alt="Map showing Berlin TV Tower location at Alexanderplatz, Berlin"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="mt-6 bg-slate-50 dark:bg-slate-800 rounded-lg p-4">
+          <h3 class="font-semibold text-slate-900 dark:text-white mb-2">🗼 Berlin TV Tower (Fernsehturm)</h3>
+          <div class="text-sm text-slate-600 dark:text-slate-300 space-y-1">
+            <p><strong>Address:</strong> Panoramastraße 1A, 10178 Berlin, Germany</p>
+            <p><strong>Coordinates:</strong> 52.5208° N, 13.4094° E</p>
+            <p><strong>Landmark:</strong> Alexanderplatz</p>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              <strong>Map Attribution:</strong> Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-700 dark:hover:text-slate-300">OpenStreetMap contributors</a>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+              This is a static, pre-generated map image. No external requests are made when viewing this page.
+            </p>
+          </div>
+
+          <div class="mt-4 text-center">
+            <a
+              href="/map"
+              class="inline-block px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
+            >
+              View Interactive Map →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Additional Contact Info -->
     <section class="mt-16 grid md:grid-cols-3 gap-8">
       <div class="cs-glass p-6 rounded-xl text-center">
@@ -49,8 +97,8 @@ import Modal from '@astro-v5/shared/components/Modal.astro';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Office</h3>
-        <p class="text-slate-600 dark:text-slate-300">123 Main St, City, Country</p>
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">Location</h3>
+        <p class="text-slate-600 dark:text-slate-300">Berlin, Germany</p>
       </div>
 
       <div class="cs-glass p-6 rounded-xl text-center">

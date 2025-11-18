@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Grid lines for streets -->
+  <g stroke="#d0d0d0" stroke-width="1" opacity="0.5">
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="400" y1="0" x2="400" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/>
+  </g>
+
+  <!-- Streets (thicker lines) -->
+  <g stroke="#ffffff" stroke-width="3" opacity="0.8">
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="600"/>
+    <line x1="500" y1="0" x2="500" y2="600"/>
+  </g>
+
+  <!-- Park/green area (simplified) -->
+  <rect x="50" y="50" width="200" height="150" fill="#90EE90" opacity="0.3" rx="5"/>
+  <rect x="550" y="400" width="200" height="150" fill="#90EE90" opacity="0.3" rx="5"/>
+
+  <!-- Buildings (simplified blocks) -->
+  <rect x="320" y="180" width="60" height="40" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+  <rect x="420" y="210" width="50" height="30" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+  <rect x="250" y="420" width="70" height="50" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+  <rect x="530" y="220" width="55" height="35" fill="#e0e0e0" stroke="#999" stroke-width="1"/>
+
+  <!-- Berlin TV Tower (Fernsehturm) -->
+  <g id="tv-tower">
+    <!-- Base/Building -->
+    <rect x="385" y="270" width="30" height="50" fill="#c0c0c0" stroke="#808080" stroke-width="1"/>
+
+    <!-- Sphere (Kugel) -->
+    <circle cx="400" cy="260" r="20" fill="#e0e0e0" stroke="#808080" stroke-width="2"/>
+    <circle cx="400" cy="260" r="20" fill="url(#sphereGradient)"/>
+
+    <!-- Spire -->
+    <line x1="400" y1="240" x2="400" y2="180" stroke="#808080" stroke-width="3"/>
+    <polygon points="400,170 395,180 405,180" fill="#cc0000"/>
+
+    <!-- Windows on sphere -->
+    <rect x="393" y="255" width="14" height="8" fill="#87ceeb" opacity="0.6" rx="1"/>
+  </g>
+
+  <!-- Marker/Pin for TV Tower -->
+  <g id="marker" transform="translate(400, 340)">
+    <!-- Pin shadow -->
+    <ellipse cx="0" cy="35" rx="8" ry="3" fill="#000000" opacity="0.3"/>
+
+    <!-- Pin body -->
+    <path d="M 0,-30 C -10,-30 -18,-22 -18,-12 C -18,0 0,30 0,30 C 0,30 18,0 18,-12 C 18,-22 10,-30 0,-30 Z"
+          fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
+
+    <!-- Pin inner circle -->
+    <circle cx="0" cy="-12" r="8" fill="#ffffff"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="400" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">
+    Berlin TV Tower
+  </text>
+  <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">
+    Alexanderplatz
+  </text>
+
+  <!-- Coordinates -->
+  <text x="400" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af">
+    52.5208° N, 13.4094° E
+  </text>
+
+  <!-- Scale indicator -->
+  <g transform="translate(650, 550)">
+    <line x1="0" y1="0" x2="100" y2="0" stroke="#000" stroke-width="2"/>
+    <line x1="0" y1="-5" x2="0" y2="5" stroke="#000" stroke-width="2"/>
+    <line x1="100" y1="-5" x2="100" y2="5" stroke="#000" stroke-width="2"/>
+    <text x="50" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#000">
+      500m
+    </text>
+  </g>
+
+  <!-- North arrow -->
+  <g transform="translate(50, 550)">
+    <polygon points="0,-20 -5,-5 0,0 5,-5" fill="#000"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#000">
+      N
+    </text>
+  </g>
+
+  <!-- Attribution -->
+  <text x="400" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Map data © OpenStreetMap contributors
+  </text>
+
+  <!-- Gradient for sphere -->
+  <defs>
+    <radialGradient id="sphereGradient" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#c0c0c0;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+</svg>

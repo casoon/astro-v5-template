@@ -9,7 +9,7 @@ export {
   validateEnv,
   createEnvSchema,
   type BaseEnv,
-} from './env';
+} from "./env";
 
 // API utilities
 export {
@@ -27,7 +27,14 @@ export {
   type ApiResponse,
   type ContactFormData,
   type NewsletterData,
-} from './api';
+} from "./api";
 
 // Sitemap utilities
-export { getSitemapUrls } from './sitemap';
+export {
+  getSitemapUrls,
+  createSitemapRoute,
+  generateSitemapPages,
+  generateSitemapXML,
+  type SitemapPage,
+  type SitemapConfig,
+} from "./sitemap";

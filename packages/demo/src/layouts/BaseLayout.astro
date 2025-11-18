@@ -5,6 +5,7 @@ import '@/styles/global.css';
 import ThemeToggle from '@shared/components/ThemeToggle.svelte';
 import Toast from '@astro-v5/shared/components/Toast.astro';
 import WebVitals from '@astro-v5/shared/components/WebVitals.astro';
+import { WebVitals as CasoonWebVitals } from '@casoon/astro-webvitals';
 import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
 import { env } from '@/env';
 
@@ -93,6 +94,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			<li><a href="/typography" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Fonts</a></li>
 			<li><a href="/animations" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Animations</a></li>
 			<li><a href="/glass-effects" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Glass</a></li>
+			<li><a href="/map" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Map</a></li>
 			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Contact</a></li>
 			<li><a href="/api-test" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">API</a></li>
 		</ul>
@@ -119,6 +121,7 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 			<li><a href="/typography" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Fonts</a></li>
 			<li><a href="/animations" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Animations</a></li>
 			<li><a href="/glass-effects" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Glass</a></li>
+			<li><a href="/map" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Map</a></li>
 			<li><a href="/contact" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Contact</a></li>
 			<li><a href="/api-test" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">API</a></li>
 		</ul>
@@ -149,7 +152,15 @@ const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
 	</div>
 </footer>
 <Toast />
+<!-- Local WebVitals implementation (top-right) -->
 <WebVitals debug={import.meta.env.DEV} />
+<!-- @casoon/astro-webvitals package for testing (bottom-left) -->
+<CasoonWebVitals
+  debug={import.meta.env.DEV}
+  position="bottom-left"
+  checkAccessibility={true}
+  extendedMetrics={true}
+/>
 
 <!-- Mobile Menu Script -->
 <script>

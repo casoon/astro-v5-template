@@ -2,12 +2,31 @@
 
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
-[![Version](https://img.shields.io/badge/Version-1.4.0-blue)]()
+[![Version](https://img.shields.io/badge/Version-1.4.1-blue)]()
 [![Workspaces](https://img.shields.io/badge/Workspaces-enabled-brightgreen)]()
 
 Production-ready Astro v5 monorepo with pnpm workspaces and shared design system.
 
-## ✨ Version 1.4.0 - What's New
+## ✨ Version 1.4.1 - What's New
+
+### Interactive Maps & Performance Monitoring
+- 🗺️ **Leaflet.js Integration** - GDPR-compliant interactive maps
+  - Interactive map page with consent banner (`/map`)
+  - Static pre-generated map on contact page (fully GDPR-compliant)
+  - Berlin TV Tower location with marker
+  - Local hosting (no CDN dependencies)
+- 📊 **Web Vitals Monitoring** - @casoon/astro-webvitals v0.1.3
+  - Core Web Vitals tracking (LCP, FID, CLS, FCP, TTFB, INP)
+  - Debug overlay with real-time metrics
+  - Accessibility checks (WCAG 2.1)
+  - Extended metrics and performance budgets
+
+### Technical Improvements
+- 🔧 **Engine Requirements** - Updated to support Node.js >=20.0.0
+- 📝 **Fixed GitHub Links** - Corrected repository links in demo site
+- 📚 **Enhanced Documentation** - Comprehensive README updates
+
+## ✨ Version 1.4.0 - Previous Release
 
 ### Blog System Improvements
 - 📝 **Enhanced BlogCard Component** - Improved visual hierarchy and readability
@@ -713,6 +732,74 @@ Default settings in `scripts/optimize-images.mjs`:
 
 **Customization:** Edit `scripts/optimize-images.mjs` to change widths, formats, quality settings, or skip patterns.
 
+## 🗺️ Interactive Maps
+
+### Leaflet.js Integration
+
+The demo package includes both interactive and static map implementations:
+
+**Interactive Map (`/map`):**
+- GDPR-compliant with consent banner
+- Leaflet.js hosted locally (no CDN)
+- OpenStreetMap tiles loaded after user consent
+- Berlin TV Tower location with marker
+- Fully responsive design
+
+**Static Map (`/contact`):**
+- Pre-generated static map image
+- No external requests (fully GDPR-compliant)
+- Shows Berlin TV Tower location
+- Includes proper OpenStreetMap attribution
+- 800x600px optimized PNG
+
+**Usage:**
+```astro
+---
+// Interactive map with consent
+import 'leaflet/dist/leaflet.css';
+---
+<script>
+  import L from 'leaflet';
+  // Map loads only after user consent
+</script>
+```
+
+**Dependencies:**
+- `leaflet` (1.9.4) - For interactive maps
+- `@types/leaflet` - TypeScript definitions
+
+## 📊 Web Vitals Monitoring
+
+### @casoon/astro-webvitals
+
+The template includes `@casoon/astro-webvitals` for performance monitoring:
+
+**Features:**
+- Core Web Vitals tracking (LCP, FID, CLS, FCP, TTFB, INP)
+- Debug overlay with real-time metrics
+- Accessibility checks (WCAG 2.1)
+- Extended metrics (memory, network)
+- Batch reporting for analytics
+- Performance budget tracking
+
+**Current Version:** 0.1.3
+
+**Usage in Demo:**
+```astro
+---
+import { WebVitals } from '@casoon/astro-webvitals';
+---
+
+<WebVitals 
+  debug={import.meta.env.DEV}
+  position="bottom-left"
+  checkAccessibility={true}
+  extendedMetrics={true}
+/>
+```
+
+The demo package shows both the local WebVitals component (top-right) and @casoon/astro-webvitals (bottom-left) for comparison.
+
 ## 🎨 Tech Stack
 
 | Technology | Version | Purpose |
@@ -721,6 +808,8 @@ Default settings in `scripts/optimize-images.mjs`:
 | **Tailwind CSS** | 4.1.17 | Utility-first CSS |
 | **Svelte** | 5.43.5 | Reactive components |
 | **TypeScript** | 5.9.3 | Type safety |
+| **Leaflet** | 1.9.4 | Interactive maps |
+| **@casoon/astro-webvitals** | 0.1.3 | Performance monitoring |
 | **Sharp** | 0.34.5 | Image optimization |
 | **pnpm** | 9.15.4 | Package manager |
 | **Volta** | - | Node.js version manager |

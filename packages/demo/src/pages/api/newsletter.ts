@@ -1,11 +1,11 @@
-import type { APIRoute } from 'astro';
 import {
-  newsletterSchema,
-  validateRequest,
-  successResponse,
   errorResponse,
+  newsletterSchema,
   simulateDelay,
-} from '@astro-v5/shared/utils/api';
+  successResponse,
+  validateRequest,
+} from '@astro-v5/shared/utils';
+import type { APIRoute } from 'astro';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -30,13 +30,13 @@ export const POST: APIRoute = async ({ request }) => {
     await simulateDelay(500);
 
     // Return success response
-    return successResponse(
-      { email },
-      'Successfully subscribed to newsletter!'
-    );
+    return successResponse({ email }, 'Successfully subscribed to newsletter!');
   } catch (error) {
     console.error('Newsletter subscription error:', error);
-    return errorResponse('An error occurred while processing your subscription', 500);
+    return errorResponse(
+      'An error occurred while processing your subscription',
+      500,
+    );
   }
 };
 
@@ -47,22 +47,6 @@ export const GET: APIRoute = async () => {
       status: 'Newsletter API is running',
       accepts: 'POST requests with JSON body containing: email',
     },
-    'API is operational'
-  );
-};
-
-// GET endpoint to check status
-export const GET: APIRoute = async () => {
-  return new Response(
-    JSON.stringify({
-      status: 'Newsletter API is running',
-      accepts: 'POST requests with JSON body containing: email'
-    }),
-    {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
+    'API is operational',
   );
 };

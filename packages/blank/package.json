@@ -1,7 +1,7 @@
 {
   "name": "@astro-v5/blank",
   "type": "module",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Blank Astro v5 template - absolute minimum for new projects",
   "private": true,
   "author": "casoon",
@@ -21,7 +21,7 @@
   ],
   "packageManager": "pnpm@9.15.4",
   "engines": {
-    "node": ">=24.0.0",
+    "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
   },
   "volta": {

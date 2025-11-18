@@ -1,6 +1,6 @@
 {
   "name": "@astro-v5/shared",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Shared styles, variables, and design system for Astro v5 templates",
   "type": "module",
   "private": true,
