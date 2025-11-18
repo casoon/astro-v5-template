@@ -1,42 +1,24 @@
 import type { APIRoute } from 'astro';
+import {
+  contactFormSchema,
+  validateRequest,
+  successResponse,
+  errorResponse,
+  simulateDelay,
+} from '@astro-v5/shared/utils/api';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    const { name, email, subject, message } = data;
 
-    // Validate required fields
-    if (!name || !email || !subject || !message) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: 'All fields are required'
-        }),
-        {
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+    // Validate request data with Zod schema
+    const validation = await validateRequest(contactFormSchema, data);
+
+    if (!validation.success) {
+      return errorResponse(validation.error, 400);
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          error: 'Invalid email format'
-        }),
-        {
-          status: 400,
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      );
-    }
+    const { name, email, subject, message } = validation.data;
 
     // Here you would typically:
     // 1. Send an email using a service like SendGrid, Resend, or AWS SES
@@ -45,51 +27,26 @@ export const POST: APIRoute = async ({ request }) => {
     // 4. etc.
 
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await simulateDelay(1000);
 
     // Return success response
-    return new Response(
-      JSON.stringify({
-        success: true,
-        message: 'Your message has been sent successfully!'
-      }),
-      {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+    return successResponse(
+      { name, email, subject, message },
+      'Your message has been sent successfully!'
     );
   } catch (error) {
     console.error('Contact form error:', error);
-    
-    return new Response(
-      JSON.stringify({
-        success: false,
-        error: 'An error occurred while processing your request'
-      }),
-      {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    );
+    return errorResponse('An error occurred while processing your request', 500);
   }
 };
 
-// Optionally handle GET requests to check endpoint status
+// GET endpoint to check API status
 export const GET: APIRoute = async () => {
-  return new Response(
-    JSON.stringify({
-      status: 'Contact API is running',
-      accepts: 'POST requests with JSON body containing: name, email, subject, message'
-    }),
+  return successResponse(
     {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
+      status: 'Contact API is running',
+      accepts: 'POST requests with JSON body containing: name, email, subject, message',
+    },
+    'API is operational'
   );
 };

@@ -49,5 +49,19 @@ export default defineConfig({
     define: {
       __SVELTE_EXPERIMENTAL_ASYNC__: true,
     },
+    // Build optimizations
+    build: {
+      // Minify for production
+      minify: 'esbuild',
+      // Chunk splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Group vendor dependencies
+            vendor: ['svelte'],
+          },
+        },
+      },
+    },
   },
 });

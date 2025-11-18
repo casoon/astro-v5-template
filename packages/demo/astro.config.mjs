@@ -49,5 +49,38 @@ export default defineConfig({
     define: {
       __SVELTE_EXPERIMENTAL_ASYNC__: true,
     },
+    // Build optimizations
+    build: {
+      // Minify for production
+      minify: 'esbuild',
+      // Chunk splitting for better caching
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Group vendor dependencies
+            vendor: ['svelte'],
+            // Separate font packages for better caching
+            fonts: [
+              '@fontsource/inter',
+              '@fontsource/archivo',
+              '@fontsource/crimson-text',
+              '@fontsource/dm-sans',
+              '@fontsource/fira-code',
+              '@fontsource/jetbrains-mono',
+              '@fontsource/lora',
+              '@fontsource/manrope',
+              '@fontsource/merriweather',
+              '@fontsource/montserrat',
+              '@fontsource/playfair-display',
+              '@fontsource/poppins',
+              '@fontsource/raleway',
+              '@fontsource/source-serif-4',
+              '@fontsource/space-grotesk',
+              '@fontsource/work-sans',
+            ],
+          },
+        },
+      },
+    },
   },
 });
