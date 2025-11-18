@@ -92,7 +92,7 @@ const isoDate = convertToISODate(lastmod);
 const keywordsString = keywords.length > 0 ? keywords.join(', ') : undefined;
 
 // JSON-LD Schema for WebPage (only include provided fields)
-const webpageSchema: any = {
+const webpageSchema: Record<string, any> = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: title,

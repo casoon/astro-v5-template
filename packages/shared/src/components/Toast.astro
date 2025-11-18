@@ -88,6 +88,7 @@
 
       toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
 
+      // Build toast structure safely to prevent XSS
       toast.innerHTML = `
         <div class="flex-shrink-0">
           <div class="w-10 h-10 rounded-full ${colors.bg} flex items-center justify-center">
@@ -95,12 +96,12 @@
           </div>
         </div>
         <div class="flex-1">
-          <p class="text-sm font-medium text-slate-900 dark:text-white">${message}</p>
+          <p class="text-sm font-medium text-slate-900 dark:text-white toast-message"></p>
         </div>
         <button
           type="button"
           data-toast-id="${id}"
-          class="flex-shrink-0 ml-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+          class="flex-shrink-0 ml-4 p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
           aria-label="Schließen"
         >
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -108,6 +109,12 @@
           </svg>
         </button>
       `;
+
+      // Safely set message using textContent to prevent XSS
+      const messageEl = toast.querySelector('.toast-message');
+      if (messageEl) {
+        messageEl.textContent = message;
+      }
 
       // Add event listener to close button
       const closeBtn = toast.querySelector('button');

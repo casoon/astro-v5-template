@@ -44,12 +44,6 @@ export const POST: APIRoute = async ({ request }) => {
     // 3. Send confirmation email
     // 4. etc.
 
-    // For demo purposes, we'll just log the email
-    console.log('Newsletter subscription:', {
-      email,
-      timestamp: new Date().toISOString()
-    });
-
     // Simulate API delay
     await new Promise(resolve => setTimeout(resolve, 500));
 

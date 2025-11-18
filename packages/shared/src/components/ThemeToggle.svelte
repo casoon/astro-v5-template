@@ -19,8 +19,6 @@
     isDark = !isDark;
     updateTheme();
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    console.log('Theme toggled to:', isDark ? 'dark' : 'light');
-    console.log('HTML classes:', document.documentElement.className);
   }
 
   function updateTheme(): void {
@@ -37,7 +35,7 @@
 
 <button
   onclick={toggleTheme}
-  class="group relative p-3 rounded-2xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-105"
+  class="group relative p-3 rounded-2xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-all duration-300 transform hover:scale-105"
   aria-label="Toggle dark mode"
 >
   {#if mounted}
