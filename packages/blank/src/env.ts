@@ -11,7 +11,7 @@ const envSchema = createEnvSchema({
   PUBLIC_SITE_NAME: "My Astro Site",
   PUBLIC_MAIN_SITE_URL: "http://localhost:4321",
   PUBLIC_AUTHOR: "Your Name",
-  PUBLIC_LOCALE: "en",
+  PUBLIC_LOCALE: "de",
 });
 
 /**

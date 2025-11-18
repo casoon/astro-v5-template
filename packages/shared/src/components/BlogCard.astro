@@ -1,5 +1,5 @@
 ---
-import { env } from '@astro-v5/shared/utils/env';
+import type { BaseEnv } from '@astro-v5/shared/utils/env';
 
 export interface Props {
   title: string;
@@ -23,46 +23,47 @@ const {
   variant = 'default'
 } = Astro.props;
 
-const locale = env.PUBLIC_LOCALE || 'en';
+const locale = (import.meta.env.PUBLIC_LOCALE as BaseEnv['PUBLIC_LOCALE']) || 'en';
 
 const cardClasses = {
-  default: 'cs-glass hover:cs-glass-lg',
-  featured: 'cs-glass hover:cs-glass-lg cs-gradient-border bg-gradient-to-br from-purple-500/10 to-cyan-500/10',
-  minimal: 'cs-glass-sm hover:cs-glass'
+  default: 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 shadow-md hover:shadow-xl',
+  featured: 'bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-2 border-purple-300 dark:border-purple-700 bg-gradient-to-br from-purple-50/50 to-cyan-50/50 dark:from-purple-900/20 dark:to-cyan-900/20 shadow-lg hover:shadow-2xl',
+  minimal: 'bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg'
 };
 
 const tagVariants = {
-  default: 'cs-glass-sm',
-  featured: 'cs-gradient-sunset text-white shadow-lg',
+  default: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600',
+  featured: 'bg-gradient-to-r from-purple-500 to-cyan-500 text-white shadow-md',
   minimal: 'bg-slate-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200'
 };
 
 const textClasses = {
-  default: 'text-gray-600 dark:text-gray-200',
+  default: 'text-gray-600 dark:text-gray-300',
   featured: 'text-gray-700 dark:text-gray-200',
-  minimal: 'text-gray-600 dark:text-gray-200'
+  minimal: 'text-gray-600 dark:text-gray-300'
 };
 
 const metaClasses = {
-  default: 'text-sm opacity-80',
-  featured: 'text-sm opacity-90 text-gray-600 dark:text-gray-300',
-  minimal: 'text-sm opacity-80'
+  default: 'text-sm text-gray-500 dark:text-gray-400',
+  featured: 'text-sm text-gray-600 dark:text-gray-300',
+  minimal: 'text-sm text-gray-500 dark:text-gray-400'
 };
 ---
 
-<article class={`group ${cardClasses[variant]} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 border border-white/20`}>
+<article class={`group ${cardClasses[variant]} rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1`}>
   <!-- Image or Placeholder -->
-  <div class="relative aspect-video overflow-hidden bg-gradient-to-br from-cyan-500/20 to-purple-500/20">
+  <div class="relative overflow-hidden bg-gradient-to-br from-cyan-500/20 to-purple-500/20" style="height: 320px;">
     {image ? (
       <img
         src={image}
         alt={title}
-        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+        class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
         loading="lazy"
+        style="min-height: 320px;"
       />
     ) : (
-      <div class="w-full h-full flex items-center justify-center cs-gradient-ocean">
-        <div class="cs-glass p-4 rounded-full">
+      <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-400 to-purple-500" style="min-height: 320px;">
+        <div class="bg-white/20 backdrop-blur-sm p-4 rounded-full">
           <svg
             class="w-12 h-12 text-white drop-shadow-lg"
             fill="none"
@@ -80,22 +81,16 @@ const metaClasses = {
       </div>
     )}
 
-    <!-- Floating orbs for visual interest -->
-    <div class="absolute inset-0 pointer-events-none">
-      <div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 20%; left: 15%;"></div>
-      <div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="top: 60%; right: 20%; animation-delay: 0.5s;"></div>
-    </div>
-
     <!-- Featured badge for featured variant -->
     {variant === 'featured' && (
-      <div class="absolute top-4 right-4 cs-gradient-sunset px-3 py-1 rounded-full text-white text-sm font-semibold shadow-lg">
+      <div class="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-cyan-600 px-3 py-1 rounded-full text-white text-sm font-semibold shadow-lg">
         ⭐ Featured
       </div>
     )}
   </div>
 
   <!-- Content -->
-  <div class="p-6 space-y-4">
+  <div class="p-6 space-y-4 bg-white dark:bg-gray-800">
     <!-- Meta Information -->
     <div class={`flex items-center justify-between ${metaClasses[variant]}`}>
       <time datetime={date} class="flex items-center gap-1">
@@ -122,7 +117,7 @@ const metaClasses = {
     <!-- Title with better contrast -->
     <h2 class={`text-xl font-bold transition-all duration-300 group-hover:scale-105 ${
       variant === 'featured'
-        ? 'text-gray-800 dark:text-white hover:cs-gradient-text hover:cs-gradient-animate'
+        ? 'text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-cyan-600'
         : 'text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-purple-600'
     }`}>
       <a
@@ -150,7 +145,7 @@ const metaClasses = {
           </span>
         ))}
         {tags.length > 3 && (
-          <span class="px-3 py-1 text-xs cs-glass-sm rounded-full font-medium">
+          <span class="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-full font-medium text-gray-700 dark:text-gray-200">
             +{tags.length - 3}
           </span>
         )}
@@ -161,11 +156,11 @@ const metaClasses = {
     <div class="pt-2">
       <a
         href={`/blog/${slug}/`}
-        class="inline-flex items-center gap-2 cs-gradient-text hover:cs-gradient-animate font-semibold transition-all duration-300 hover:gap-3 group/link focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-lg"
+        class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent font-semibold transition-all duration-300 hover:gap-3 group/link focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 rounded-lg"
         aria-label={`Read full article: ${title}`}
       >
-        Read article
-        <svg class="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        Artikel lesen
+        <svg class="w-4 h-4 text-purple-600 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
       </a>

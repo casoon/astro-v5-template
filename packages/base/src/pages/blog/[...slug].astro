@@ -69,232 +69,150 @@ const slug = post.slug || post.id;
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter">
-<header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
-	<nav class="flex justify-between items-center max-w-6xl mx-auto">
+<body class="min-h-screen bg-white dark:bg-slate-900 flex flex-col transition-colors duration-300 font-inter">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4 px-4 sm:py-4 sm:px-6">
+	<nav class="flex justify-between items-center max-w-4xl mx-auto">
 		<ul class="hidden md:flex gap-8 list-none p-0 m-0">
-			<li><a href="/" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Home</a></li>
-			<li><a href="/blog" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Blog</a></li>
-			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200">Contact</a></li>
+			<li><a href="/" class="text-gray-700 dark:text-gray-200 no-underline text-base font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Home</a></li>
+			<li><a href="/blog" class="text-gray-700 dark:text-gray-200 no-underline text-base font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Blog</a></li>
+			<li><a href="/contact" class="text-gray-700 dark:text-gray-200 no-underline text-base font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200">Kontakt</a></li>
 		</ul>
 		<ThemeToggle client:load />
 	</nav>
 </header>
-<main class="flex-1 px-4 sm:px-6 py-8">
-	<div class="max-w-7xl mx-auto">
 
-	<!-- Background with floating orbs -->
-	<div class="fixed inset-0 pointer-events-none overflow-hidden">
-		<div class="cs-orb cs-orb-lg opacity-5 animate-pulse" style="top: 20%; right: 10%; animation-duration: 12s;"></div>
-		<div class="cs-orb cs-orb-md opacity-10 animate-bounce" style="top: 70%; left: 5%; animation-delay: 3s; animation-duration: 8s;"></div>
-	</div>
+<main class="flex-1 px-4 sm:px-6 py-12">
+	<article class="max-w-4xl mx-auto">
+		<!-- Back Navigation -->
+		<nav class="mb-8">
+			<a href="/blog/" class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200 font-medium">
+				<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+				</svg>
+				Zurück zum Blog
+			</a>
+		</nav>
 
-	<article class="max-w-5xl mx-auto relative">
-		<!-- Header with Atlas styling -->
-		<header class="mb-16">
-			<nav class="mb-8">
-				<a href="/blog/" class="inline-flex items-center gap-2 cs-glass px-4 py-2 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1">
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-					</svg>
-					Zurück zum Blog
-				</a>
-			</nav>
+		<!-- Article Header -->
+		<header class="mb-12 space-y-6">
+			<!-- Title -->
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+				{post.data.title}
+			</h1>
 
-			<!-- Title with gradient effect -->
-			<div class="cs-glass-sm p-8 rounded-3xl mb-8">
-				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold cs-gradient-text cs-gradient-animate mb-8 text-center">
-					{post.data.title}
-				</h1>
-
-				<!-- Meta Information with Atlas styling -->
-				<div class="flex flex-wrap items-center justify-center gap-8 text-sm opacity-80 mb-6">
-					{post.data.date && (
-						<div class="flex items-center gap-2 cs-glass-sm px-4 py-2 rounded-full">
-							<svg class="w-4 h-4 text-cyan-500" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-							</svg>
-							<time datetime={post.data.date}>
+			<!-- Meta Information -->
+			<div class="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+				{post.data.date && (
+					<div class="flex items-center gap-2">
+						<svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+						</svg>
+						<time datetime={post.data.date}>
 							{new Date(post.data.date).toLocaleDateString('de-DE', {
-									year: 'numeric',
-									month: 'long',
-									day: 'numeric'
-								})}
-							</time>
-						</div>
-					)}
-					{post.data.author && (
-						<div class="flex items-center gap-2 cs-glass-sm px-4 py-2 rounded-full">
-							<svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-							</svg>
-							<span>von {post.data.author}</span>
-						</div>
-					)}
-				</div>
-
-				<!-- Tags with Atlas styling -->
-				{post.data.tags && post.data.tags.length > 0 && (
-					<div class="flex flex-wrap gap-3 justify-center">
-					{post.data.tags.map((tag: string) => (
-							<span class="cs-glass px-4 py-2 rounded-full font-medium hover:cs-glass-lg transition-all duration-300 hover:scale-105">
-								{tag}
-							</span>
-						))}
+								year: 'numeric',
+								month: 'long',
+								day: 'numeric'
+							})}
+						</time>
+					</div>
+				)}
+				{post.data.author && (
+					<div class="flex items-center gap-2">
+						<svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+							<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+						</svg>
+						<span>{post.data.author}</span>
 					</div>
 				)}
 			</div>
 
-			<!-- Description with Atlas styling -->
-			{post.data.description && (
-				<div class="cs-glass p-6 rounded-2xl mb-8 text-center">
-					<p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed italic">
-						{post.data.description}
-					</p>
+			<!-- Tags -->
+			{post.data.tags && post.data.tags.length > 0 && (
+				<div class="flex flex-wrap gap-2">
+					{post.data.tags.map((tag: string) => (
+						<span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+							{tag}
+						</span>
+					))}
 				</div>
 			)}
 
-			<!-- Image with Atlas styling -->
+			<!-- Description -->
+			{post.data.description && (
+				<p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed border-l-4 border-purple-500 pl-6 py-2 italic bg-gray-50 dark:bg-gray-800/50 rounded-r-lg">
+					{post.data.description}
+				</p>
+			)}
+
+			<!-- Featured Image -->
 			{post.data.image && (
-				<div class="relative group mb-12">
-					<div class="cs-glass p-2 rounded-3xl">
+				<figure class="space-y-2">
+					<div class="relative rounded-2xl overflow-hidden shadow-xl">
 						<img
 							src={post.data.image}
 							alt={post.data.title}
-							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
-							loading="lazy"
+							class="w-full h-auto object-cover"
+							loading="eager"
 						/>
 					</div>
-					<!-- Floating orbs around image -->
-					<div class="absolute inset-0 pointer-events-none">
-						<div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 10%; left: -5%; animation-delay: 1s;"></div>
-						<div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="bottom: 15%; right: -3%; animation-delay: 2s;"></div>
-					</div>
-				</div>
+					<figcaption class="text-sm text-gray-500 dark:text-gray-400 text-center italic">
+						Bildquelle: {post.data.imageSource || 'Unsplash'}
+					</figcaption>
+				</figure>
 			)}
 		</header>
 
-		<!-- Content with enhanced Atlas styling -->
-		<div class="cs-glass-sm p-8 rounded-3xl">
-			<div class="prose prose-lg max-w-none dark:prose-invert
-				[&>h1]:cs-gradient-text [&>h1]:text-4xl [&>h1]:font-bold [&>h1]:mb-8 [&>h1]:mt-12 [&>h1]:text-center
-				[&>h2]:cs-gradient-text [&>h2]:text-3xl [&>h2]:font-bold [&>h2]:mb-6 [&>h2]:mt-10
-				[&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-gray-800 [&>h3]:dark:text-white [&>h3]:mb-4 [&>h3]:mt-8
-				[&>p]:text-gray-700 [&>p]:dark:text-gray-200 [&>p]:leading-relaxed [&>p]:mb-6 [&>p]:text-lg
-				[&>a]:cs-gradient-text [&>a]:no-underline [&>a]:hover:underline [&>a]:font-medium
-				[&>strong]:text-gray-800 [&>strong]:dark:text-white [&>strong]:font-bold
-				[&>code]:text-cyan-600 [&>code]:dark:text-cyan-400 [&>code]:cs-glass-sm [&>code]:px-3 [&>code]:py-1 [&>code]:rounded [&>code]:text-sm [&>code]:font-mono
-				[&>pre]:cs-glass [&>pre]:p-6 [&>pre]:rounded-2xl [&>pre]:overflow-x-auto [&>pre]:mb-8 [&>pre]:border [&>pre]:border-white/20
-				[&>blockquote]:cs-glass [&>blockquote]:border-l-4 [&>blockquote]:border-gradient-to-b [&>blockquote]:from-cyan-500 [&>blockquote]:to-purple-500 [&>blockquote]:p-6 [&>blockquote]:rounded-r-2xl [&>blockquote]:mb-8 [&>blockquote]:italic
-				[&>ul]:list-none [&>ul]:space-y-2 [&>ul]:mb-6
-				[&>li]:relative [&>li]:pl-6 [&>li]:text-gray-700 [&>li]:dark:text-gray-200
-				[&>li]:before:content-['•'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-cyan-500 [&>li]:before:font-bold
-				[&>hr]:border-none [&>hr]:h-px [&>hr]:bg-gradient-to-r [&>hr]:from-transparent [&>hr]:via-gray-300 [&>hr]:dark:via-gray-600 [&>hr]:to-transparent [&>hr]:my-12
-			">
-				<Content />
-			</div>
+		<!-- Article Content -->
+		<div class="prose prose-lg max-w-none dark:prose-invert
+			prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white
+			prose-h1:text-4xl prose-h1:mb-8 prose-h1:mt-12
+			prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-10 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700
+			prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8
+			prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
+			prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-a:no-underline hover:prose-a:underline prose-a:font-medium prose-a:transition-colors
+			prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-bold
+			prose-code:text-purple-600 dark:prose-code:text-purple-400 prose-code:bg-purple-50 dark:prose-code:bg-purple-950/30 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+			prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:text-gray-100 prose-pre:p-6 prose-pre:rounded-xl prose-pre:overflow-x-auto prose-pre:shadow-lg prose-pre:border prose-pre:border-gray-700
+			[&_pre_code]:!bg-transparent [&_pre_code]:!text-gray-100 [&_pre_code]:!p-0 [&_pre_code]:before:!content-none [&_pre_code]:after:!content-none
+			prose-blockquote:border-l-4 prose-blockquote:border-purple-500 prose-blockquote:bg-gray-50 dark:prose-blockquote:bg-gray-800/50 prose-blockquote:pl-6 prose-blockquote:py-4 prose-blockquote:rounded-r-lg prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300
+			prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-2
+			prose-ol:list-decimal prose-ol:pl-6 prose-ol:space-y-2
+			prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:marker:text-purple-500
+			prose-hr:border-gray-300 dark:prose-hr:border-gray-700 prose-hr:my-12
+			prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8
+			prose-table:border-collapse prose-table:w-full
+			prose-th:bg-gray-100 dark:prose-th:bg-gray-800 prose-th:p-3 prose-th:text-left prose-th:font-semibold prose-th:border prose-th:border-gray-300 dark:prose-th:border-gray-700
+			prose-td:p-3 prose-td:border prose-td:border-gray-300 dark:prose-td:border-gray-700
+		">
+			<Content />
 		</div>
 
-		<!-- Footer with Atlas styling -->
-		<footer class="mt-16">
-			<div class="cs-glass p-8 rounded-3xl text-center">
-				<div class="flex items-center justify-center gap-4 mb-6">
-					<div class="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent w-20"></div>
-					<div class="cs-orb cs-orb-xs animate-pulse"></div>
-					<div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
-				</div>
-
-				<p class="text-gray-600 dark:text-gray-300 mb-6">
-					Danke fürs Lesen! Entdecke weitere Artikel in unserem Blog.
+		<!-- Article Footer -->
+		<footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
+			<div class="bg-gradient-to-r from-purple-50 to-cyan-50 dark:from-purple-900/20 dark:to-cyan-900/20 rounded-2xl p-8 text-center space-y-6">
+				<p class="text-lg text-gray-700 dark:text-gray-300">
+					Danke fürs Lesen! Entdecke weitere spannende Artikel.
 				</p>
 
 				<a
 					href="/blog/"
-					class="inline-flex items-center gap-3 cs-glass px-6 py-3 rounded-xl hover:cs-glass-lg transition-all duration-300 hover:-translate-y-1 cs-gradient-text font-semibold"
+					class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
 				>
 					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
 					</svg>
 					Alle Artikel ansehen
 				</a>
 			</div>
 		</footer>
 	</article>
-
-	</div>
 </main>
-<footer class="text-center text-gray-500 dark:text-gray-400 py-4 sm:py-6 px-4">
+
+<footer class="text-center text-gray-500 dark:text-gray-400 py-8 px-4 border-t border-gray-200 dark:border-gray-800">
 	<p>&copy; 2025 {siteName}</p>
 </footer>
+
 <Toast />
 <WebVitals debug={import.meta.env.DEV} />
 </body>
 </html>
-
-<script>
-	// Demo functionality for blog posts
-	document.addEventListener('DOMContentLoaded', function() {
-		// Counter demo
-		const counterButton = document.getElementById('demo-counter');
-		const counterSpan = document.getElementById('counter');
-
-		if (counterButton && counterSpan) {
-			let count = 0;
-			counterButton.addEventListener('click', function() {
-				count++;
-				counterSpan.textContent = count.toString();
-			});
-		}
-
-		// Animation demo
-		const fadeBtn = document.getElementById('fade-btn');
-		const slideBtn = document.getElementById('slide-btn');
-		const resetBtn = document.getElementById('reset-btn');
-		const demoElement = document.getElementById('demo-element');
-
-		if (fadeBtn && demoElement) {
-			fadeBtn.addEventListener('click', function() {
-				demoElement.style.opacity = '0.3';
-				demoElement.style.transform = 'scale(0.8)';
-			});
-		}
-
-		if (slideBtn && demoElement) {
-			slideBtn.addEventListener('click', function() {
-				demoElement.style.transform = 'translateX(100px) rotate(45deg)';
-			});
-		}
-
-		if (resetBtn && demoElement) {
-			resetBtn.addEventListener('click', function() {
-				demoElement.style.opacity = '1';
-				demoElement.style.transform = 'none';
-			});
-		}
-
-		// Tailwind demo
-		const colorBtn = document.getElementById('color-btn');
-		const sizeBtn = document.getElementById('size-btn');
-		const demoBox = document.getElementById('demo-box');
-
-		if (colorBtn && demoBox) {
-			colorBtn.addEventListener('click', function() {
-				const colors = ['bg-red-500', 'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-yellow-500'];
-				const currentColor = demoBox.className.match(/bg-\w+-500/);
-				const currentIndex = colors.indexOf(currentColor ? currentColor[0] : 'bg-red-500');
-				const nextIndex = (currentIndex + 1) % colors.length;
-				demoBox.className = demoBox.className.replace(/bg-\w+-500/, colors[nextIndex]);
-			});
-		}
-
-		if (sizeBtn && demoBox) {
-			sizeBtn.addEventListener('click', function() {
-				const sizes = ['w-32 h-32', 'w-40 h-40', 'w-48 h-48', 'w-32 h-32'];
-				const currentSize = demoBox.className.match(/w-\d+ h-\d+/);
-				const currentIndex = sizes.indexOf(currentSize ? currentSize[0] : 'w-32 h-32');
-				const nextIndex = (currentIndex + 1) % sizes.length;
-				demoBox.className = demoBox.className.replace(/w-\d+ h-\d+/, sizes[nextIndex]);
-			});
-		}
-	});
-</script>
