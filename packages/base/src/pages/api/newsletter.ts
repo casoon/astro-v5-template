@@ -10,13 +10,13 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(
         JSON.stringify({
           success: false,
-          error: 'Email is required'
+          error: 'Email is required',
         }),
         {
           status: 400,
           headers: {
-            'Content-Type': 'application/json'
-          }
+            'Content-Type': 'application/json',
+          },
         }
       );
     }
@@ -27,13 +27,13 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(
         JSON.stringify({
           success: false,
-          error: 'Invalid email format'
+          error: 'Invalid email format',
         }),
         {
           status: 400,
           headers: {
-            'Content-Type': 'application/json'
-          }
+            'Content-Type': 'application/json',
+          },
         }
       );
     }
@@ -45,34 +45,34 @@ export const POST: APIRoute = async ({ request }) => {
     // 4. etc.
 
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Return success response
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Successfully subscribed to newsletter!'
+        message: 'Successfully subscribed to newsletter!',
       }),
       {
         status: 200,
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       }
     );
   } catch (error) {
     console.error('Newsletter subscription error:', error);
-    
+
     return new Response(
       JSON.stringify({
         success: false,
-        error: 'An error occurred while processing your subscription'
+        error: 'An error occurred while processing your subscription',
       }),
       {
         status: 500,
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       }
     );
   }
@@ -83,13 +83,13 @@ export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
       status: 'Newsletter API is running',
-      accepts: 'POST requests with JSON body containing: email'
+      accepts: 'POST requests with JSON body containing: email',
     }),
     {
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }
   );
 };

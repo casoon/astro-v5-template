@@ -1,6 +1,6 @@
-import tailwind from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
-import { env } from "./src/env.ts";
+import tailwind from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
+import { env } from './src/env.ts';
 
 // Minimal Astro configuration for blank template
 // https://docs.astro.build/en/reference/configuration-reference/
@@ -10,7 +10,7 @@ export default defineConfig({
 
   // Build configuration
   build: {
-    inlineStylesheets: "auto", // Inline critical CSS for better performance
+    inlineStylesheets: 'auto', // Inline critical CSS for better performance
   },
 
   // Vite configuration
@@ -19,13 +19,13 @@ export default defineConfig({
       // Tailwind CSS v4 with Vite integration
       tailwind({
         config: {
-          darkMode: "class", // Enable class-based dark mode
+          darkMode: 'class', // Enable class-based dark mode
         },
       }),
     ],
     ssr: {
       // Include font packages in SSR bundle
-      noExternal: ["@fontsource/*"],
+      noExternal: ['@fontsource/*'],
     },
   },
 });

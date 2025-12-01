@@ -33,10 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
     return successResponse({ email }, 'Successfully subscribed to newsletter!');
   } catch (error) {
     console.error('Newsletter subscription error:', error);
-    return errorResponse(
-      'An error occurred while processing your subscription',
-      500,
-    );
+    return errorResponse('An error occurred while processing your subscription', 500);
   }
 };
 
@@ -47,6 +44,6 @@ export const GET: APIRoute = async () => {
       status: 'Newsletter API is running',
       accepts: 'POST requests with JSON body containing: email',
     },
-    'API is operational',
+    'API is operational'
   );
 };

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-import sharp from "sharp";
-import { readdir, mkdir, stat, writeFile, copyFile } from "node:fs/promises";
-import { join, dirname, basename, extname, relative } from "node:path";
-import { fileURLToPath } from "node:url";
+import { copyFile, mkdir, readdir, stat, writeFile } from 'node:fs/promises';
+import { basename, dirname, extname, join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT_DIR = join(__dirname, "..");
+const ROOT_DIR = join(__dirname, '..');
 
 // Configuration
 const CONFIG = {
-  inputDir: "src/assets/images",
-  outputDir: "public/responsive",
+  inputDir: 'src/assets/images',
+  outputDir: 'public/responsive',
   widths: [378, 400, 756, 800, 1200],
-  formats: ["webp", "avif"],
+  formats: ['webp', 'avif'],
   quality: {
     webp: 80,
     avif: 75,
@@ -36,19 +36,17 @@ async function getImageFiles(dir, baseDir = dir) {
       files.push(...(await getImageFiles(fullPath, baseDir)));
     } else if (entry.isFile()) {
       const ext = extname(entry.name).toLowerCase();
-      if ([".jpg", ".jpeg", ".png", ".webp", ".svg"].includes(ext)) {
+      if (['.jpg', '.jpeg', '.png', '.webp', '.svg'].includes(ext)) {
         // Skip if matches skip patterns
-        const shouldSkip = CONFIG.skipPatterns.some((pattern) =>
-          pattern.test(entry.name),
-        );
+        const shouldSkip = CONFIG.skipPatterns.some((pattern) => pattern.test(entry.name));
         if (!shouldSkip) {
           files.push({
             path: fullPath,
             relativePath: relative(baseDir, fullPath),
             name: basename(entry.name, ext),
             ext,
-            isWebp: ext === ".webp",
-            isSvg: ext === ".svg",
+            isWebp: ext === '.webp',
+            isSvg: ext === '.svg',
           });
         }
       }
@@ -61,7 +59,7 @@ async function getImageFiles(dir, baseDir = dir) {
 /**
  * Optimize existing WebP file to multiple sizes
  */
-async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
+async function optimizeWebPFile(file, _inputBaseDir, outputBaseDir) {
   const results = [];
   const relativeDir = dirname(file.relativePath);
   const outputDirPath = join(outputBaseDir, relativeDir);
@@ -90,7 +88,7 @@ async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
         .toFile(outputPath);
 
       results.push({
-        format: "webp",
+        format: 'webp',
         width,
         path: outputPath,
         relativePath: relative(outputBaseDir, outputPath),
@@ -117,7 +115,7 @@ async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
         .toFile(outputPath);
 
       results.push({
-        format: "avif",
+        format: 'avif',
         width,
         path: outputPath,
         relativePath: relative(outputBaseDir, outputPath),
@@ -137,7 +135,7 @@ async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
     await copyFile(file.path, fallbackPath);
 
     results.push({
-      format: "webp-original",
+      format: 'webp-original',
       width: metadata.width,
       path: fallbackPath,
       relativePath: relative(outputBaseDir, fallbackPath),
@@ -154,7 +152,7 @@ async function optimizeWebPFile(file, inputBaseDir, outputBaseDir) {
 /**
  * Copy SVG file without modification
  */
-async function copySvgFile(file, inputBaseDir, outputBaseDir) {
+async function copySvgFile(file, _inputBaseDir, outputBaseDir) {
   const relativeDir = dirname(file.relativePath);
   const outputDirPath = join(outputBaseDir, relativeDir);
 
@@ -169,7 +167,7 @@ async function copySvgFile(file, inputBaseDir, outputBaseDir) {
 
   return [
     {
-      format: "svg",
+      format: 'svg',
       path: outputPath,
       relativePath: relative(outputBaseDir, outputPath),
     },
@@ -227,10 +225,7 @@ async function optimizeImage(file, inputBaseDir, outputBaseDir) {
 
         console.log(`  ✅ ${width}w ${format.toUpperCase()}`);
       } catch (error) {
-        console.error(
-          `  ❌ Failed ${width}w ${format.toUpperCase()}:`,
-          error.message,
-        );
+        console.error(`  ❌ Failed ${width}w ${format.toUpperCase()}:`, error.message);
       }
     }
   }
@@ -240,12 +235,10 @@ async function optimizeImage(file, inputBaseDir, outputBaseDir) {
   const fallbackPath = join(outputDirPath, fallbackName);
 
   try {
-    await sharp(file.path)
-      .jpeg({ quality: CONFIG.quality.jpeg })
-      .toFile(fallbackPath);
+    await sharp(file.path).jpeg({ quality: CONFIG.quality.jpeg }).toFile(fallbackPath);
 
     results.push({
-      format: "original",
+      format: 'original',
       width: metadata.width,
       path: fallbackPath,
       relativePath: relative(outputBaseDir, fallbackPath),
@@ -269,7 +262,7 @@ async function generateManifest(optimizedImages, outputBaseDir) {
     manifest[originalPath] = variants;
   }
 
-  const manifestPath = join(outputBaseDir, "manifest.json");
+  const manifestPath = join(outputBaseDir, 'manifest.json');
   await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log(`\n📄 Manifest generated: ${manifestPath}`);
@@ -282,13 +275,13 @@ async function main() {
   // Get package filter from command line argument
   const packageFilter = process.argv[2];
 
-  console.log("🚀 Starting image optimization...\n");
+  console.log('🚀 Starting image optimization...\n');
   if (packageFilter) {
     console.log(`📦 Filter: Only processing package "${packageFilter}"\n`);
   }
 
   // Find all packages with images
-  const packagesDir = join(ROOT_DIR, "packages");
+  const packagesDir = join(ROOT_DIR, 'packages');
   const packages = await readdir(packagesDir);
 
   for (const pkg of packages) {
@@ -335,11 +328,11 @@ async function main() {
     console.log(`\n✅ Package ${pkg} complete!\n`);
   }
 
-  console.log("🎉 All images optimized successfully!");
+  console.log('🎉 All images optimized successfully!');
 }
 
 // Run
 main().catch((error) => {
-  console.error("❌ Error:", error);
+  console.error('❌ Error:', error);
   process.exit(1);
 });

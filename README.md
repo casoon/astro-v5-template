@@ -2,52 +2,16 @@
 
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
-[![Version](https://img.shields.io/badge/Version-1.4.1-blue)]()
-[![Workspaces](https://img.shields.io/badge/Workspaces-enabled-brightgreen)]()
+[![Version](https://img.shields.io/badge/Version-1.4.2-blue)]()
 
 Production-ready Astro v5 monorepo with pnpm workspaces and shared design system.
 
-## ✨ Version 1.4.1 - What's New
+## ✨ Version 1.4.2
 
-### Interactive Maps & Performance Monitoring
-- 🗺️ **Leaflet.js Integration** - GDPR-compliant interactive maps
-  - Interactive map page with consent banner (`/map`)
-  - Static pre-generated map on contact page (fully GDPR-compliant)
-  - Berlin TV Tower location with marker
-  - Local hosting (no CDN dependencies)
-- 📊 **Web Vitals Monitoring** - @casoon/astro-webvitals v0.1.3
-  - Core Web Vitals tracking (LCP, FID, CLS, FCP, TTFB, INP)
-  - Debug overlay with real-time metrics
-  - Accessibility checks (WCAG 2.1)
-  - Extended metrics and performance budgets
-
-### Technical Improvements
-- 🔧 **Engine Requirements** - Updated to support Node.js >=20.0.0
-- 📝 **Fixed GitHub Links** - Corrected repository links in demo site
-- 📚 **Enhanced Documentation** - Comprehensive README updates
-
-## ✨ Version 1.4.0 - Previous Release
-
-### Blog System Improvements
-- 📝 **Enhanced BlogCard Component** - Improved visual hierarchy and readability
-  - Taller teaser images (320px height) for better visual impact
-  - Fixed borders on light backgrounds (visible gray borders)
-  - Removed non-existent `cs-*` classes, now using standard Tailwind
-  - Better tag styling with proper contrast
-  - Gradient text on "Artikel lesen" link with colored icon
-- 📄 **Improved Blog Post Layout** - Better typography and formatting
-  - Sticky header for better navigation
-  - Optimized prose classes for article content
-  - Fixed code block styling (dark background without white overlay)
-  - Image source attribution support
-  - Better spacing and hierarchy
-- 🌍 **German Localization** - All packages now use German locale (`de`) by default
-- ✍️ **Rich Example Content** - Comprehensive blog post example with 1,500+ words
-
-### Environment & Configuration
-- 🔧 **Centralized Environment Validation** - Type-safe env vars across all packages
-- 📦 **Shared Package Enhancement** - Better component reusability
-- 🎨 **Consistent Design System** - Unified styling across all packages
+### Code Quality & Developer Experience
+- **Hybrid Linting** - Biome (JS/TS/JSON) + ESLint (Astro) + Prettier (Astro/Svelte/CSS)
+- **Husky + lint-staged** - Pre-commit hooks for automatic formatting
+- **Improved Sitemap** - Uses `Astro.site` as single source of truth
 
 ## Packages
 
@@ -59,849 +23,137 @@ packages/
 └── demo/    - Full-featured demo site
 ```
 
-### **@astro-v5/shared**
-Shared design system for all packages:
-- CSS variables and design tokens
-- Common animations
-- Utility classes
-- Typography system
-- Dark mode support
+| Package | Description | Use When |
+|---------|-------------|----------|
+| **blank** | Single homepage + 404, no components | Starting from scratch |
+| **base** | All components, blog, forms | Need solid foundation |
+| **demo** | Full showcase, 4 blog posts | Exploring features |
 
-### **@astro-v5/blank** 🆕
-**Absolute minimum** - Perfect blank canvas:
-- ✅ Single homepage + 404
-- ✅ Basic layout & SEO
-- ✅ Shared design system
-- ❌ No components
-- ❌ No blog
-- ❌ No forms
-- **Use when**: Starting completely from scratch
-
-### **@astro-v5/base**
-**Moderate starter** with essential features:
-- ✅ All components (Hero, Card, Modal, etc.)
-- ✅ Blog functionality (MDX)
-- ✅ Contact form
-- ✅ Newsletter signup
-- ✅ Example blog post
-- **Use when**: Need a solid foundation with reusable components
-
-### **@astro-v5/demo**
-**Full showcase** with all features:
-- ✅ 4 example blog posts
-- ✅ All components demonstrated
-- ✅ API examples
-- ✅ Contact forms
-- ✅ [Deployed demo site](https://astrov5.casoon.dev)
-- **Use when**: Exploring features or need complete examples
-
-## 🚀 Quick Start
-
-### Prerequisites
+## Quick Start
 
 ```bash
-# Install Volta (automatic Node.js version management)
+# Prerequisites: Volta (recommended) or Node.js 24+
 curl https://get.volta.sh | bash
-
-# Install pnpm
 volta install pnpm
-```
 
-Volta automatically uses Node.js 24.11.0 and pnpm 9.15.4 (defined in `package.json` and `.nvmrc`).
-
-### Install & Run
-
-```bash
-# Clone repository
+# Install & run
 git clone https://github.com/casoon/astro-v5-template.git
 cd astro-v5-template
-
-# Install all dependencies
 pnpm install
-
-# Run demo site (default)
 pnpm dev
-
-# Or run specific package
-pnpm dev:blank   # Blank template
-pnpm dev:base    # Base template
-pnpm dev:demo    # Demo site
 ```
 
-## 📋 Workspace Commands
+## Commands
 
 | Command | Description |
 |---------|-------------|
-| `pnpm dev` | Start demo site (default) |
+| `pnpm dev` | Start demo site |
 | `pnpm dev:blank` | Start blank template |
 | `pnpm dev:base` | Start base template |
-| `pnpm dev:demo` | Start demo site |
 | `pnpm build` | Build all packages |
-| `pnpm build:blank` | Build blank only |
-| `pnpm build:base` | Build base only |
-| `pnpm build:demo` | Build demo only |
-| `pnpm preview` | Preview demo build |
-| `pnpm preview:blank` | Preview blank build |
-| `pnpm preview:base` | Preview base build |
-| `pnpm preview:demo` | Preview demo build |
-| `pnpm optimize-images` | Optimize images for all packages |
-| `pnpm optimize-images:blank` | Optimize images for blank only |
-| `pnpm optimize-images:base` | Optimize images for base only |
-| `pnpm optimize-images:demo` | Optimize images for demo only |
-| `pnpm clean` | Clean all packages |
-| `pnpm clean:images` | Remove all optimized images |
-| `pnpm format` | Format all code |
-| `pnpm check` | Run all checks |
+| `pnpm check` | Run Biome + ESLint |
+| `pnpm format` | Format all files |
+| `pnpm optimize-images` | Generate responsive images |
 
-## 🎯 Use Cases
+## Code Quality
 
-### Choose Your Starting Point
+Hybrid setup for best performance:
 
-**Decision Tree:**
-- 🆕 **Complete blank slate?** → Use `@astro-v5/blank`
-- 🏗️ **Need components & blog?** → Use `@astro-v5/base`
-- 📚 **Want to see examples?** → Use `@astro-v5/demo`
-
-### Scenario 1: Start Fresh (Blank Template)
-
-Perfect for custom projects where you want complete control:
+| File Type | Linting | Formatting |
+|-----------|---------|------------|
+| JS/TS/JSON | Biome | Biome |
+| Astro | ESLint | Prettier |
+| Svelte/CSS/MD | - | Prettier |
 
 ```bash
-# Copy blank package
-cp -r packages/blank my-project
-cd my-project
-pnpm install
-pnpm dev
+pnpm check        # Run all checks
+pnpm biome:fix    # Auto-fix JS/TS/JSON
+pnpm lint:astro   # Lint Astro files
 ```
 
-**What you get:**
-- ✅ Single homepage + 404 page
-- ✅ Basic layout structure
-- ✅ SEO components from shared
-- ✅ Shared design system
-- ✅ Environment configuration
-- ❌ No pre-built components
-- ❌ No blog functionality
-
-### Scenario 2: Start with Components (Base Template)
-
-Get essential components and blog functionality out of the box:
-
-```bash
-# Copy base package
-cp -r packages/base my-project
-cd my-project
-pnpm install
-pnpm dev
-```
-
-**What you get:**
-- ✅ All UI components (Hero, Card, Modal, Forms, etc.)
-- ✅ Blog with MDX support
-- ✅ Contact form
-- ✅ Newsletter signup
-- ✅ Example blog post
-- ✅ Comprehensive component library
-
-### Scenario 3: Multiple Sites with Shared Design System
-
-Main use case - multiple landing pages sharing common styles:
-
-```bash
-# 1. Add new site to workspace
-mkdir packages/landing-page
-
-# 2. Copy base template
-cp -r packages/base/* packages/landing-page/
-
-# 3. Edit package.json
-# Change "name": "@astro-v5/landing-page"
-```
-
-```json
-{
-  "name": "@astro-v5/landing-page",
-  "version": "1.0.0",
-  "dependencies": {
-    "@astro-v5/shared": "workspace:*"
-  }
-}
-```
-
-```bash
-# 4. Install and run
-pnpm install
-pnpm --filter @astro-v5/landing-page dev
-
-# 5. Add convenience script to root package.json
-{
-  "scripts": {
-    "dev:landing": "pnpm --filter @astro-v5/landing-page dev"
-  }
-}
-```
-
-### Scenario 4: Customize Shared Design System
-
-Edit shared styles once, applies to all packages:
-
-```bash
-# Edit shared CSS variables
-packages/shared/src/styles/variables.css
-
-# Changes automatically apply to:
-# - packages/base
-# - packages/demo
-# - packages/landing-page
-# - Any other packages using @astro-v5/shared
-```
-
-## 🏗️ Workspace Structure
-
-```
-astro-v5-template/
-├── package.json              # Root workspace config
-├── pnpm-workspace.yaml       # Workspace definition
-├── pnpm-lock.yaml           # Shared lockfile
-├── packages/
-│   ├── shared/              # Shared design system
-│   │   ├── package.json     # @astro-v5/shared
-│   │   ├── README.md
-│   │   └── src/
-│   │       └── styles/
-│   │           ├── index.css       # Main entry
-│   │           ├── variables.css   # CSS variables
-│   │           ├── animations.css  # Animations
-│   │           └── utilities.css   # Utility classes
-│   ├── blank/               # Blank template (minimal)
-│   │   ├── package.json     # @astro-v5/blank
-│   │   ├── src/
-│   │   ├── public/
-│   │   └── ...
-│   ├── base/                # Base template (with components)
-│   │   ├── package.json     # @astro-v5/base
-│   │   ├── src/
-│   │   ├── public/
-│   │   └── ...
-│   └── demo/                # Demo site (full showcase)
-│       ├── package.json     # @astro-v5/demo
-│       ├── src/
-│       ├── public/
-│       └── ...
-└── README.md               # This file
-```
-
-## 🔄 Workflow Benefits
-
-### **Shared Design System**
-- Update CSS variables in `packages/shared` → all packages get updates
-- Consistent design tokens across all sites
-- Single source of truth for styles
-
-### **Independent Deployment**
-- Each package can be deployed separately
-- Different content, same tech stack
-- Build and preview independently
-
-### **Efficient Development**
-- Shared `node_modules` saves disk space
-- Fast installs with pnpm
-- Parallel builds with `-r` flag
-- Automatic dependency linking with `workspace:*`
-
-## 📝 Adding New Sites (Step-by-Step)
-
-### Step 1: Create Package Directory
-
-```bash
-mkdir packages/my-new-site
-```
-
-### Step 2: Copy Template
-
-Choose your starting point:
-
-```bash
-# Option A: Start with blank (minimal)
-cp -r packages/blank/* packages/my-new-site/
-
-# Option B: Start with base (includes components & blog)
-cp -r packages/base/* packages/my-new-site/
-```
-
-### Step 3: Update package.json
-
-Edit `packages/my-new-site/package.json`:
-
-```json
-{
-  "name": "@astro-v5/my-new-site",
-  "version": "1.0.0",
-  "description": "My new site description",
-  "dependencies": {
-    "@astro-v5/shared": "workspace:*",
-    // ... other dependencies are already included
-  }
-}
-```
-
-**Key points:**
-- Change `name` to unique package name with `@astro-v5/` prefix
-- Keep `"@astro-v5/shared": "workspace:*"` to use shared styles
-- Don't remove other dependencies
-
-### Step 4: Customize Site Content
-
-```bash
-# Edit homepage
-packages/my-new-site/src/pages/index.astro
-
-# Add blog posts
-packages/my-new-site/src/content/blog/
-
-# Customize components
-packages/my-new-site/src/components/
-```
-
-### Step 5: Install Dependencies
-
-```bash
-# From root directory
-pnpm install
-```
-
-This links the shared package automatically.
-
-### Step 6: Run Development Server
-
-```bash
-pnpm --filter @astro-v5/my-new-site dev
-```
-
-### Step 7: Add Convenience Script (Optional)
-
-Edit root `package.json` to add shortcut:
-
-```json
-{
-  "scripts": {
-    "dev:my-site": "pnpm --filter @astro-v5/my-new-site dev",
-    "build:my-site": "pnpm --filter @astro-v5/my-new-site build"
-  }
-}
-```
-
-Now you can run:
-
-```bash
-pnpm dev:my-site
-pnpm build:my-site
-```
-
-## 🎨 Using Shared Design System
-
-### Import in Layouts
-
-All packages import shared styles via `global.css`:
-
-```css
-/* packages/*/src/styles/global.css */
-@import '@astro-v5/shared/styles/index.css';
-```
-
-### Available CSS Variables
-
-```css
-/* Colors */
-var(--color-background)
-var(--color-text-primary)
-var(--color-accent-primary)
-var(--color-border)
-
-/* Spacing */
-var(--spacing-xs) through var(--spacing-3xl)
-
-/* Typography */
-var(--font-size-base)
-var(--font-weight-medium)
-var(--line-height-normal)
-
-/* Effects */
-var(--shadow-lg)
-var(--blur-md)
-var(--radius-xl)
-```
-
-See full list in `packages/shared/README.md`.
-
-### Utility Classes
-
-```html
-<!-- Navigation -->
-<a class="nav-link">Link</a>
-
-<!-- Cards -->
-<div class="card-container">Content</div>
-<div class="glass-effect">Glass morphism</div>
-
-<!-- Effects -->
-<span class="text-gradient">Gradient Text</span>
-<div class="hover-lift">Hover effect</div>
-
-<!-- Animations -->
-<div class="animate-fade-in-up">Fade in</div>
-<div class="animate-float">Float</div>
-```
-
-## 🗺️ Sitemap & SEO
-
-### Custom Sitemap Implementation
-
-Each package includes a **custom sitemap generator** (not using @astrojs/sitemap) for full control over SEO parameters.
-
-**Location:**
-- `packages/demo/src/pages/sitemap.xml.ts`
-- `packages/base/src/pages/sitemap.xml.ts`
-- Shared utilities: `@shared/utils/sitemap`
-
-**Advantages:**
-- ✅ Full control over `priority`, `changefreq`, and `lastmod`
-- ✅ Automatically scans all `.astro` pages
-- ✅ Supports blog posts via Content Collections (demo package)
-- ✅ Uses `env.PUBLIC_SITE_URL` from environment config
-- ✅ Generates `sitemap.xml` at build time
-
-**Example Usage:**
-
-```typescript
-// packages/demo/src/pages/sitemap.xml.ts
-import { generateSitemapPages, generateSitemapXML } from '@shared/utils/sitemap';
-import { getCollection } from 'astro:content';
-
-const pageModules = import.meta.glob('./**/*.astro', { eager: true });
-const blogPosts = await getCollection('blog');
-
-const pages = generateSitemapPages({
-  siteUrl: env.PUBLIC_SITE_URL,
-  pageModules,
-  blogPosts, // Optional: only for packages with blog
-});
-
-const sitemap = generateSitemapXML(pages, env.PUBLIC_SITE_URL);
-```
-
-**Customization:**
-
-Edit `packages/shared/src/utils/sitemap.ts` to adjust:
-- Default priority values
-- Changefreq settings
-- URL filtering logic
-- lastmod date handling
-
-**Output:** `/sitemap.xml` (available at `https://yourdomain.com/sitemap.xml`)
-
-## ⚙️ Configuration & Validation
+## Configuration
 
 ### Environment Variables
 
-Each package uses Zod for type-safe environment configuration:
-
-**File:** `packages/*/src/env.ts`
+Each package uses Zod for type-safe env configuration in `src/env.ts`:
 
 ```typescript
-import { z } from 'zod';
-
-const envSchema = z.object({
-  PUBLIC_SITE_URL: z.string().url().default('http://localhost:4321'),
-  PUBLIC_SITE_NAME: z.string().default('Astro V5 Template'),
+const envSchema = createEnvSchema({
+  PUBLIC_SITE_URL: 'https://example.com',
+  PUBLIC_SITE_NAME: 'My Site',
 });
-
-export const env = envSchema.parse(import.meta.env);
+export const env = validateEnv(envSchema, import.meta.env);
 ```
 
-**Single Source of Truth:**
-- Site URL is defined ONLY in `env.ts`
-- `astro.config.mjs` imports from `env.ts`:
+### Sitemap
 
-```javascript
-import { env } from './src/env.ts';
+Uses `Astro.site` from `astro.config.mjs` automatically:
 
-export default defineConfig({
-  site: env.PUBLIC_SITE_URL, // Import from env
+```typescript
+// src/pages/sitemap.xml.ts
+import { createSitemapRoute } from '@astro-v5/shared/utils';
+
+const pageModules = import.meta.glob('./**/*.astro', { eager: true });
+
+export const GET = createSitemapRoute({
+  pageModules,
+  getBlogPosts: () => getCollection('blog'), // optional
 });
 ```
 
-This ensures consistency across your configuration.
+## Adding New Sites
 
-### Build-Time Validation
-
-The template includes automatic configuration validation during builds:
-
-**Run manually:**
 ```bash
-node scripts/validate-config.mjs packages/demo
-```
+# 1. Copy template
+cp -r packages/base packages/my-site
 
-**Automatically runs during:**
-```bash
-pnpm build        # Validates all packages
-pnpm build:demo   # Validates demo only
-```
+# 2. Update package.json name
+"name": "@astro-v5/my-site"
 
-**What it checks:**
-- ❌ **ERROR** if `PUBLIC_SITE_URL` uses default/localhost (blocks build)
-- ⚠️  **WARNING** if `PUBLIC_SITE_NAME` uses default template name
-- ⚠️  **WARNING** if package.json still has template metadata
-- ⚠️  **WARNING** if robots.txt references template URLs
-- ⚠️  **WARNING** if favicon is missing
-
-**Example output:**
-```
-🔍 Validating configuration for: demo
-
-✓ Checking env.ts configuration...
-  ❌ ERROR: PUBLIC_SITE_URL is still using default value
-  → Action: Update PUBLIC_SITE_URL in packages/demo/src/env.ts
-
-✓ Checking package.json metadata...
-  ⚠️  WARNING: repository URL still points to template
-  → Action: Update repository URL in packages/demo/package.json
-
-Configuration validation complete!
-Found 1 error(s) and 1 warning(s)
-```
-
-**Key behavior:**
-- **Errors block the build** (exit code 1)
-- **Warnings show but continue** (exit code 0)
-- Helps catch template placeholders before deployment
-
-### SEO Components
-
-Each package includes comprehensive SEO components from the shared package:
-
-**Import from shared:**
-```astro
----
-import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
-import BlogSEO from '@astro-v5/shared/components/seo/BlogSEO.astro';
----
-```
-
-**PageSEO Component:**
-```astro
----
-// Only title is required - everything else is optional
-import PageSEO from '@astro-v5/shared/components/seo/PageSEO.astro';
----
-
-<head>
-  <PageSEO 
-    title="About Us"
-    description="Learn more about our company"
-    keywords={['company', 'about', 'team']}
-    image="/responsive/team-photo-800w.webp"
-    author="John Doe"
-  />
-</head>
-```
-
-**BlogSEO Component:**
-```astro
----
-// Required: title, publishDate, slug
-// Optional: Everything else
-import BlogSEO from '@astro-v5/shared/components/seo/BlogSEO.astro';
----
-
-<head>
-  <BlogSEO
-    title={post.data.title}
-    publishDate={post.data.publishDate}
-    slug={post.slug}
-    description={post.data.description}
-    author={post.data.author}
-    category={post.data.category}
-    readingTime={readingTime}
-    image={post.data.heroImage}
-    keywords={post.data.tags}
-  />
-</head>
-```
-
-**Features:**
-- ✅ JSON-LD structured data (WebPage, Article schemas)
-- ✅ Open Graph meta tags
-- ✅ Twitter Card meta tags
-- ✅ Graceful handling of missing values (no errors, no placeholders)
-- ✅ Automatic fallbacks (description defaults to title)
-- ✅ Reading time calculation for blog posts
-
-**Graceful Degradation:**
-- Missing optional props are simply omitted from output
-- No error messages or placeholder text
-- Only required fields are enforced
-
-See `packages/shared/src/components/seo/README.md` for full documentation.
-
-## 🖼️ Image Optimization
-
-### Automatic WebP/AVIF Generation
-
-The template includes a powerful image optimization system that generates optimized images at **build-time**.
-
-**Folder Structure:**
-```
-packages/your-package/
-├── src/
-│   └── assets/
-│       └── images/          # Source images (JPG, PNG, WebP, SVG)
-│           ├── hero.jpg
-│           ├── logo.svg     # SVGs are copied as-is
-│           ├── photo.webp   # WebP sources also supported
-│           └── blog/
-│               └── post.jpg
-│
-└── public/
-    └── responsive/          # Generated optimized images
-        ├── hero-378w.webp
-        ├── hero-400w.webp
-        ├── hero-756w.webp
-        ├── hero-800w.webp
-        ├── hero-1200w.webp
-        ├── hero-378w.avif
-        ├── hero-400w.avif
-        ├── hero-756w.avif
-        ├── hero-800w.avif
-        ├── hero-1200w.avif
-        ├── hero.jpg         # Original (optimized)
-        ├── logo.svg         # SVG (copied)
-        └── manifest.json
-```
-
-**Generate Optimized Images:**
-```bash
-# Run when adding NEW images to src/assets/images/
-pnpm optimize-images              # All packages
-pnpm optimize-images:demo         # Demo package only
-pnpm optimize-images:base         # Base package only
-```
-
-**Supported Formats:**
-- **JPG/PNG** → Converted to WebP + AVIF (multiple sizes)
-- **WebP** → Copied + generated in multiple sizes + AVIF variants
-- **SVG** → Copied as-is (no conversion)
-
-**Excluded Files:**
-- Favicon files (automatically skipped)
-- Already optimized files (pattern: `-\d+w\.(webp|avif|jpg|png)$`)
-
-**Important:** Optimized images should be **committed to git** (not regenerated at build time). This ensures:
-- Faster CI/CD builds
-- Consistent output across environments
-- Works on Cloudflare Pages and other static hosts
-
-**Configuration:**
-
-Default settings in `scripts/optimize-images.mjs`:
-```javascript
-{
-  inputDir: "src/assets/images",      // Source directory
-  outputDir: "public/responsive",      // Output directory
-  widths: [378, 400, 756, 800, 1200], // Responsive breakpoints
-  formats: ["webp", "avif"],          // Output formats
-  quality: {
-    webp: 80,
-    avif: 75,
-    jpeg: 85
-  }
-}
-```
-
-**Workflow:**
-1. Add images to `src/assets/images/` (JPG, PNG, WebP, or SVG)
-2. Run `pnpm optimize-images` (or package-specific command)
-3. Generated files appear in `public/responsive/`
-4. Reference optimized images in your code: `/responsive/hero-800w.webp`
-
-**Output Files:**
-- Multiple widths: 378w, 400w, 756w, 800w, 1200w
-- Multiple formats: WebP, AVIF
-- Original format (optimized JPEG or copied WebP)
-- Manifest JSON for programmatic access
-
-**Customization:** Edit `scripts/optimize-images.mjs` to change widths, formats, quality settings, or skip patterns.
-
-## 🗺️ Interactive Maps
-
-### Leaflet.js Integration
-
-The demo package includes both interactive and static map implementations:
-
-**Interactive Map (`/map`):**
-- GDPR-compliant with consent banner
-- Leaflet.js hosted locally (no CDN)
-- OpenStreetMap tiles loaded after user consent
-- Berlin TV Tower location with marker
-- Fully responsive design
-
-**Static Map (`/contact`):**
-- Pre-generated static map image
-- No external requests (fully GDPR-compliant)
-- Shows Berlin TV Tower location
-- Includes proper OpenStreetMap attribution
-- 800x600px optimized PNG
-
-**Usage:**
-```astro
----
-// Interactive map with consent
-import 'leaflet/dist/leaflet.css';
----
-<script>
-  import L from 'leaflet';
-  // Map loads only after user consent
-</script>
-```
-
-**Dependencies:**
-- `leaflet` (1.9.4) - For interactive maps
-- `@types/leaflet` - TypeScript definitions
-
-## 📊 Web Vitals Monitoring
-
-### @casoon/astro-webvitals
-
-The template includes `@casoon/astro-webvitals` for performance monitoring:
-
-**Features:**
-- Core Web Vitals tracking (LCP, FID, CLS, FCP, TTFB, INP)
-- Debug overlay with real-time metrics
-- Accessibility checks (WCAG 2.1)
-- Extended metrics (memory, network)
-- Batch reporting for analytics
-- Performance budget tracking
-
-**Current Version:** 0.1.3
-
-**Usage in Demo:**
-```astro
----
-import { WebVitals } from '@casoon/astro-webvitals';
----
-
-<WebVitals 
-  debug={import.meta.env.DEV}
-  position="bottom-left"
-  checkAccessibility={true}
-  extendedMetrics={true}
-/>
-```
-
-The demo package shows both the local WebVitals component (top-right) and @casoon/astro-webvitals (bottom-left) for comparison.
-
-## 🎨 Tech Stack
-
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Astro** | 5.15.4 | Static site generator |
-| **Tailwind CSS** | 4.1.17 | Utility-first CSS |
-| **Svelte** | 5.43.5 | Reactive components |
-| **TypeScript** | 5.9.3 | Type safety |
-| **Leaflet** | 1.9.4 | Interactive maps |
-| **@casoon/astro-webvitals** | 0.1.3 | Performance monitoring |
-| **Sharp** | 0.34.5 | Image optimization |
-| **pnpm** | 9.15.4 | Package manager |
-| **Volta** | - | Node.js version manager |
-| **Biome** | 2.3.4 | Linter & formatter |
-| **Zod** | 4.1.12 | Runtime validation |
-| **MDX** | 4.3.10 | Markdown with components |
-
-## 🚢 Deployment
-
-Each package can be deployed independently:
-
-### Deploy Demo:
-```bash
-# Build demo
-pnpm build:demo
-
-# Deploy from packages/demo/dist/
-```
-
-### Deploy Base:
-```bash
-# Build base
-pnpm build:base
-
-# Deploy from packages/base/dist/
-```
-
-### Supported Platforms
-- Vercel
-- Netlify
-- Cloudflare Pages (Node.js version pinned via `.nvmrc`)
-- GitHub Pages
-- Any static host
-
-### Node.js Version Control
-
-The project uses Node.js 24.11.0 (LTS). Version is controlled via:
-- `.nvmrc` - For nvm, Volta, and Cloudflare Pages
-- `.node-version` - For asdf and other version managers
-- `package.json` engines field - For npm/pnpm version checks
-
-Cloudflare Pages will automatically use the version specified in `.nvmrc`.
-
-## 🔧 Troubleshooting
-
-### "Module not found" errors
-```bash
-# Reinstall workspace
+# 3. Install & run
 pnpm install
+pnpm --filter @astro-v5/my-site dev
 ```
 
-### "git can't be found" (Husky warning)
+## Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| Astro 5.15 | Static site generator |
+| Tailwind CSS 4 | Utility-first CSS |
+| Svelte 5 | Reactive components |
+| Biome | Linter & formatter (JS/TS) |
+| ESLint | Linter (Astro) |
+| Prettier | Formatter (Astro/Svelte) |
+| Husky | Git hooks |
+| Sharp | Image optimization |
+| Zod | Runtime validation |
+
+## Features
+
+- **Shared Design System** - CSS variables, animations, utilities
+- **Image Optimization** - WebP/AVIF generation with Sharp
+- **SEO Components** - PageSEO, BlogSEO with JSON-LD
+- **Interactive Maps** - Leaflet.js with GDPR consent
+- **Web Vitals** - Performance monitoring
+- **Blog System** - MDX support with Content Collections
+
+## Deployment
+
+Build and deploy from `packages/*/dist/`:
+
 ```bash
-# Husky looks for .git in package root
-# This is normal in workspaces, can be ignored
-# Or configure husky in root if needed
+pnpm build:demo   # Build demo
+pnpm build:base   # Build base
 ```
 
-### Different Node.js versions
-```bash
-# Volta manages versions automatically
-# Just ensure Volta is installed
-volta install node@24.11.0
-volta install pnpm
+Supports: Vercel, Netlify, Cloudflare Pages, GitHub Pages
 
-# Or use nvm
-nvm use
+## Links
 
-# Or use asdf
-asdf install
-```
-
-### Shared styles not updating
-```bash
-# Clear cache and rebuild
-pnpm clean
-pnpm install
-pnpm build
-```
-
-## 📚 Learn More
-
-- [pnpm Workspaces](https://pnpm.io/workspaces)
-- [Astro Documentation](https://docs.astro.build)
-- [Volta Documentation](https://volta.sh)
-- [Shared Package README](packages/shared/README.md)
+- [Demo Site](https://astrov5.casoon.dev)
+- [GitHub Repository](https://github.com/casoon/astro-v5-template)
 
 ## License
 
 MIT © casoon
-
-## 🔗 Links
-
-- [GitHub Repository](https://github.com/casoon/astro-v5-template)
-- [Demo Site](https://astrov5.casoon.dev) (from packages/demo)

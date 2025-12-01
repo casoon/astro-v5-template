@@ -1,7 +1,7 @@
 {
   "name": "@astro-v5/blank",
   "type": "module",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Blank Astro v5 template - absolute minimum for new projects",
   "private": true,
   "author": "casoon",

@@ -153,8 +153,8 @@ const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : un
 ---
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(webpageSchema)}></script>
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(webpageSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
 <!-- Meta Tags for SEO -->
 <meta name="description" content={pageDescription} />
@@ -170,14 +170,14 @@ const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : un
 {siteName && <meta property="og:site_name" content={siteName} />}
 <meta property="og:locale" content={locale} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+<meta property="og:image:alt" content={image ? title : siteName ? `${siteName} Logo` : 'Logo'} />
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={pageDescription} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+<meta name="twitter:image:alt" content={image ? title : siteName ? `${siteName} Logo` : 'Logo'} />
 {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
 {twitterCreator && <meta name="twitter:site" content={twitterCreator} />}
 

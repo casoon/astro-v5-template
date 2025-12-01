@@ -7,14 +7,14 @@ export interface Props {
   }>;
 }
 
-const { 
-  logo = "Astro + Atlas", 
+const {
+  logo = 'Astro + Atlas',
   links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" }
-  ] 
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/contact', label: 'Contact' },
+  ],
 } = Astro.props;
 ---
 
@@ -23,7 +23,10 @@ const {
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="/" class="text-xl font-bold text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+        <a
+          href="/"
+          class="text-xl font-bold text-slate-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+        >
           {logo}
         </a>
       </div>
@@ -31,14 +34,16 @@ const {
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
-          {links.map((link) => (
-            <a 
-              href={link.href} 
-              class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                class="px-3 py-2 rounded-md text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
         </div>
       </div>
 
@@ -52,7 +57,11 @@ const {
           <span class="sr-only">Open main menu</span>
           <!-- Hamburger icon -->
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
@@ -62,14 +71,16 @@ const {
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 cs-glass-lg">
-      {links.map((link) => (
-        <a 
-          href={link.href} 
-          class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400"
-        >
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
@@ -78,14 +89,14 @@ const {
   // Mobile menu toggle
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   mobileMenuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
 
   // Navbar glass effect on scroll
   const navbar = document.getElementById('navbar');
-  
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       navbar?.classList.add('cs-glass', 'shadow-lg');
@@ -98,7 +109,7 @@ const {
 
   // Initial check
   handleScroll();
-  
+
   // Listen for scroll
   window.addEventListener('scroll', handleScroll);
 </script>

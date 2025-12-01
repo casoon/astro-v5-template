@@ -61,6 +61,7 @@ export type BaseEnv = z.infer<typeof baseEnvSchema>;
  */
 export function validateEnv<T extends z.ZodTypeAny>(
   schema: T,
+  // biome-ignore lint/suspicious/noExplicitAny: import.meta.env is typed as any
   env: Record<string, any>
 ): z.infer<T> {
   const parsed = schema.safeParse(env);
@@ -105,7 +106,10 @@ export function createEnvSchema(defaults: {
     PUBLIC_SITE_NAME: z.string().min(1).default(defaults.PUBLIC_SITE_NAME),
     PUBLIC_MAIN_SITE_URL: z.string().default(defaults.PUBLIC_MAIN_SITE_URL),
     PUBLIC_AUTHOR: z.string().min(1).default(defaults.PUBLIC_AUTHOR),
-    PUBLIC_LOCALE: z.string().min(2).default(defaults.PUBLIC_LOCALE || 'en'),
+    PUBLIC_LOCALE: z
+      .string()
+      .min(2)
+      .default(defaults.PUBLIC_LOCALE || 'en'),
     PUBLIC_API_URL: defaults.PUBLIC_API_URL
       ? z.string().default(defaults.PUBLIC_API_URL)
       : z.string().optional(),

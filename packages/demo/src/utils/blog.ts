@@ -6,9 +6,7 @@ type BlogEntry = CollectionEntry<'blog'>;
  * Get all blog posts sorted by date (newest first)
  * Optionally filter out draft posts in production
  */
-export async function getSortedPosts(
-  includeDrafts = false,
-): Promise<BlogEntry[]> {
+export async function getSortedPosts(includeDrafts = false): Promise<BlogEntry[]> {
   const posts = await getCollection('blog', ({ data }: BlogEntry) => {
     // Filter out drafts in production unless explicitly requested
     if (!includeDrafts && import.meta.env.PROD) {
@@ -19,7 +17,7 @@ export async function getSortedPosts(
 
   return posts.sort(
     (a: BlogEntry, b: BlogEntry) =>
-      new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 }
 
@@ -34,7 +32,7 @@ export async function getFeaturedPosts(): Promise<BlogEntry[]> {
 
   return posts.sort(
     (a: BlogEntry, b: BlogEntry) =>
-      new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 }
 
@@ -85,7 +83,7 @@ export async function getPostsByTag(tag: string): Promise<BlogEntry[]> {
 
   return posts.sort(
     (a: BlogEntry, b: BlogEntry) =>
-      new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 }
 

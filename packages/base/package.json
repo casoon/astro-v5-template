@@ -1,7 +1,7 @@
 {
   "name": "@astro-v5/base",
   "type": "module",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Minimal Astro v5 base template - production-ready starter",
   "private": true,
   "author": "casoon",

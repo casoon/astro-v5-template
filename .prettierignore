@@ -1,7 +1,18 @@
-# Astro-Dateien von Prettier ausschließen (werden separat formatiert)
-*.astro
-
-# Andere Dateien, die nicht formatiert werden sollen
+# Build outputs
 node_modules/
 dist/
-.astro/ 
+.astro/
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+
+# Generated files
+*.min.js
+*.min.css
+
+# Markdown files
+*.md
+
+# Astro files with is:inline scripts that cause parser issues
+packages/shared/src/components/WebVitals.astro

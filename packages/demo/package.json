@@ -1,7 +1,7 @@
 {
   "name": "@astro-v5/demo",
   "type": "module",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Demo site showcasing Astro v5 template with example content",
   "private": true,
   "author": "casoon",

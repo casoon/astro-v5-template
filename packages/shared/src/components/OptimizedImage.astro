@@ -50,7 +50,7 @@ const getOptimizedPath = (originalSrc: string) => {
 
 // Generate srcset for a format
 const generateSrcSet = (basePath: string, format: string, widths: number[]) => {
-  return widths.map(w => `${basePath}-${w}w.${format} ${w}w`).join(', ');
+  return widths.map((w) => `${basePath}-${w}w.${format} ${w}w`).join(', ');
 };
 
 const basePath = getOptimizedPath(src);
@@ -63,18 +63,10 @@ const webpSrcSet = generateSrcSet(basePath, 'webp', widths);
 
 <picture>
   <!-- AVIF - Best compression -->
-  <source
-    type="image/avif"
-    srcset={avifSrcSet}
-    sizes={sizes}
-  />
+  <source type="image/avif" srcset={avifSrcSet} sizes={sizes} />
 
   <!-- WebP - Good compression, wide support -->
-  <source
-    type="image/webp"
-    srcset={webpSrcSet}
-    sizes={sizes}
-  />
+  <source type="image/webp" srcset={webpSrcSet} sizes={sizes} />
 
   <!-- Fallback - Optimized JPEG/PNG -->
   <img
@@ -82,7 +74,7 @@ const webpSrcSet = generateSrcSet(basePath, 'webp', widths);
     alt={alt}
     loading={loading}
     class={className}
-    {...(fetchpriority && { fetchpriority })}
+    {...fetchpriority && { fetchpriority }}
     decoding="async"
   />
 </picture>

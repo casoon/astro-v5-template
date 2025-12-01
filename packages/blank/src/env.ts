@@ -1,4 +1,4 @@
-import { createEnvSchema, validateEnv } from "@astro-v5/shared/utils";
+import { createEnvSchema, validateEnv } from '@astro-v5/shared/utils';
 
 /**
  * Environment variables for the blank package
@@ -7,11 +7,11 @@ import { createEnvSchema, validateEnv } from "@astro-v5/shared/utils";
  * to ensure consistency across all packages.
  */
 const envSchema = createEnvSchema({
-  PUBLIC_SITE_URL: "http://localhost:4321",
-  PUBLIC_SITE_NAME: "My Astro Site",
-  PUBLIC_MAIN_SITE_URL: "http://localhost:4321",
-  PUBLIC_AUTHOR: "Your Name",
-  PUBLIC_LOCALE: "de",
+  PUBLIC_SITE_URL: 'http://localhost:4321',
+  PUBLIC_SITE_NAME: 'My Astro Site',
+  PUBLIC_MAIN_SITE_URL: 'http://localhost:4321',
+  PUBLIC_AUTHOR: 'Your Name',
+  PUBLIC_LOCALE: 'de',
 });
 
 /**

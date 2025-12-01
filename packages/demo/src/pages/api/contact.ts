@@ -32,14 +32,11 @@ export const POST: APIRoute = async ({ request }) => {
     // Return success response
     return successResponse(
       { name, email, subject, message },
-      'Your message has been sent successfully!',
+      'Your message has been sent successfully!'
     );
   } catch (error) {
     console.error('Contact form error:', error);
-    return errorResponse(
-      'An error occurred while processing your request',
-      500,
-    );
+    return errorResponse('An error occurred while processing your request', 500);
   }
 };
 
@@ -48,9 +45,8 @@ export const GET: APIRoute = async () => {
   return successResponse(
     {
       status: 'Contact API is running',
-      accepts:
-        'POST requests with JSON body containing: name, email, subject, message',
+      accepts: 'POST requests with JSON body containing: name, email, subject, message',
     },
-    'API is operational',
+    'API is operational'
   );
 };

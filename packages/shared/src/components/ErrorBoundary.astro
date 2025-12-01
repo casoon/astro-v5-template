@@ -8,10 +8,7 @@ export interface Props {
   showDetails?: boolean;
 }
 
-const {
-  fallback = 'Something went wrong',
-  showDetails = import.meta.env.DEV,
-} = Astro.props;
+const { fallback = 'Something went wrong', showDetails = import.meta.env.DEV } = Astro.props;
 ---
 
 <div class="error-boundary">

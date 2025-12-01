@@ -13,10 +13,7 @@ export interface ApiResponse<T = unknown> {
 /**
  * Email validation schema
  */
-export const emailSchema = z
-  .string()
-  .email('Invalid email format')
-  .min(1, 'Email is required');
+export const emailSchema = z.string().email('Invalid email format').min(1, 'Email is required');
 
 /**
  * Common validation schemas
@@ -31,10 +28,7 @@ export const validationSchemas = {
 /**
  * Creates a standardized JSON response
  */
-export function createResponse<T>(
-  data: ApiResponse<T>,
-  status = 200
-): Response {
+export function createResponse<T>(data: ApiResponse<T>, status = 200): Response {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
@@ -46,11 +40,7 @@ export function createResponse<T>(
 /**
  * Creates a success response
  */
-export function successResponse<T>(
-  data?: T,
-  message?: string,
-  status = 200
-): Response {
+export function successResponse<T>(data?: T, message?: string, status = 200): Response {
   return createResponse(
     {
       success: true,
@@ -64,10 +54,7 @@ export function successResponse<T>(
 /**
  * Creates an error response
  */
-export function errorResponse(
-  error: string,
-  status = 400
-): Response {
+export function errorResponse(error: string, status = 400): Response {
   return createResponse(
     {
       success: false,

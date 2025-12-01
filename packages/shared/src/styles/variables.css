@@ -131,14 +131,10 @@
      ======================================== */
 
   --shadow-sm: 0 1px 2px 0 oklch(0% 0 0 / 0.05);
-  --shadow-base:
-    0 1px 3px 0 oklch(0% 0 0 / 0.1), 0 1px 2px -1px oklch(0% 0 0 / 0.1);
-  --shadow-md:
-    0 4px 6px -1px oklch(0% 0 0 / 0.1), 0 2px 4px -2px oklch(0% 0 0 / 0.1);
-  --shadow-lg:
-    0 10px 15px -3px oklch(0% 0 0 / 0.1), 0 4px 6px -4px oklch(0% 0 0 / 0.1);
-  --shadow-xl:
-    0 20px 25px -5px oklch(0% 0 0 / 0.1), 0 8px 10px -6px oklch(0% 0 0 / 0.1);
+  --shadow-base: 0 1px 3px 0 oklch(0% 0 0 / 0.1), 0 1px 2px -1px oklch(0% 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px oklch(0% 0 0 / 0.1), 0 2px 4px -2px oklch(0% 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px oklch(0% 0 0 / 0.1), 0 4px 6px -4px oklch(0% 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px oklch(0% 0 0 / 0.1), 0 8px 10px -6px oklch(0% 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px oklch(0% 0 0 / 0.25);
   --shadow-inner: inset 0 2px 4px 0 oklch(0% 0 0 / 0.05);
 
@@ -163,12 +159,9 @@
      Typography (Tailwind-compatible)
      ======================================== */
 
-  --font-family-sans:
-    "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-family-serif:
-    ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-family-mono:
-    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  --font-family-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-family-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-family-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
 
   /* Font Sizes */
   --font-size-xs: 0.75rem; /* 12px */
@@ -295,14 +288,10 @@
 
   /* Shadows (darker) */
   --shadow-sm: 0 1px 2px 0 oklch(0% 0 0 / 0.3);
-  --shadow-base:
-    0 1px 3px 0 oklch(0% 0 0 / 0.4), 0 1px 2px -1px oklch(0% 0 0 / 0.4);
-  --shadow-md:
-    0 4px 6px -1px oklch(0% 0 0 / 0.4), 0 2px 4px -2px oklch(0% 0 0 / 0.4);
-  --shadow-lg:
-    0 10px 15px -3px oklch(0% 0 0 / 0.4), 0 4px 6px -4px oklch(0% 0 0 / 0.4);
-  --shadow-xl:
-    0 20px 25px -5px oklch(0% 0 0 / 0.4), 0 8px 10px -6px oklch(0% 0 0 / 0.4);
+  --shadow-base: 0 1px 3px 0 oklch(0% 0 0 / 0.4), 0 1px 2px -1px oklch(0% 0 0 / 0.4);
+  --shadow-md: 0 4px 6px -1px oklch(0% 0 0 / 0.4), 0 2px 4px -2px oklch(0% 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px oklch(0% 0 0 / 0.4), 0 4px 6px -4px oklch(0% 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px oklch(0% 0 0 / 0.4), 0 8px 10px -6px oklch(0% 0 0 / 0.4);
   --shadow-2xl: 0 25px 50px -12px oklch(0% 0 0 / 0.5);
 }
 

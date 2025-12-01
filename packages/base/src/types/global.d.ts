@@ -14,6 +14,10 @@ interface ToastManager {
 interface Window {
   openModal: (modalId: string) => void;
   closeModal: (modalId: string) => void;
-  showToast: (message: string, type?: 'success' | 'error' | 'info' | 'warning', duration?: number) => void;
+  showToast: (
+    message: string,
+    type?: 'success' | 'error' | 'info' | 'warning',
+    duration?: number
+  ) => void;
   toastManager: ToastManager;
 }

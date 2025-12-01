@@ -3,7 +3,7 @@ title: Moderne Webentwicklung mit Astro 5
 description: Ein ausführlicher Leitfaden über die Verwendung von Astro 5 für die Entwicklung moderner, performanter Websites mit optimaler Developer Experience.
 date: 2025-01-09
 author: Max Mustermann
-tags: ["Astro", "Webentwicklung", "Performance", "TypeScript"]
+tags: ['Astro', 'Webentwicklung', 'Performance', 'TypeScript']
 draft: false
 featured: true
 image: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=630&fit=crop
@@ -35,7 +35,7 @@ import InteractiveCounter from './InteractiveCounter.jsx';
 <div>
   <h1>Statischer Inhalt</h1>
   <p>Dieser Text wird als reines HTML gerendert.</p>
-  
+
   <!-- Diese Komponente lädt JavaScript -->
   <InteractiveCounter client:load />
 </div>
@@ -92,7 +92,7 @@ const blogCollection = defineCollection({
 });
 
 export const collections = {
-  'blog': blogCollection,
+  blog: blogCollection,
 };
 ```
 
@@ -157,7 +157,7 @@ Astro unterstützt beide Ansätze:
 // astro.config.mjs
 export default {
   output: 'static', // oder 'server' für SSR
-}
+};
 ```
 
 ## Best Practices

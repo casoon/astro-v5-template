@@ -3,15 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { env } from '../env';
 ---
 
-<BaseLayout
-  title={env.PUBLIC_SITE_NAME}
-  description="Welcome to your new Astro site"
->
+<BaseLayout title={env.PUBLIC_SITE_NAME} description="Welcome to your new Astro site">
   <main id="main-content" class="min-h-screen flex items-center justify-center p-8">
     <div class="max-w-2xl text-center space-y-6">
-      <h1 class="text-gradient text-5xl font-bold">
-        Welcome to Astro
-      </h1>
+      <h1 class="text-gradient text-5xl font-bold">Welcome to Astro</h1>
 
       <p class="text-xl text-neutral-400">
         Your blank canvas is ready. Start building something amazing.

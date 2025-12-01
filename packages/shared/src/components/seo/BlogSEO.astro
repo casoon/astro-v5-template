@@ -232,7 +232,7 @@ const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : un
 {siteName && <meta property="og:site_name" content={siteName} />}
 <meta property="og:locale" content={locale} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+<meta property="og:image:alt" content={image ? title : siteName ? `${siteName} Logo` : 'Logo'} />
 
 <!-- Article-specific Open Graph Tags (only if provided) -->
 {author && <meta property="article:author" content={author} />}
@@ -246,7 +246,7 @@ const twitterCreator = twitterHandle ? `@${twitterHandle.replace('@', '')}` : un
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={articleDescription} />
 <meta name="twitter:image" content={ogImage} />
-<meta name="twitter:image:alt" content={image ? title : (siteName ? `${siteName} Logo` : 'Logo')} />
+<meta name="twitter:image:alt" content={image ? title : siteName ? `${siteName} Logo` : 'Logo'} />
 {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
 {twitterCreator && <meta name="twitter:site" content={twitterCreator} />}
 

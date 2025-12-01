@@ -23,26 +23,19 @@ async function setupTemplate() {
 
   // Project Configuration
   const projectName =
-    (await question('📦 Project name (astro-v5-template): ')) ||
-    'astro-v5-template';
+    (await question('📦 Project name (astro-v5-template): ')) || 'astro-v5-template';
   const projectDescription =
     (await question('📝 Project description: ')) || 'Modern Astro v5 website';
   const authorName = (await question('👤 Author name: ')) || 'Your Name';
-  const siteUrl =
-    (await question('🌐 Site URL (https://example.com): ')) ||
-    'https://example.com';
+  const siteUrl = (await question('🌐 Site URL (https://example.com): ')) || 'https://example.com';
 
   // Feature Selection
   const includeBlog =
-    (await question('📝 Include Blog functionality? (y/N): ')).toLowerCase() ===
-    'y';
-  const includeApi =
-    (await question('🔌 Include API routes? (y/N): ')).toLowerCase() === 'y';
+    (await question('📝 Include Blog functionality? (y/N): ')).toLowerCase() === 'y';
+  const includeApi = (await question('🔌 Include API routes? (y/N): ')).toLowerCase() === 'y';
   const includeNewsletter =
-    (await question('📧 Include Newsletter signup? (y/N): ')).toLowerCase() ===
-    'y';
-  const includeContact =
-    (await question('📞 Include Contact form? (y/N): ')).toLowerCase() === 'y';
+    (await question('📧 Include Newsletter signup? (y/N): ')).toLowerCase() === 'y';
+  const includeContact = (await question('📞 Include Contact form? (y/N): ')).toLowerCase() === 'y';
 
   console.log('\n🔧 Configuring your template...');
 
@@ -70,12 +63,7 @@ async function setupTemplate() {
   }
 
   // Update dependencies based on selected features
-  updateDependencies(
-    includeBlog,
-    includeApi,
-    includeNewsletter,
-    includeContact,
-  );
+  updateDependencies(includeBlog, includeApi, includeNewsletter, includeContact);
 
   console.log('\n✅ Template setup completed!');
   console.log(`\nNext steps:
@@ -148,10 +136,7 @@ function removeNewsletterFeatures() {
 
     console.log('📧 Newsletter features removed');
   } catch (error) {
-    console.warn(
-      '⚠️ Newsletter component could not be removed:',
-      error.message,
-    );
+    console.warn('⚠️ Newsletter component could not be removed:', error.message);
   }
 }
 
@@ -171,12 +156,7 @@ function removeContactFeatures() {
   }
 }
 
-function updateDependencies(
-  includeBlog,
-  _includeApi,
-  includeNewsletter,
-  includeContact,
-) {
+function updateDependencies(includeBlog, _includeApi, includeNewsletter, includeContact) {
   const packagePath = join(__dirname, 'package.json');
   const packageJson = JSON.parse(readFileSync(packagePath, 'utf-8'));
 

@@ -6,9 +6,9 @@ export interface Props {
 }
 
 const {
-  title = "Stay Updated",
-  description = "Get the latest news and updates delivered to your inbox.",
-  variant = 'card'
+  title = 'Stay Updated',
+  description = 'Get the latest news and updates delivered to your inbox.',
+  variant = 'card',
 } = Astro.props;
 ---
 
@@ -22,8 +22,8 @@ const {
         {description}
       </p>
     </div>
-    
-    <form 
+
+    <form
       id="newsletter-form"
       class={variant === 'inline' ? 'flex-1' : 'mt-6'}
       action="/api/newsletter"
@@ -44,9 +44,25 @@ const {
         >
           <span class="flex items-center">
             <span id="newsletter-button-text">Subscribe</span>
-            <svg id="newsletter-spinner" class="hidden animate-spin ml-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            <svg
+              id="newsletter-spinner"
+              class="hidden animate-spin ml-2 h-4 w-4 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
           </span>
         </button>
@@ -56,12 +72,18 @@ const {
       </p>
     </form>
   </div>
-  
+
   <!-- Success Message -->
-  <div id="newsletter-success" class="hidden mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+  <div
+    id="newsletter-success"
+    class="hidden mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg"
+  >
     <p class="text-green-700 dark:text-green-300 flex items-center">
       <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        <path
+          fill-rule="evenodd"
+          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+          clip-rule="evenodd"></path>
       </svg>
       Thanks for subscribing! Check your email for confirmation.
     </p>
@@ -88,7 +110,7 @@ const {
     e.preventDefault();
 
     const email = emailInput.value.trim();
-    
+
     // Validate email
     if (!validateEmail(email)) {
       errorMessage?.classList.remove('hidden');
@@ -118,25 +140,29 @@ const {
         // Show success message
         form.style.display = 'none';
         successMessage!.classList.remove('hidden');
-        
+
         // Show toast notification
-        window.dispatchEvent(new CustomEvent('show-toast', {
-          detail: {
-            message: 'Successfully subscribed to newsletter!',
-            type: 'success'
-          }
-        }));
+        window.dispatchEvent(
+          new CustomEvent('show-toast', {
+            detail: {
+              message: 'Successfully subscribed to newsletter!',
+              type: 'success',
+            },
+          })
+        );
       } else {
         throw new Error('Subscription failed');
       }
     } catch (error) {
       // Show error
-      window.dispatchEvent(new CustomEvent('show-toast', {
-        detail: {
-          message: 'Failed to subscribe. Please try again.',
-          type: 'error'
-        }
-      }));
+      window.dispatchEvent(
+        new CustomEvent('show-toast', {
+          detail: {
+            message: 'Failed to subscribe. Please try again.',
+            type: 'error',
+          },
+        })
+      );
     } finally {
       // Reset button state
       submitButton.disabled = false;

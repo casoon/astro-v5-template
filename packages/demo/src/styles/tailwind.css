@@ -1,8 +1,8 @@
 /* Tailwind CSS v4 import */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Atlas Design System - Full integration */
-@import "@casoon/atlas-styles";
+@import '@casoon/atlas-styles';
 
 /* Tailwind CSS v4 plugins */
 @plugin "@tailwindcss/forms";
