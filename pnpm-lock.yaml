@@ -249,8 +249,8 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
       '@casoon/atlas-styles':
-        specifier: file:../../../atlas/packages/styles
-        version: file:../atlas/packages/styles
+        specifier: ^0.0.6
+        version: 0.0.6
       '@fontsource/archivo':
         specifier: ^5.2.8
         version: 5.2.8
@@ -548,9 +548,6 @@ packages:
 
   '@casoon/atlas-styles@0.0.6':
     resolution: {integrity: sha512-5mn841oxqKNyE/ZAKueJzdqsFIoB37TcZRR/q2APjNv6pGFnZlDyEvFPfp4sUxW0uS51Z3RiwK9DGRFdQYflYA==}
-
-  '@casoon/atlas-styles@file:../atlas/packages/styles':
-    resolution: {directory: ../atlas/packages/styles, type: directory}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -4730,8 +4727,6 @@ snapshots:
       astro: 5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2)
 
   '@casoon/atlas-styles@0.0.6': {}
-
-  '@casoon/atlas-styles@file:../atlas/packages/styles': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
