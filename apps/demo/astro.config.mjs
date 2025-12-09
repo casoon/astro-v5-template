@@ -43,6 +43,24 @@ export default defineConfig({
           darkMode: 'class', // Enable class-based dark mode
         },
       }),
+      // Suppress @fontsource file resolution warnings
+      {
+        name: 'suppress-fontsource-warnings',
+        apply: 'build',
+        configResolved(config) {
+          const originalWarn = config.logger.warn;
+          config.logger.warn = (msg, options) => {
+            if (
+              typeof msg === 'string' &&
+              msg.includes('/files/') &&
+              msg.includes("didn't resolve at build time")
+            ) {
+              return;
+            }
+            originalWarn(msg, options);
+          };
+        },
+      },
     ],
     ssr: {
       // Include font packages in SSR bundle
