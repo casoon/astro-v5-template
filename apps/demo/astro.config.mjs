@@ -48,6 +48,10 @@ export default defineConfig({
       // Include font packages in SSR bundle
       noExternal: ['@fontsource/*'],
     },
+    // Suppress font file resolution warnings
+    optimizeDeps: {
+      exclude: ['@fontsource/*'],
+    },
     // Svelte-specific configuration for async SSR
     define: {
       __SVELTE_EXPERIMENTAL_ASYNC__: true,
@@ -58,6 +62,13 @@ export default defineConfig({
       minify: 'esbuild',
       // Chunk splitting for better caching
       rollupOptions: {
+        // Suppress font file warnings from @fontsource packages
+        onwarn(warning, warn) {
+          if (warning.code === 'UNRESOLVED_IMPORT' && warning.message?.includes('/files/')) {
+            return;
+          }
+          warn(warning);
+        },
         output: {
           manualChunks: {
             // Group vendor dependencies
