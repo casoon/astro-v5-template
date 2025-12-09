@@ -4,27 +4,26 @@
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
 [![Version](https://img.shields.io/badge/Version-1.4.2-blue)]()
 
-Production-ready Astro v5 monorepo with pnpm workspaces and shared design system.
+Production-ready Astro v5 monorepo with pnpm workspaces, shared design system, and centralized dependency management.
 
-## ✨ Version 1.4.2
-
-### Code Quality & Developer Experience
-- **Hybrid Linting** - Biome (JS/TS/JSON) + ESLint (Astro) + Prettier (Astro/Svelte/CSS)
-- **Husky + lint-staged** - Pre-commit hooks for automatic formatting
-- **Improved Sitemap** - Uses `Astro.site` as single source of truth
-
-## Packages
+## Project Structure
 
 ```
-packages/
-├── shared/  - Shared CSS variables and design system
-├── blank/   - Absolute minimum (blank canvas)
-├── base/    - Moderate starter with components
-└── demo/    - Full-featured demo site
+astro-v5-template/
+├── apps/
+│   ├── blank/   - Absolute minimum (blank canvas)
+│   ├── base/    - Moderate starter with components
+│   └── demo/    - Full-featured demo site
+├── packages/
+│   ├── config/  - Shared TypeScript configuration
+│   ├── styles/  - CSS variables and design tokens
+│   ├── ui/      - Shared UI components
+│   └── utils/   - Shared utilities
+└── pnpm-workspace.yaml  - Workspace & catalog config
 ```
 
-| Package | Description | Use When |
-|---------|-------------|----------|
+| App | Description | Use When |
+|-----|-------------|----------|
 | **blank** | Single homepage + 404, no components | Starting from scratch |
 | **base** | All components, blog, forms | Need solid foundation |
 | **demo** | Full showcase, 4 blog posts | Exploring features |
@@ -50,10 +49,42 @@ pnpm dev
 | `pnpm dev` | Start demo site |
 | `pnpm dev:blank` | Start blank template |
 | `pnpm dev:base` | Start base template |
-| `pnpm build` | Build all packages |
+| `pnpm build` | Build all apps |
+| `pnpm build:demo` | Build demo site |
 | `pnpm check` | Run Biome + ESLint |
 | `pnpm format` | Format all files |
 | `pnpm optimize-images` | Generate responsive images |
+
+## Dependency Management
+
+This workspace uses **pnpm catalog** for centralized version management. All shared dependencies are defined once in `pnpm-workspace.yaml`:
+
+```yaml
+catalog:
+  astro: ^5.15.4
+  tailwindcss: ^4.1.17
+  svelte: ^5.43.5
+  typescript: ^5.9.3
+  '@casoon/atlas-styles': ^0.0.7
+  # ... more dependencies
+```
+
+Apps reference catalog versions with `catalog:`:
+
+```json
+{
+  "dependencies": {
+    "astro": "catalog:",
+    "tailwindcss": "catalog:",
+    "@casoon/atlas-styles": "catalog:"
+  }
+}
+```
+
+**Benefits:**
+- Update versions in one place
+- Consistent versions across all apps
+- No version drift between packages
 
 ## Code Quality
 
@@ -75,7 +106,7 @@ pnpm lint:astro   # Lint Astro files
 
 ### Environment Variables
 
-Each package uses Zod for type-safe env configuration in `src/env.ts`:
+Each app uses Zod for type-safe env configuration in `src/env.ts`:
 
 ```typescript
 const envSchema = createEnvSchema({
@@ -91,13 +122,13 @@ Uses `Astro.site` from `astro.config.mjs` automatically:
 
 ```typescript
 // src/pages/sitemap.xml.ts
-import { createSitemapRoute } from '@astro-v5/shared/utils';
+import { createSitemapRoute } from '@astro-v5/utils';
 
 const pageModules = import.meta.glob('./**/*.astro', { eager: true });
 
 export const GET = createSitemapRoute({
   pageModules,
-  getBlogPosts: () => getCollection('blog'), // optional
+  getBlogPosts: () => getCollection('blog'),
 });
 ```
 
@@ -105,7 +136,7 @@ export const GET = createSitemapRoute({
 
 ```bash
 # 1. Copy template
-cp -r packages/base packages/my-site
+cp -r apps/base apps/my-site
 
 # 2. Update package.json name
 "name": "@astro-v5/my-site"
@@ -122,6 +153,9 @@ pnpm --filter @astro-v5/my-site dev
 | Astro 5.15 | Static site generator |
 | Tailwind CSS 4 | Utility-first CSS |
 | Svelte 5 | Reactive components |
+| @casoon/atlas-styles | Design system |
+| @casoon/astro-speed-measure | Build performance metrics |
+| @casoon/astro-webvitals | Web Vitals monitoring |
 | Biome | Linter & formatter (JS/TS) |
 | ESLint | Linter (Astro) |
 | Prettier | Formatter (Astro/Svelte) |
@@ -131,20 +165,23 @@ pnpm --filter @astro-v5/my-site dev
 
 ## Features
 
-- **Shared Design System** - CSS variables, animations, utilities
+- **Shared Design System** - CSS variables, animations, utilities via `@astro-v5/styles`
+- **UI Component Library** - Reusable components via `@astro-v5/ui`
 - **Image Optimization** - WebP/AVIF generation with Sharp
 - **SEO Components** - PageSEO, BlogSEO with JSON-LD
 - **Interactive Maps** - Leaflet.js with GDPR consent
-- **Web Vitals** - Performance monitoring
+- **Web Vitals** - Performance monitoring with `@casoon/astro-webvitals`
+- **Build Metrics** - Performance reports with `@casoon/astro-speed-measure`
 - **Blog System** - MDX support with Content Collections
 
 ## Deployment
 
-Build and deploy from `packages/*/dist/`:
+Build and deploy from `apps/*/dist/`:
 
 ```bash
-pnpm build:demo   # Build demo
-pnpm build:base   # Build base
+pnpm build:demo   # Build demo -> apps/demo/dist/
+pnpm build:base   # Build base -> apps/base/dist/
+pnpm build:blank  # Build blank -> apps/blank/dist/
 ```
 
 Supports: Vercel, Netlify, Cloudflare Pages, GitHub Pages

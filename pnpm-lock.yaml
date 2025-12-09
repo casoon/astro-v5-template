@@ -48,15 +48,30 @@ catalogs:
     '@tailwindcss/vite':
       specifier: ^4.1.17
       version: 4.1.17
+    '@types/leaflet':
+      specifier: ^1.9.21
+      version: 1.9.21
     astro:
       specifier: ^5.15.4
       version: 5.16.4
     clsx:
       specifier: ^2.1.1
       version: 2.1.1
+    eslint:
+      specifier: ^9.39.1
+      version: 9.39.1
+    eslint-config-prettier:
+      specifier: ^10.1.8
+      version: 10.1.8
+    eslint-plugin-astro:
+      specifier: ^1.5.0
+      version: 1.5.0
     husky:
       specifier: ^9.1.7
       version: 9.1.7
+    leaflet:
+      specifier: ^1.9.4
+      version: 1.9.4
     lint-staged:
       specifier: ^16.2.6
       version: 16.2.7
@@ -94,34 +109,18 @@ catalogs:
 importers:
 
   .:
-    dependencies:
-      '@casoon/astro-speed-measure':
-        specifier: 'catalog:'
-        version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
-      '@casoon/astro-webvitals':
-        specifier: 'catalog:'
-        version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
-      '@casoon/atlas-styles':
-        specifier: 'catalog:'
-        version: 0.0.7
-      '@types/leaflet':
-        specifier: ^1.9.21
-        version: 1.9.21
-      leaflet:
-        specifier: ^1.9.4
-        version: 1.9.4
     devDependencies:
       '@biomejs/biome':
         specifier: 'catalog:'
         version: 2.3.8
       eslint:
-        specifier: ^9.39.1
+        specifier: 'catalog:'
         version: 9.39.1(jiti@2.6.1)
       eslint-config-prettier:
-        specifier: ^10.1.8
+        specifier: 'catalog:'
         version: 10.1.8(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-astro:
-        specifier: ^1.5.0
+        specifier: 'catalog:'
         version: 1.5.0(eslint@9.39.1(jiti@2.6.1))
       husky:
         specifier: 'catalog:'
@@ -168,6 +167,12 @@ importers:
       '@astrojs/svelte':
         specifier: 'catalog:'
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
+      '@casoon/astro-speed-measure':
+        specifier: 'catalog:'
+        version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
+      '@casoon/astro-webvitals':
+        specifier: 'catalog:'
+        version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/atlas-styles':
         specifier: 'catalog:'
         version: 0.0.7
@@ -265,6 +270,9 @@ importers:
       '@astrojs/sitemap':
         specifier: 'catalog:'
         version: 3.6.0
+      '@casoon/astro-speed-measure':
+        specifier: 'catalog:'
+        version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/atlas-styles':
         specifier: 'catalog:'
         version: 0.0.7
@@ -335,6 +343,12 @@ importers:
       '@astrojs/svelte':
         specifier: 'catalog:'
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
+      '@casoon/astro-speed-measure':
+        specifier: 'catalog:'
+        version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
+      '@casoon/astro-webvitals':
+        specifier: 'catalog:'
+        version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/atlas-styles':
         specifier: 'catalog:'
         version: 0.0.7
@@ -395,9 +409,15 @@ importers:
       '@tailwindcss/vite':
         specifier: 'catalog:'
         version: 4.1.17(vite@6.4.1(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.2))
+      '@types/leaflet':
+        specifier: 'catalog:'
+        version: 1.9.21
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
+      leaflet:
+        specifier: 'catalog:'
+        version: 1.9.4
       lucide-svelte:
         specifier: 'catalog:'
         version: 0.553.0(svelte@5.45.6)

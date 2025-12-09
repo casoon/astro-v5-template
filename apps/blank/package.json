@@ -51,6 +51,7 @@
     "@astro-v5/config": "workspace:*",
     "@astrojs/check": "catalog:",
     "@astrojs/sitemap": "catalog:",
+    "@casoon/astro-speed-measure": "catalog:",
     "@casoon/atlas-styles": "catalog:",
     "@fontsource/inter": "catalog:",
     "@tailwindcss/vite": "catalog:",

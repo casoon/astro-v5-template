@@ -2,7 +2,7 @@
   "name": "astro-v5-workspace",
   "version": "1.4.2",
   "private": true,
-  "description": "Astro v5 monorepo with blank, base, and demo templates using pnpm workspaces",
+  "description": "Astro v5 monorepo with pnpm workspaces, shared design system, and centralized dependency management",
   "author": "casoon",
   "license": "MIT",
   "repository": {
@@ -73,24 +73,17 @@
     "monorepo",
     "workspace",
     "pnpm",
-    "volta"
+    "catalog"
   ],
   "devDependencies": {
     "@biomejs/biome": "catalog:",
-    "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-astro": "^1.5.0",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-astro": "catalog:",
     "husky": "catalog:",
     "lint-staged": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-astro": "catalog:",
     "sharp": "catalog:"
-  },
-  "dependencies": {
-    "@casoon/astro-speed-measure": "catalog:",
-    "@casoon/astro-webvitals": "catalog:",
-    "@casoon/atlas-styles": "catalog:",
-    "@types/leaflet": "^1.9.21",
-    "leaflet": "^1.9.4"
   }
 }

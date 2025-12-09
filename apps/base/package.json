@@ -60,6 +60,8 @@
     "@astrojs/rss": "catalog:",
     "@astrojs/sitemap": "catalog:",
     "@astrojs/svelte": "catalog:",
+    "@casoon/astro-speed-measure": "catalog:",
+    "@casoon/astro-webvitals": "catalog:",
     "@casoon/atlas-styles": "catalog:",
     "@fontsource/inter": "catalog:",
     "@tailwindcss/forms": "catalog:",
