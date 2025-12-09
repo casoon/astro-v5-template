@@ -60,7 +60,7 @@
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/svelte": "^7.2.2",
-    "@casoon/atlas-styles": "^0.0.6",
+    "@casoon/atlas-styles": "^0.0.7",
     "@fontsource/archivo": "^5.2.8",
     "@fontsource/crimson-text": "^5.2.7",
     "@fontsource/dm-sans": "^5.2.8",

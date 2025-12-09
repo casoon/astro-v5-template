@@ -51,7 +51,7 @@
     "@astro-v5/config": "workspace:*",
     "@astrojs/check": "^0.9.5",
     "@astrojs/sitemap": "^3.6.0",
-    "@casoon/atlas-styles": "^0.0.6",
+    "@casoon/atlas-styles": "^0.0.7",
     "@fontsource/inter": "^5.2.8",
     "@tailwindcss/vite": "^4.1.17",
     "clsx": "^2.1.1",

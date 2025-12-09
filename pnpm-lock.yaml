@@ -15,8 +15,8 @@ importers:
         specifier: ^0.1.5
         version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/atlas-styles':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@types/leaflet':
         specifier: ^1.9.21
         version: 1.9.21
@@ -82,8 +82,8 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
       '@casoon/atlas-styles':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -179,8 +179,8 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0
       '@casoon/atlas-styles':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@fontsource/inter':
         specifier: ^5.2.8
         version: 5.2.8
@@ -249,8 +249,8 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
       '@casoon/atlas-styles':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@fontsource/archivo':
         specifier: ^5.2.8
         version: 5.2.8
@@ -546,8 +546,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0 || ^5.0.0
 
-  '@casoon/atlas-styles@0.0.6':
-    resolution: {integrity: sha512-5mn841oxqKNyE/ZAKueJzdqsFIoB37TcZRR/q2APjNv6pGFnZlDyEvFPfp4sUxW0uS51Z3RiwK9DGRFdQYflYA==}
+  '@casoon/atlas-styles@0.0.7':
+    resolution: {integrity: sha512-kbXrrr+uHSjH3dJ+IswdmSvsdCtQnEV3WDZVT/VnRHmWKTBGGae/U+9AEuO4KaiiCXsDCeOiY8hpQ9fMxoVlcw==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -4726,7 +4726,7 @@ snapshots:
     dependencies:
       astro: 5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2)
 
-  '@casoon/atlas-styles@0.0.6': {}
+  '@casoon/atlas-styles@0.0.7': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
