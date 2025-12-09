@@ -19,7 +19,7 @@
     "@astro-v5/styles": "workspace:*"
   },
   "devDependencies": {
-    "astro": "^5.0.0"
+    "astro": "catalog:"
   },
   "peerDependencies": {
     "astro": "^5.0.0",

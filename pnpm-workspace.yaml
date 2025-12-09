@@ -3,4 +3,44 @@ packages:
   - 'packages/*'
 
 catalog:
+  # Astro
+  astro: ^5.15.4
+  '@astrojs/check': ^0.9.5
+  '@astrojs/mdx': ^4.3.10
+  '@astrojs/rss': ^4.0.13
+  '@astrojs/sitemap': ^3.6.0
+  '@astrojs/svelte': ^7.2.2
+
+  # Tailwind
+  tailwindcss: ^4.1.17
+  '@tailwindcss/forms': ^0.5.10
+  '@tailwindcss/typography': ^0.5.19
+  '@tailwindcss/vite': ^4.1.17
+
+  # Svelte
+  svelte: ^5.43.5
+  '@sveltejs/vite-plugin-svelte': ^5.1.1
+  lucide-svelte: ^0.553.0
+
+  # Core
+  typescript: ^5.9.3
+  zod: ^4.1.12
+  clsx: ^2.1.1
+  tailwind-merge: ^3.3.1
+  sharp: ^0.34.5
+
+  # Formatting & Linting
+  '@biomejs/biome': ^2.3.4
+  prettier: ^3.6.2
+  prettier-plugin-astro: ^0.14.1
+  prettier-plugin-svelte: ^3.4.0
+  husky: ^9.1.7
+  lint-staged: ^16.2.6
+
+  # Casoon
   '@casoon/atlas-styles': ^0.0.7
+  '@casoon/astro-speed-measure': 0.1.4
+  '@casoon/astro-webvitals': ^0.1.5
+
+  # Fonts (Inter als Standard)
+  '@fontsource/inter': ^5.2.8

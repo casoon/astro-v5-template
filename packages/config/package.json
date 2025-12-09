@@ -17,6 +17,6 @@
     "typescript"
   ],
   "dependencies": {
-    "@fontsource/inter": "^5.2.8"
+    "@fontsource/inter": "catalog:"
   }
 }
