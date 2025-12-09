@@ -4,6 +4,12 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@casoon/atlas-styles':
+      specifier: ^0.0.7
+      version: 0.0.7
+
 importers:
 
   .:
@@ -15,7 +21,7 @@ importers:
         specifier: ^0.1.5
         version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/atlas-styles':
-        specifier: ^0.0.7
+        specifier: 'catalog:'
         version: 0.0.7
       '@types/leaflet':
         specifier: ^1.9.21
@@ -82,7 +88,7 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
       '@casoon/atlas-styles':
-        specifier: ^0.0.7
+        specifier: 'catalog:'
         version: 0.0.7
       '@fontsource/inter':
         specifier: ^5.2.8
@@ -179,7 +185,7 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0
       '@casoon/atlas-styles':
-        specifier: ^0.0.7
+        specifier: 'catalog:'
         version: 0.0.7
       '@fontsource/inter':
         specifier: ^5.2.8
@@ -249,7 +255,7 @@ importers:
         specifier: ^7.2.2
         version: 7.2.2(@types/node@24.10.1)(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))(jiti@2.6.1)(lightningcss@1.30.2)(svelte@5.45.6)(typescript@5.9.3)(yaml@2.8.2)
       '@casoon/atlas-styles':
-        specifier: ^0.0.7
+        specifier: 'catalog:'
         version: 0.0.7
       '@fontsource/archivo':
         specifier: ^5.2.8
