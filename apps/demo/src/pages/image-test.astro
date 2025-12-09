@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import OptimizedImage from '@astro-v5/ui/OptimizedImage.astro';
+---
+
+<BaseLayout title="Optimized Image Test">
+  <div class="max-w-4xl mx-auto space-y-8">
+    <h1 class="text-4xl font-bold mb-8">Optimized Image Test</h1>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Hero Image (img01.jpg)</h2>
+      <OptimizedImage
+        src="/images/img01.jpg"
+        alt="Hero image example"
+        sizes="(max-width: 768px) 100vw, 800px"
+        class="rounded-lg shadow-lg"
+      />
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">OG Image (og-image.jpg)</h2>
+      <OptimizedImage
+        src="/images/og-image.jpg"
+        alt="Open Graph image"
+        widths={[400, 800]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        class="rounded-lg shadow-lg"
+      />
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold mb-4">Blog Image (blog/astro-atlas.jpg)</h2>
+      <OptimizedImage
+        src="/images/blog/astro-atlas.jpg"
+        alt="Astro Atlas blog post"
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 600px"
+        class="rounded-lg shadow-lg"
+      />
+    </section>
+
+    <section class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+      <h2 class="text-xl font-bold mb-4">How It Works</h2>
+      <ul class="list-disc list-inside space-y-2 text-sm">
+        <li>Original images stored in <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">/public/images/</code></li>
+        <li>Run <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">pnpm optimize-images</code> to generate optimized versions</li>
+        <li>Optimized images saved to <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">/public/images-optimized/</code></li>
+        <li>Component generates <code class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">&lt;picture&gt;</code> with AVIF, WebP, and JPEG fallback</li>
+        <li>Browser automatically selects best format and size</li>
+      </ul>
+    </section>
+
+    <section class="bg-blue-50 dark:bg-blue-900 p-6 rounded-lg">
+      <h2 class="text-xl font-bold mb-4">Usage Example</h2>
+      <pre class="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm"><code>&lt;OptimizedImage
+  src="/images/hero.jpg"
+  alt="Description"
+  sizes="(max-width: 768px) 100vw, 800px"
+  loading="lazy"
+  class="rounded-lg"
+/&gt;</code></pre>
+    </section>
+  </div>
+</BaseLayout>

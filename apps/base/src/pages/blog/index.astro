@@ -1,0 +1,79 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogCard from '@astro-v5/ui/BlogCard.astro';
+import { getSortedPosts } from '@/utils/blog';
+import type { CollectionEntry } from 'astro:content';
+
+const posts = await getSortedPosts();
+
+// Function to determine card variant
+function getCardVariant(index: number): 'default' | 'featured' | 'minimal' {
+  if (index === 0) return 'featured';
+  if ((index + 1) % 4 === 0) return 'minimal';
+  return 'default';
+}
+---
+
+<BaseLayout>
+  <!-- Background with floating orbs -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden">
+    <div class="cs-orb cs-orb-lg opacity-10 animate-pulse" style="top: 10%; left: 80%; animation-duration: 8s;"></div>
+    <div class="cs-orb cs-orb-md opacity-15 animate-bounce" style="top: 60%; left: 10%; animation-delay: 2s; animation-duration: 6s;"></div>
+    <div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 80%; right: 15%; animation-delay: 4s; animation-duration: 10s;"></div>
+  </div>
+
+  <div class="relative space-y-12 w-full">
+    <!-- Header with Atlas styling -->
+    <div class="text-center space-y-6">
+      <div class="cs-glass-sm p-8 rounded-3xl mx-auto max-w-4xl backdrop-blur-xl">
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold cs-gradient-text cs-gradient-animate mb-6">
+          Blog
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          Entdecke Artikel über Astro, Tailwind CSS, Svelte und moderne Webentwicklung
+        </p>
+        
+        <!-- Decorative elements -->
+        <div class="flex justify-center items-center gap-4 mt-6 opacity-60">
+          <div class="h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent w-20"></div>
+          <div class="cs-orb cs-orb-xs animate-pulse"></div>
+          <div class="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-20"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Posts Grid with Atlas styling -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post: CollectionEntry<'blog'>, index: number) => (
+        <BlogCard 
+          title={post.data.title}
+          description={post.data.description}
+          date={post.data.date}
+          author={post.data.author}
+          image={post.data.image}
+          slug={post.slug}
+          tags={post.data.tags}
+          variant={getCardVariant(index)}
+        />
+      ))}
+    </div>
+
+    <!-- Empty State with Atlas styling -->
+    {posts.length === 0 && (
+      <div class="text-center py-16">
+        <div class="cs-glass p-12 rounded-3xl mx-auto max-w-md">
+          <div class="text-8xl mb-6 animate-bounce">📝</div>
+          <h3 class="text-2xl font-bold cs-gradient-text mb-4">
+            Noch keine Blog-Posts
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Erstelle deinen ersten Blog-Post im 
+            <code class="cs-glass-sm px-2 py-1 rounded text-sm font-mono">src/content/blog/</code> 
+            Verzeichnis
+          </p>
+          <div class="cs-orb cs-orb-sm opacity-30 animate-pulse mx-auto"></div>
+        </div>
+      </div>
+    )}
+  </div>
+</BaseLayout> 

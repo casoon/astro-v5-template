@@ -1,0 +1,280 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import 'leaflet/dist/leaflet.css';
+
+const title = 'Interactive Map Demo';
+const description = 'GDPR-compliant OpenStreetMap integration with Leaflet.js - Berlin TV Tower';
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="w-full max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
+      🗺️ Interactive Map Demo
+    </h1>
+
+    <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8 text-left">
+      <h2 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-100">
+        ℹ️ GDPR-Compliant Integration
+      </h2>
+      <div class="text-sm text-blue-800 dark:text-blue-200 space-y-2">
+        <p><strong>Important for GDPR compliance:</strong></p>
+        <ul class="list-disc list-inside space-y-1 ml-4">
+          <li><strong>Local hosting:</strong> Leaflet.js CSS & JavaScript are hosted locally (no CDN dependency)</li>
+          <li><strong>OpenStreetMap Tiles:</strong> Map tiles from OSM servers are only loaded after user consent</li>
+          <li><strong>Opt-in Consent:</strong> Users must explicitly agree before external resources are loaded</li>
+          <li><strong>Privacy Notice:</strong> Clear notice about data transmission to OSM servers</li>
+          <li><strong>IP Address:</strong> OSM servers receive the IP address when loading tiles (mention in privacy policy)</li>
+          <li><strong>Alternative:</strong> For maximum GDPR security, run your own tile server or use commercial providers with DPA</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Consent Banner -->
+    <div id="map-consent" class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-300 dark:border-yellow-700 rounded-lg p-6 mb-6">
+      <h3 class="text-lg font-semibold mb-3 text-yellow-900 dark:text-yellow-100">
+        🔒 Privacy Notice
+      </h3>
+      <p class="text-sm text-yellow-800 dark:text-yellow-200 mb-4 text-left">
+        This map uses OpenStreetMap (OSM). When loading the map, map tiles are retrieved from OSM servers.
+        Your IP address will be transmitted to the OpenStreetMap Foundation servers.
+      </p>
+      <p class="text-sm text-yellow-800 dark:text-yellow-200 mb-4 text-left">
+        <strong>Data Processing:</strong><br>
+        • IP address (temporary for tile delivery)<br>
+        • Browser information (User-Agent)<br>
+        • Requested map areas
+      </p>
+      <p class="text-sm text-yellow-800 dark:text-yellow-200 mb-4 text-left">
+        More info: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer" class="underline hover:text-yellow-600">OSM Privacy Policy</a>
+      </p>
+      <div class="flex gap-3">
+        <button
+          id="accept-map"
+          class="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors"
+        >
+          ✓ Load Map
+        </button>
+        <button
+          id="decline-map"
+          class="px-6 py-2 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors"
+        >
+          ✗ Decline
+        </button>
+      </div>
+    </div>
+
+    <!-- Map Container (initially hidden) -->
+    <div id="map-container" class="hidden">
+      <div
+        id="map"
+        class="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-lg shadow-lg border border-gray-300 dark:border-gray-700"
+        style="z-index: 1;"
+      ></div>
+
+      <div class="mt-6 text-left space-y-3">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">
+          📍 Berlin TV Tower
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300">
+          The Berlin TV Tower at Alexanderplatz is 368 meters tall, making it the tallest structure in Germany
+          and one of Berlin's most iconic landmarks.
+        </p>
+        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 space-y-1 text-sm">
+          <p><strong>Address:</strong> Panoramastraße 1A, 10178 Berlin, Germany</p>
+          <p><strong>Coordinates:</strong> 52.5208° N, 13.4094° E</p>
+          <p><strong>Height:</strong> 368 meters (1,207 feet)</p>
+          <p><strong>Opened:</strong> October 3, 1969</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Declined Message -->
+    <div id="map-declined" class="hidden bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        You have declined loading the map. The map has not been loaded.
+      </p>
+      <button
+        id="reload-consent"
+        class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+      >
+        🔄 Ask Again
+      </button>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import L from 'leaflet';
+
+  // Leaflet Icon Fix (important for local hosting)
+  // @ts-ignore
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+  });
+
+  // Berlin TV Tower Coordinates
+  const tvTowerCoords: [number, number] = [52.5208, 13.4094];
+  let map: L.Map | null = null;
+
+  // DOM Elements
+  const consentDiv = document.getElementById('map-consent');
+  const mapContainer = document.getElementById('map-container');
+  const mapDeclined = document.getElementById('map-declined');
+  const acceptBtn = document.getElementById('accept-map');
+  const declineBtn = document.getElementById('decline-map');
+  const reloadBtn = document.getElementById('reload-consent');
+
+  // LocalStorage Key for Consent
+  const CONSENT_KEY = 'osm-map-consent';
+
+  // Check stored consent
+  function checkStoredConsent() {
+    const consent = localStorage.getItem(CONSENT_KEY);
+
+    if (consent === 'accepted') {
+      loadMap();
+    } else if (consent === 'declined') {
+      showDeclined();
+    }
+    // Otherwise: Consent banner remains visible
+  }
+
+  // Load map
+  function loadMap() {
+    if (!consentDiv || !mapContainer) return;
+
+    // Hide consent banner, show map
+    consentDiv.classList.add('hidden');
+    mapContainer.classList.remove('hidden');
+    mapDeclined?.classList.add('hidden');
+
+    // Initialize map
+    map = L.map('map').setView(tvTowerCoords, 16);
+
+    // Add OpenStreetMap Tiles
+    // IMPORTANT: This loads data from external OSM servers
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Custom Marker Icon (optional)
+    const customIcon = L.icon({
+      iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+      iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    // Marker for TV Tower
+    const marker = L.marker(tvTowerCoords, { icon: customIcon }).addTo(map);
+
+    // Popup with information
+    marker.bindPopup(`
+      <div style="text-align: center; min-width: 200px;">
+        <h3 style="font-weight: bold; font-size: 16px; margin-bottom: 8px;">
+          🗼 Berlin TV Tower
+        </h3>
+        <p style="margin-bottom: 6px;">Germany's tallest structure</p>
+        <p style="font-size: 12px; color: #666;">
+          <strong>Height:</strong> 368 meters<br>
+          <strong>Built:</strong> 1969
+        </p>
+        <a
+          href="https://www.openstreetmap.org/?mlat=${tvTowerCoords[0]}&mlon=${tvTowerCoords[1]}&zoom=16"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="display: inline-block; margin-top: 8px; color: #2563eb; text-decoration: underline;"
+        >
+          View on OpenStreetMap →
+        </a>
+      </div>
+    `).openPopup();
+
+    // Circle around TV Tower (visibility area)
+    L.circle(tvTowerCoords, {
+      color: 'purple',
+      fillColor: '#a855f7',
+      fillOpacity: 0.2,
+      radius: 200
+    }).addTo(map);
+  }
+
+  // Show declined message
+  function showDeclined() {
+    if (!consentDiv || !mapDeclined) return;
+
+    consentDiv.classList.add('hidden');
+    mapContainer?.classList.add('hidden');
+    mapDeclined.classList.remove('hidden');
+  }
+
+  // Reset consent
+  function resetConsent() {
+    localStorage.removeItem(CONSENT_KEY);
+    consentDiv?.classList.remove('hidden');
+    mapContainer?.classList.add('hidden');
+    mapDeclined?.classList.add('hidden');
+
+    // Destroy map if exists
+    if (map) {
+      map.remove();
+      map = null;
+    }
+  }
+
+  // Event Listeners
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem(CONSENT_KEY, 'accepted');
+    loadMap();
+  });
+
+  declineBtn?.addEventListener('click', () => {
+    localStorage.setItem(CONSENT_KEY, 'declined');
+    showDeclined();
+  });
+
+  reloadBtn?.addEventListener('click', () => {
+    resetConsent();
+  });
+
+  // Initial Check
+  checkStoredConsent();
+</script>
+
+<style>
+  /* Leaflet Popup Styling */
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 8px;
+  }
+
+  :global(.leaflet-popup-content) {
+    margin: 16px;
+  }
+
+  /* Dark Mode for Leaflet Controls */
+  :global(.dark .leaflet-control-zoom a) {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-color: #374151 !important;
+  }
+
+  :global(.dark .leaflet-control-zoom a:hover) {
+    background-color: #374151 !important;
+  }
+
+  :global(.dark .leaflet-control-attribution) {
+    background-color: rgba(31, 41, 55, 0.8) !important;
+    color: #e5e7eb !important;
+  }
+
+  :global(.dark .leaflet-control-attribution a) {
+    color: #60a5fa !important;
+  }
+</style>

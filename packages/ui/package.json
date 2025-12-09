@@ -1,0 +1,33 @@
+{
+  "name": "@astro-v5/ui",
+  "version": "1.4.2",
+  "description": "Shared UI components for Astro v5 templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "astro",
+    "components",
+    "ui"
+  ],
+  "dependencies": {
+    "@astro-v5/styles": "workspace:*"
+  },
+  "devDependencies": {
+    "astro": "^5.0.0"
+  },
+  "peerDependencies": {
+    "astro": "^5.0.0",
+    "svelte": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "svelte": {
+      "optional": true
+    }
+  }
+}

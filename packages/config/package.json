@@ -1,0 +1,22 @@
+{
+  "name": "@astro-v5/config",
+  "version": "1.4.2",
+  "description": "Shared configuration and TypeScript definitions for Astro v5 templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./env": "./env.d.ts",
+    "./types/env": "./env.d.ts"
+  },
+  "files": [
+    "*.d.ts"
+  ],
+  "keywords": [
+    "astro",
+    "config",
+    "typescript"
+  ],
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8"
+  }
+}

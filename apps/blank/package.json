@@ -1,0 +1,70 @@
+{
+  "name": "@astro-v5/blank",
+  "type": "module",
+  "version": "1.4.2",
+  "description": "Blank Astro v5 template - absolute minimum for new projects",
+  "private": true,
+  "author": "casoon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casoon/astro-v5-template"
+  },
+  "keywords": [
+    "astro",
+    "tailwindcss",
+    "blank",
+    "minimal",
+    "starter",
+    "template",
+    "typescript"
+  ],
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "volta": {
+    "node": "24.11.0",
+    "pnpm": "9.15.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "node ../../scripts/validate-config.mjs . && astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview",
+    "clean": "rm -rf dist .astro node_modules/.cache",
+    "format": "pnpm format:biome && pnpm format:astro",
+    "format:biome": "biome format --write .",
+    "format:astro": "prettier --write \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:format:astro": "prettier --check \"**/*.astro\" --config .prettierrc.astro.json",
+    "check:biome": "biome check --write .",
+    "check": "pnpm check:biome && pnpm check:format:astro",
+    "type-check": "astro check",
+    "update-deps": "pnpm dlx npm-check-updates -u"
+  },
+  "dependencies": {
+    "@astro-v5/ui": "workspace:*",
+    "@astro-v5/styles": "workspace:*",
+    "@astro-v5/utils": "workspace:*",
+    "@astro-v5/config": "workspace:*",
+    "@astrojs/check": "^0.9.5",
+    "@astrojs/sitemap": "^3.6.0",
+    "@casoon/atlas-styles": "^0.0.6",
+    "@fontsource/inter": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.17",
+    "clsx": "^2.1.1",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.4",
+    "astro": "^5.15.4",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}

@@ -36,7 +36,7 @@
     "optimize-images:base": "node scripts/optimize-images.mjs base",
     "optimize-images:demo": "node scripts/optimize-images.mjs demo",
     "clean": "pnpm -r clean && rm -rf node_modules",
-    "clean:images": "rm -rf packages/*/public/responsive",
+    "clean:images": "rm -rf apps/*/public/responsive",
     "check": "pnpm biome:check && pnpm lint:astro",
     "type-check": "pnpm -r type-check",
     "update-deps": "pnpm -r update-deps",
@@ -87,7 +87,9 @@
     "sharp": "^0.34.5"
   },
   "dependencies": {
-    "@casoon/astro-webvitals": "^0.1.3",
+    "@casoon/astro-speed-measure": "0.1.4",
+    "@casoon/astro-webvitals": "^0.1.5",
+    "@casoon/atlas-styles": "^0.0.6",
     "@types/leaflet": "^1.9.21",
     "leaflet": "^1.9.4"
   }

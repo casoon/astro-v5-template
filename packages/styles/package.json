@@ -1,0 +1,26 @@
+{
+  "name": "@astro-v5/styles",
+  "version": "1.4.2",
+  "description": "Shared styles, CSS variables and design tokens for Astro v5 templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./*": "./src/*",
+    "./index.css": "./src/index.css",
+    "./variables.css": "./src/variables.css",
+    "./utilities.css": "./src/utilities.css",
+    "./animations.css": "./src/animations.css"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "astro",
+    "css",
+    "design-system",
+    "css-variables"
+  ],
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8"
+  }
+}

@@ -1,0 +1,305 @@
+---
+export interface Props {
+  id: string;
+  title?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  closeOnBackdrop?: boolean;
+}
+
+const { id, title, size = 'md', closeOnBackdrop = true } = Astro.props;
+
+const sizeClasses = {
+  sm: 'max-w-[calc(100vw-2rem)] sm:max-w-md',
+  md: 'max-w-[calc(100vw-2rem)] sm:max-w-lg md:max-w-2xl',
+  lg: 'max-w-[calc(100vw-2rem)] sm:max-w-2xl md:max-w-4xl',
+  xl: 'max-w-[calc(100vw-2rem)] sm:max-w-4xl md:max-w-6xl',
+  full: 'max-w-[calc(100vw-2rem)] sm:max-w-full sm:mx-4',
+};
+---
+
+<div
+  id={id}
+  class="modal fixed inset-0 z-50 hidden overflow-y-auto"
+  aria-labelledby={`${id}-title`}
+  aria-modal="true"
+  role="dialog"
+>
+  <!-- Backdrop -->
+  <div
+    class="modal-backdrop fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+    data-close-on-click={closeOnBackdrop}
+  >
+  </div>
+
+  <!-- Modal Container -->
+  <div class="flex min-h-full items-center justify-center p-4">
+    <!-- Modal Content -->
+    <div
+      class={`modal-content cs-glass-xl relative w-full ${sizeClasses[size]} transform scale-95 opacity-0 transition-all duration-300 rounded-2xl shadow-2xl`}
+    >
+      <!-- Header -->
+      {
+        title && (
+          <div class="border-b border-slate-200 dark:border-slate-700 px-6 py-4">
+            <h3 id={`${id}-title`} class="text-xl font-semibold text-slate-900 dark:text-white">
+              {title}
+            </h3>
+          </div>
+        )
+      }
+
+      <!-- Close Button -->
+      <button
+        type="button"
+        class="absolute right-4 top-4 p-2 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-colors"
+        data-modal-close
+      >
+        <span class="sr-only">Close modal</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Body -->
+      <div class="p-6">
+        <slot />
+      </div>
+
+      <!-- Footer (optional) -->
+      <div class="modal-footer hidden border-t border-slate-200 dark:border-slate-700 px-6 py-4">
+        <slot name="footer" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  class ModalManager {
+    private modals: Map<string, HTMLElement> = new Map();
+    private activeModal: HTMLElement | null = null;
+
+    constructor() {
+      this.init();
+    }
+
+    private init() {
+      // Find all modals on the page
+      document.querySelectorAll('.modal').forEach((modal) => {
+        this.modals.set(modal.id, modal as HTMLElement);
+      });
+
+      // Setup event listeners
+      this.setupTriggers();
+      this.setupCloseButtons();
+      this.setupBackdropClose();
+      this.setupEscapeKey();
+    }
+
+    private setupTriggers() {
+      document.querySelectorAll('[data-modal-trigger]').forEach((trigger) => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          const modalId = trigger.getAttribute('data-modal-trigger');
+          if (modalId) {
+            this.open(modalId);
+          }
+        });
+      });
+    }
+
+    private setupCloseButtons() {
+      document.querySelectorAll('[data-modal-close]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (this.activeModal) {
+            this.close(this.activeModal.id);
+          }
+        });
+      });
+    }
+
+    private setupBackdropClose() {
+      document.querySelectorAll('.modal-backdrop').forEach((backdrop) => {
+        backdrop.addEventListener('click', () => {
+          if (backdrop.getAttribute('data-close-on-click') === 'true' && this.activeModal) {
+            this.close(this.activeModal.id);
+          }
+        });
+      });
+    }
+
+    private setupEscapeKey() {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.activeModal) {
+          this.close(this.activeModal.id);
+        }
+      });
+    }
+
+    open(modalId: string) {
+      const modal = this.modals.get(modalId);
+      if (!modal) return;
+
+      // Store currently focused element to restore later
+      const previouslyFocused = document.activeElement as HTMLElement;
+      modal.setAttribute('data-previously-focused', previouslyFocused?.id || '');
+
+      // Show modal
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Animate in
+      requestAnimationFrame(() => {
+        const backdrop = modal.querySelector('.modal-backdrop');
+        const content = modal.querySelector('.modal-content');
+
+        backdrop?.classList.remove('opacity-0');
+        backdrop?.classList.add('opacity-100');
+
+        content?.classList.remove('scale-95', 'opacity-0');
+        content?.classList.add('scale-100', 'opacity-100');
+
+        // Focus first focusable element in modal
+        this.focusFirstElement(modal);
+      });
+
+      this.activeModal = modal;
+
+      // Setup focus trap
+      this.setupFocusTrap(modal);
+
+      // Dispatch open event
+      modal.dispatchEvent(new CustomEvent('modal:open'));
+    }
+
+    close(modalId: string) {
+      const modal = this.modals.get(modalId);
+      if (!modal) return;
+
+      const backdrop = modal.querySelector('.modal-backdrop');
+      const content = modal.querySelector('.modal-content');
+
+      // Animate out
+      backdrop?.classList.remove('opacity-100');
+      backdrop?.classList.add('opacity-0');
+
+      content?.classList.remove('scale-100', 'opacity-100');
+      content?.classList.add('scale-95', 'opacity-0');
+
+      // Hide after animation
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        this.activeModal = null;
+
+        // Restore focus to previously focused element
+        const previouslyFocusedId = modal.getAttribute('data-previously-focused');
+        if (previouslyFocusedId) {
+          const element = document.getElementById(previouslyFocusedId);
+          element?.focus();
+        }
+
+        // Dispatch close event
+        modal.dispatchEvent(new CustomEvent('modal:close'));
+      }, 300);
+    }
+
+    private getFocusableElements(modal: HTMLElement): HTMLElement[] {
+      const selectors = [
+        'a[href]',
+        'button:not([disabled])',
+        'textarea:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])',
+      ];
+
+      return Array.from(modal.querySelectorAll(selectors.join(','))) as HTMLElement[];
+    }
+
+    private focusFirstElement(modal: HTMLElement) {
+      const focusable = this.getFocusableElements(modal);
+      if (focusable.length > 0) {
+        focusable[0].focus();
+      }
+    }
+
+    private setupFocusTrap(modal: HTMLElement) {
+      const handleTabKey = (e: KeyboardEvent) => {
+        if (e.key !== 'Tab' || this.activeModal !== modal) return;
+
+        const focusable = this.getFocusableElements(modal);
+        if (focusable.length === 0) return;
+
+        const firstElement = focusable[0];
+        const lastElement = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          // Shift + Tab
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          // Tab
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      };
+
+      // Remove existing listener if any
+      document.removeEventListener('keydown', handleTabKey);
+
+      // Add new listener
+      document.addEventListener('keydown', handleTabKey);
+    }
+
+    toggle(modalId: string) {
+      const modal = this.modals.get(modalId);
+      if (!modal) return;
+
+      if (modal.classList.contains('hidden')) {
+        this.open(modalId);
+      } else {
+        this.close(modalId);
+      }
+    }
+  }
+
+  // Initialize modal manager
+  declare global {
+    interface Window {
+      modalManager: ModalManager;
+    }
+  }
+
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.modalManager = new ModalManager();
+    });
+  } else {
+    window.modalManager = new ModalManager();
+  }
+
+  // Helper functions
+  window.openModal = (modalId: string) => {
+    window.modalManager?.open(modalId);
+  };
+
+  window.closeModal = (modalId: string) => {
+    window.modalManager?.close(modalId);
+  };
+</script>
+
+<style>
+  /* Check if footer slot has content and show it */
+  .modal-footer:has(*) {
+    display: block;
+  }
+</style>

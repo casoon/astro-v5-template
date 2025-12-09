@@ -280,16 +280,16 @@ async function main() {
     console.log(`📦 Filter: Only processing package "${packageFilter}"\n`);
   }
 
-  // Find all packages with images
-  const packagesDir = join(ROOT_DIR, 'packages');
-  const packages = await readdir(packagesDir);
+  // Find all apps with images
+  const appsDir = join(ROOT_DIR, 'apps');
+  const packages = await readdir(appsDir);
 
   for (const pkg of packages) {
     // Skip if package filter is set and doesn't match
     if (packageFilter && pkg !== packageFilter) {
       continue;
     }
-    const pkgDir = join(packagesDir, pkg);
+    const pkgDir = join(appsDir, pkg);
     const inputDir = join(pkgDir, CONFIG.inputDir);
     const outputDir = join(pkgDir, CONFIG.outputDir);
 

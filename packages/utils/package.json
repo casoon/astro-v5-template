@@ -1,0 +1,21 @@
+{
+  "name": "@astro-v5/utils",
+  "version": "1.4.2",
+  "description": "Shared utilities for Astro v5 templates",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "astro",
+    "utilities"
+  ],
+  "dependencies": {
+    "zod": "^4.1.12"
+  }
+}

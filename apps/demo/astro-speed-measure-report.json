@@ -1,0 +1,137 @@
+{
+  "totalBuildTime": 1545.185125,
+  "integrations": [],
+  "vitePlugins": [],
+  "pages": [
+    {
+      "component": "src/pages/404.astro",
+      "pathname": "/404",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/animations.astro",
+      "pathname": "/animations",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/api/contact.ts",
+      "pathname": "/api/contact",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/api/hello.ts",
+      "pathname": "/api/hello",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/api/newsletter.ts",
+      "pathname": "/api/newsletter",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/api/users.ts",
+      "pathname": "/api/users",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/api-test.astro",
+      "pathname": "/api-test",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/blog/index.astro",
+      "pathname": "/blog",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/blog/[...slug].astro",
+      "pathname": "/blog/[...slug]",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/contact.astro",
+      "pathname": "/contact",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/glass-effects.astro",
+      "pathname": "/glass-effects",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/image-test.astro",
+      "pathname": "/image-test",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/map.astro",
+      "pathname": "/map",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/rss.xml.js",
+      "pathname": "/rss.xml",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/sitemap.xml.ts",
+      "pathname": "/sitemap.xml",
+      "type": "api",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/typography.astro",
+      "pathname": "/typography",
+      "type": "ssg",
+      "duration": 0
+    },
+    {
+      "component": "src/pages/index.astro",
+      "pathname": "/",
+      "type": "ssg",
+      "duration": 0
+    }
+  ],
+  "assets": [],
+  "contentCollections": [],
+  "stages": [
+    {
+      "name": "astro:config:setup",
+      "duration": 0.13529099999993832
+    },
+    {
+      "name": "astro:build:setup",
+      "duration": 0.036417000000028565
+    },
+    {
+      "name": "astro:build:setup",
+      "duration": 0.026000000000067303
+    },
+    {
+      "name": "astro:build:generated",
+      "duration": 0.0010839999999916472
+    },
+    {
+      "name": "astro:build:ssr",
+      "duration": 0.0009580000000823929
+    },
+    {
+      "name": "astro:build:start",
+      "duration": 0.0008330000000569271
+    }
+  ]
+}

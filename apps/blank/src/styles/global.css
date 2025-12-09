@@ -1,0 +1,4 @@
+/* Import shared design system */
+@import '@astro-v5/styles/index.css';
+
+/* Add your custom styles here */

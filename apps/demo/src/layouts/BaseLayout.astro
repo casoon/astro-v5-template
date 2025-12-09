@@ -1,0 +1,211 @@
+---
+import '@astro-v5/styles/index.css';
+import '@/styles/tailwind.css';
+import '@/styles/global.css';
+import ThemeToggle from '@astro-v5/ui/ThemeToggle.svelte';
+import Toast from '@astro-v5/ui/Toast.astro';
+import { WebVitals } from '@casoon/astro-webvitals';
+import PageSEO from '@astro-v5/ui/seo/PageSEO.astro';
+import { env } from '@/env';
+
+// Environment variables
+const siteName = env.PUBLIC_SITE_NAME;
+const locale = env.PUBLIC_LOCALE || 'en';
+
+// Props for SEO
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  keywords?: string[];
+  author?: string;
+}
+
+const {
+  title = siteName,
+  description = 'Modern Astro template with Tailwind CSS v4 and Svelte',
+  image,
+  keywords = [],
+  author = 'Astro V5 Template'
+} = Astro.props;
+
+const pageTitle = title === siteName ? title : `${title} | ${siteName}`;
+---
+<html lang={locale} class="scroll-smooth">
+<script is:inline>
+  // Theme initialization
+  (function() {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const html = document.documentElement;
+
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      html.setAttribute('data-theme', 'dark');
+    } else {
+      html.classList.remove('dark');
+      html.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>{pageTitle}</title>
+
+	<!-- Security Headers -->
+	<meta http-equiv="X-Content-Type-Options" content="nosniff">
+	<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+	<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+	<!-- SEO Component with JSON-LD, Open Graph, Twitter Cards -->
+	<PageSEO
+		title={pageTitle}
+		description={description}
+		keywords={keywords}
+		image={image}
+		author={author}
+		siteName={siteName}
+	/>
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml">
+
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col transition-all duration-500 ease-in-out font-inter safe-area-inset">
+<!-- Skip Links for Accessibility -->
+<a
+	href="#main-content"
+	class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-purple-600 focus:text-white focus:rounded-lg focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2"
+>
+	Skip to main content
+</a>
+
+<header class="py-4 px-4 sm:py-6 sm:px-6 bg-transparent">
+	<nav class="flex justify-between items-center max-w-6xl mx-auto">
+		<!-- Desktop Navigation -->
+		<ul class="hidden md:flex gap-5 list-none p-0 m-0">
+			<li><a href="/" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Home</a></li>
+			<li><a href="/blog" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Blog</a></li>
+			<li><a href="/typography" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Fonts</a></li>
+			<li><a href="/animations" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Animations</a></li>
+			<li><a href="/glass-effects" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Glass</a></li>
+			<li><a href="/map" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Map</a></li>
+			<li><a href="/contact" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">Contact</a></li>
+			<li><a href="/api-test" class="text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 transition-all duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-slate-900 dark:after:bg-slate-100 after:transition-all after:duration-200 hover:after:w-full">API</a></li>
+		</ul>
+
+		<!-- Mobile Menu Button -->
+		<button
+			id="mobile-menu-button"
+			class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+			aria-label="Toggle mobile menu"
+		>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+			<span class="block w-6 h-0.5 bg-slate-900 dark:bg-slate-100 transition-all duration-200"></span>
+		</button>
+
+		<ThemeToggle client:load />
+	</nav>
+
+	<!-- Mobile Navigation Menu -->
+	<div id="mobile-menu" class="md:hidden hidden bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm border-t border-slate-200 dark:border-slate-700">
+		<ul class="flex flex-col py-4 px-6 space-y-2 list-none">
+			<li><a href="/" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Home</a></li>
+			<li><a href="/blog" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Blog</a></li>
+			<li><a href="/typography" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Fonts</a></li>
+			<li><a href="/animations" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Animations</a></li>
+			<li><a href="/glass-effects" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Glass</a></li>
+			<li><a href="/map" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Map</a></li>
+			<li><a href="/contact" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">Contact</a></li>
+			<li><a href="/api-test" class="block py-3 text-slate-900 dark:text-slate-100 no-underline text-base font-medium hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 px-3 rounded-lg transition-all duration-200">API</a></li>
+		</ul>
+	</div>
+</header>
+<main id="main-content" class="flex-1 flex items-start justify-center px-4 sm:px-6 py-8">
+	<div class="w-full max-w-7xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-10 mx-2 flex flex-col items-center text-center border border-slate-200 dark:border-slate-700 transition-all duration-500 ease-in-out">
+		<slot />
+	</div>
+</main>
+<footer class="text-center text-gray-500 dark:text-gray-400 py-4 sm:py-6 px-4">
+	<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+		<p>&copy; 2025 {siteName}</p>
+		<div class="flex items-center gap-2">
+			<span>•</span>
+			<a
+				href="https://github.com/casoon/astro-v5-template"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+			>
+				<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+				</svg>
+				GitHub
+			</a>
+		</div>
+	</div>
+</footer>
+<Toast />
+<WebVitals debug={import.meta.env.DEV} />
+
+<!-- Mobile Menu Script -->
+<script>
+	// Mobile menu functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+		const menuLines = mobileMenuButton?.querySelectorAll('span');
+
+		mobileMenuButton?.addEventListener('click', function() {
+			const isOpen = !mobileMenu?.classList.contains('hidden');
+
+			if (isOpen) {
+				// Close menu
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			} else {
+				// Open menu
+				mobileMenu?.classList.remove('hidden');
+				// Transform to X icon
+				menuLines?.[0]?.classList.add('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.add('opacity-0');
+				menuLines?.[2]?.classList.add('-rotate-45', '-translate-y-2');
+			}
+		});
+
+		// Close menu when clicking on a link
+		const mobileLinks = mobileMenu?.querySelectorAll('a');
+		mobileLinks?.forEach(link => {
+			link.addEventListener('click', function() {
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			});
+		});
+
+		// Close menu when clicking outside
+		document.addEventListener('click', function(event) {
+			if (!mobileMenuButton?.contains(event.target as Node) &&
+				!mobileMenu?.contains(event.target as Node)) {
+				mobileMenu?.classList.add('hidden');
+				// Reset hamburger icon
+				menuLines?.[0]?.classList.remove('rotate-45', 'translate-y-2');
+				menuLines?.[1]?.classList.remove('opacity-0');
+				menuLines?.[2]?.classList.remove('-rotate-45', '-translate-y-2');
+			}
+		});
+	});
+</script>
+
+</body>
+</html>

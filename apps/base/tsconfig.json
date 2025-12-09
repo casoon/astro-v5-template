@@ -1,0 +1,27 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./src/*"],
+      "public/*": ["./public/*"],
+      "@astro-v5/ui/*": ["../../packages/ui/src/*"],
+      "@astro-v5/styles/*": ["../../packages/styles/src/*"],
+      "@astro-v5/utils/*": ["../../packages/utils/src/*"],
+      "@astro-v5/config/*": ["../../packages/config/*"]
+    },
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "ignoreDeprecations": "5.0"
+  },
+  "include": ["src/**/*", "astro.config.mjs"],
+  "exclude": ["node_modules", "dist"]
+}

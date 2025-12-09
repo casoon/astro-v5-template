@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  variant?: 'default' | 'dark' | 'strong' | 'blue' | 'purple' | 'pink';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { title, description, variant = 'default', size = 'md' } = Astro.props;
+
+const sizeClass = size === 'sm' ? 'p-4' : size === 'lg' ? 'p-8' : 'p-6';
+
+const variantStyles = {
+  default: 'background: var(--cs-glass-bg-medium, rgba(255, 255, 255, 0.15)); border: 1px solid var(--cs-glass-border-medium, rgba(255, 255, 255, 0.3)); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);',
+  dark: 'background: var(--cs-glass-bg-dark, rgba(0, 0, 0, 0.4)); border: 1px solid var(--cs-glass-border-light, rgba(255, 255, 255, 0.15)); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);',
+  strong: 'background: var(--cs-glass-bg-xl, rgba(255, 255, 255, 0.25)); border: 2px solid var(--cs-glass-border-strong, rgba(255, 255, 255, 0.4)); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);',
+  blue: 'background: rgba(59, 130, 246, 0.2); border: 1px solid rgba(59, 130, 246, 0.3);',
+  purple: 'background: rgba(168, 85, 247, 0.2); border: 1px solid rgba(168, 85, 247, 0.3);',
+  pink: 'background: rgba(236, 72, 153, 0.2); border: 1px solid rgba(236, 72, 153, 0.3);',
+};
+---
+
+<div
+  class={`${sizeClass} rounded-2xl backdrop-blur-xl transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl`}
+  style={variantStyles[variant]}
+>
+  <h3 class={`text-xl font-semibold mb-2 ${variant === 'dark' ? 'text-white' : 'text-white drop-shadow-md'}`}>
+    {title}
+  </h3>
+  {description && (
+    <p class={`text-sm ${variant === 'dark' ? 'text-gray-200' : 'text-white/90 drop-shadow'}`}>
+      {description}
+    </p>
+  )}
+  <slot />
+</div>
