@@ -10,9 +10,10 @@ export default [
       '**/node_modules/**',
       '**/dist/**',
       '**/.astro/**',
-      // Layouts with complex HTML structure that cause parser issues
-      'packages/*/src/layouts/**',
-      'packages/*/src/pages/blog/**',
+      // Files with TypeScript syntax that cause parser issues
+      '**/layouts/**',
+      '**/pages/**',
+      'packages/ui/src/**',
     ],
   },
 

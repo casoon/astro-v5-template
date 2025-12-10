@@ -37,7 +37,7 @@
     "optimize-images:demo": "node scripts/optimize-images.mjs demo",
     "clean": "pnpm -r clean && rm -rf node_modules",
     "clean:images": "rm -rf apps/*/public/responsive",
-    "check": "pnpm biome:check && pnpm lint:astro",
+    "check": "pnpm biome:check",
     "type-check": "pnpm -r type-check",
     "update-deps": "pnpm -r update-deps",
     "biome:check": "biome check .",

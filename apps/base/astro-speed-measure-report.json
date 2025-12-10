@@ -1,857 +1,857 @@
 {
-  "totalBuildTime": 1120.707417,
+  "totalBuildTime": 1107.352167,
   "integrations": [],
   "vitePlugins": [
     {
       "name": "astro:build",
-      "duration": 2207.3890070000007,
+      "duration": 3202.6071459999957,
       "count": 1252,
       "hooks": [
         {
           "name": "load",
-          "duration": 8.045404999997572,
+          "duration": 7.276972000000228,
           "count": 625
         },
         {
           "name": "transform",
-          "duration": 2199.3436020000054,
+          "duration": 3195.330173999997,
           "count": 627
         }
       ]
     },
     {
       "name": "vite:esbuild",
-      "duration": 1370.123669,
+      "duration": 1339.766701,
       "count": 519,
       "hooks": [
         {
           "name": "transform",
-          "duration": 1370.123669,
+          "duration": 1339.766701,
           "count": 519
         }
       ]
     },
     {
       "name": "vite:resolve",
-      "duration": 365.1851729999976,
+      "duration": 361.72662299999786,
       "count": 1876,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 365.1851729999976,
+          "duration": 361.72662299999786,
           "count": 1876
         }
       ]
     },
     {
       "name": "@mdx-js/rollup",
-      "duration": 337.74186500000906,
+      "duration": 324.6260629999914,
       "count": 5263,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 17.052892000003908,
+          "duration": 15.656728999996176,
           "count": 4174
         },
         {
           "name": "transform",
-          "duration": 320.68897300000515,
+          "duration": 308.96933399999523,
           "count": 1089
-        }
-      ]
-    },
-    {
-      "name": "@tailwindcss/vite:generate:build",
-      "duration": 176.9751240000022,
-      "count": 570,
-      "hooks": [
-        {
-          "name": "transform",
-          "duration": 176.9751240000022,
-          "count": 570
         }
       ]
     },
     {
       "name": "vite:css",
-      "duration": 156.4403310000007,
+      "duration": 161.83850700000085,
       "count": 519,
       "hooks": [
         {
           "name": "transform",
-          "duration": 156.4403310000007,
+          "duration": 161.83850700000085,
           "count": 519
-        }
-      ]
-    },
-    {
-      "name": "vite-plugin-svelte",
-      "duration": 108.18539799999814,
-      "count": 6320,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 28.640237999998135,
-          "count": 4178
-        },
-        {
-          "name": "load",
-          "duration": 19.412792999998032,
-          "count": 1053
-        },
-        {
-          "name": "transform",
-          "duration": 60.13236700000198,
-          "count": 1089
         }
       ]
     },
     {
       "name": "vite:css-post",
-      "duration": 75.5205079999995,
+      "duration": 156.09023700000103,
       "count": 569,
       "hooks": [
         {
           "name": "transform",
-          "duration": 0.3781739999991487,
+          "duration": 0.36353100000133054,
           "count": 519
         },
         {
           "name": "renderChunk",
-          "duration": 75.14233400000035,
+          "duration": 155.7267059999997,
           "count": 50
+        }
+      ]
+    },
+    {
+      "name": "@tailwindcss/vite:generate:build",
+      "duration": 135.93983799999808,
+      "count": 570,
+      "hooks": [
+        {
+          "name": "transform",
+          "duration": 135.93983799999808,
+          "count": 570
         }
       ]
     },
     {
       "name": "astro-content-virtual-mod-plugin",
-      "duration": 54.27815799999837,
+      "duration": 122.39103600000169,
       "count": 3065,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 13.155025999997974,
+          "duration": 12.505904000001124,
           "count": 2456
         },
         {
           "name": "load",
-          "duration": 41.123132000000396,
+          "duration": 109.88513200000057,
           "count": 609
         }
       ]
     },
     {
-      "name": "astro:assets",
-      "duration": 46.9215010000006,
-      "count": 677,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 0.12207800000101088,
-          "count": 591
-        },
-        {
-          "name": "resolveId",
-          "duration": 45.27300200000025,
-          "count": 27
-        },
-        {
-          "name": "renderChunk",
-          "duration": 1.5264209999993454,
-          "count": 59
-        }
-      ]
-    },
-    {
-      "name": "astro:actions",
-      "duration": 26.610666999999808,
-      "count": 3045,
+      "name": "vite-plugin-svelte",
+      "duration": 89.39880200000835,
+      "count": 6320,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 20.333707999999433,
-          "count": 2439
+          "duration": 22.942013000006114,
+          "count": 4178
         },
         {
           "name": "load",
-          "duration": 6.2769590000003745,
-          "count": 606
-        }
-      ]
-    },
-    {
-      "name": "vite:esbuild-transpile",
-      "duration": 25.795710999999756,
-      "count": 50,
-      "hooks": [
-        {
-          "name": "renderChunk",
-          "duration": 25.795710999999756,
-          "count": 50
-        }
-      ]
-    },
-    {
-      "name": "astro:markdown",
-      "duration": 18.629588000004105,
-      "count": 3212,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 9.410756000003175,
-          "count": 2603
-        },
-        {
-          "name": "load",
-          "duration": 9.21883200000093,
-          "count": 609
-        }
-      ]
-    },
-    {
-      "name": "vite:import-analysis",
-      "duration": 17.846999999999866,
-      "count": 57,
-      "hooks": [
-        {
-          "name": "transform",
-          "duration": 17.846999999999866,
-          "count": 57
-        }
-      ]
-    },
-    {
-      "name": "astro:content-asset-propagation",
-      "duration": 17.550705000013977,
-      "count": 3069,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 16.735209000010173,
-          "count": 2442
+          "duration": 9.320366000002196,
+          "count": 1053
         },
         {
           "name": "transform",
-          "duration": 0.8154960000038045,
-          "count": 627
-        }
-      ]
-    },
-    {
-      "name": "vite-plugin-svelte-module",
-      "duration": 17.0288669999984,
-      "count": 1089,
-      "hooks": [
-        {
-          "name": "transform",
-          "duration": 17.0288669999984,
+          "duration": 57.136423000000036,
           "count": 1089
         }
       ]
     },
     {
+      "name": "astro:assets",
+      "duration": 41.27546999999868,
+      "count": 677,
+      "hooks": [
+        {
+          "name": "load",
+          "duration": 0.11163899999917248,
+          "count": 591
+        },
+        {
+          "name": "resolveId",
+          "duration": 39.548871000000304,
+          "count": 27
+        },
+        {
+          "name": "renderChunk",
+          "duration": 1.6149599999992006,
+          "count": 59
+        }
+      ]
+    },
+    {
+      "name": "vite:esbuild-transpile",
+      "duration": 26.466583000000128,
+      "count": 50,
+      "hooks": [
+        {
+          "name": "renderChunk",
+          "duration": 26.466583000000128,
+          "count": 50
+        }
+      ]
+    },
+    {
+      "name": "astro:actions",
+      "duration": 22.54514699999754,
+      "count": 3045,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 19.520772999997803,
+          "count": 2439
+        },
+        {
+          "name": "load",
+          "duration": 3.0243739999997388,
+          "count": 606
+        }
+      ]
+    },
+    {
+      "name": "vite:import-analysis",
+      "duration": 17.181915999999546,
+      "count": 57,
+      "hooks": [
+        {
+          "name": "transform",
+          "duration": 17.181915999999546,
+          "count": 57
+        }
+      ]
+    },
+    {
+      "name": "vite-plugin-svelte-module",
+      "duration": 16.83576800000401,
+      "count": 1089,
+      "hooks": [
+        {
+          "name": "transform",
+          "duration": 16.83576800000401,
+          "count": 1089
+        }
+      ]
+    },
+    {
+      "name": "astro:content-asset-propagation",
+      "duration": 16.725068999997234,
+      "count": 3069,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 15.951995999998758,
+          "count": 2442
+        },
+        {
+          "name": "transform",
+          "duration": 0.773072999998476,
+          "count": 627
+        }
+      ]
+    },
+    {
+      "name": "astro:markdown",
+      "duration": 14.120634999994422,
+      "count": 3212,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 8.396287999996389,
+          "count": 2603
+        },
+        {
+          "name": "load",
+          "duration": 5.724346999998033,
+          "count": 609
+        }
+      ]
+    },
+    {
       "name": "@astro/plugin-middleware",
-      "duration": 16.84688500000027,
+      "duration": 14.10053100000141,
       "count": 618,
       "hooks": [
         {
           "name": "load",
-          "duration": 5.841262000000029,
+          "duration": 3.100780000001123,
           "count": 592
         },
         {
           "name": "resolveId",
-          "duration": 11.005623000000242,
+          "duration": 10.999751000000288,
           "count": 26
         }
       ]
     },
     {
       "name": "@astro/plugin-build-pages",
-      "duration": 13.589951999996629,
+      "duration": 12.992449999999167,
       "count": 385,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.01741499999991447,
+          "duration": 0.019333999999957996,
           "count": 39
         },
         {
           "name": "load",
-          "duration": 13.572536999996714,
+          "duration": 12.973115999999209,
           "count": 346
         }
       ]
     },
     {
       "name": "astro:tsconfig-alias",
-      "duration": 9.136249999999563,
+      "duration": 11.492330999999808,
       "count": 30,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 9.136249999999563,
+          "duration": 11.492330999999808,
           "count": 30
         }
       ]
     },
     {
-      "name": "astro:scripts",
-      "duration": 7.573962000003576,
-      "count": 620,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 7.47079500000325,
-          "count": 592
-        },
-        {
-          "name": "resolveId",
-          "duration": 0.10316700000032597,
-          "count": 28
-        }
-      ]
-    },
-    {
-      "name": "astro:dev-toolbar",
-      "duration": 7.238620000000083,
-      "count": 609,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 7.230953000000682,
-          "count": 589
-        },
-        {
-          "name": "resolveId",
-          "duration": 0.007666999999401014,
-          "count": 20
-        }
-      ]
-    },
-    {
       "name": "astro:vite-plugin-env",
-      "duration": 6.115630000000692,
+      "duration": 6.26841499999864,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 6.115630000000692,
+          "duration": 6.26841499999864,
           "count": 627
         }
       ]
     },
     {
+      "name": "astro:dev-toolbar",
+      "duration": 4.829723999998578,
+      "count": 609,
+      "hooks": [
+        {
+          "name": "load",
+          "duration": 4.8220119999984945,
+          "count": 589
+        },
+        {
+          "name": "resolveId",
+          "duration": 0.007712000000083208,
+          "count": 20
+        }
+      ]
+    },
+    {
       "name": "astro:assets:esm",
-      "duration": 5.805048999999258,
+      "duration": 3.9328450000019757,
       "count": 606,
       "hooks": [
         {
           "name": "load",
-          "duration": 5.805048999999258,
+          "duration": 3.9328450000019757,
           "count": 606
         }
       ]
     },
     {
       "name": "astro:scanner",
-      "duration": 3.319299000001706,
+      "duration": 3.573582000001352,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 3.319299000001706,
+          "duration": 3.573582000001352,
           "count": 627
         }
       ]
     },
     {
+      "name": "astro:scripts",
+      "duration": 3.5461460000000216,
+      "count": 620,
+      "hooks": [
+        {
+          "name": "load",
+          "duration": 3.4473980000002484,
+          "count": 592
+        },
+        {
+          "name": "resolveId",
+          "duration": 0.09874799999977313,
+          "count": 28
+        }
+      ]
+    },
+    {
       "name": "astro:prefetch",
-      "duration": 2.971173999996381,
+      "duration": 2.9693350000001146,
       "count": 1236,
       "hooks": [
         {
           "name": "load",
-          "duration": 0.08683599999721991,
+          "duration": 0.06707799999799136,
           "count": 589
         },
         {
           "name": "transform",
-          "duration": 0.18683799999917028,
+          "duration": 0.18734000000245032,
           "count": 627
         },
         {
           "name": "resolveId",
-          "duration": 2.697499999999991,
+          "duration": 2.714916999999673,
           "count": 20
         }
       ]
     },
     {
       "name": "@astro/plugin-component-entry",
-      "duration": 2.75170099999832,
+      "duration": 2.857123000000911,
       "count": 671,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 2.0508689999985563,
+          "duration": 2.0765840000005937,
           "count": 563
         },
         {
           "name": "load",
-          "duration": 0.7008319999997639,
+          "duration": 0.7805390000003172,
           "count": 108
         }
       ]
     },
     {
-      "name": "@astro/plugin-renderers",
-      "duration": 2.4435369999994236,
-      "count": 399,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 0.01879400000075293,
-          "count": 52
-        },
-        {
-          "name": "load",
-          "duration": 2.4247429999986707,
-          "count": 347
-        }
-      ]
-    },
-    {
       "name": "@astrojs/mdx-postprocess",
-      "duration": 2.1663779999979624,
+      "duration": 1.9365880000029847,
       "count": 1089,
       "hooks": [
         {
           "name": "transform",
-          "duration": 2.1663779999979624,
+          "duration": 1.9365880000029847,
           "count": 1089
         }
       ]
     },
     {
       "name": "vite:build-metadata",
-      "duration": 1.2485390000003918,
+      "duration": 1.429413999999042,
       "count": 50,
       "hooks": [
         {
           "name": "renderChunk",
-          "duration": 1.2485390000003918,
+          "duration": 1.429413999999042,
           "count": 50
         }
       ]
     },
     {
       "name": "astro:postprocess",
-      "duration": 1.2327930000021752,
+      "duration": 1.1834159999972371,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 1.2327930000021752,
+          "duration": 1.1834159999972371,
           "count": 627
+        }
+      ]
+    },
+    {
+      "name": "@astro/plugin-renderers",
+      "duration": 1.0239329999996016,
+      "count": 399,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.01854200000059336,
+          "count": 52
+        },
+        {
+          "name": "load",
+          "duration": 1.0053909999990083,
+          "count": 347
         }
       ]
     },
     {
       "name": "astro:content-imports",
-      "duration": 0.8525490000013178,
+      "duration": 0.8008809999993218,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 0.8525490000013178,
+          "duration": 0.8008809999993218,
           "count": 627
         }
       ]
     },
     {
-      "name": "vite:reporter",
-      "duration": 0.8394090000003871,
-      "count": 158,
-      "hooks": [
-        {
-          "name": "renderChunk",
-          "duration": 0.6986210000018218,
-          "count": 50
-        },
-        {
-          "name": "transform",
-          "duration": 0.14078799999856528,
-          "count": 108
-        }
-      ]
-    },
-    {
-      "name": "@astrojs/vite-plugin-astro-adapter",
-      "duration": 0.8287529999990966,
-      "count": 345,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 0.006249000000025262,
-          "count": 19
-        },
-        {
-          "name": "load",
-          "duration": 0.8225039999990713,
-          "count": 326
-        }
-      ]
-    },
-    {
       "name": "alias",
-      "duration": 0.8142490000019507,
+      "duration": 0.7835669999932406,
       "count": 2042,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.8142490000019507,
+          "duration": 0.7835669999932406,
           "count": 2042
         }
       ]
     },
     {
       "name": "astro:head-metadata",
-      "duration": 0.7366300000001047,
+      "duration": 0.7510459999986097,
       "count": 203,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.2727540000000772,
+          "duration": 0.2957099999989623,
           "count": 146
         },
         {
           "name": "transform",
-          "duration": 0.4638760000000275,
+          "duration": 0.45533599999964736,
           "count": 57
         }
       ]
     },
     {
+      "name": "vite:reporter",
+      "duration": 0.7222589999994398,
+      "count": 158,
+      "hooks": [
+        {
+          "name": "renderChunk",
+          "duration": 0.5798359999992044,
+          "count": 50
+        },
+        {
+          "name": "transform",
+          "duration": 0.14242300000023533,
+          "count": 108
+        }
+      ]
+    },
+    {
       "name": "astro:html",
-      "duration": 0.6270900000008623,
+      "duration": 0.5717820000015763,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 0.6270900000008623,
+          "duration": 0.5717820000015763,
           "count": 627
         }
       ]
     },
     {
+      "name": "@astrojs/vite-plugin-astro-adapter",
+      "duration": 0.5501349999995,
+      "count": 345,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.006959999999821775,
+          "count": 19
+        },
+        {
+          "name": "load",
+          "duration": 0.5431749999996782,
+          "count": 326
+        }
+      ]
+    },
+    {
       "name": "astro:server-islands",
-      "duration": 0.5700399999997217,
+      "duration": 0.5479069999973945,
       "count": 1273,
       "hooks": [
         {
           "name": "load",
-          "duration": 0.09103999999661028,
+          "duration": 0.06978800000013052,
           "count": 583
         },
         {
           "name": "transform",
-          "duration": 0.3304960000027677,
+          "duration": 0.32295499999804633,
           "count": 627
         },
         {
           "name": "resolveId",
-          "duration": 0.006250000000022737,
+          "duration": 0.015874000000053456,
           "count": 4
         },
         {
           "name": "renderChunk",
-          "duration": 0.14225400000032096,
+          "duration": 0.13928999999916414,
           "count": 59
         }
       ]
     },
     {
       "name": "astro-env-plugin",
-      "duration": 0.44209499999874424,
+      "duration": 0.40771200000119734,
       "count": 3212,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.2987619999978506,
+          "duration": 0.28347100000098635,
           "count": 2603
         },
         {
           "name": "load",
-          "duration": 0.14333300000089366,
+          "duration": 0.12424100000021099,
           "count": 609
         }
       ]
     },
     {
       "name": "astro-manifest-plugin",
-      "duration": 0.3747910000001866,
+      "duration": 0.34404000000233737,
       "count": 3228,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.2660119999992503,
+          "duration": 0.2308110000024044,
           "count": 2603
         },
         {
           "name": "load",
-          "duration": 0.10877900000093632,
+          "duration": 0.11322899999993297,
           "count": 625
         }
       ]
     },
     {
-      "name": "astro:vite-plugin-file-url",
-      "duration": 0.2971270000052755,
-      "count": 2441,
+      "name": "vite:worker",
+      "duration": 0.28924700000015946,
+      "count": 50,
       "hooks": [
         {
-          "name": "resolveId",
-          "duration": 0.2971270000052755,
-          "count": 2441
+          "name": "renderChunk",
+          "duration": 0.28924700000015946,
+          "count": 50
         }
       ]
     },
     {
       "name": "vite:asset",
-      "duration": 0.26012200000081975,
+      "duration": 0.2692029999996066,
       "count": 50,
       "hooks": [
         {
           "name": "renderChunk",
-          "duration": 0.26012200000081975,
+          "duration": 0.2692029999996066,
           "count": 50
         }
       ]
     },
     {
-      "name": "vite:worker",
-      "duration": 0.24171199999977944,
-      "count": 50,
-      "hooks": [
-        {
-          "name": "renderChunk",
-          "duration": 0.24171199999977944,
-          "count": 50
-        }
-      ]
-    },
-    {
-      "name": "astro:transitions",
-      "duration": 0.2350100000008979,
-      "count": 1236,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 0.09021800000004987,
-          "count": 589
-        },
-        {
-          "name": "transform",
-          "duration": 0.11066500000094948,
-          "count": 627
-        },
-        {
-          "name": "resolveId",
-          "duration": 0.034126999999898544,
-          "count": 20
-        }
-      ]
-    },
-    {
-      "name": "vite:json",
-      "duration": 0.21204400000044643,
-      "count": 519,
-      "hooks": [
-        {
-          "name": "transform",
-          "duration": 0.21204400000044643,
-          "count": 519
-        }
-      ]
-    },
-    {
-      "name": "astro:container",
-      "duration": 0.18808499999761352,
-      "count": 2440,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 0.18808499999761352,
-          "count": 2440
-        }
-      ]
-    },
-    {
-      "name": "astro:i18n",
-      "duration": 0.18417500000293785,
+      "name": "astro:vite-plugin-file-url",
+      "duration": 0.2605759999953534,
       "count": 2441,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.18417500000293785,
+          "duration": 0.2605759999953534,
           "count": 2441
         }
       ]
     },
     {
+      "name": "vite:json",
+      "duration": 0.21557899999993424,
+      "count": 519,
+      "hooks": [
+        {
+          "name": "transform",
+          "duration": 0.21557899999993424,
+          "count": 519
+        }
+      ]
+    },
+    {
+      "name": "astro:transitions",
+      "duration": 0.20185499999718104,
+      "count": 1236,
+      "hooks": [
+        {
+          "name": "load",
+          "duration": 0.07277599999918039,
+          "count": 589
+        },
+        {
+          "name": "transform",
+          "duration": 0.09887099999832571,
+          "count": 627
+        },
+        {
+          "name": "resolveId",
+          "duration": 0.03020799999967494,
+          "count": 20
+        }
+      ]
+    },
+    {
+      "name": "astro:i18n",
+      "duration": 0.18797200000631165,
+      "count": 2441,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.18797200000631165,
+          "count": 2441
+        }
+      ]
+    },
+    {
+      "name": "astro:container",
+      "duration": 0.18232099999806906,
+      "count": 2440,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.18232099999806906,
+          "count": 2440
+        }
+      ]
+    },
+    {
       "name": "astro:scripts:page-ssr",
-      "duration": 0.17288299999938772,
+      "duration": 0.17970100000115963,
       "count": 627,
       "hooks": [
         {
           "name": "transform",
-          "duration": 0.17288299999938772,
+          "duration": 0.17970100000115963,
           "count": 627
         }
       ]
     },
     {
-      "name": "vite:terser",
-      "duration": 0.1579569999994419,
-      "count": 9,
-      "hooks": [
-        {
-          "name": "renderChunk",
-          "duration": 0.1579569999994419,
-          "count": 9
-        }
-      ]
-    },
-    {
       "name": "astro:fonts:fallback",
-      "duration": 0.14143700000124682,
+      "duration": 0.10857599999792455,
       "count": 612,
       "hooks": [
         {
           "name": "load",
-          "duration": 0.12877000000094085,
+          "duration": 0.09607399999822519,
           "count": 590
         },
         {
           "name": "resolveId",
-          "duration": 0.012667000000305961,
+          "duration": 0.012501999999699365,
           "count": 22
         }
       ]
     },
     {
-      "name": "astro:adapter-config",
-      "duration": 0.10461800000109633,
-      "count": 620,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 0.09557700000061686,
-          "count": 592
-        },
-        {
-          "name": "resolveId",
-          "duration": 0.009041000000479471,
-          "count": 28
-        }
-      ]
-    },
-    {
       "name": "vite:build-import-analysis",
-      "duration": 0.1037909999997737,
+      "duration": 0.10629499999981817,
       "count": 50,
       "hooks": [
         {
           "name": "renderChunk",
-          "duration": 0.1037909999997737,
+          "duration": 0.10629499999981817,
           "count": 50
         }
       ]
     },
     {
-      "name": "@astrojs/vite-plugin-astro-ssr-manifest",
-      "duration": 0.09274499999673935,
-      "count": 589,
-      "hooks": [
-        {
-          "name": "load",
-          "duration": 0.08778699999675155,
-          "count": 584
-        },
-        {
-          "name": "resolveId",
-          "duration": 0.0049579999999878055,
-          "count": 5
-        }
-      ]
-    },
-    {
-      "name": "@astro/plugin-build-manifest",
-      "duration": 0.08629299999893192,
-      "count": 347,
-      "hooks": [
-        {
-          "name": "resolveId",
-          "duration": 0.008248999999750595,
-          "count": 20
-        },
-        {
-          "name": "load",
-          "duration": 0.07804399999918132,
-          "count": 327
-        }
-      ]
-    },
-    {
       "name": "vite:data-uri",
-      "duration": 0.0847850000005792,
+      "duration": 0.09145200000068598,
       "count": 448,
       "hooks": [
         {
           "name": "resolveId",
-          "duration": 0.03637499999990723,
+          "duration": 0.03870700000038596,
           "count": 20
         },
         {
           "name": "load",
-          "duration": 0.04841000000067197,
+          "duration": 0.052745000000300024,
           "count": 428
         }
       ]
     },
     {
-      "name": "astro:build:normal",
-      "duration": 0.04833500000006552,
-      "count": 28,
+      "name": "astro:adapter-config",
+      "duration": 0.09035499999913554,
+      "count": 620,
       "hooks": [
         {
+          "name": "load",
+          "duration": 0.08035599999902843,
+          "count": 592
+        },
+        {
           "name": "resolveId",
-          "duration": 0.04833500000006552,
+          "duration": 0.009999000000107117,
           "count": 28
         }
       ]
     },
     {
+      "name": "@astro/plugin-build-manifest",
+      "duration": 0.09011699999848588,
+      "count": 347,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.010288999999488624,
+          "count": 20
+        },
+        {
+          "name": "load",
+          "duration": 0.07982799999899726,
+          "count": 327
+        }
+      ]
+    },
+    {
+      "name": "@astrojs/vite-plugin-astro-ssr-manifest",
+      "duration": 0.07962799999847903,
+      "count": 589,
+      "hooks": [
+        {
+          "name": "load",
+          "duration": 0.07516799999859813,
+          "count": 584
+        },
+        {
+          "name": "resolveId",
+          "duration": 0.004459999999880893,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "astro:build:normal",
+      "duration": 0.048085000000128275,
+      "count": 28,
+      "hooks": [
+        {
+          "name": "resolveId",
+          "duration": 0.048085000000128275,
+          "count": 28
+        }
+      ]
+    },
+    {
+      "name": "vite:terser",
+      "duration": 0.04487599999993108,
+      "count": 9,
+      "hooks": [
+        {
+          "name": "renderChunk",
+          "duration": 0.04487599999993108,
+          "count": 9
+        }
+      ]
+    },
+    {
       "name": "vite:client-inject",
-      "duration": 0.025542999999743188,
+      "duration": 0.02358399999991434,
       "count": 57,
       "hooks": [
         {
           "name": "transform",
-          "duration": 0.025542999999743188,
+          "duration": 0.02358399999991434,
           "count": 57
         }
       ]
     },
     {
       "name": "vite:force-systemjs-wrap-complete",
-      "duration": 0.01808600000072147,
+      "duration": 0.015164999999569773,
       "count": 50,
       "hooks": [
         {
           "name": "renderChunk",
-          "duration": 0.01808600000072147,
+          "duration": 0.015164999999569773,
           "count": 50
         }
       ]
@@ -859,3190 +859,3190 @@
   ],
   "pages": [
     {
-      "component": "src/pages/blog/[...slug].astro",
-      "pathname": "/blog/[...slug]",
-      "type": "ssg",
-      "duration": 384.1899990000004
-    },
-    {
       "component": "src/pages/api-test.astro",
       "pathname": "/api-test",
       "type": "ssg",
-      "duration": 355.45665799999904
+      "duration": 395.91875000000016
     },
     {
       "component": "src/pages/404.astro",
       "pathname": "/404",
       "type": "ssg",
-      "duration": 282.7589569999989
+      "duration": 329.2860379999993
     },
     {
-      "component": "src/pages/blog/index.astro",
-      "pathname": "/blog",
+      "component": "src/pages/blog/[...slug].astro",
+      "pathname": "/blog/[...slug]",
       "type": "ssg",
-      "duration": 277.41979400000014
+      "duration": 324.91712399999903
     },
     {
       "component": "src/pages/contact.astro",
       "pathname": "/contact",
       "type": "ssg",
-      "duration": 277.4154139999995
+      "duration": 323.9859559999999
+    },
+    {
+      "component": "src/pages/blog/index.astro",
+      "pathname": "/blog",
+      "type": "ssg",
+      "duration": 323.929206
     },
     {
       "component": "src/pages/index.astro",
       "pathname": "/",
       "type": "ssg",
-      "duration": 277.2381650000002
-    },
-    {
-      "component": "src/pages/api/users.ts",
-      "pathname": "/api/users",
-      "type": "api",
-      "duration": 143.76520700000003
-    },
-    {
-      "component": "src/pages/api/contact.ts",
-      "pathname": "/api/contact",
-      "type": "api",
-      "duration": 143.76092099999994
+      "duration": 323.8828779999999
     },
     {
       "component": "src/pages/api/hello.ts",
       "pathname": "/api/hello",
       "type": "api",
-      "duration": 143.69353800000033
+      "duration": 155.1463339999999
+    },
+    {
+      "component": "src/pages/api/contact.ts",
+      "pathname": "/api/contact",
+      "type": "api",
+      "duration": 155.13500100000022
     },
     {
       "component": "src/pages/api/newsletter.ts",
       "pathname": "/api/newsletter",
       "type": "api",
-      "duration": 143.649086
+      "duration": 154.9614580000001
+    },
+    {
+      "component": "src/pages/api/users.ts",
+      "pathname": "/api/users",
+      "type": "api",
+      "duration": 154.91958399999953
     },
     {
       "component": "src/pages/sitemap.xml.ts",
       "pathname": "/sitemap.xml",
       "type": "api",
-      "duration": 143.41787399999964
+      "duration": 153.93979499999978
     },
     {
       "component": "src/pages/rss.xml.js",
       "pathname": "/rss.xml",
       "type": "api",
-      "duration": 0.1158750000006421
+      "duration": 0.10445700000036595
     }
   ],
   "assets": [
     {
-      "path": "src/pages/blog/[...slug].astro",
-      "duration": 384.1899990000004,
-      "type": "other",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
       "path": "src/pages/api-test.astro",
-      "duration": 355.45665799999904,
+      "duration": 395.91875000000016,
       "type": "other",
       "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/content/blog/example.mdx",
-      "duration": 325.47362200000134,
-      "type": "other",
-      "plugin": "alias"
     },
     {
       "path": "src/pages/404.astro",
-      "duration": 282.7589569999989,
+      "duration": 329.2860379999993,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "src/pages/blog/index.astro",
-      "duration": 277.41979400000014,
+      "path": "src/pages/blog/[...slug].astro",
+      "duration": 324.91712399999903,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
       "path": "src/pages/contact.astro",
-      "duration": 277.4154139999995,
+      "duration": 323.9859559999999,
+      "type": "other",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "src/pages/blog/index.astro",
+      "duration": 323.929206,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
       "path": "src/pages/index.astro",
-      "duration": 277.2381650000002,
+      "duration": 323.8828779999999,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/styles/src/index.css",
-      "duration": 187.28821000000084,
-      "type": "style",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/pages/api/users.ts",
-      "duration": 143.76520700000003,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/pages/api/contact.ts",
-      "duration": 143.76092099999994,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/pages/api/hello.ts",
-      "duration": 143.69353800000033,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/pages/api/newsletter.ts",
-      "duration": 143.649086,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/pages/sitemap.xml.ts",
-      "duration": 143.41787399999964,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "src/layouts/BaseLayout.astro",
-      "duration": 141.31270099999733,
+      "path": "src/content/blog/example.mdx",
+      "duration": 313.9002039999999,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "src/styles/tailwind.css",
-      "duration": 137.88087600000017,
-      "type": "style",
-      "plugin": "alias"
-    },
-    {
-      "path": "src/env.ts",
-      "duration": 131.52228499999978,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/api.ts",
-      "duration": 88.69779099999948,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/index.ts",
-      "duration": 74.98371100000054,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/ThemeToggle.svelte",
-      "duration": 58.889713000000484,
-      "type": "other",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/env.ts",
-      "duration": 56.61437299999943,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/Toast.astro",
-      "duration": 54.20092200000249,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/Modal.astro",
+      "duration": 179.8802069999997,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
       "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/Newsletter.astro",
-      "duration": 50.62666399999989,
+      "duration": 170.66370800000118,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/sitemap.ts",
-      "duration": 50.6242909999994,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/styles/src/index.css",
+      "duration": 157.57287600000086,
+      "type": "style",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "src/pages/api/hello.ts",
+      "duration": 155.1463339999999,
       "type": "script",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/ContactForm.astro",
-      "duration": 48.53713099999845,
-      "type": "other",
+      "path": "src/pages/api/contact.ts",
+      "duration": 155.13500100000022,
+      "type": "script",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/Modal.astro",
-      "duration": 45.71461899999872,
-      "type": "other",
+      "path": "src/pages/api/newsletter.ts",
+      "duration": 154.9614580000001,
+      "type": "script",
       "plugin": "astro-manifest-plugin"
     },
     {
-      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/seo/BlogSEO.astro",
-      "duration": 22.70029099999988,
-      "type": "other",
+      "path": "src/pages/api/users.ts",
+      "duration": 154.91958399999953,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "src/pages/sitemap.xml.ts",
+      "duration": 153.93979499999978,
+      "type": "script",
       "plugin": "astro-manifest-plugin"
     },
     {
       "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/BlogCard.astro",
-      "duration": 21.036505000000943,
+      "duration": 152.9358370000009,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
+      "path": "src/env.ts",
+      "duration": 145.75208599999996,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/Toast.astro",
+      "duration": 139.67132699999775,
+      "type": "other",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "src/styles/tailwind.css",
+      "duration": 132.43116600000099,
+      "type": "style",
+      "plugin": "alias"
+    },
+    {
+      "path": "src/layouts/BaseLayout.astro",
+      "duration": 129.60583500000052,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/seo/BlogSEO.astro",
+      "duration": 114.52554400000054,
+      "type": "other",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/ContactForm.astro",
+      "duration": 94.37616799999887,
+      "type": "other",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/api.ts",
+      "duration": 75.37254500000085,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/index.ts",
+      "duration": 64.51067000000023,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/ThemeToggle.svelte",
+      "duration": 56.13899700000093,
+      "type": "other",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "src/utils/blog.ts",
+      "duration": 40.984960000000456,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
       "path": "/Users/jseidel/GitHub/astro-v5-template/packages/ui/src/seo/PageSEO.astro",
-      "duration": 12.017038999999158,
+      "duration": 20.113207000000102,
       "type": "other",
       "plugin": "astro-manifest-plugin"
     },
     {
       "path": "chunks/sitemap_xml.a644d609_!~{007}~.mjs",
-      "duration": 11.682457000000113,
+      "duration": 11.343627999999626,
       "type": "script",
       "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "src/utils/blog.ts",
-      "duration": 8.03174999999942,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "../hydration.js",
-      "duration": 7.1191319999994676,
-      "type": "script",
-      "plugin": "alias"
     },
     {
       "path": "../../constants.js",
-      "duration": 6.564039000000207,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../reactivity/effects.js",
-      "duration": 6.541498000006413,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "chunks/contact.9c304bb1_!~{004}~.mjs",
-      "duration": 6.233707000000095,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "chunks/index.942e3154_!~{005}~.mjs",
-      "duration": 6.156627000000299,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "chunks/sitemap_xml.69abefd2_!~{006}~.mjs",
-      "duration": 6.1478729999998905,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "_astro/template.!~{009}~.js",
-      "duration": 6.1218330000001515,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "../../../reactivity/effects.js",
-      "duration": 5.983559000000014,
+      "duration": 7.244921000002705,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "context.js",
-      "duration": 5.9806360000005725,
+      "duration": 6.590543000000821,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "dev/tracing.js",
-      "duration": 4.536749999999529,
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/env.ts",
+      "duration": 6.5462499999991905,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "/Users/jseidel/GitHub/astro-v5-template/packages/utils/src/sitemap.ts",
+      "duration": 6.416327999999112,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "_astro/template.!~{009}~.js",
+      "duration": 6.307166999999708,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": "../hydration.js",
+      "duration": 6.213875000000144,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "chunks/contact.9c304bb1_!~{004}~.mjs",
+      "duration": 5.814997999999832,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": "chunks/index.942e3154_!~{005}~.mjs",
+      "duration": 5.7317069999996875,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": "../../reactivity/effects.js",
+      "duration": 5.7263800000012,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "chunks/sitemap_xml.69abefd2_!~{006}~.mjs",
+      "duration": 5.7233330000005935,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": "@astro-page:src/pages/blog/[...slug]@_@astro",
+      "duration": 5.649039000000357,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-page:src/pages/rss.xml@_@js",
+      "duration": 5.395378000000505,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-page:src/pages/sitemap.xml@_@ts",
+      "duration": 5.282205999999974,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../runtime.js",
+      "duration": 4.56562900000381,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../../attachments/index.js",
-      "duration": 4.377001999999948,
+      "duration": 4.479205000000093,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../runtime.js",
-      "duration": 4.334073000000217,
+      "path": "dev/tracing.js",
+      "duration": 4.467205000001172,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "src/content/config.ts",
-      "duration": 4.139000000000465,
+      "duration": 4.249083999999925,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../../constants.js",
-      "duration": 4.116913000000295,
+      "path": "chunks/_astro_assets_!~{00m}~.mjs",
+      "duration": 4.232585999999856,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": ".astro/content-assets.mjs",
+      "duration": 4.122240999999576,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "dev/assign.js",
+      "duration": 4.079167000000666,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "@/layouts/BaseLayout.astro",
-      "duration": 4.011696000000029,
+      "duration": 4.057123000000274,
       "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/assign.js",
-      "duration": 3.972959000000401,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/css.js",
-      "duration": 3.9132930000005217,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/elements.js",
-      "duration": 3.855082000000266,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../shared/utils.js",
-      "duration": 3.8242630000011104,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/hmr.js",
-      "duration": 3.8055020000001605,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../escape.js",
-      "duration": 3.7790859999993245,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/ownership.js",
-      "duration": 3.7559529999996357,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/legacy.js",
-      "duration": 3.7057909999996355,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/inspect.js",
-      "duration": 3.606831000000284,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/async.js",
-      "duration": 3.555624000000307,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/validation.js",
-      "duration": 3.4840819999997166,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shared/utils.js",
-      "duration": 3.4772550000009232,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/effects.js",
-      "duration": 3.4674570000006497,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/await.js",
-      "duration": 3.384999000000107,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/if.js",
-      "duration": 3.335415000000012,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/key.js",
-      "duration": 3.286916999999221,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/css-props.js",
-      "duration": 3.236917000000176,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../runtime.js",
-      "duration": 3.198093000001336,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/each.js",
-      "duration": 3.192459000000099,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/html.js",
-      "duration": 3.147044000000051,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-page:src/pages/blog/[...slug]@_@astro",
-      "duration": 3.125253999999927,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/slot.js",
-      "duration": 3.1002090000008593,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/snippet.js",
-      "duration": 3.037618999999495,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/svelte-component.js",
-      "duration": 2.9821269999995366,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/events.js",
-      "duration": 2.964995999999701,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/svelte-element.js",
-      "duration": 2.9247899999995752,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-page:src/pages/rss.xml@_@js",
-      "duration": 2.9060799999995197,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/svelte-head.js",
-      "duration": 2.87908099999936,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/css.js",
-      "duration": 2.8353769999994256,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-page:src/pages/sitemap.xml@_@ts",
-      "duration": 2.814876000000254,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro-entry:@astro-v5/ui/ThemeToggle.svelte",
-      "duration": 2.8102520000006734,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/sources.js",
-      "duration": 2.796541000000161,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../context.js",
-      "duration": 2.7855029999975613,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/actions.js",
-      "duration": 2.7772920000004433,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "runtime.js",
-      "duration": 2.7227069999980813,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/attachments.js",
-      "duration": 2.707961000000978,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/attributes.js",
-      "duration": 2.660417999999254,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/class.js",
-      "duration": 2.6169630000006237,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../errors.js",
-      "duration": 2.5950759999980164,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../constants.js",
-      "duration": 2.5802099999996244,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/misc.js",
-      "duration": 2.5170829999997295,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/hydration.js",
-      "duration": 2.5095059999991918,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../shared/utils.js",
-      "duration": 2.4982110000021294,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/style.js",
-      "duration": 2.4739190000007056,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/transitions.js",
-      "duration": 2.4212469999997666,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/document.js",
-      "duration": 2.374456999999893,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/index.js",
-      "duration": 2.3377489999996897,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/deriveds.js",
-      "duration": 2.3342099999993025,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/input.js",
-      "duration": 2.318541999999752,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/media.js",
-      "duration": 2.2615430000003016,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../warnings.js",
-      "duration": 2.222121000002062,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/navigator.js",
-      "duration": 2.209582000000637,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../task.js",
-      "duration": 2.186202999997249,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/props.js",
-      "duration": 2.1614210000000185,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "errors.js",
-      "duration": 2.1486720000006017,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../operations.js",
-      "duration": 2.1233429999990676,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/select.js",
-      "duration": 2.089167000000316,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/size.js",
-      "duration": 2.037543000001051,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/batch.js",
-      "duration": 1.994083999999475,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/this.js",
-      "duration": 1.98891599999979,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "constants.js",
-      "duration": 1.9526339999965785,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/universal.js",
-      "duration": 1.9437899999993533,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../flags/index.js",
-      "duration": 1.9367889999990666,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/ui/ThemeToggle.svelte",
-      "duration": 1.9292469999998048,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/bindings/window.js",
-      "duration": 1.8941669999994701,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/template.js",
-      "duration": 1.8761679999995522,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "common.js",
-      "duration": 1.8760800000005702,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/operations.js",
-      "duration": 1.865873000001102,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../util.js",
-      "duration": 1.8147469999992154,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@fontsource/inter/400.css",
-      "duration": 1.8141669999999976,
-      "type": "style",
-      "plugin": "astro:tsconfig-alias"
-    },
-    {
-      "path": ".astro/content-modules.mjs",
-      "duration": 1.814040000000091,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "dom/legacy/event-modifiers.js",
-      "duration": 1.7933759999993981,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../constants.js",
-      "duration": 1.7736139999988154,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@fontsource/inter/500.css",
-      "duration": 1.7551250000001346,
-      "type": "style",
-      "plugin": "astro:tsconfig-alias"
-    },
-    {
-      "path": "@fontsource/inter/600.css",
-      "duration": 1.7391249999998308,
-      "type": "style",
-      "plugin": "astro:tsconfig-alias"
-    },
-    {
-      "path": "chunks/_astro_assets_!~{00m}~.mjs",
-      "duration": 1.7372099999997772,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "dom/legacy/lifecycle.js",
-      "duration": 1.7362069999994674,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@fontsource/inter/700.css",
-      "duration": 1.7278340000000298,
-      "type": "style",
-      "plugin": "astro:tsconfig-alias"
-    },
-    {
-      "path": "dom/legacy/misc.js",
-      "duration": 1.6895420000005288,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../flags/index.js",
-      "duration": 1.6885040000006484,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "shared.js",
-      "duration": 1.6668710000001283,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/async.js",
-      "duration": 1.6653000000010252,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@/styles/tailwind.css",
-      "duration": 1.6332509999997455,
-      "type": "style",
-      "plugin": "alias"
-    },
-    {
-      "path": "../context.js",
-      "duration": 1.5915080000020225,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/styles/index.css",
-      "duration": 1.5711270000003879,
-      "type": "style",
-      "plugin": "alias"
-    },
-    {
-      "path": "../errors/index.js",
-      "duration": 1.5301320000002079,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "warnings.js",
-      "duration": 1.524049999998283,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": ".astro/content-assets.mjs",
-      "duration": 1.5149200000004157,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "legacy.js",
-      "duration": 1.4997500000001764,
-      "type": "script",
       "plugin": "alias"
     },
     {
       "path": "chunks/api_!~{009}~.mjs",
-      "duration": 1.4659579999997732,
+      "duration": 4.03441599999951,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "@/styles/global.css",
-      "duration": 1.4492920000002414,
-      "type": "style",
-      "plugin": "alias"
-    },
-    {
-      "path": "hydration.js",
-      "duration": 1.4468299999998635,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/store.js",
-      "duration": 1.4311210000007577,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../reactivity/sources.js",
-      "duration": 1.4180370000015046,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/blocks/boundary.js",
-      "duration": 1.3905470000013338,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "reactivity/props.js",
-      "duration": 1.375377000000526,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "render.js",
-      "duration": 1.3748290000000907,
+      "path": "dev/css.js",
+      "duration": 4.012626999998929,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "chunks/WebVitals_!~{00j}~.mjs",
-      "duration": 1.3722500000003492,
+      "duration": 3.977333999999928,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "../template.js",
-      "duration": 1.3511659999978747,
+      "path": "dev/elements.js",
+      "duration": 3.9498340000001235,
       "type": "script",
       "plugin": "alias"
-    },
-    {
-      "path": "chunks/_astro_content_!~{00e}~.mjs",
-      "duration": 1.346543999999767,
-      "type": "script",
-      "plugin": "vite:build-metadata"
     },
     {
       "path": "chunks/env_!~{00f}~.mjs",
-      "duration": 1.339832000000115,
+      "duration": 3.910456999999951,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "../runtime/server/index.js",
-      "duration": 1.3324579999997468,
+      "path": "chunks/_astro_content_!~{00e}~.mjs",
+      "duration": 3.910290000000259,
       "type": "script",
-      "plugin": "alias"
+      "plugin": "vite:build-metadata"
     },
     {
       "path": "chunks/contact_!~{00d}~.mjs",
-      "duration": 1.318917000000738,
+      "duration": 3.885874999999942,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
       "path": "chunks/BaseLayout_!~{00h}~.mjs",
-      "duration": 1.3087900000004993,
+      "duration": 3.8764169999997193,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "../../../../utils.js",
-      "duration": 1.3073369999981423,
+      "path": "dev/hmr.js",
+      "duration": 3.87500199999954,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "chunks/_...slug__!~{00c}~.mjs",
-      "duration": 1.3062490000002072,
+      "duration": 3.871457999999393,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
       "path": "chunks/blog_!~{00i}~.mjs",
-      "duration": 1.3035820000000058,
+      "duration": 3.8682060000001,
       "type": "script",
       "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "../../../core/errors/index.js",
-      "duration": 1.2986699999999018,
-      "type": "script",
-      "plugin": "alias"
     },
     {
       "path": "chunks/index_!~{00g}~.mjs",
-      "duration": 1.2980000000000018,
+      "duration": 3.867416000000503,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "equality.js",
-      "duration": 1.2683699999995497,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "utils.js",
-      "duration": 1.265669000000912,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
       "path": "chunks/404_!~{008}~.mjs",
-      "duration": 1.2581240000001799,
+      "duration": 3.8350839999998243,
+      "type": "script",
+      "plugin": "vite:build-metadata"
+    },
+    {
+      "path": "chunks/index_!~{00b}~.mjs",
+      "duration": 3.8112090000006447,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
       "path": "chunks/api-test_!~{00a}~.mjs",
-      "duration": 1.2348349999999755,
+      "duration": 3.8104149999996935,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "../core/errors/index.js",
-      "duration": 1.2337529999997514,
+      "path": "../shared/utils.js",
+      "duration": 3.8103359999996655,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "chunks/index_!~{00b}~.mjs",
-      "duration": 1.2326680000001033,
-      "type": "script",
-      "plugin": "vite:build-metadata"
-    },
-    {
-      "path": "sources.js",
-      "duration": 1.177335999999059,
+      "path": "dev/ownership.js",
+      "duration": 3.774456000000214,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../warnings.js",
-      "duration": 1.1724979999978586,
+      "path": "dev/legacy.js",
+      "duration": 3.6984589999993887,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../shared/attributes.js",
-      "duration": 1.1640820000003487,
+      "path": "../../../../constants.js",
+      "duration": 3.694009000000733,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../reconciler.js",
-      "duration": 1.1491659999999229,
+      "path": "dev/inspect.js",
+      "duration": 3.5808329999991884,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "validate.js",
-      "duration": 1.147583999999938,
+      "path": "dom/blocks/async.js",
+      "duration": 3.5080819999992627,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "timing.js",
-      "duration": 1.1417080000005626,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/reactivity/effects.js",
-      "duration": 1.1357110000003559,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "head.js",
-      "duration": 1.1109179999996286,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../reactivity/batch.js",
-      "duration": 1.0883329999978741,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "src/styles/global.css",
-      "duration": 1.0795410000002903,
-      "type": "style",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../util.js",
-      "duration": 1.0702960000002122,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/shared/utils.js",
-      "duration": 1.0699540000000525,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/render.js",
-      "duration": 1.0438770000002933,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "proxy.js",
-      "duration": 1.0364559999998164,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../serialize.js",
-      "duration": 1.0294229999996105,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/runtime.js",
-      "duration": 0.9939600000020619,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom/elements/custom-element.js",
-      "duration": 0.9904990000006819,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shorthash.js",
-      "duration": 0.9648739999996678,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "effects.js",
-      "duration": 0.9625880000007783,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/reactivity/sources.js",
-      "duration": 0.9467940000001818,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dom.js",
-      "duration": 0.9417940000003,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shared/dev.js",
-      "duration": 0.9274579999995467,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "events.js",
-      "duration": 0.9263320000002295,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../assets/utils/resolveImports.js",
-      "duration": 0.9150430000001961,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/client/runtime.js",
-      "duration": 0.9073760000006814,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../core/errors/index.js",
-      "duration": 0.8969600000018545,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "batch.js",
-      "duration": 0.8662909999986823,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "slot.js",
-      "duration": 0.8634589999996933,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "misc.js",
-      "duration": 0.862126000000444,
+      "path": "../escape.js",
+      "duration": 3.480574999999476,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "chunks/astro_!~{002}~.mjs",
-      "duration": 0.8582069999995383,
+      "duration": 3.4447070000001077,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "component.js",
-      "duration": 0.8497109999998429,
+      "path": "dev/validation.js",
+      "duration": 3.421752999999512,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro/factory.js",
-      "duration": 0.8456240000001571,
+      "path": "dom/blocks/await.js",
+      "duration": 3.3454160000002275,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../render.js",
-      "duration": 0.8367870000001858,
+      "path": "dom/blocks/if.js",
+      "duration": 3.273832000000425,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../proxy.js",
-      "duration": 0.8221720000001369,
+      "path": "../../../shared/utils.js",
+      "duration": 3.2376689999989594,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "instruction.js",
-      "duration": 0.8204980000007254,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astrojs/svelte/client.js",
-      "duration": 0.8075040000005629,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../actions/runtime/server.js",
-      "duration": 0.806709000000069,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../runtime.js",
-      "duration": 0.8017899999997553,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/constants.js",
-      "duration": 0.7972899999999754,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../shared/dev.js",
-      "duration": 0.7759549999998399,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shared/clone.js",
-      "duration": 0.7667100000005576,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dom/blocks/boundary.js",
-      "duration": 0.7643770000015593,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "consts.js",
-      "duration": 0.7563809999998057,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../shared/attributes.js",
-      "duration": 0.7529120000003786,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "error-handling.js",
-      "duration": 0.7516230000005635,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../cookies/index.js",
-      "duration": 0.747000999999841,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/client/index.js",
-      "duration": 0.7427880000000187,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/404.astro",
-      "duration": 0.732335000000262,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../actions/runtime/shared.js",
-      "duration": 0.7302919999999631,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../path.js",
-      "duration": 0.7223729999999478,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shared/validate.js",
-      "duration": 0.7196629999999686,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../errors.js",
-      "duration": 0.718246999999792,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../core/path.js",
-      "duration": 0.7062469999998484,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../actions/utils.js",
-      "duration": 0.7033339999999271,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../assets/utils/remotePattern.js",
-      "duration": 0.6994200000001456,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/instance.js",
-      "duration": 0.6984590000000708,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "head-and-content.js",
-      "duration": 0.6916640000004008,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "errors/errors-data.js",
-      "duration": 0.6808350000000019,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../i18n/utils.js",
-      "duration": 0.6783310000002984,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "util.js",
-      "duration": 0.6761950000002344,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/client/errors.js",
-      "duration": 0.6756650000002082,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "operations.js",
-      "duration": 0.6728740000021389,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../runtime/server/endpoint.js",
-      "duration": 0.6532500000001846,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "deriveds.js",
-      "duration": 0.648045000002412,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../i18n/index.js",
-      "duration": 0.6424579999999196,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/render.js",
-      "duration": 0.6343329999997422,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "bmp.js",
-      "duration": 0.6239570000000185,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../core/constants.js",
-      "duration": 0.6185020000001487,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../error-handling.js",
-      "duration": 0.6166639999996733,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/ui/Toast.astro",
-      "duration": 0.6128320000007079,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../error-handling.js",
-      "duration": 0.6099579999995512,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/flags/index.js",
-      "duration": 0.609543999999687,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../escaping.js",
-      "duration": 0.605586999999332,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "errors/index.js",
-      "duration": 0.6042530000001989,
+      "path": "dom/blocks/key.js",
+      "duration": 3.2094539999998233,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "chunks/astro/server_!~{003}~.mjs",
-      "duration": 0.5990409999997155,
+      "duration": 3.1699169999999413,
       "type": "script",
       "plugin": "vite:build-metadata"
     },
     {
-      "path": "../../shared/clone.js",
-      "duration": 0.5948390000007748,
+      "path": "dom/blocks/css-props.js",
+      "duration": 3.1370849999991606,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../../core/errors/index.js",
-      "duration": 0.5906699999998182,
+      "path": "dom/blocks/each.js",
+      "duration": 3.069332999999915,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "branches.js",
-      "duration": 0.5904159999979584,
+      "path": "dom/blocks/html.js",
+      "duration": 3.0213749999996935,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "factory.js",
-      "duration": 0.5875440000003209,
+      "path": "reactivity/effects.js",
+      "duration": 3.0131260000005113,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "/src/pages/api/users.ts",
-      "duration": 0.5803369999997585,
+      "path": "dom/blocks/slot.js",
+      "duration": 2.973920999999905,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "cur.js",
-      "duration": 0.5794989999997142,
+      "path": "dom/blocks/snippet.js",
+      "duration": 2.949124000000211,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../task.js",
-      "duration": 0.5790820000015628,
+      "path": "astro-entry:@astro-v5/ui/ThemeToggle.svelte",
+      "duration": 2.93387400000006,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/blocks/svelte-component.js",
+      "duration": 2.8971269999998412,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "config.js",
-      "duration": 0.5715850000000273,
+      "path": "dom/blocks/svelte-element.js",
+      "duration": 2.8403759999994236,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "attachments.js",
-      "duration": 0.5631609999995817,
+      "path": "dom/elements/events.js",
+      "duration": 2.82816900000023,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "internal/client/context.js",
-      "duration": 0.5631260000000111,
+      "path": "../errors.js",
+      "duration": 2.7927479999971183,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "/src/pages/api/contact.ts",
-      "duration": 0.5573789999997416,
+      "path": "dom/blocks/svelte-head.js",
+      "duration": 2.7869970000009516,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../errors.js",
-      "duration": 0.5503349999996772,
+      "path": "../../shared/utils.js",
+      "duration": 2.734610999999063,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../runtime/server/index.js",
-      "duration": 0.5470030000000179,
+      "path": "dom/css.js",
+      "duration": 2.7252070000004096,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "dds.js",
-      "duration": 0.5463779999997769,
+      "path": "dom/elements/actions.js",
+      "duration": 2.6711659999998574,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "escape.js",
-      "duration": 0.5414540000003853,
+      "path": "../../runtime.js",
+      "duration": 2.6629200000022593,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../core/errors/errors.js",
-      "duration": 0.5404600000000528,
+      "path": "dom/elements/attachments.js",
+      "duration": 2.6120860000004313,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../reactivity/async.js",
-      "duration": 0.5325819999986834,
+      "path": "errors.js",
+      "duration": 2.5872480000005,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "/src/pages/api/hello.ts",
-      "duration": 0.528545999999551,
+      "path": "dom/elements/attributes.js",
+      "duration": 2.5469189999997752,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../reactivity/effects.js",
-      "duration": 0.525800000001027,
+      "path": "runtime.js",
+      "duration": 2.532874000000106,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "gif.js",
-      "duration": 0.5170820000000731,
+      "path": "dom/elements/class.js",
+      "duration": 2.4948740000000953,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro-component.js",
-      "duration": 0.512501000000043,
+      "path": "../../context.js",
+      "duration": 2.48758599999951,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "cookies/index.js",
-      "duration": 0.5115020000001778,
+      "path": "reactivity/sources.js",
+      "duration": 2.451248999999052,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../constants.js",
+      "duration": 2.450257000001784,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@fontsource/inter/400.css",
+      "duration": 2.4217499999999745,
+      "type": "style",
+      "plugin": "astro:tsconfig-alias"
+    },
+    {
+      "path": "dom/elements/misc.js",
+      "duration": 2.382583999999497,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/style.js",
+      "duration": 2.3328340000001617,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@fontsource/inter/500.css",
+      "duration": 2.3315829999999096,
+      "type": "style",
+      "plugin": "astro:tsconfig-alias"
+    },
+    {
+      "path": "@fontsource/inter/600.css",
+      "duration": 2.308499999999867,
+      "type": "style",
+      "plugin": "astro:tsconfig-alias"
+    },
+    {
+      "path": "@fontsource/inter/700.css",
+      "duration": 2.29104099999995,
+      "type": "style",
+      "plugin": "astro:tsconfig-alias"
+    },
+    {
+      "path": "dom/elements/transitions.js",
+      "duration": 2.283038999999576,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/hydration.js",
+      "duration": 2.244831000000204,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/document.js",
+      "duration": 2.235667000000376,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/input.js",
+      "duration": 2.168418000000088,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../task.js",
+      "duration": 2.1202059999980065,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/media.js",
+      "duration": 2.1102160000000367,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../constants.js",
+      "duration": 2.068041999997945,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/navigator.js",
+      "duration": 2.0540399999999863,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/ThemeToggle.svelte",
+      "duration": 2.00912900000003,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/props.js",
+      "duration": 1.996126000000345,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/index.js",
+      "duration": 1.982836000000134,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../warnings.js",
+      "duration": 1.954913999999917,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/select.js",
+      "duration": 1.9359600000003638,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../flags/index.js",
+      "duration": 1.9144209999999475,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reactivity/deriveds.js",
+      "duration": 1.9138699999996334,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../context.js",
+      "duration": 1.8729169999999158,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/size.js",
+      "duration": 1.8433730000009518,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@/styles/tailwind.css",
+      "duration": 1.8385439999999562,
+      "type": "style",
+      "plugin": "alias"
+    },
+    {
+      "path": ".astro/content-modules.mjs",
+      "duration": 1.8348759999996673,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "../../../reactivity/effects.js",
+      "duration": 1.8184669999991456,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/styles/index.css",
+      "duration": 1.7975010000000111,
+      "type": "style",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/this.js",
+      "duration": 1.7884929999994483,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../operations.js",
+      "duration": 1.7855499999967606,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/universal.js",
+      "duration": 1.71354499999984,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "constants.js",
+      "duration": 1.7006700000006276,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/operations.js",
+      "duration": 1.6691669999993337,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reactivity/batch.js",
+      "duration": 1.6559190000018589,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/elements/bindings/window.js",
+      "duration": 1.6536669999992455,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../util.js",
+      "duration": 1.653545999999892,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/template.js",
+      "duration": 1.6225809999988314,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@/styles/global.css",
+      "duration": 1.6208790000005138,
+      "type": "style",
+      "plugin": "alias"
+    },
+    {
+      "path": "../errors/index.js",
+      "duration": 1.6170460000003004,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "common.js",
+      "duration": 1.6116660000008096,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../flags/index.js",
+      "duration": 1.5665459999992208,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/legacy/event-modifiers.js",
+      "duration": 1.5438360000003968,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/shared/utils.js",
+      "duration": 1.4983729999995603,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "hydration.js",
+      "duration": 1.4903760000013335,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "warnings.js",
+      "duration": 1.4894619999985252,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/legacy/lifecycle.js",
+      "duration": 1.4752919999992855,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/legacy/misc.js",
+      "duration": 1.425125000000321,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../shared/attributes.js",
+      "duration": 1.4104190000006156,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reactivity/async.js",
+      "duration": 1.3968760000000202,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "equality.js",
+      "duration": 1.3717939999985447,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "utils.js",
+      "duration": 1.3684019999991506,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "src/styles/global.css",
+      "duration": 1.3425419999991846,
+      "type": "style",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../reactivity/sources.js",
+      "duration": 1.2573250000014013,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reactivity/store.js",
+      "duration": 1.1742479999984425,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "legacy.js",
+      "duration": 1.171208000001343,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../core/errors/index.js",
+      "duration": 1.1483349999992924,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../warnings.js",
+      "duration": 1.1458319999999276,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "batch.js",
+      "duration": 1.1212920000000395,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dom/blocks/boundary.js",
+      "duration": 1.120960000000082,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../runtime/server/index.js",
+      "duration": 1.106124000000932,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../escaping.js",
+      "duration": 1.1036259999998492,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reactivity/props.js",
+      "duration": 1.0941669999999704,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/reactivity/effects.js",
+      "duration": 1.0918369999999413,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../shared/validate.js",
+      "duration": 1.086795000000052,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "sources.js",
+      "duration": 1.07988800000021,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../template.js",
+      "duration": 1.0669130000003406,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "render.js",
+      "duration": 1.061331999999993,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../shared/dev.js",
+      "duration": 1.0442050000003746,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../../utils.js",
-      "duration": 0.5078740000008111,
+      "duration": 1.0416250000004084,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../internal/shared/utils.js",
-      "duration": 0.5036259999995991,
+      "path": "../../../../utils.js",
+      "duration": 1.039332999999715,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../middleware/noop-middleware.js",
-      "duration": 0.5014559999999619,
+      "path": "../../reactivity/batch.js",
+      "duration": 1.03816900000038,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../internal/client/reactivity/batch.js",
-      "duration": 0.4994999999994434,
+      "path": "shared.js",
+      "duration": 1.0349900000023808,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../logger/console.js",
-      "duration": 0.4901679999998123,
+      "path": "../cookies/index.js",
+      "duration": 0.9773349999998118,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "cookies/response.js",
-      "duration": 0.4870820000001004,
+      "path": "../internal/client/runtime.js",
+      "duration": 0.9532039999994595,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "ico.js",
-      "duration": 0.4844159999997828,
+      "path": "bmp.js",
+      "duration": 0.9506250000001728,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../core/errors/index.js",
+      "duration": 0.943208999999797,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "timing.js",
+      "duration": 0.923629000001597,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/client/runtime.js",
+      "duration": 0.9142140000002428,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/reactivity/sources.js",
+      "duration": 0.9120869999997012,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/errors/index.js",
+      "duration": 0.9047570000016094,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/constants.js",
+      "duration": 0.8879169999993337,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../util.js",
+      "duration": 0.8858420000005935,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "head.js",
+      "duration": 0.8855070000001888,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "validate.js",
+      "duration": 0.8724159999999301,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "cur.js",
+      "duration": 0.872333000000026,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "internal/server/context.js",
-      "duration": 0.4827910000004749,
+      "duration": 0.8528349999999136,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "heif.js",
-      "duration": 0.4758729999996376,
+      "path": "../reconciler.js",
+      "duration": 0.8515780000000177,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "/src/pages/api/newsletter.ts",
-      "duration": 0.4757100000003902,
+      "path": "../../assets/utils/remotePattern.js",
+      "duration": 0.8463319999999612,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../dom/hydration.js",
-      "duration": 0.47409000000084234,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "dev/equality.js",
-      "duration": 0.4723760000003949,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "class.js",
-      "duration": 0.4682920000007016,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "any.js",
-      "duration": 0.4636230000000978,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../hydration.js",
-      "duration": 0.45825100000047314,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../logger/core.js",
-      "duration": 0.4543340000001308,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../loop.js",
-      "duration": 0.4496230000004289,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../render-context.js",
-      "duration": 0.4452059999995299,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "csp/runtime.js",
-      "duration": 0.4428789999997207,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../store/utils.js",
-      "duration": 0.44087100000024293,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../escape.js",
-      "duration": 0.4362930000000915,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "icns.js",
-      "duration": 0.43587499999966894,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/api-test.astro",
-      "duration": 0.42975100000046496,
+      "path": "/src/pages/404.astro",
+      "duration": 0.839289000000008,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "index.js",
-      "duration": 0.4294989999993959,
+      "path": "events.js",
+      "duration": 0.8330419999997503,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../core/encryption.js",
-      "duration": 0.42783399999996163,
+      "path": "../../shared/dev.js",
+      "duration": 0.8276190000001407,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../any.js",
-      "duration": 0.42020400000023983,
+      "path": "dds.js",
+      "duration": 0.8075419999995574,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "server-islands.js",
-      "duration": 0.4190889999998717,
+      "path": "effects.js",
+      "duration": 0.8011209999973516,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "reconciler.js",
-      "duration": 0.4179160000005595,
+      "path": "../assets/utils/resolveImports.js",
+      "duration": 0.7923350000007758,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "dev/console-log.js",
-      "duration": 0.4169169999993301,
+      "path": "slot.js",
+      "duration": 0.7917109999992817,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "render/index.js",
-      "duration": 0.4160450000001674,
+      "path": "misc.js",
+      "duration": 0.7836249999988922,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "internal/client/reactivity/batch.js",
-      "duration": 0.4120880000006082,
+      "path": "../../i18n/index.js",
+      "duration": 0.7798339999998234,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "data-store.js",
-      "duration": 0.411623999999847,
+      "path": "component.js",
+      "duration": 0.7760010000002922,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../render/ssr-element.js",
-      "duration": 0.4094150000000809,
+      "path": "@astrojs/svelte/client.js",
+      "duration": 0.7598739999998543,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro-global.js",
-      "duration": 0.40858100000036757,
+      "path": "gif.js",
+      "duration": 0.7587070000001859,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "style.js",
-      "duration": 0.40795600000001286,
+      "path": "ico.js",
+      "duration": 0.7556240000003527,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../scripts.js",
-      "duration": 0.4017900000000054,
+      "path": "../serialize.js",
+      "duration": 0.7537519999998494,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../../shared/utils.js",
-      "duration": 0.40041699999983393,
+      "path": "proxy.js",
+      "duration": 0.7497469999993882,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../internal/client/errors.js",
-      "duration": 0.39849800000047253,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../core/errors/errors-data.js",
-      "duration": 0.398082999999815,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../common.js",
-      "duration": 0.392669000000069,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dom/task.js",
-      "duration": 0.3922489999999925,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "encryption.js",
-      "duration": 0.39037500000006276,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../reactivity/deriveds.js",
-      "duration": 0.3790900000003603,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../core/path.js",
-      "duration": 0.37854400000071564,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/blog/index.astro",
-      "duration": 0.3780469999991283,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "j2c.js",
-      "duration": 0.37308399999960784,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../jsx-runtime/index.js",
-      "duration": 0.3639570000001413,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dom/operations.js",
-      "duration": 0.3527900000005957,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../store/shared/index.js",
-      "duration": 0.3488290000004781,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dev/equality.js",
-      "duration": 0.34791699999982484,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "csp.js",
-      "duration": 0.34720700000059423,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "endpoint.js",
-      "duration": 0.34704199999987395,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/warnings.js",
-      "duration": 0.3460440000003473,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/client/hydratable.js",
-      "duration": 0.34516800000074,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../reactivity/batch.js",
-      "duration": 0.3433809999994537,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/contact.astro",
-      "duration": 0.3401660000005222,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/blog/[...slug].astro",
-      "duration": 0.3400049999999055,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../proxy.js",
-      "duration": 0.3385860000003049,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../context.js",
-      "duration": 0.3360439999985374,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "jp2.js",
-      "duration": 0.3359179999999924,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dev/tracing.js",
-      "duration": 0.33458699999982855,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../actions/noop-actions.js",
-      "duration": 0.3343350000001237,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "page.js",
-      "duration": 0.3310849999998027,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/components/Image.astro",
-      "duration": 0.3301240000000689,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "loaders/errors.js",
-      "duration": 0.32574899999985973,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/ui/BlogCard.astro",
-      "duration": 0.32399899999927584,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "async.js",
-      "duration": 0.3220009999974991,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astrojs/svelte/server.js",
-      "duration": 0.31204200000001947,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "middleware/callMiddleware.js",
-      "duration": 0.30741699999998673,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../i18n/middleware.js",
-      "duration": 0.306871000000001,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "jpg.js",
-      "duration": 0.3051680000003216,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/rss.xml.js",
-      "duration": 0.29991800000004787,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/3xx.js",
-      "duration": 0.29695799999979045,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "render-context.js",
-      "duration": 0.29533400000025267,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "render-template.js",
-      "duration": 0.2951299999992898,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/runtime/server/index.js",
-      "duration": 0.29495699999995395,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../actions/utils.js",
-      "duration": 0.2887069999999312,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "app/middlewares.js",
-      "duration": 0.2857920000000149,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../base-pipeline.js",
-      "duration": 0.2850830000000997,
+      "path": "../../error-handling.js",
+      "duration": 0.7439199999989796,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../../store/utils.js",
-      "duration": 0.2827919999998585,
+      "duration": 0.7364590000000817,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "ktx.js",
-      "duration": 0.27725199999918004,
+      "path": "../path.js",
+      "duration": 0.7314520000012408,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../consts.js",
-      "duration": 0.27382499999953325,
+      "path": "astro/render.js",
+      "duration": 0.7306249999996908,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "types/index.js",
-      "duration": 0.2729180000003453,
+      "path": "dom.js",
+      "duration": 0.7247539999997343,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../core/build/util.js",
-      "duration": 0.27229199999965203,
+      "path": "heif.js",
+      "duration": 0.7210430000002361,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "internal/client/render.js",
-      "duration": 0.2691669999998112,
+      "path": "../../errors.js",
+      "duration": 0.7191270000005261,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "middleware/index.js",
-      "duration": 0.26846000000023196,
+      "path": "dom/elements/custom-element.js",
+      "duration": 0.7050049999995736,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "consts.js",
+      "duration": 0.7037069999998948,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../shorthash.js",
+      "duration": 0.7036219999996547,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "instruction.js",
+      "duration": 0.7020910000007916,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "deriveds.js",
+      "duration": 0.6956679999998414,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "icns.js",
+      "duration": 0.6952500000002146,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dom/blocks/boundary.js",
+      "duration": 0.6891689999990831,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "renderer.js",
-      "duration": 0.26528799999982766,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "script.js",
-      "duration": 0.26446100000021033,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/astro-designed-error-pages.js",
-      "duration": 0.26295900000025085,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../../legacy/legacy-client.js",
-      "duration": 0.25645800000052077,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../index-client.js",
-      "duration": 0.2550770000011653,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "404.astro",
-      "duration": 0.2542059999997264,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../i18n/utils.js",
-      "duration": 0.2531689999999571,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/client/dom/blocks/snippet.js",
-      "duration": 0.25263000000063585,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "hex.js",
-      "duration": 0.25004200000000765,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/sitemap.xml.ts",
-      "duration": 0.24996199999986857,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "png.js",
-      "duration": 0.24953899999991336,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "instance.js",
-      "duration": 0.24854300000026797,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../utils.js",
-      "duration": 0.24645600000030754,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "jsx.js",
-      "duration": 0.24258799999984149,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "redirects/render.js",
-      "duration": 0.23787399999991976,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../errors/errors-data.js",
-      "duration": 0.23653999999999087,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/default.js",
-      "duration": 0.23420800000008057,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "bindings/select.js",
-      "duration": 0.23146200000041972,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "abort-signal.js",
-      "duration": 0.22879299999999603,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro-island.prebuilt.js",
-      "duration": 0.22870999999986452,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "/src/pages/index.astro",
-      "duration": 0.22800000000040654,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/ui/ContactForm.astro",
-      "duration": 0.2245839999995951,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../content/consts.js",
-      "duration": 0.21937400000047091,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "services/service.js",
-      "duration": 0.21912499999984902,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../dev/tracing.js",
-      "duration": 0.2136690000006638,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/dev/tracing.js",
-      "duration": 0.20603800000003503,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../internal/shared/utils.js",
-      "duration": 0.20508000000040738,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/match.js",
-      "duration": 0.2043740000000298,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "pnm.js",
-      "duration": 0.2040410000004158,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/rewrite.js",
-      "duration": 0.2030019999997421,
+      "duration": 0.6745009999997365,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "internal/server/errors.js",
-      "duration": 0.20129199999973935,
+      "duration": 0.66404,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "api-test.astro",
-      "duration": 0.2007100000000719,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/context.js",
-      "duration": 0.19958400000018628,
+      "path": "internal/client/index.js",
+      "duration": 0.6600450000000819,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../runtime/server/jsx.js",
-      "duration": 0.1962500000000773,
+      "path": "/src/pages/api/contact.ts",
+      "duration": 0.6579579999997804,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../core/constants.js",
-      "duration": 0.19491600000003473,
+      "path": "errors/errors-data.js",
+      "duration": 0.6561659999991889,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro/head-and-content.js",
-      "duration": 0.19412899999997535,
+      "path": "error-handling.js",
+      "duration": 0.6483679999990954,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../encryption.js",
-      "duration": 0.19162400000027446,
+      "path": "j2c.js",
+      "duration": 0.6380839999999353,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "errors-data.js",
-      "duration": 0.19033299999989595,
+      "path": "../../../shared/attributes.js",
+      "duration": 0.6354589999987184,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../runtime/server/render/astro/factory.js",
-      "duration": 0.18879299999991872,
+      "path": "../dom/operations.js",
+      "duration": 0.6323359999996683,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "dom/elements/bindings/shared.js",
-      "duration": 0.18470800000000054,
+      "path": "../actions/runtime/server.js",
+      "duration": 0.6318740000000389,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "render/astro/factory.js",
-      "duration": 0.1808330000000069,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../warnings.js",
-      "duration": 0.1797120000007908,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "psd.js",
-      "duration": 0.17241799999965224,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../build/util.js",
-      "duration": 0.17133499999999913,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../session.js",
-      "duration": 0.1700420000001941,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "layout.js",
-      "duration": 0.16941599999961454,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "blog/[...slug].astro",
-      "duration": 0.1693759999999429,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/components/Picture.astro",
-      "duration": 0.1682500000000573,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../../../reactivity/create-subscriber.js",
-      "duration": 0.16770500000006905,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "bindings/shared.js",
-      "duration": 0.1670419999998103,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../reactivity/sources.js",
-      "duration": 0.16404000000125052,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../transitions/index.js",
-      "duration": 0.16224599999986822,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../reactivity/batch.js",
-      "duration": 0.15958200000068246,
+      "path": "../shared/clone.js",
+      "duration": 0.6295860000001312,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "internal/server/abort-signal.js",
-      "duration": 0.15774999999996453,
+      "duration": 0.6235839999998234,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../dist/core/errors/index.js",
-      "duration": 0.15662299999996776,
+      "path": "../../render.js",
+      "duration": 0.6235489999999118,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "types.js",
-      "duration": 0.15463099999976748,
+      "path": "@astrojs/svelte/server.js",
+      "duration": 0.6150020000001177,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "middleware/noop-middleware.js",
-      "duration": 0.15112199999975928,
+      "path": "../core/path.js",
+      "duration": 0.6148749999998699,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "cookies.js",
-      "duration": 0.14991399999996702,
+      "path": "jp2.js",
+      "duration": 0.6120019999998476,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../core/build/util.js",
-      "duration": 0.14904299999977866,
+      "path": "../internal/client/render.js",
+      "duration": 0.6112090000001444,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../render/index.js",
-      "duration": 0.14858499999979813,
+      "path": "astro/factory.js",
+      "duration": 0.6014119999999821,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "tags.js",
-      "duration": 0.14812600000027487,
+      "path": "util.js",
+      "duration": 0.594569999999635,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "src/uneval.js",
-      "duration": 0.1462930000001279,
+      "path": "../logger/console.js",
+      "duration": 0.5942500000001019,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../elements/events.js",
-      "duration": 0.1451659999995627,
+      "path": "../../shared/clone.js",
+      "duration": 0.5928399999991143,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../util/pathname.js",
-      "duration": 0.14458300000001145,
+      "path": "internal/client/errors.js",
+      "duration": 0.5904179999990902,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../internal/flags/index.js",
-      "duration": 0.14395800000079362,
+      "path": "factory.js",
+      "duration": 0.5755489999994552,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "params-and-props.js",
-      "duration": 0.1430430000001479,
+      "path": "jpg.js",
+      "duration": 0.5733740000005128,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../assets/utils/getAssetsPrefix.js",
-      "duration": 0.14262699999994766,
+      "path": "../actions/runtime/shared.js",
+      "duration": 0.5703330000001188,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro/render-template.js",
-      "duration": 0.1419540000001689,
+      "path": "../middleware/noop-middleware.js",
+      "duration": 0.5688330000001542,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../../shared/validate.js",
-      "duration": 0.14179300000159856,
+      "path": "/src/pages/api/hello.ts",
+      "duration": 0.5637519999996812,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "svg.js",
-      "duration": 0.14099999999984902,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "routing/match.js",
-      "duration": 0.14070900000012898,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro-island.prebuilt-dev.js",
-      "duration": 0.1402459999999337,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../html-tree-validation.js",
-      "duration": 0.14012499999989814,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "blog/index.astro",
-      "duration": 0.13637499999992997,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../runtime/server/render/index.js",
-      "duration": 0.13591600000006565,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "@astro-v5/ui/seo/PageSEO.astro",
-      "duration": 0.1351670000001377,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../runtime/server/shorthash.js",
-      "duration": 0.13245999999980995,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "WebVitals.astro",
-      "duration": 0.13220899999942048,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../core/render-context.js",
-      "duration": 0.1317070000000058,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../reactivity/equality.js",
-      "duration": 0.13012500000036198,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../internal/client/reactivity/equality.js",
-      "duration": 0.12966899999992165,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "validation.js",
-      "duration": 0.12920900000005986,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../runtime/server/render/slot.js",
-      "duration": 0.12708599999996295,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dom/elements/bindings/shared.js",
-      "duration": 0.12491900000077294,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../shared/errors.js",
-      "duration": 0.11928600000021561,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro/assets/utils/inferRemoteSize.js",
-      "duration": 0.11924999999996544,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../render.js",
-      "duration": 0.11771000000044296,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "store.js",
-      "duration": 0.11745700000005854,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "transition.js",
-      "duration": 0.11637399999972331,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "src/pages/rss.xml.js",
-      "duration": 0.1158750000006421,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
-    },
-    {
-      "path": "contact.astro",
-      "duration": 0.11416499999995722,
-      "type": "other",
-      "plugin": "alias"
-    },
-    {
-      "path": "../dev/css.js",
-      "duration": 0.11374599999999191,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "tga.js",
-      "duration": 0.11225200000012592,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "middleware/sequence.js",
-      "duration": 0.11208300000021154,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal/server/hydratable.js",
-      "duration": 0.11125000000004093,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "base64.js",
-      "duration": 0.1107049999998253,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/request.js",
-      "duration": 0.10999600000002374,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "internal.js",
-      "duration": 0.10991900000021815,
+      "path": "astro-component.js",
+      "duration": 0.5636640000001307,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "blocks/html.js",
-      "duration": 0.10933399999998983,
+      "duration": 0.5460849999997208,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../runtime/server/transition.js",
-      "duration": 0.10858200000006946,
+      "path": "../logger/core.js",
+      "duration": 0.5460409999999456,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "routing/rewrite.js",
-      "duration": 0.1065449999998691,
+      "path": "render-context.js",
+      "duration": 0.5422930000000861,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "pipeline.js",
-      "duration": 0.10570800000016334,
+      "path": "../actions/utils.js",
+      "duration": 0.5400419999999713,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "printer.js",
-      "duration": 0.10400100000026669,
+      "path": "escape.js",
+      "duration": 0.5388339999999516,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../elements/transitions.js",
-      "duration": 0.10320500000102584,
+      "path": "errors/index.js",
+      "duration": 0.5362500000005639,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "@astro-v5/ui/seo/BlogSEO.astro",
-      "duration": 0.10099699999977929,
+      "path": "head-and-content.js",
+      "duration": 0.533743000000527,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/flags/index.js",
+      "duration": 0.5326239999994868,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/shared/utils.js",
+      "duration": 0.526794000000109,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../core/encryption.js",
+      "duration": 0.5249589999999671,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/api/newsletter.ts",
+      "duration": 0.5227939999994078,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/reactivity/batch.js",
+      "duration": 0.5217090000010103,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "ktx.js",
+      "duration": 0.5168720000006033,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../i18n/utils.js",
+      "duration": 0.5145409999998947,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "branches.js",
+      "duration": 0.5100439999999935,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../actions/utils.js",
+      "duration": 0.5089179999998805,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/Toast.astro",
+      "duration": 0.5086229999997158,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "utils/imageAttributes.js",
-      "duration": 0.09729300000003605,
+      "path": "../error-handling.js",
+      "duration": 0.5008289999999533,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../routing/params.js",
-      "duration": 0.09683300000017425,
+      "path": "astro/instance.js",
+      "duration": 0.49320499999953427,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "config.js",
+      "duration": 0.4925430000000688,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../runtime/server/endpoint.js",
+      "duration": 0.49158200000033503,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/constants.js",
+      "duration": 0.48954100000025846,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "attachments.js",
+      "duration": 0.4890819999998257,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../reactivity/effects.js",
+      "duration": 0.4832319999995889,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/api/users.ts",
+      "duration": 0.482998999999495,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../proxy.js",
+      "duration": 0.4794979999999214,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../render/ssr-element.js",
+      "duration": 0.47883299999989504,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/api-test.astro",
+      "duration": 0.47383300000035433,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/client/context.js",
+      "duration": 0.4707920000001877,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../render-context.js",
+      "duration": 0.46925100000009934,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "any.js",
+      "duration": 0.4655900000004749,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro-global.js",
+      "duration": 0.45508300000005875,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../../core/errors/index.js",
+      "duration": 0.4549160000003667,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../reactivity/async.js",
+      "duration": 0.45058199999880344,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "async.js",
+      "duration": 0.4503740000000107,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dev/tracing.js",
+      "duration": 0.450336000000334,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/errors/errors.js",
+      "duration": 0.4478329999996049,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../proxy.js",
+      "duration": 0.44229400000040187,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "404.astro",
+      "duration": 0.438541999999984,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../runtime.js",
+      "duration": 0.4339569999988271,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "png.js",
+      "duration": 0.4305829999989328,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dev/equality.js",
+      "duration": 0.4235400000010259,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/index.js",
+      "duration": 0.4181250000001455,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "render/index.js",
+      "duration": 0.4165009999999256,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dom/hydration.js",
+      "duration": 0.4142910000005031,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/errors.js",
+      "duration": 0.4134119999998802,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/blog/index.astro",
+      "duration": 0.4129190000003291,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../actions/noop-actions.js",
+      "duration": 0.41271100000017213,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "cookies/index.js",
+      "duration": 0.41137400000013713,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "operations.js",
+      "duration": 0.39383299999917654,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "class.js",
+      "duration": 0.3904149999998481,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../escape.js",
+      "duration": 0.3884160000003476,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "endpoint.js",
+      "duration": 0.38483199999973294,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "index.js",
+      "duration": 0.3817910000001348,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "dev/console-log.js",
+      "duration": 0.3810429999995222,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../store/utils.js",
+      "duration": 0.37862400000062735,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "cookies/response.js",
+      "duration": 0.37779299999999694,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "data-store.js",
+      "duration": 0.3772100000002183,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../i18n/utils.js",
+      "duration": 0.37162500000010823,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../i18n/middleware.js",
+      "duration": 0.36991600000010294,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "pnm.js",
+      "duration": 0.3663730000000669,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/blog/[...slug].astro",
+      "duration": 0.36124599999970997,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/warnings.js",
+      "duration": 0.356916999999612,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/path.js",
+      "duration": 0.35200099999985923,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "csp/runtime.js",
+      "duration": 0.3498349999999846,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../utils.js",
+      "duration": 0.3485039999984565,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/components/Image.astro",
+      "duration": 0.3470430000000988,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "style.js",
+      "duration": 0.3422899999995934,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/3xx.js",
+      "duration": 0.33883700000023964,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "api-test.astro",
+      "duration": 0.337877000000276,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "server-islands.js",
+      "duration": 0.33642100000020037,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../any.js",
+      "duration": 0.33600200000046243,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/errors/errors-data.js",
+      "duration": 0.33383299999968585,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dev/equality.js",
+      "duration": 0.33154199999944467,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../scripts.js",
+      "duration": 0.3251639999999725,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/contact.astro",
+      "duration": 0.32392000000004373,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../common.js",
+      "duration": 0.3235850000002074,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../errors.js",
+      "duration": 0.3220000000003438,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "encryption.js",
+      "duration": 0.31908500000008644,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "app/middlewares.js",
+      "duration": 0.3108359999998811,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "loaders/errors.js",
+      "duration": 0.3079189999996288,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../store/shared/index.js",
+      "duration": 0.30387500000006185,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../loop.js",
+      "duration": 0.30145800000059353,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/astro-designed-error-pages.js",
+      "duration": 0.2997509999997874,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../task.js",
+      "duration": 0.29938100000072154,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../jsx-runtime/index.js",
+      "duration": 0.297500000000241,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../reactivity/deriveds.js",
+      "duration": 0.2972520000002987,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "csp.js",
+      "duration": 0.29395899999997255,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "psd.js",
+      "duration": 0.2891279999996641,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/rss.xml.js",
+      "duration": 0.2882469999996147,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "blog/[...slug].astro",
+      "duration": 0.28762599999959093,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/runtime/server/index.js",
+      "duration": 0.2836229999995794,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "page.js",
+      "duration": 0.2835040000002209,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../consts.js",
+      "duration": 0.28262400000016896,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../../legacy/legacy-client.js",
+      "duration": 0.2822489999996378,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../core/constants.js",
+      "duration": 0.2729580000001306,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../build/util.js",
+      "duration": 0.2708729999997104,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/client/reactivity/batch.js",
+      "duration": 0.26441499999975804,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "jsx.js",
+      "duration": 0.26379100000008293,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "errors-data.js",
+      "duration": 0.2601249999999027,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/default.js",
+      "duration": 0.2578760000001239,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/build/util.js",
+      "duration": 0.25125100000013845,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../base-pipeline.js",
+      "duration": 0.24637499999982992,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/sitemap.xml.ts",
+      "duration": 0.24437399999953868,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../index-client.js",
+      "duration": 0.24383300000044983,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dom/task.js",
+      "duration": 0.24379100000010112,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "middleware/callMiddleware.js",
+      "duration": 0.24329199999999673,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/ContactForm.astro",
+      "duration": 0.24070900000060647,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/rewrite.js",
+      "duration": 0.24028999999984535,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../dev/tracing.js",
+      "duration": 0.23829399999954148,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "blog/index.astro",
+      "duration": 0.23320799999987685,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../content/consts.js",
+      "duration": 0.23033299999997325,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "script.js",
+      "duration": 0.22712800000044808,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "reconciler.js",
+      "duration": 0.22117099999923084,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "services/service.js",
+      "duration": 0.21950200000026143,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/match.js",
+      "duration": 0.2190810000000738,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "src/uneval.js",
+      "duration": 0.21849999999994907,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "middleware/index.js",
+      "duration": 0.2146659999999656,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "svg.js",
+      "duration": 0.21304099999974824,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../../shared/utils.js",
+      "duration": 0.20916800000009061,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../core/build/util.js",
+      "duration": 0.20908199999996668,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "/src/pages/index.astro",
+      "duration": 0.20904199999961293,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/context.js",
+      "duration": 0.20646100000067236,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/head-and-content.js",
+      "duration": 0.20508400000005622,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/client/hydratable.js",
+      "duration": 0.20291300000053525,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../internal/shared/utils.js",
+      "duration": 0.20179200000052333,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/BlogCard.astro",
+      "duration": 0.2004570000003696,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "instance.js",
+      "duration": 0.19995900000037636,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/request.js",
+      "duration": 0.19662499999992633,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro-island.prebuilt.js",
+      "duration": 0.19537699999966662,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "types/index.js",
+      "duration": 0.19437500000003638,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dom/elements/bindings/shared.js",
+      "duration": 0.19316500000013548,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../encryption.js",
+      "duration": 0.19299699999976383,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../hydration.js",
+      "duration": 0.19237199999861332,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "redirects/render.js",
+      "duration": 0.19166600000005474,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "render-template.js",
+      "duration": 0.190794999999639,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "cookies.js",
+      "duration": 0.18945499999972526,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/components/Picture.astro",
+      "duration": 0.18808599999999842,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "contact.astro",
+      "duration": 0.18654400000002624,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../session.js",
+      "duration": 0.18512399999985973,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/dev/tracing.js",
+      "duration": 0.18420900000000984,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../../reactivity/create-subscriber.js",
+      "duration": 0.18337800000017523,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "middleware/noop-middleware.js",
+      "duration": 0.18191899999987982,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "abort-signal.js",
+      "duration": 0.1800429999998414,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../errors/errors-data.js",
+      "duration": 0.17954100000019935,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "bindings/select.js",
+      "duration": 0.1785830000005717,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/render/astro/factory.js",
+      "duration": 0.17779200000029505,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "layout.js",
+      "duration": 0.17458499999997912,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dist/core/errors/index.js",
+      "duration": 0.1681229999999232,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "index.astro",
-      "duration": 0.09658300000023701,
+      "duration": 0.16141300000015235,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "../server-islands/endpoint.js",
-      "duration": 0.09454099999948085,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/client/dom/legacy/event-modifiers.js",
-      "duration": 0.09254299999952309,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "base32.js",
-      "duration": 0.08958500000017011,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../redirects/helpers.js",
-      "duration": 0.0892470000000003,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "render/component.js",
-      "duration": 0.08887700000025234,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../redirects/render.js",
-      "duration": 0.08670999999992546,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../../runtime/server/render/instruction.js",
-      "duration": 0.08654299999955128,
+      "path": "render/astro/factory.js",
+      "duration": 0.15850300000033712,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "dev.js",
-      "duration": 0.08379299999978684,
+      "duration": 0.15733200000011038,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro/components/Font.astro",
-      "duration": 0.08325100000013208,
+      "path": "types.js",
+      "duration": 0.15687900000023092,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/jsx.js",
+      "duration": 0.15687700000012228,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/client/render.js",
+      "duration": 0.15620800000021973,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "hex.js",
+      "duration": 0.1554150000001755,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../reactivity/batch.js",
+      "duration": 0.154175999999552,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "WebVitals.astro",
+      "duration": 0.15058500000054664,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "runtime/shared.js",
-      "duration": 0.08258200000000215,
+      "path": "../util/pathname.js",
+      "duration": 0.15058299999975588,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "tiff.js",
-      "duration": 0.08212300000013784,
+      "path": "dom/elements/bindings/shared.js",
+      "duration": 0.15017099999931816,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/flags/index.js",
+      "duration": 0.14979499999935797,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/shorthash.js",
+      "duration": 0.1487489999999525,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/render-template.js",
+      "duration": 0.14316500000006727,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/assets/utils/inferRemoteSize.js",
+      "duration": 0.14224899999987883,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "bindings/shared.js",
+      "duration": 0.14162900000178524,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "store.js",
+      "duration": 0.1397919999997157,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/seo/PageSEO.astro",
+      "duration": 0.13937200000054872,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "middleware/sequence.js",
+      "duration": 0.1390009999998938,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal/server/hydratable.js",
+      "duration": 0.13871000000006006,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "routing/match.js",
+      "duration": 0.13870799999983774,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../reactivity/sources.js",
+      "duration": 0.13416699999993398,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "tga.js",
+      "duration": 0.13308300000085183,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../internal/client/reactivity/equality.js",
+      "duration": 0.13129200000003038,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../elements/events.js",
+      "duration": 0.13121099999966646,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "printer.js",
+      "duration": 0.1306720000001178,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro-island.prebuilt-dev.js",
+      "duration": 0.13037400000007437,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "tags.js",
+      "duration": 0.12875300000018797,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../html-tree-validation.js",
+      "duration": 0.12837199999978566,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../core/render-context.js",
+      "duration": 0.1282899999999927,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../shared/validate.js",
+      "duration": 0.1274600000006103,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../transitions/index.js",
+      "duration": 0.1268739999997024,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../../reactivity/batch.js",
+      "duration": 0.12562399999933405,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "transition.js",
+      "duration": 0.12425199999984216,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../shared/errors.js",
+      "duration": 0.12333499999999731,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "base64.js",
+      "duration": 0.12129099999935988,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../runtime/server/transition.js",
+      "duration": 0.11871099999973467,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/render/slot.js",
+      "duration": 0.1181259999999611,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../render/index.js",
+      "duration": 0.11749900000006619,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../core/errors/errors-data.js",
-      "duration": 0.08183299999996052,
+      "duration": 0.11258400000019719,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "session.js",
-      "duration": 0.08137499999997999,
+      "path": "../../../context.js",
+      "duration": 0.11091799999894647,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "render/route-cache.js",
-      "duration": 0.08120600000006561,
+      "path": "../../runtime/server/render/index.js",
+      "duration": 0.10704200000009223,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "@astro-v5/ui/Newsletter.astro",
-      "duration": 0.07770700000082797,
+      "path": "utils/imageAttributes.js",
+      "duration": 0.10645900000008623,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "pipeline.js",
+      "duration": 0.1056250000002592,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "src/pages/rss.xml.js",
+      "duration": 0.10445700000036595,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "tiff.js",
+      "duration": 0.1044160000001284,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../redirects/helpers.js",
+      "duration": 0.10412299999984498,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "internal.js",
+      "duration": 0.10312500000009095,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/client/dom/legacy/event-modifiers.js",
+      "duration": 0.1029980000002979,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro/components/Font.astro",
+      "duration": 0.10179200000027322,
       "type": "other",
       "plugin": "alias"
     },
     {
-      "path": "csp/config.js",
-      "duration": 0.0776740000000018,
+      "path": "params-and-props.js",
+      "duration": 0.10133400000006532,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../redirects/component.js",
-      "duration": 0.07683600000018487,
+      "path": "../../../warnings.js",
+      "duration": 0.1001649999991514,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "utils/imageKind.js",
-      "duration": 0.07412600000009206,
+      "path": "internal/client/dom/blocks/snippet.js",
+      "duration": 0.09941099999980452,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "astro-island-styles.js",
-      "duration": 0.07391399999994519,
+      "path": "../server-islands/endpoint.js",
+      "duration": 0.0975389999998697,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../dist/assets/utils/imageKind.js",
-      "duration": 0.07300200000031509,
+      "path": "routing/rewrite.js",
+      "duration": 0.09700099999975009,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "src/parse.js",
-      "duration": 0.07299799999964307,
+      "path": "../routing/params.js",
+      "duration": 0.09687399999995705,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../internal/client/dom/task.js",
-      "duration": 0.07278799999971852,
+      "path": "../render.js",
+      "duration": 0.09458199999926364,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../reactivity/equality.js",
+      "duration": 0.09441899999956149,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../dev/css.js",
+      "duration": 0.09421099999940452,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "render/component.js",
+      "duration": 0.09312799999975141,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "zod-error-map.js",
-      "duration": 0.06962599999985741,
+      "duration": 0.09312699999998131,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../misc.js",
-      "duration": 0.0674190000006547,
+      "path": "src/parse.js",
+      "duration": 0.09008200000016586,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../version.js",
-      "duration": 0.06625000000076398,
+      "path": "render/route-cache.js",
+      "duration": 0.08808500000020558,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../utils.js",
-      "duration": 0.06487499999980173,
+      "path": "csp/config.js",
+      "duration": 0.08670500000039283,
       "type": "script",
       "plugin": "alias"
-    },
-    {
-      "path": "boundary.js",
-      "duration": 0.06462600000054408,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "commonjsHelpers.js",
-      "duration": 0.06341500000041833,
-      "type": "script",
-      "plugin": "astro-manifest-plugin"
     },
     {
       "path": "../../template/4xx.js",
-      "duration": 0.06295799999986684,
+      "duration": 0.08500000000015007,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "internal/server/blocks/snippet.js",
-      "duration": 0.06137600000022303,
+      "path": "utils/imageKind.js",
+      "duration": 0.08354100000008202,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "util/pathname.js",
-      "duration": 0.061166999999954896,
+      "path": "@astro-v5/ui/Newsletter.astro",
+      "duration": 0.08345800000051895,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/seo/BlogSEO.astro",
+      "duration": 0.08329199999980119,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../request.js",
+      "duration": 0.0808750000001055,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../../runtime/server/render/util.js",
-      "duration": 0.06095900000036636,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "serialize.js",
-      "duration": 0.059955999999488085,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "astro-designed-error-pages.js",
-      "duration": 0.059332000000267726,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../internal/server/index.js",
-      "duration": 0.05854000000022097,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../routing/validation.js",
-      "duration": 0.05850000000009459,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "core.js",
-      "duration": 0.05558300000018335,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../redirects/index.js",
-      "duration": 0.05558200000029956,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../utils/vendor/image-size/lookup.js",
-      "duration": 0.05545899999992798,
+      "path": "../../assets/utils/getAssetsPrefix.js",
+      "duration": 0.07879200000036235,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "sequence.js",
-      "duration": 0.05466700000022229,
+      "duration": 0.07845699999995759,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "generator.js",
-      "duration": 0.05383200000005672,
+      "path": "../elements/transitions.js",
+      "duration": 0.07837499999914144,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "utils/remoteProbe.js",
-      "duration": 0.05325100000004568,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../server/index.js",
-      "duration": 0.05312500000002274,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "../request.js",
-      "duration": 0.05262500000014825,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "routing/default.js",
-      "duration": 0.052502000000004045,
-      "type": "script",
-      "plugin": "alias"
-    },
-    {
-      "path": "helpers.js",
-      "duration": 0.052125999999816486,
+      "path": "../redirects/component.js",
+      "duration": 0.07599900000013804,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../core/routing/match.js",
-      "duration": 0.05166700000017954,
+      "duration": 0.07587599999988015,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "webp.js",
-      "duration": 0.05079399999999623,
+      "path": "../redirects/index.js",
+      "duration": 0.07558399999993526,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "shared/unstorage.zVDD2mZo.mjs",
-      "duration": 0.04924700000003668,
+      "path": "../misc.js",
+      "duration": 0.0753380000001016,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "runtime/utils.js",
-      "duration": 0.04908000000011725,
+      "path": "session.js",
+      "duration": 0.07491500000026008,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../routing/manifest/pattern.js",
-      "duration": 0.0486679999999069,
+      "path": "../internal/client/dom/task.js",
+      "duration": 0.07379200000104902,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "detector.js",
-      "duration": 0.047169000000167216,
+      "path": "internal/server/blocks/snippet.js",
+      "duration": 0.07333500000015647,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../routing/manifest/serialization.js",
-      "duration": 0.04553800000019237,
+      "path": "../redirects/render.js",
+      "duration": 0.0729999999998654,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "slots.js",
-      "duration": 0.04462699999999131,
+      "path": "helpers.js",
+      "duration": 0.07037300000024516,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "metadata.js",
-      "duration": 0.043376000000193926,
+      "path": "../dist/assets/utils/imageKind.js",
+      "duration": 0.06979000000001179,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "response.js",
-      "duration": 0.04062800000019706,
+      "path": "../utils.js",
+      "duration": 0.06975300000135576,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "@astro-v5/ui/Modal.astro",
-      "duration": 0.04028999999991356,
-      "type": "other",
+      "path": "astro-designed-error-pages.js",
+      "duration": 0.06937499999958163,
+      "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "../utils/imageKind.js",
-      "duration": 0.038251000000627755,
+      "path": "../../runtime/server/render/instruction.js",
+      "duration": 0.06924899999989975,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../server/index.js",
+      "duration": 0.06875099999990653,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "astro-island-styles.js",
+      "duration": 0.06812499999978172,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "core.js",
+      "duration": 0.06683499999974174,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "base32.js",
+      "duration": 0.06666899999981979,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "generator.js",
+      "duration": 0.06649900000002162,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "runtime/shared.js",
+      "duration": 0.06574899999986883,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "service.js",
-      "duration": 0.03758299999981318,
+      "duration": 0.06479199999978391,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "utils/remoteProbe.js",
+      "duration": 0.061997999999903186,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "boundary.js",
+      "duration": 0.06145900000024085,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "routing/default.js",
+      "duration": 0.06050000000016098,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../../runtime/server/render/util.js",
+      "duration": 0.05958399999997255,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../internal/server/index.js",
+      "duration": 0.05929100000014387,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/validation.js",
+      "duration": 0.05587300000013329,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "serialize.js",
+      "duration": 0.05271100000015849,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "webp.js",
+      "duration": 0.052248999999847,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "../middleware/index.js",
-      "duration": 0.03312499999992724,
+      "duration": 0.052125999999816486,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "utils/url.js",
-      "duration": 0.03195699999980661,
+      "path": "util/pathname.js",
+      "duration": 0.05200000000036198,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "paginate.js",
-      "duration": 0.030250000000137334,
+      "path": "../utils/vendor/image-size/lookup.js",
+      "duration": 0.05099999999958982,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "route-cache.js",
-      "duration": 0.030125999999995656,
+      "path": "shared/unstorage.zVDD2mZo.mjs",
+      "duration": 0.04974900000013349,
       "type": "script",
       "plugin": "alias"
     },
     {
-      "path": "middleware.js",
-      "duration": 0.029293000000166103,
+      "path": "detector.js",
+      "duration": 0.04599900000027901,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "validation.js",
+      "duration": 0.04599899999971058,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../utils/imageKind.js",
+      "duration": 0.042541000000255735,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "src/stringify.js",
-      "duration": 0.02699799999993502,
+      "duration": 0.04245799999978317,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "middleware.js",
+      "duration": 0.04175199999997403,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "@astro-v5/ui/Modal.astro",
+      "duration": 0.04150200000026416,
+      "type": "other",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/manifest/pattern.js",
+      "duration": 0.04091799999980594,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "utils/url.js",
+      "duration": 0.039501000000427666,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "commonjsHelpers.js",
+      "duration": 0.03821099999981925,
+      "type": "script",
+      "plugin": "astro-manifest-plugin"
+    },
+    {
+      "path": "route-cache.js",
+      "duration": 0.03800100000000839,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "response.js",
+      "duration": 0.03762599999993199,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../routing/manifest/serialization.js",
+      "duration": 0.03745799999967403,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "slots.js",
+      "duration": 0.0319169999999076,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "metadata.js",
+      "duration": 0.03091699999993125,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "paginate.js",
+      "duration": 0.0298769999999422,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "runtime/utils.js",
+      "duration": 0.029290999999830092,
+      "type": "script",
+      "plugin": "alias"
+    },
+    {
+      "path": "../version.js",
+      "duration": 0.028708000000506217,
       "type": "script",
       "plugin": "alias"
     },
     {
       "path": "variables.css",
-      "duration": 0.002208000000109678,
+      "duration": 0.005249999999932697,
       "type": "style",
       "plugin": "astro:tsconfig-alias"
     },
     {
       "path": "animations.css",
-      "duration": 0.0014999999998508429,
+      "duration": 0.004167000000052212,
       "type": "style",
       "plugin": "astro:tsconfig-alias"
     },
     {
       "path": "utilities.css",
-      "duration": 0.0009999999999763531,
+      "duration": 0.003916000000117492,
       "type": "style",
       "plugin": "astro:tsconfig-alias"
     }
@@ -4050,93 +4050,77 @@
   "contentCollections": [
     {
       "collection": "blog",
-      "duration": 325.47362200000134,
+      "duration": 313.9002039999999,
       "entries": 150,
-      "files": [
-        "src/content/blog/example.mdx"
-      ]
+      "files": ["src/content/blog/example.mdx"]
     },
     {
       "collection": "runtime.js",
-      "duration": 6.552047000000016,
+      "duration": 6.605910999999196,
       "entries": 88,
-      "files": [
-        "runtime.js"
-      ]
+      "files": ["runtime.js"]
     },
     {
       "collection": "config.ts",
-      "duration": 4.139000000000465,
+      "duration": 4.249083999999925,
       "entries": 58,
-      "files": [
-        "src/content/config.ts"
-      ]
-    },
-    {
-      "collection": "data-store.js",
-      "duration": 0.5335019999998849,
-      "entries": 88,
-      "files": [
-        "data-store.js"
-      ]
+      "files": ["src/content/config.ts"]
     },
     {
       "collection": "runtime",
-      "duration": 0.48874700000010307,
+      "duration": 0.5544189999991431,
       "entries": 51,
-      "files": [
-        "runtime"
-      ]
+      "files": ["runtime"]
+    },
+    {
+      "collection": "data-store.js",
+      "duration": 0.5321750000007341,
+      "entries": 88,
+      "files": ["data-store.js"]
     },
     {
       "collection": "consts.js",
-      "duration": 0.34158200000035777,
+      "duration": 0.3660409999994272,
       "entries": 121,
-      "files": [
-        "consts.js"
-      ]
+      "files": ["consts.js"]
     },
     {
       "collection": "config.js",
-      "duration": 0.24291599999992286,
+      "duration": 0.2450869999997849,
       "entries": 88,
-      "files": [
-        "config.js"
-      ]
+      "files": ["config.js"]
     },
     {
       "collection": "loaders",
-      "duration": 0.0775870000006762,
+      "duration": 0.08091600000022936,
       "entries": 88,
-      "files": [
-        "errors.js"
-      ]
+      "files": ["errors.js"]
     }
   ],
   "stages": [
     {
       "name": "astro:config:setup",
-      "duration": 0.12129200000003948
+      "duration": 0.13283300000000509
     },
     {
       "name": "astro:build:setup",
-      "duration": 0.039416999999957625
+      "duration": 0.036166999999977634
     },
     {
       "name": "astro:build:setup",
-      "duration": 0.01887499999997999
-    },
-    {
-      "name": "astro:build:generated",
-      "duration": 0.0010830000001078588
+      "duration": 0.01841699999999946
     },
     {
       "name": "astro:build:ssr",
-      "duration": 0.001040999999986525
+      "duration": 0.0014579999999568827
+    },
+    {
+      "name": "astro:build:generated",
+      "duration": 0.001125000000001819
     },
     {
       "name": "astro:build:start",
-      "duration": 0.0009170000000722212
+      "duration": 0.0007500000000391083
     }
   ]
 }
