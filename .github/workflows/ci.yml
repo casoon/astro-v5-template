@@ -44,10 +44,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check formatting (Biome)
-        run: pnpm biome:check
-
-      - name: Lint Astro files
-        run: pnpm lint:astro
+        run: pnpm check
 
       - name: Type check
         run: pnpm type-check
