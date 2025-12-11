@@ -1,5 +1,6 @@
 # Astro v5 Workspace
 
+[![CI](https://github.com/casoon/astro-v5-template/actions/workflows/ci.yml/badge.svg)](https://github.com/casoon/astro-v5-template/actions/workflows/ci.yml)
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
 [![Version](https://img.shields.io/badge/Version-1.4.2-blue)]()
