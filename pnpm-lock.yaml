@@ -27,9 +27,6 @@ catalogs:
     '@casoon/astro-speed-measure':
       specifier: 0.1.4
       version: 0.1.4
-    '@casoon/astro-webvitals':
-      specifier: ^0.1.5
-      version: 0.1.5
     '@casoon/atlas-styles':
       specifier: ^0.0.7
       version: 0.0.7
@@ -171,8 +168,8 @@ importers:
         specifier: 'catalog:'
         version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/astro-webvitals':
-        specifier: 'catalog:'
-        version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
+        specifier: link:/Users/jseidel/GitHub/astro-webvitals
+        version: link:../../../astro-webvitals
       '@casoon/atlas-styles':
         specifier: 'catalog:'
         version: 0.0.7
@@ -347,8 +344,8 @@ importers:
         specifier: 'catalog:'
         version: 0.1.4(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
       '@casoon/astro-webvitals':
-        specifier: 'catalog:'
-        version: 0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))
+        specifier: link:/Users/jseidel/GitHub/astro-webvitals
+        version: link:../../../astro-webvitals
       '@casoon/atlas-styles':
         specifier: 'catalog:'
         version: 0.0.7
@@ -644,12 +641,6 @@ packages:
 
   '@casoon/astro-speed-measure@0.1.4':
     resolution: {integrity: sha512-s+903B7E/zCecf8PM/LSKcN6iWQO+XtDa215dWJUfcNvJ9q/lcvvicZkKLk/pcDuPNX1EU0f/jWOpHrLbc681Q==}
-    peerDependencies:
-      astro: ^4.0.0 || ^5.0.0
-
-  '@casoon/astro-webvitals@0.1.5':
-    resolution: {integrity: sha512-yxgqIsMHWxPuP5PL/3hgmIWPHk+LOKOqhH4RWhrHtfQ9MNbmdKFVYJDer1p/YrepDLTOc6sS1TBKP1QsJnjehA==}
-    engines: {node: '>=18.0.0'}
     peerDependencies:
       astro: ^4.0.0 || ^5.0.0
 
@@ -4828,10 +4819,6 @@ snapshots:
     dependencies:
       astro: 5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2)
       picocolors: 1.1.1
-
-  '@casoon/astro-webvitals@0.1.5(astro@5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2))':
-    dependencies:
-      astro: 5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.9.3)(yaml@2.8.2)
 
   '@casoon/atlas-styles@0.0.7': {}
 
