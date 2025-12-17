@@ -287,5 +287,39 @@ import Card from '@astro-v5/ui/Card.astro';
         </div>
       </div>
     </section>
+
+    <!-- Web Vitals Test Section -->
+    <section class="mt-16 p-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-white mb-4 text-center">Web Vitals Test</h2>
+      <p class="text-slate-300 text-center mb-6">
+        Click the button below to trigger FID and INP measurements.
+      </p>
+      <div class="flex justify-center">
+        <button
+          id="webvitals-test-btn"
+          class="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-xl hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-emerald-500/30"
+        >
+          Trigger FID/INP Metrics
+        </button>
+      </div>
+      <p id="webvitals-test-result" class="text-slate-400 text-center mt-4 text-sm"></p>
+    </section>
   </div>
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('webvitals-test-btn');
+    const result = document.getElementById('webvitals-test-result');
+    let clickCount = 0;
+
+    btn?.addEventListener('click', () => {
+      clickCount++;
+      if (result) {
+        result.textContent = 'Interaction #' + clickCount + ' recorded - Check the Web Vitals overlay for FID/INP updates!';
+        result.classList.remove('text-slate-400');
+        result.classList.add('text-emerald-400');
+      }
+    });
+  });
+</script>

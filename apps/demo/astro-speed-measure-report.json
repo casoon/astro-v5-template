@@ -1,5 +1,5 @@
 {
-  "totalBuildTime": 1516.0205409999999,
+  "totalBuildTime": 1822.210292,
   "integrations": [],
   "vitePlugins": [],
   "pages": [
@@ -111,27 +111,27 @@
   "stages": [
     {
       "name": "astro:config:setup",
-      "duration": 0.14562499999999545
+      "duration": 0.167583000000036
     },
     {
       "name": "astro:build:setup",
-      "duration": 0.04291600000010476
+      "duration": 0.04279199999996308
     },
     {
       "name": "astro:build:setup",
-      "duration": 0.023791999999957625
-    },
-    {
-      "name": "astro:build:ssr",
-      "duration": 0.0011249999997744453
+      "duration": 0.026834000000235392
     },
     {
       "name": "astro:build:start",
-      "duration": 0.0009580000000823929
+      "duration": 0.0016249999999899956
+    },
+    {
+      "name": "astro:build:ssr",
+      "duration": 0.0012500000002546585
     },
     {
       "name": "astro:build:generated",
-      "duration": 0.0009579999996276456
+      "duration": 0.0010830000001078588
     }
   ]
 }

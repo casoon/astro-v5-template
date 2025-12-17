@@ -4,39 +4,39 @@ packages:
 
 catalog:
   # Astro
-  astro: ^5.15.4
+  astro: ^5.16.6
   '@astrojs/check': ^0.9.5
-  '@astrojs/mdx': ^4.3.10
+  '@astrojs/mdx': ^4.3.13
   '@astrojs/rss': ^4.0.13
   '@astrojs/sitemap': ^3.6.0
-  '@astrojs/svelte': ^7.2.2
+  '@astrojs/svelte': ^7.2.4
 
   # Tailwind
-  tailwindcss: ^4.1.17
-  '@tailwindcss/forms': ^0.5.10
+  tailwindcss: ^4.1.18
+  '@tailwindcss/forms': ^0.5.11
   '@tailwindcss/typography': ^0.5.19
-  '@tailwindcss/vite': ^4.1.17
+  '@tailwindcss/vite': ^4.1.18
 
   # Svelte
-  svelte: ^5.43.5
-  '@sveltejs/vite-plugin-svelte': ^5.1.1
-  lucide-svelte: ^0.553.0
+  svelte: ^5.46.0
+  '@sveltejs/vite-plugin-svelte': ^6.2.1
+  lucide-svelte: ^0.561.0
 
   # Core
   typescript: ^5.9.3
-  zod: ^4.1.12
+  zod: ^4.2.1
   clsx: ^2.1.1
   tailwind-merge: ^3.3.1
   sharp: ^0.34.5
 
   # Formatting & Linting
-  '@biomejs/biome': ^2.3.4
-  eslint: ^9.39.1
+  '@biomejs/biome': ^2.3.10
+  eslint: ^9.39.2
   eslint-config-prettier: ^10.1.8
   eslint-plugin-astro: ^1.5.0
   prettier: ^3.6.2
   prettier-plugin-astro: ^0.14.1
-  prettier-plugin-svelte: ^3.4.0
+  prettier-plugin-svelte: ^3.4.1
   husky: ^9.1.7
   lint-staged: ^16.2.6
 
@@ -45,9 +45,9 @@ catalog:
   '@types/leaflet': ^1.9.21
 
   # Casoon
-  '@casoon/atlas-styles': ^0.0.7
+  '@casoon/atlas-styles': ^0.0.9
   '@casoon/astro-speed-measure': 0.1.4
-  '@casoon/astro-webvitals': ^0.1.6
+  '@casoon/astro-webvitals': ^0.2.1
 
   # Fonts (Inter als Standard)
   '@fontsource/inter': ^5.2.8

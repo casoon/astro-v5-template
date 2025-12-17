@@ -1,6 +1,6 @@
 {
   "name": "astro-v5-workspace",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "private": true,
   "description": "Astro v5 monorepo with pnpm workspaces, shared design system, and centralized dependency management",
   "author": "casoon",
