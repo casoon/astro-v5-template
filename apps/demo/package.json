@@ -61,7 +61,7 @@
     "@astrojs/sitemap": "catalog:",
     "@astrojs/svelte": "catalog:",
     "@casoon/astro-speed-measure": "catalog:",
-    "@casoon/astro-webvitals": "link:/Users/jseidel/GitHub/astro-webvitals",
+    "@casoon/astro-webvitals": "catalog:",
     "@casoon/atlas-styles": "catalog:",
     "@types/leaflet": "catalog:",
     "leaflet": "catalog:",

@@ -47,7 +47,7 @@ catalog:
   # Casoon
   '@casoon/atlas-styles': ^0.0.7
   '@casoon/astro-speed-measure': 0.1.4
-  # '@casoon/astro-webvitals': ^0.1.5  # temporarily using local link
+  '@casoon/astro-webvitals': ^0.1.6
 
   # Fonts (Inter als Standard)
   '@fontsource/inter': ^5.2.8

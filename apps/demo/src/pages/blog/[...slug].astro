@@ -65,6 +65,11 @@ const slug = post.slug || post.id;
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 	<link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml">
 
+	<!-- Preload LCP image -->
+	{post.data.image && (
+		<link rel="preload" as="image" href={post.data.image} fetchpriority="high" />
+	)}
+
 	<!-- Preconnect to external domains -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,6 +105,25 @@ const slug = post.slug || post.id;
 					Zurück zum Blog
 				</a>
 			</nav>
+
+			<!-- Hero Image for LCP - loaded first, no lazy loading -->
+			{post.data.image && (
+				<div class="relative group mb-8">
+					<div class="cs-glass p-2 rounded-3xl">
+						<img
+							src={post.data.image}
+							alt={post.data.title}
+							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
+							fetchpriority="high"
+						/>
+					</div>
+					<!-- Floating orbs around image -->
+					<div class="absolute inset-0 pointer-events-none">
+						<div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 10%; left: -5%; animation-delay: 1s;"></div>
+						<div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="bottom: 15%; right: -3%; animation-delay: 2s;"></div>
+					</div>
+				</div>
+			)}
 
 			<!-- Title with gradient effect -->
 			<div class="cs-glass-sm p-8 rounded-3xl mb-8">
@@ -151,25 +175,6 @@ const slug = post.slug || post.id;
 					<p class="text-xl text-gray-700 dark:text-gray-200 leading-relaxed italic">
 						{post.data.description}
 					</p>
-				</div>
-			)}
-
-			<!-- Image with Atlas styling -->
-			{post.data.image && (
-				<div class="relative group mb-12">
-					<div class="cs-glass p-2 rounded-3xl">
-						<img
-							src={post.data.image}
-							alt={post.data.title}
-							class="w-full h-80 object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-700"
-							loading="lazy"
-						/>
-					</div>
-					<!-- Floating orbs around image -->
-					<div class="absolute inset-0 pointer-events-none">
-						<div class="cs-orb cs-orb-sm opacity-20 animate-pulse" style="top: 10%; left: -5%; animation-delay: 1s;"></div>
-						<div class="cs-orb cs-orb-xs opacity-30 animate-bounce" style="bottom: 15%; right: -3%; animation-delay: 2s;"></div>
-					</div>
 				</div>
 			)}
 		</header>
