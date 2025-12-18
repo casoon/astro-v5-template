@@ -79,16 +79,16 @@
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@sveltejs/vite-plugin-svelte": "catalog:",
-    "@types/node-fetch": "^2.6.13",
+    "@types/node-fetch": "catalog:",
     "astro": "catalog:",
     "husky": "catalog:",
-    "lighthouse": "^13.0.1",
+    "lighthouse": "catalog:",
     "lint-staged": "catalog:",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-astro": "catalog:",
     "prettier-plugin-svelte": "catalog:",
-    "wait-on": "^9.0.3"
+    "wait-on": "catalog:"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,mjs,cjs}": [

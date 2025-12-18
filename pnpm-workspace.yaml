@@ -49,5 +49,26 @@ catalog:
   '@casoon/astro-speed-measure': 0.1.4
   '@casoon/astro-webvitals': ^0.2.1
 
-  # Fonts (Inter als Standard)
+  # Fonts
+  '@fontsource/archivo': ^5.2.8
+  '@fontsource/crimson-text': ^5.2.7
+  '@fontsource/dm-sans': ^5.2.8
+  '@fontsource/fira-code': ^5.2.7
   '@fontsource/inter': ^5.2.8
+  '@fontsource/jetbrains-mono': ^5.2.8
+  '@fontsource/lora': ^5.2.8
+  '@fontsource/manrope': ^5.2.8
+  '@fontsource/merriweather': ^5.2.11
+  '@fontsource/montserrat': ^5.2.8
+  '@fontsource/playfair-display': ^5.2.8
+  '@fontsource/poppins': ^5.2.7
+  '@fontsource/raleway': ^5.2.8
+  '@fontsource/source-serif-4': ^5.2.9
+  '@fontsource/space-grotesk': ^5.2.10
+  '@fontsource/work-sans': ^5.2.8
+
+  # Dev Tools
+  '@types/node-fetch': ^2.6.13
+  lighthouse: ^13.0.1
+  npm-run-all: ^4.1.5
+  wait-on: ^9.0.3
