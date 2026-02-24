@@ -1,5 +1,7 @@
 # Astro v5 Workspace
 
+> **End of Life:** This template is no longer actively maintained. Astro v6 is around the corner and this project will not receive further planned updates. The successor is **[astro-v6-template](https://github.com/casoon/astro-v6-template)** — rebuilt from scratch with Astro v6, Tailwind v4, Zod v4, and Biome-only linting.
+
 [![CI](https://github.com/casoon/astro-v5-template/actions/workflows/ci.yml/badge.svg)](https://github.com/casoon/astro-v5-template/actions/workflows/ci.yml)
 [![Astro](https://img.shields.io/badge/Astro-5.15.4-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-F69220?logo=pnpm&logoColor=white)](https://pnpm.io/)
